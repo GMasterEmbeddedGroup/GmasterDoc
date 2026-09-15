@@ -1,0 +1,29 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">工具详解：STM32CubeMX</h2>
+    <p class="lead">负责"<b>配</b>"：图形化配置芯片，自动生成初始化代码。</p>
+  </div>
+
+  <div class="grid grid-2">
+    <div class="card">
+      <h4><span class="card-index">01</span>它是什么</h4>
+      <p>ST 官方的图形化配置工具，覆盖全系列 STM32，把寄存器配置变成点选操作。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">02</span>在工作流里干什么</h4>
+      <p>选型号 → 配引脚、时钟树、外设 → 生成 HAL 初始化代码。<b>.ioc 文件是全部配置的源头</b>，改配置就重新生成。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">03</span>关键操作</h4>
+      <p>注册并登录 myST 账号；先下载对应系列的固件包（F4 / H7）；Project Manager 里 Toolchain 选 CMake。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">04</span>常见坑</h4>
+      <p>手写的代码没放在 USER CODE 区间，重新生成时被覆盖；固件包没下载导致无法生成工程。</p>
+    </div>
+  </div>
+
+  <div class="callout">要点：<b>CubeMX 负责生成初始化代码</b>，业务代码必须写在 USER CODE 标记之间。</div>
+
+  <p class="back-link"><a data-goto="9">← 返回工具链总览</a></p>
+</section>

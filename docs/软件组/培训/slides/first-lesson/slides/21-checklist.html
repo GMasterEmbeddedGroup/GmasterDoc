@@ -1,0 +1,23 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">环境自检清单</h2>
+    <p class="lead">逐条检查并勾选，<b>全部通过后环境配置即完成</b>。遇到问题及时在组内提问。</p>
+  </div>
+
+  <div class="checklist">
+    <label class="check-item"><input type="checkbox"><span>命令行输入 <span class="mono">code --version</span> 能输出版本号</span></label>
+    <label class="check-item"><input type="checkbox"><span>VS Code 界面已经切换为中文</span></label>
+    <label class="check-item"><input type="checkbox"><span>扩展面板里 C/C++ 与 STM32 扩展已启用、无报错</span></label>
+    <label class="check-item"><input type="checkbox"><span>STM32CubeMX 能正常启动，并且已登录 myST 账号</span></label>
+    <label class="check-item"><input type="checkbox"><span>已下载板子对应系列的固件包（F4 或 H7）</span></label>
+    <label class="check-item"><input type="checkbox"><span>能用 CubeMX 生成一个空工程，并用 VS Code 打开</span></label>
+    <label class="check-item"><input type="checkbox"><span>命令行输入 <span class="mono">git --version</span> 能输出结果</span></label>
+    <label class="check-item"><input type="checkbox"><span>命令行输入 <span class="mono">arm-none-eabi-gcc --version</span> 能输出结果</span></label>
+  </div>
+
+  <div class="cl-progress">
+    <span>自检进度</span>
+    <span class="cl-bar"><span class="cl-bar-fill"></span></span>
+    <span class="cl-count">0 / 8</span>
+  </div>
+</section>

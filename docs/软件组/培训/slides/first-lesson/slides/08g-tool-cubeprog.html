@@ -1,0 +1,29 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">工具详解：CubeProgrammer</h2>
+    <p class="lead">负责"<b>救</b>"：官方烧录工具，OpenOCD 搞不定时的后手。</p>
+  </div>
+
+  <div class="grid grid-2">
+    <div class="card">
+      <h4><span class="card-index">01</span>它是什么</h4>
+      <p>ST 官方烧录软件，图形界面 + 命令行（<span class="mono">STM32_Programmer_CLI</span>）双形态。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">02</span>在工作流里干什么</h4>
+      <p>整片擦除、读写 Flash、改选项字节；支持 SWD、UART、USB DFU 多种烧录入口。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">03</span>关键操作</h4>
+      <p>芯片"锁死"时连上后先全片擦除；可回读 Flash 校验烧录结果；顺便升级 ST-Link 固件。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">04</span>常见坑</h4>
+      <p>开了 RDP 读保护后读不出程序——<b>不是芯片坏了</b>，解除保护并擦除即可恢复。</p>
+    </div>
+  </div>
+
+  <div class="callout">要点：日常开发可不使用；<b>芯片锁死、读保护等异常场景依靠它恢复</b>。</div>
+
+  <p class="back-link"><a data-goto="9">← 返回工具链总览</a></p>
+</section>

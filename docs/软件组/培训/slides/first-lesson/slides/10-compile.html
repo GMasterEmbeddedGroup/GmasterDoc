@@ -1,0 +1,171 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">编译原理：一行代码是怎么变成机器码的</h2>
+    <p class="lead">一次"构建"背后包含四个步骤。点击左侧步骤，下方显示对应的原理图。</p>
+  </div>
+
+  <div data-stepper>
+    <div class="stepper">
+      <div class="step-rail">
+        <button class="step-item"><span class="step-idx">01</span>预处理</button>
+        <button class="step-item"><span class="step-idx">02</span>编译</button>
+        <button class="step-item"><span class="step-idx">03</span>汇编</button>
+        <button class="step-item"><span class="step-idx">04</span>链接</button>
+      </div>
+      <div class="step-stage">
+        <div class="step-panel">
+          <h4>① 预处理：展开头文件与宏</h4>
+          处理所有以 <span class="mono">#</span> 开头的指令：<span class="mono">#include</span> 把头文件内容原样展开，<span class="mono">#define</span> 做文本替换。
+          <span class="dim">此阶段不做语法检查，仅进行文本拼接。</span>
+        </div>
+        <div class="step-panel">
+          <h4>② 编译：翻译为汇编</h4>
+          检查语法与类型，做优化，再把 C/C++ 语句翻译成对应 CPU 的
+          <a href="https://zh.wikipedia.org/wiki/汇编语言" target="_blank" rel="noopener">汇编指令</a>。
+          <span class="dim">"expected ';'"、"未声明的标识符"等语法错误都在此阶段报告。</span>
+        </div>
+        <div class="step-panel">
+          <h4>③ 汇编：生成机器码</h4>
+          <a href="https://zh.wikipedia.org/wiki/汇编器" target="_blank" rel="noopener">汇编器</a>把指令逐条翻译成
+          <a href="https://zh.wikipedia.org/wiki/机器语言" target="_blank" rel="noopener">机器码</a>，得到目标文件。
+          <span class="dim">目标文件仍不能运行：地址未定，且可能缺少其他文件中的函数。</span>
+        </div>
+        <div class="step-panel">
+          <h4>④ 链接：生成完整程序</h4>
+          <a href="https://zh.wikipedia.org/wiki/链接器" target="_blank" rel="noopener">链接器</a>把多个目标文件与标准库合并，解析符号，再按
+          <a href="https://sourceware.org/binutils/docs/ld/Scripts.html" target="_blank" rel="noopener">链接脚本</a>把代码放进 Flash、变量放进 RAM。
+          <span class="dim">"undefined reference" 是链接错误——说明函数只有声明、没有定义。</span>
+        </div>
+        <div class="step-controls">
+          <button type="button" data-step="prev">← 上一步</button>
+          <button type="button" data-step="next">下一步 →</button>
+          <span class="step-counter"><span class="step-current">01</span> / 04</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-views">
+      <!-- ① 预处理 -->
+      <div class="step-view" data-step-view="0">
+        <svg viewBox="0 0 1200 170" role="img" aria-label="预处理：main.c 经预处理器变成 main.i">
+          <defs>
+            <marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="#98a2b3"/>
+            </marker>
+          </defs>
+          <rect x="110" y="40" width="190" height="70" rx="4" fill="#ffffff" stroke="#c8ced6"/>
+          <text x="205" y="72" text-anchor="middle" font-family="Consolas, monospace" font-size="21" fill="#14161a">main.c</text>
+          <text x="205" y="96" text-anchor="middle" font-size="15" fill="#7c848f">源文件（纯文本）</text>
+
+          <line x1="304" y1="75" x2="426" y2="75" stroke="#98a2b3" stroke-width="2" marker-end="url(#ar1)"/>
+
+          <rect x="430" y="26" width="340" height="98" rx="4" fill="#14161a"/>
+          <text x="600" y="64" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff">预处理器</text>
+          <text x="600" y="92" text-anchor="middle" font-size="15" fill="#c9d1da">展开 #include、替换 #define</text>
+          <text x="600" y="112" text-anchor="middle" font-size="15" fill="#c9d1da">按 #ifdef 取舍代码</text>
+
+          <line x1="774" y1="75" x2="896" y2="75" stroke="#98a2b3" stroke-width="2" marker-end="url(#ar1)"/>
+
+          <rect x="900" y="40" width="190" height="70" rx="4" fill="#f7f8fa" stroke="#c8ced6"/>
+          <text x="995" y="72" text-anchor="middle" font-family="Consolas, monospace" font-size="21" fill="#14161a">main.i</text>
+          <text x="995" y="96" text-anchor="middle" font-size="15" fill="#7c848f">仍然是纯文本</text>
+
+          <text x="600" y="157" text-anchor="middle" font-size="17" fill="#3b4149">这一层只“拼文本”：不检查语法，也还不产生任何机器码</text>
+        </svg>
+      </div>
+
+      <!-- ② 编译 -->
+      <div class="step-view" data-step-view="1">
+        <svg viewBox="0 0 1200 170" role="img" aria-label="编译：main.i 经编译器变成 main.s">
+          <defs>
+            <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="#98a2b3"/>
+            </marker>
+          </defs>
+          <rect x="110" y="40" width="190" height="70" rx="4" fill="#ffffff" stroke="#c8ced6"/>
+          <text x="205" y="72" text-anchor="middle" font-family="Consolas, monospace" font-size="21" fill="#14161a">main.i</text>
+          <text x="205" y="96" text-anchor="middle" font-size="15" fill="#7c848f">展开后的源文件</text>
+
+          <line x1="304" y1="75" x2="426" y2="75" stroke="#98a2b3" stroke-width="2" marker-end="url(#ar2)"/>
+
+          <rect x="430" y="26" width="340" height="98" rx="4" fill="#14161a"/>
+          <text x="600" y="64" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff">编译器</text>
+          <text x="600" y="92" text-anchor="middle" font-size="15" fill="#c9d1da">语法与类型检查</text>
+          <text x="600" y="112" text-anchor="middle" font-size="15" fill="#c9d1da">优化后翻译成汇编</text>
+
+          <line x1="774" y1="75" x2="896" y2="75" stroke="#98a2b3" stroke-width="2" marker-end="url(#ar2)"/>
+
+          <rect x="900" y="40" width="190" height="70" rx="4" fill="#f7f8fa" stroke="#c8ced6"/>
+          <text x="995" y="72" text-anchor="middle" font-family="Consolas, monospace" font-size="21" fill="#14161a">main.s</text>
+          <text x="995" y="96" text-anchor="middle" font-size="15" fill="#7c848f">汇编代码</text>
+
+          <text x="600" y="157" text-anchor="middle" font-size="17" fill="#3b4149">几乎所有的语法报错都发生在这一步：它是人与机器之间的一次“翻译”</text>
+        </svg>
+      </div>
+
+      <!-- ③ 汇编 -->
+      <div class="step-view" data-step-view="2">
+        <svg viewBox="0 0 1200 170" role="img" aria-label="汇编：main.s 经汇编器变成 main.o">
+          <defs>
+            <marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="#98a2b3"/>
+            </marker>
+          </defs>
+          <rect x="110" y="40" width="190" height="70" rx="4" fill="#ffffff" stroke="#c8ced6"/>
+          <text x="205" y="72" text-anchor="middle" font-family="Consolas, monospace" font-size="21" fill="#14161a">main.s</text>
+          <text x="205" y="96" text-anchor="middle" font-size="15" fill="#7c848f">汇编代码</text>
+
+          <line x1="304" y1="75" x2="426" y2="75" stroke="#98a2b3" stroke-width="2" marker-end="url(#ar3)"/>
+
+          <rect x="430" y="26" width="340" height="98" rx="4" fill="#14161a"/>
+          <text x="600" y="64" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff">汇编器</text>
+          <text x="600" y="92" text-anchor="middle" font-size="15" fill="#c9d1da">逐条翻译成机器码</text>
+          <text x="600" y="112" text-anchor="middle" font-size="15" fill="#c9d1da">生成目标文件与符号表</text>
+
+          <line x1="774" y1="75" x2="896" y2="75" stroke="#98a2b3" stroke-width="2" marker-end="url(#ar3)"/>
+
+          <rect x="900" y="40" width="190" height="70" rx="4" fill="#f7f8fa" stroke="#c8ced6"/>
+          <text x="995" y="72" text-anchor="middle" font-family="Consolas, monospace" font-size="21" fill="#14161a">main.o</text>
+          <text x="995" y="96" text-anchor="middle" font-size="15" fill="#7c848f">目标文件</text>
+
+          <text x="600" y="157" text-anchor="middle" font-size="17" fill="#3b4149">已经是机器码，但地址还没定、也可能缺别的文件里的函数，所以还不能运行</text>
+        </svg>
+      </div>
+
+      <!-- ④ 链接 -->
+      <div class="step-view" data-step-view="3">
+        <svg viewBox="0 0 1200 170" role="img" aria-label="链接：多个目标文件与库经链接器变成 app.elf">
+          <defs>
+            <marker id="ar4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="#98a2b3"/>
+            </marker>
+          </defs>
+          <rect x="80" y="16" width="170" height="40" rx="4" fill="#ffffff" stroke="#c8ced6"/>
+          <text x="165" y="42" text-anchor="middle" font-family="Consolas, monospace" font-size="19" fill="#14161a">main.o</text>
+
+          <rect x="80" y="65" width="170" height="40" rx="4" fill="#ffffff" stroke="#c8ced6"/>
+          <text x="165" y="91" text-anchor="middle" font-family="Consolas, monospace" font-size="19" fill="#14161a">gpio.o</text>
+
+          <rect x="80" y="114" width="170" height="40" rx="4" fill="#ffffff" stroke="#c8ced6"/>
+          <text x="165" y="140" text-anchor="middle" font-family="Consolas, monospace" font-size="19" fill="#14161a">libc.a</text>
+
+          <path d="M250 36 H340 M250 85 H340 M250 134 H340 M340 36 V134" fill="none" stroke="#98a2b3" stroke-width="2"/>
+          <line x1="340" y1="85" x2="416" y2="85" stroke="#98a2b3" stroke-width="2" marker-end="url(#ar4)"/>
+
+          <rect x="420" y="36" width="330" height="98" rx="4" fill="#14161a"/>
+          <text x="585" y="74" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff">链接器</text>
+          <text x="585" y="102" text-anchor="middle" font-size="15" fill="#c9d1da">合并目标文件、解析符号</text>
+          <text x="585" y="122" text-anchor="middle" font-size="15" fill="#c9d1da">按链接脚本分配地址</text>
+
+          <line x1="754" y1="85" x2="876" y2="85" stroke="#98a2b3" stroke-width="2" marker-end="url(#ar4)"/>
+
+          <rect x="880" y="50" width="190" height="70" rx="4" fill="#f7f8fa" stroke="#c8ced6"/>
+          <text x="975" y="82" text-anchor="middle" font-family="Consolas, monospace" font-size="21" fill="#14161a">app.elf</text>
+          <text x="975" y="106" text-anchor="middle" font-size="15" fill="#7c848f">可执行文件</text>
+
+          <text x="600" y="170" text-anchor="middle" font-size="17" fill="#3b4149">代码被放进 Flash、变量被放进 RAM，每个符号的地址在这一步才最终确定</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>

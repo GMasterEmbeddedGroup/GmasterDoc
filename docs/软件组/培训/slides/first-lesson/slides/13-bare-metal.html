@@ -1,0 +1,34 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">为什么裸机开发比在电脑上写程序难</h2>
+    <p class="lead">管理硬件的系统层不复存在，时钟、引脚、内存都要由程序自行配置。</p>
+  </div>
+
+  <div class="compare">
+    <div>
+      <h4>电脑上（有操作系统）</h4>
+      <ul>
+        <li>调用 printf 即可输出，外设由操作系统对接到屏幕；</li>
+        <li>程序崩溃最多关闭窗口，系统本身不受影响。</li>
+      </ul>
+    </div>
+    <div>
+      <h4>单片机上（<a href="https://zh.wikipedia.org/wiki/嵌入式系统" target="_blank" rel="noopener">裸机</a>）</h4>
+      <ul>
+        <li>时钟、引脚、内存全部自行配置，配错会直接“跑飞”，且没有报错信息；</li>
+        <li>没有输出与日志，排查问题只能依靠调试器查看寄存器。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="figrow two photo xs">
+    <figure>
+      <img src="img/nucleo-board.jpg" alt="STM32 开发板">
+      <figcaption>STM32 开发板：左侧是 ST-Link 调试器，中间是目标芯片，两侧排针是 GPIO</figcaption>
+    </figure>
+    <figure>
+      <img src="img/debug-probe.jpg" alt="硬件调试器">
+      <figcaption>硬件调试器：把程序烧进芯片，也能让芯片停下来看变量</figcaption>
+    </figure>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">第四步：下载固件包</h2>
+    <p class="lead">没有固件包，CubeMX 生成工程时会失败。这一步体积大，建议在实验室网络下完成。</p>
+  </div>
+
+  <div class="grid grid-2">
+    <div class="card">
+      <h4><span class="card-index">01</span>登录账号</h4>
+      <p>进入 <span class="mono">Help → Manage embedded software packages</span>，按提示登录
+        <a href="https://my.st.com/" target="_blank" rel="noopener">myST</a> 账号，没有就现场注册。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">02</span>下载对应系列</h4>
+      <p>勾选你板子对应的系列：<b>STM32F4</b>（C 型板、F407）或者 <b>STM32H7</b>，点击 Install 等待完成。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">03</span>固件包位置</h4>
+      <p>默认存在 <span class="mono">C:\Users\&lt;用户名&gt;\STM32Cube\Repository</span>，可以在
+        <span class="mono">Help → Updater Settings</span> 里修改。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">04</span>下载缓慢的处理</h4>
+      <p>到官网手动下载固件包 zip，再用 <b>From Local</b> 从本地导入，可以绕开缓慢的在线下载。</p>
+    </div>
+  </div>
+
+  <div class="callout tip">
+    固件包的内容是 <b><a href="https://www.st.com/en/embedded-software/stm32cube-mcu-mpu-packages.html" target="_blank" rel="noopener">HAL 库</a>和
+    <a href="https://www.keil.arm.com/cmsis" target="_blank" rel="noopener">CMSIS</a> 的全部源码</b>，一个系列几百 MB。
+    它相当于芯片外设的说明书与参考实现，代码中的每一行 <span class="mono">HAL_xxx()</span> 最终都会调用其中的实现。
+  </div>
+</section>

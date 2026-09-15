@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>单页预览：从零开始电控开发 | GMaster</title>
+<link rel="stylesheet" href="vendor/reveal.js/reveal.css">
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="deck.css">
+<style>
+  /* 单页预览模式的顶部工具栏 */
+  body { margin: 0; background: #f4f6f8; }
+  .onebar {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.55rem 1rem;
+    background: #14161a;
+    color: #e7ebf2;
+    font: 400 14px/1.4 "Microsoft YaHei", system-ui, sans-serif;
+  }
+  .onebar .brand { color: #ff6a4d; font-weight: 700; letter-spacing: .04em; }
+  .onebar select,
+  .onebar button {
+    font: inherit;
+    padding: 0.35rem 0.7rem;
+    border-radius: 4px;
+    border: 1px solid #39404d;
+    background: #1e2430;
+    color: #e7ebf2;
+    cursor: pointer;
+  }
+  .onebar button:hover { border-color: #b3121b; }
+  .onebar .pos { margin-left: auto; color: #98a2b3; font-family: Consolas, monospace; }
+  .onebar .file { color: #7c848f; font-family: Consolas, monospace; font-size: 12px; }
+  #stage {
+    width: 100vw;
+    height: calc(100vh - 42px);
+  }
+  #stage .reveal { width: 100%; height: 100%; }
+  .reveal::after {
+    content: "单页预览：仅显示当前页，改完刷新即可";
+    position: absolute;
+    left: 14px;
+    bottom: 10px;
+    font: 400 12px/1 Consolas, monospace;
+    color: #b6bec9;
+  }
+</style>
+</head>
+<body>
+
+<div class="onebar">
+  <span class="brand">GMaster</span>
+  <span>单页预览</span>
+  <button id="prev">← 上一页</button>
+  <button id="next">下一页 →</button>
+  <select id="jump"></select>
+  <span class="file" id="file"></span>
+  <span class="pos" id="pos"></span>
+</div>
+
+<div id="stage">
+  <div class="reveal">
+    <img class="brand-logo" src="img/brand-logo.png" alt="GMaster">
+    <img class="brand-corner" src="img/brand-corner.png" alt="">
+    <div class="slides"><section><h2>正在载入…</h2></section></div>
+  </div>
+</div>
+
+<script src="slides/manifest.js"></script>
+<script src="vendor/reveal.js/reveal.js"></script>
+<script src="deck.js"></script>
+<script>
+(function () {
+  var list = window.DECK_SLIDES;
+  var slidesEl = document.querySelector('.reveal .slides');
+  var jump = document.getElementById('jump');
+  var fileLabel = document.getElementById('file');
+  var posLabel = document.getElementById('pos');
+
+  list.forEach(function (s, i) {
+    var opt = document.createElement('option');
+    opt.value = String(i);
+    opt.textContent = ('0' + (i + 1)).slice(-2) + ' ' + s.title;
+    jump.appendChild(opt);
+  });
+
+  function indexFromUrl() {
+    var p = parseInt(new URLSearchParams(location.search).get('p'), 10);
+    if (isNaN(p) || p < 1 || p > list.length) { return 0; }
+    return p - 1;
+  }
+
+  function render(i) {
+    var item = list[i];
+    fileLabel.textContent = 'slides/' + item.file;
+    posLabel.textContent = ('0' + (i + 1)).slice(-2) + ' / ' + list.length;
+    jump.value = String(i);
+    document.title = '单页预览：' + item.title;
+
+    DeckKit.loadFragments([item.file], slidesEl)
+      .then(function () {
+        DeckKit.initAll(document);
+        if (!window.__oneReady) {
+          window.__oneReady = true;
+          DeckKit.initReveal({
+            hash: false,
+            controls: false,
+            progress: false,
+            slideNumber: false,
+            overview: false,
+            keyboard: false,
+            touch: false,
+            plugins: []
+          });
+        } else if (window.Reveal) {
+          window.Reveal.sync();
+          window.Reveal.slide(0);
+          window.Reveal.layout();
+        }
+      })
+      .catch(function (err) {
+        slidesEl.innerHTML = '<section><h2>载入失败</h2><p>' + err.message + '</p></section>';
+      });
+  }
+
+  function go(i) {
+    i = (i + list.length) % list.length;
+    history.replaceState(null, '', '?p=' + (i + 1));
+    render(i);
+  }
+
+  document.getElementById('prev').addEventListener('click', function () { go(indexFromUrl() - 1); });
+  document.getElementById('next').addEventListener('click', function () { go(indexFromUrl() + 1); });
+  jump.addEventListener('change', function () { go(Number(jump.value)); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') { go(indexFromUrl() - 1); }
+    if (e.key === 'ArrowRight' || e.key === 'PageDown') { go(indexFromUrl() + 1); }
+  });
+
+  render(indexFromUrl());
+
+  new MutationObserver(function () {
+    if (window.Reveal && window.Reveal.isReady && window.Reveal.isReady()) {
+      window.Reveal.layout();
+    }
+  }).observe(document.getElementById('stage'), { attributes: true, childList: false, subtree: false });
+
+  window.addEventListener('resize', function () {
+    if (window.Reveal && window.Reveal.layout) { window.Reveal.layout(); }
+  });
+})();
+</script>
+</body>
+</html>

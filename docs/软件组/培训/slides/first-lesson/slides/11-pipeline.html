@@ -1,0 +1,81 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">编译全流程：从 main.c 到 app.elf</h2>
+    <p class="lead">四个步骤串联后即为完整编译流程。浅色方框为文本文件，淡红方框为机器码文件。</p>
+  </div>
+
+  <svg viewBox="0 0 1200 250" role="img" aria-label="编译全流程：main.c 经预处理器、编译器、汇编器、链接器，最终得到 app.elf">
+    <defs>
+      <marker id="flow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M0,0 L10,5 L0,10 z" fill="#98a2b3"/>
+      </marker>
+    </defs>
+
+    <!-- ① 预处理 -->
+    <rect x="12" y="38" width="120" height="84" rx="4" fill="#f7f8fa" stroke="#c8ced6"/>
+    <text x="72" y="72" text-anchor="middle" font-family="Consolas, monospace" font-size="19" fill="#14161a">main.c</text>
+    <text x="72" y="96" text-anchor="middle" font-size="14" fill="#7c848f">源代码文件</text>
+
+    <line x1="136" y1="80" x2="150" y2="80" stroke="#98a2b3" stroke-width="2" marker-end="url(#flow)"/>
+
+    <rect x="154" y="48" width="100" height="64" rx="4" fill="#14161a"/>
+    <text x="204" y="88" text-anchor="middle" font-size="19" font-weight="700" fill="#ffffff">预处理器</text>
+
+    <line x1="258" y1="80" x2="272" y2="80" stroke="#98a2b3" stroke-width="2" marker-end="url(#flow)"/>
+
+    <rect x="276" y="38" width="120" height="84" rx="4" fill="#f7f8fa" stroke="#c8ced6"/>
+    <text x="336" y="72" text-anchor="middle" font-family="Consolas, monospace" font-size="19" fill="#14161a">main.i</text>
+    <text x="336" y="96" text-anchor="middle" font-size="14" fill="#7c848f">展开后的文本</text>
+
+    <!-- ② 编译 -->
+    <line x1="400" y1="80" x2="414" y2="80" stroke="#98a2b3" stroke-width="2" marker-end="url(#flow)"/>
+
+    <rect x="418" y="48" width="100" height="64" rx="4" fill="#14161a"/>
+    <text x="468" y="88" text-anchor="middle" font-size="19" font-weight="700" fill="#ffffff">编译器</text>
+
+    <line x1="522" y1="80" x2="536" y2="80" stroke="#98a2b3" stroke-width="2" marker-end="url(#flow)"/>
+
+    <rect x="540" y="38" width="120" height="84" rx="4" fill="#f7f8fa" stroke="#c8ced6"/>
+    <text x="600" y="72" text-anchor="middle" font-family="Consolas, monospace" font-size="19" fill="#14161a">main.s</text>
+    <text x="600" y="96" text-anchor="middle" font-size="14" fill="#7c848f">汇编代码</text>
+
+    <!-- ③ 汇编 -->
+    <line x1="664" y1="80" x2="678" y2="80" stroke="#98a2b3" stroke-width="2" marker-end="url(#flow)"/>
+
+    <rect x="682" y="48" width="100" height="64" rx="4" fill="#14161a"/>
+    <text x="732" y="88" text-anchor="middle" font-size="19" font-weight="700" fill="#ffffff">汇编器</text>
+
+    <line x1="786" y1="80" x2="800" y2="80" stroke="#98a2b3" stroke-width="2" marker-end="url(#flow)"/>
+
+    <rect x="804" y="38" width="120" height="84" rx="4" fill="#f7eaeb" stroke="#e6c9cb"/>
+    <text x="864" y="72" text-anchor="middle" font-family="Consolas, monospace" font-size="19" fill="#14161a">main.o</text>
+    <text x="864" y="96" text-anchor="middle" font-size="14" fill="#b3121b">机器码，地址未定</text>
+
+    <!-- ④ 链接 -->
+    <line x1="928" y1="80" x2="942" y2="80" stroke="#98a2b3" stroke-width="2" marker-end="url(#flow)"/>
+
+    <rect x="946" y="48" width="100" height="64" rx="4" fill="#14161a"/>
+    <text x="996" y="88" text-anchor="middle" font-size="19" font-weight="700" fill="#ffffff">链接器</text>
+
+    <line x1="1050" y1="80" x2="1064" y2="80" stroke="#98a2b3" stroke-width="2" marker-end="url(#flow)"/>
+
+    <rect x="1068" y="38" width="120" height="84" rx="4" fill="#f7eaeb" stroke="#e6c9cb"/>
+    <text x="1128" y="72" text-anchor="middle" font-family="Consolas, monospace" font-size="19" fill="#14161a">app.elf</text>
+    <text x="1128" y="96" text-anchor="middle" font-size="14" fill="#b3121b">地址确定，可烧录</text>
+
+    <!-- 链接器的额外输入 -->
+    <text x="996" y="140" text-anchor="middle" font-size="14" fill="#7c848f">还要带上其他 .o 与 libc.a</text>
+    <text x="996" y="160" text-anchor="middle" font-size="14" fill="#7c848f">以及链接脚本 .ld</text>
+
+    <!-- 图例 -->
+    <rect x="300" y="200" width="26" height="16" fill="#f7f8fa" stroke="#c8ced6"/>
+    <text x="336" y="213" font-size="15" fill="#3b4149">文本文件：可供人阅读</text>
+    <rect x="640" y="200" width="26" height="16" fill="#f7eaeb" stroke="#e6c9cb"/>
+    <text x="676" y="213" font-size="15" fill="#3b4149">机器码：只有芯片能执行</text>
+  </svg>
+
+  <div class="callout">
+    这四步分别由 GCC 工具链中的 <b>cpp、cc1、as、ld</b> 四个程序完成，<b>CMake 负责按顺序调度</b>。
+    越靠后的产物越难以人工阅读：main.c 可直接编辑，main.s 需查指令手册，main.o 之后只能借助调试器分析。
+  </div>
+</section>

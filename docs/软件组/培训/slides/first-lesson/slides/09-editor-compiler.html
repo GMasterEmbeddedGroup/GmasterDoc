@@ -1,0 +1,26 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">VS Code 只是一个文本编辑器</h2>
+    <p class="lead">编辑器不产生机器码，只负责提升编写效率。各环节的分工如下。</p>
+  </div>
+
+  <div class="figrow short">
+    <figure>
+      <img src="img/shell-terminal.png" alt="命令行界面">
+      <figcaption>实际完成构建的是命令行程序：GCC 将源码翻译为机器码，CMake 组织构建流程，OpenOCD 负责烧录。编辑器只负责代码编写体验。</figcaption>
+    </figure>
+  </div>
+
+  <div class="compare" style="margin-top:0.6em">
+    <div>
+      <h4>编辑器（Editor）</h4>
+      <p>只处理文本：高亮、补全、查找、跳转。<b>不参与编译，也无法判断代码能否通过编译。</b>
+        因此仅安装 VS Code 时提示找不到编译器属于正常现象。</p>
+    </div>
+    <div>
+      <h4>编译器（Compiler）</h4>
+      <p>把源码翻译成机器码，<b>真正决定程序能不能跑</b>。单片机用的是
+        <a href="https://zh.wikipedia.org/wiki/交叉编译器" target="_blank" rel="noopener">交叉编译器</a> arm-none-eabi-gcc。</p>
+    </div>
+  </div>
+</section>

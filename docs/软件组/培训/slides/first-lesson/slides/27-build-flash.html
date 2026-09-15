@@ -1,0 +1,32 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">编译与烧录</h2>
+    <p class="lead">工程生成后，先编译通过，再烧录到芯片运行。</p>
+  </div>
+
+  <div class="grid grid-3">
+    <div class="card">
+      <h4><span class="card-index">方式一</span>VS Code</h4>
+      <p>用 CMake 插件选择工具链，再选预设（Debug 或 Release），然后 Configure、Build。产物在 <span class="mono">build/</span> 下。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">方式二</span>命令行</h4>
+      <p><span class="mono">cmake --preset Debug</span>，再 <span class="mono">cmake --build build/Debug</span>。预设名称以工程里的配置为准。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">方式三</span>ST 官方扩展</h4>
+      <p><a href="https://marketplace.visualstudio.com/items?itemName=stmicroelectronics.stm32-vscode-extension" target="_blank" rel="noopener">STM32 VS Code Extension</a>
+        可以直接构建并烧录，配置写在工程里，点一下按钮即可。</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <b>烧录前三件事：</b>烧录器线序正确（绿黄黑红，对应 3V3、GND、CLK、DIO），目标板已经供电，并且选对了烧录器类型
+    （<a href="https://www.st.com/en/development-tools/st-link-v2.html" target="_blank" rel="noopener">ST-Link</a> 或无线烧录器）。
+  </div>
+
+  <p class="lead" style="margin-top:0.6em">
+    无论采用哪种方式，最终都是把 <span class="mono">.elf</span> 或 <span class="mono">.hex</span> 写入 Flash。
+    当 LED 按代码预期闪烁，说明<b>编辑、构建、烧录、运行</b>整条链路已经打通。
+  </p>
+</section>

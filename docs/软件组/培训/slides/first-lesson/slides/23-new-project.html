@@ -1,0 +1,49 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">新建工程：五步</h2>
+    <p class="lead">以 <b>STM32F407ZGTx</b> 为例。点击左侧步骤逐步查看操作要点。</p>
+  </div>
+
+  <div class="stepper" data-stepper>
+    <div class="step-rail">
+      <button class="step-item"><span class="step-idx">01</span>选择芯片</button>
+      <button class="step-item"><span class="step-idx">02</span>调试口与时钟源</button>
+      <button class="step-item"><span class="step-idx">03</span>配置引脚</button>
+      <button class="step-item"><span class="step-idx">04</span>时钟树</button>
+      <button class="step-item"><span class="step-idx">05</span>生成代码</button>
+    </div>
+    <div class="step-stage">
+      <div class="step-panel">
+        <h4>① 新建工程并选择芯片</h4>
+        进入 <span class="mono">File → New Project</span>，在左上角搜索型号（例如 <span class="mono">STM32F407ZGTx</span>）后双击选中。
+        <span class="dim">型号写错一位，后面所有配置都要重做——先确认芯片丝印上的完整型号。</span>
+      </div>
+      <div class="step-panel">
+        <h4>② 配置调试口与时钟源</h4>
+        <b>SYS</b> 里把 Debug 设为 <b>Serial Wire</b>，<b>RCC</b> 里把 HSE 设为 <b>Crystal/Ceramic Resonator</b>。
+        <span class="dim">不配调试口，首次烧录后可能无法再连接芯片；不配 HSE 则只能使用精度较差的内部时钟。</span>
+      </div>
+      <div class="step-panel">
+        <h4>③ 配置引脚</h4>
+        在芯片图上左键点击要用的引脚，选择功能（例如 LED 引脚选 <b>GPIO_Output</b>），右键可以 Enter User Label 起个名字。
+        <span class="dim">命名后生成的代码将使用该名称，而非 PA5 等默认引脚名。</span>
+      </div>
+      <div class="step-panel">
+        <h4>④ 配置时钟树</h4>
+        切到 <b>Clock Configuration</b>，填入板载晶振频率（常见 8 MHz 或 25 MHz），再设置目标主频。
+        <span class="dim">F407 最高 168 MHz，H7 可达 480 MHz。出现红字说明频率超限，需要重新调整分频。</span>
+      </div>
+      <div class="step-panel">
+        <h4>⑤ 生成工程</h4>
+        切到 <b>Project Manager</b>：填写工程名与保存路径（纯英文），Toolchain 选择
+        <a href="https://cmake.org/" target="_blank" rel="noopener">CMake</a>，然后点击 <b>GENERATE CODE</b>。
+        <span class="artifact">产物：一个可以编译的完整工程</span>
+      </div>
+      <div class="step-controls">
+        <button type="button" data-step="prev">← 上一步</button>
+        <button type="button" data-step="next">下一步 →</button>
+        <span class="step-counter"><span class="step-current">01</span> / 05</span>
+      </div>
+    </div>
+  </div>
+</section>

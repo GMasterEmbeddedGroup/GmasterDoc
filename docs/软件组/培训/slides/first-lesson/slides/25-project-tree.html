@@ -1,0 +1,122 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">工程里都有什么</h2>
+    <p class="lead">点击左侧任意文件或目录，右侧查看它的作用。以 STM32F407 + CMake 工程为例。</p>  </div>
+
+  <div class="explorer" data-explorer>
+    <div class="ex-tree">
+      <button class="ex-item is-group" data-key="ioc">F407_LED.ioc</button>
+      <button class="ex-item" data-key="mxproject">.mxproject</button>
+      <button class="ex-item is-group" data-key="core">Core/</button>
+      <button class="ex-item depth-1" data-key="main">├─ Src/main.c</button>
+      <button class="ex-item depth-1" data-key="periph">├─ Src/gpio.c、can.c…</button>
+      <button class="ex-item depth-1" data-key="it">├─ Src/stm32f4xx_it.c</button>
+      <button class="ex-item depth-1" data-key="inc">└─ Inc/</button>
+      <button class="ex-item is-group" data-key="drivers">Drivers/</button>
+      <button class="ex-item" data-key="middle">Middlewares/</button>
+      <button class="ex-item" data-key="startup">startup_stm32f407xx.s</button>
+      <button class="ex-item" data-key="ld">STM32F407ZGTx_FLASH.ld</button>
+      <button class="ex-item" data-key="cmake">CMakeLists.txt</button>
+      <button class="ex-item" data-key="presets">CMakePresets.json</button>
+      <button class="ex-item" data-key="tc">cmake/gcc-arm-none-eabi.cmake</button>
+      <button class="ex-item" data-key="build">build/</button>
+    </div>
+
+    <div class="ex-panels">
+      <div class="ex-panel" data-panel="ioc">
+        <h4>F407_LED.ioc</h4>
+        <span class="ex-tag touch">需频繁修改</span>
+        <p>CubeMX 的工程配置文件：芯片型号、每个引脚的功能、时钟树、外设参数全部记录在这里。<b>双击它就能回到 CubeMX 的图形界面。</b></p>
+        <p class="dim">它是文本文件（XML 格式），但不要手动修改——改配置请通过 CubeMX 界面。建议提交到 Git。</p>
+      </div>
+      <div class="ex-panel" data-panel="mxproject">
+        <h4>.mxproject</h4>
+        <span class="ex-tag">无需处理</span>
+        <p>CubeMX 的内部记录文件，用来追踪上次生成时的信息。<b>不需要打开，也不需要手动修改。</b></p>
+      </div>
+      <div class="ex-panel" data-panel="core">
+        <h4>Core/</h4>
+        <span class="ex-tag touch">主要工作区</span>
+        <p>装载"与芯片直接打交道"的初始化代码，由 CubeMX 自动生成：<span class="mono">Inc/</span> 放头文件，<span class="mono">Src/</span> 放源文件。</p>
+        <p class="dim">职责很清晰：谁被初始化，就有一个对应的 .c 文件。</p>
+      </div>
+      <div class="ex-panel" data-panel="main">
+        <h4>Core/Src/main.c</h4>
+        <span class="ex-tag touch">最常打开</span>
+        <p>程序入口。顺序是：<span class="mono">HAL_Init()</span> 初始化 HAL，<span class="mono">SystemClock_Config()</span> 配置时钟，然后是各外设初始化，最后进入 <span class="mono">while (1)</span> 主循环。</p>
+        <p class="dim">单片机的 main 永不返回，因此没有 return；主循环只处理轻量事务，耗时任务交给 <a href="https://www.freertos.org/" target="_blank" rel="noopener">FreeRTOS</a> 任务。</p>
+      </div>
+      <div class="ex-panel" data-panel="periph">
+        <h4>Core/Src/gpio.c、can.c、tim.c …</h4>
+        <span class="ex-tag">生成代码，勿手改</span>
+        <p>每个外设一个文件，里面是 CubeMX 依据你的配置生成的初始化函数：引脚电平与模式、CAN 波特率、定时器分频与 PWM 参数。</p>
+        <p class="dim">想改这些参数，正确做法是回 CubeMX 改配置再重新生成，而不是直接改这里的代码。</p>
+      </div>
+      <div class="ex-panel" data-panel="it">
+        <h4>Core/Src/stm32f4xx_it.c</h4>
+        <span class="ex-tag touch">谨慎修改</span>
+        <p><a href="https://zh.wikipedia.org/wiki/中断" target="_blank" rel="noopener">中断</a>服务函数集中在这里，例如 <span class="mono">SysTick_Handler</span>、<span class="mono">CAN1_RX0_IRQHandler</span>。</p>
+        <p class="dim">原则是中断里只做"搬运数据"，尽快返回；真正的计算交给主循环或 FreeRTOS 任务，否则会阻塞整个系统。</p>
+      </div>
+      <div class="ex-panel" data-panel="inc">
+        <h4>Core/Inc/</h4>
+        <span class="ex-tag touch">偶尔修改</span>
+        <p>头文件目录：<span class="mono">main.h</span> 里有引脚宏定义，<span class="mono">gpio.h</span>、<span class="mono">can.h</span> 里是各外设的声明，<span class="mono">stm32f4xx_hal_conf.h</span> 决定启用哪些 HAL 模块。</p>
+        <p class="dim">想在多个文件里共用自己写的函数，可以在这里加一个自己的头文件。</p>
+      </div>
+      <div class="ex-panel" data-panel="drivers">
+        <h4>Drivers/</h4>
+        <span class="ex-tag">官方库，勿修改</span>
+        <p>ST 官方的库文件目录，由 CubeMX 从固件包里拷贝过来：<b>CMSIS</b> 提供内核与芯片定义（<span class="mono">stm32f407xx.h</span> 里是所有寄存器的地址），
+          <b>HAL Driver</b> 提供外设的现成函数。</p>
+        <p class="dim">升级固件包时这些文件会被整体替换，所以永远不要在这里写自己的代码。</p>
+      </div>
+      <div class="ex-panel" data-panel="middle">
+        <h4>Middlewares/</h4>
+        <span class="ex-tag">按需生成</span>
+        <p>中间件目录，只有启用了对应功能才存在：启用 <a href="https://www.freertos.org/" target="_blank" rel="noopener">FreeRTOS</a> 后会生成实时内核源码，启用 FATFS 会生成文件系统。</p>
+        <p class="dim">GSRL 就是用 FreeRTOS 做实时任务调度的。</p>
+      </div>
+      <div class="ex-panel" data-panel="startup">
+        <h4>startup_stm32f407xx.s</h4>
+        <span class="ex-tag">不要改</span>
+        <p><b>启动文件（<a href="https://zh.wikipedia.org/wiki/汇编语言" target="_blank" rel="noopener">汇编</a>）</b>：芯片上电后执行的第一段代码。
+          它设置堆栈指针、初始化数据段、配置中断向量表，最后跳转到 <span class="mono">main()</span>。</p>
+        <p class="dim">"程序是怎么跑到 main 的"答案就在这里。文件名中的型号对应你的芯片。</p>
+      </div>
+      <div class="ex-panel" data-panel="ld">
+        <h4>STM32F407ZGTx_FLASH.ld</h4>
+        <span class="ex-tag">不要改</span>
+        <p><b><a href="https://sourceware.org/binutils/docs/ld/Scripts.html" target="_blank" rel="noopener">链接脚本</a></b>：告诉
+          <a href="https://zh.wikipedia.org/wiki/链接器" target="_blank" rel="noopener">链接器</a>内存怎么划分——Flash 从哪个地址开始、有多大，RAM 在哪里，堆栈放多深。</p>
+        <p class="dim">程序"内存不够"或"跑飞了"，第一个要看的就是它和编译生成的 .map 文件。</p>
+      </div>
+      <div class="ex-panel" data-panel="cmake">
+        <h4>CMakeLists.txt</h4>
+        <span class="ex-tag touch">很少改</span>
+        <p><b>顶层构建脚本</b>：声明工程名、编译选项、要参与编译的源文件目录、要链接的库。它由
+          <a href="https://cmake.org/" target="_blank" rel="noopener">CMake</a> 读取，再生成真正的构建脚本。</p>
+        <p class="dim">自己新增了源文件目录时，需要在这里登记，否则不会被编译进去。</p>
+      </div>
+      <div class="ex-panel" data-panel="presets">
+        <h4>CMakePresets.json</h4>
+        <span class="ex-tag">很少改</span>
+        <p><b>构建预设</b>：预先定义好 Debug 和 Release 分别怎么构建，VS Code 的 CMake 插件会读取它，让你一键选择配置并编译，不用手敲长命令。</p>
+      </div>
+      <div class="ex-panel" data-panel="tc">
+        <h4>cmake/gcc-arm-none-eabi.cmake</h4>
+        <span class="ex-tag">不要改</span>
+        <p><b>交叉编译工具链文件</b>：告诉 CMake 用哪个编译器、编译出什么架构的代码——这里是
+          <a href="https://developer.arm.com/Processors/Cortex-M" target="_blank" rel="noopener">ARM Cortex-M</a>，而不是你电脑的 x86。</p>
+        <p class="dim">"<a href="https://zh.wikipedia.org/wiki/交叉编译器" target="_blank" rel="noopener">交叉编译</a>"就是在 PC 上编译、给另一种架构的芯片执行。</p>
+      </div>
+      <div class="ex-panel" data-panel="build">
+        <h4>build/</h4>
+        <span class="ex-tag">产物，不提交</span>
+        <p>构建产物目录：<span class="mono">.elf</span> 含调试信息供烧录与调试，<span class="mono">.hex</span> 和 <span class="mono">.bin</span> 用来烧录，
+          <span class="mono">.map</span> 是地址与空间占用清单。</p>
+        <p class="dim">整个目录都可由源码重新生成，因此<b>不要提交到 Git</b>，删除后重新构建即可。</p>
+      </div>
+    </div>
+  </div>
+</section>

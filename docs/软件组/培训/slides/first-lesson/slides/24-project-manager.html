@@ -1,0 +1,37 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">生成前必须确认的几项设置</h2>
+  </div>
+
+  <table>
+    <thead><tr><th>项目</th><th>建议值</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><b>Project Name / Location</b></td>
+        <td>纯英文、无空格，如 <span class="mono">D:\Dev\F407_LED</span></td>
+        <td>中文路径是各种诡异报错的根源</td>
+      </tr>
+      <tr>
+        <td><b>Toolchain / IDE</b></td>
+        <td><b>CMake</b></td>
+        <td>用 VS Code 开发就选它；也可选 Makefile 或 CubeIDE</td>
+      </tr>
+      <tr>
+        <td><b>Code Generator</b></td>
+        <td>勾选 <i>Copy only the necessary library files</i></td>
+        <td>只拷贝用到的库文件，工程体积更小</td>
+      </tr>
+      <tr>
+        <td><b>Firmware Package</b></td>
+        <td>用已下载的最新版本</td>
+        <td>列表为空说明固件包未安装，请返回第三章完成下载</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <b>关于 .ioc 文件：</b>它是工程配置的“源头”，双击即可回到 CubeMX 修改配置，改完后再生成一次代码；它应与源码一起提交到
+    <a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a>。自行编写的代码放在
+    <span class="mono">/* USER CODE BEGIN */</span> 与 <span class="mono">/* USER CODE END */</span> 之间，重新生成时不会被覆盖。
+  </div>
+</section>

@@ -1,0 +1,283 @@
+/* ==========================================================================
+   GMaster 课件主题（浅色，严肃教程简约风）
+   字号体系参考 reveal.js 官方主题（white/serif：基准 40–42px / 960×700 舞台）
+   本课件的舞台是 1280×800，因此基准取 34px，并用 1.2em 作为最小正文
+   标题用「华文中宋」，正文用「等线 Light」（与 PPT 母版字体保持一致）
+   ========================================================================== */
+
+:root {
+  --g-red: #b3121b;
+  --g-red-2: #d0202a;
+  --g-red-soft: #f7eaeb;
+  --g-ink: #14161a;
+  --g-body: #3b4149;
+  --g-mute: #7c848f;
+  --g-line: #e2e5e9;
+  --g-line-soft: #eef0f3;
+  --g-bg: #ffffff;
+  --g-bg-soft: #f7f8fa;
+  --g-ok: #1f7a4d;
+  --g-warn: #a8620a;
+
+  --g-cn-font: "华文中宋", "STZhongsong", "Source Han Serif SC", "Noto Serif SC",
+    "Songti SC", "SimSun", "Microsoft YaHei", serif;
+
+  --g-body-font: "等线 Light", "DengXian Light", "等线", "DengXian",
+    "Microsoft YaHei", "PingFang SC", sans-serif;
+
+  --r-background-color: var(--g-bg);
+  --r-main-font: var(--g-body-font);
+  --r-main-font-size: 34px;
+  --r-main-color: var(--g-body);
+  --r-heading-font: var(--g-cn-font);
+  --r-heading-color: var(--g-ink);
+  --r-heading-font-weight: 700;
+  --r-heading-text-transform: none;
+  --r-heading-letter-spacing: 0.01em;
+  --r-heading-text-shadow: none;
+  --r-heading1-size: 1.7em;
+  --r-heading2-size: 1.3em;
+  --r-heading3-size: 1.1em;
+  --r-heading4-size: 0.95em;
+  --r-block-margin: 16px;
+  --r-code-font: "JetBrains Mono", "Cascadia Mono", Consolas, "Courier New",
+    "华文中宋", monospace;
+  --r-link-color: var(--g-red);
+  --r-link-color-hover: var(--g-red-2);
+  --r-link-color-dark: #8c0e15;
+  --r-selection-background-color: var(--g-red-soft);
+  --r-selection-color: var(--g-ink);
+}
+
+.reveal-viewport { background: var(--g-bg); }
+
+.reveal {
+  font-family: var(--r-main-font);
+  font-size: var(--r-main-font-size);
+  font-weight: 400;
+  color: var(--r-main-color);
+  letter-spacing: 0.01em;
+}
+
+.reveal .slides { text-align: left; }
+
+.reveal .slides section {
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* ---------------------------------------------------------------- 标题排版 */
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+  font-family: var(--r-heading-font);
+  font-weight: 700;
+  line-height: 1.32;
+  margin: 0 0 0.4em;
+  text-transform: none;
+  overflow-wrap: break-word;
+}
+
+.reveal h1 { font-size: var(--r-heading1-size); }
+.reveal h2 { font-size: var(--r-heading2-size); }
+.reveal h3 { font-size: var(--r-heading3-size); }
+.reveal h4 { font-size: var(--r-heading4-size); }
+
+.reveal strong, .reveal b { color: var(--g-ink); font-weight: 700; }
+
+.reveal em {
+  color: var(--g-red);
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* ------------------------------------------------------------------ 超链接 */
+.reveal a {
+  color: var(--g-ink);
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(179, 18, 27, 0.55);
+  transition: color 0.14s ease, border-color 0.14s ease;
+}
+
+.reveal a:hover { color: var(--g-red); border-bottom: 1px solid var(--g-red); }
+
+.reveal a[target="_blank"]::after {
+  content: "↗";
+  font-size: 0.62em;
+  margin-left: 0.1em;
+  vertical-align: super;
+  opacity: 0.5;
+}
+
+/* -------------------------------------------------------------- 列表与段落 */
+.reveal p { margin: 0 0 0.5em; }
+
+.reveal ul, .reveal ol { margin: 0 0 0.5em 1.05em; padding: 0; }
+
+.reveal ul { list-style: none; }
+
+.reveal ul > li { position: relative; margin: 0.36em 0; }
+
+.reveal ul > li::before {
+  content: "";
+  position: absolute;
+  left: -0.8em;
+  top: 0.72em;
+  width: 0.32em;
+  height: 1px;
+  background: var(--g-red);
+}
+
+.reveal ol { list-style: decimal; }
+.reveal ol > li { margin: 0.36em 0; padding-left: 0.1em; }
+.reveal ol > li::marker { color: var(--g-red); font-weight: 700; }
+
+/* -------------------------------------------------------------- 行内标记 */
+kbd {
+  font-family: var(--r-code-font);
+  font-size: 0.72em;
+  line-height: 1;
+  display: inline-block;
+  padding: 0.2em 0.46em;
+  color: var(--g-ink);
+  background: #fff;
+  border: 1px solid #d5d9de;
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+mark {
+  background: var(--g-red-soft);
+  color: var(--g-red);
+  padding: 0 0.2em;
+  border-radius: 2px;
+}
+
+code {
+  font-family: var(--r-code-font);
+  font-size: 0.8em;
+  color: var(--g-ink);
+  background: var(--g-bg-soft);
+  border: 1px solid var(--g-line);
+  border-radius: 3px;
+  padding: 0.06em 0.3em;
+}
+
+/* ------------------------------------------------------------------ 表格 */
+.reveal table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.3em 0 0.5em;
+  font-size: 0.72em;
+}
+
+.reveal table th {
+  text-align: left;
+  color: var(--g-ink);
+  font-weight: 700;
+  padding: 0.55em 0.6em;
+  background: var(--g-bg-soft);
+  border-top: 2px solid var(--g-ink);
+  border-bottom: 1px solid var(--g-line);
+  white-space: nowrap;
+}
+
+.reveal table td {
+  padding: 0.55em 0.6em;
+  border-bottom: 1px solid var(--g-line-soft);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.reveal table tbody tr:last-child td { border-bottom: 1px solid var(--g-line); }
+
+/* ------------------------------------------------------------------ 代码 */
+.reveal pre {
+  width: 100%;
+  margin: 0.25em 0 0.5em;
+  font-size: 0.62em;
+  line-height: 1.6;
+  box-shadow: none;
+  border-radius: 4px;
+}
+
+.reveal pre code {
+  display: block;
+  padding: 14px 16px;
+  max-height: none;
+  overflow: visible;
+  color: var(--g-ink);
+  background: var(--g-bg-soft);
+  border: 1px solid var(--g-line);
+  border-left: 3px solid var(--g-red);
+  border-radius: 4px;
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+.hljs { background: transparent !important; }
+.hljs-comment, .hljs-quote { color: #8a929c; font-style: italic; }
+.hljs-keyword, .hljs-selector-tag, .hljs-literal { color: #a2131c; }
+.hljs-built_in, .hljs-type { color: #6b4a00; }
+.hljs-string, .hljs-regexp { color: #1f7a4d; }
+.hljs-number { color: #8a4b00; }
+.hljs-title, .hljs-function .hljs-title { color: #1b4f8a; }
+.hljs-meta, .hljs-preprocessor { color: #6a3d9a; }
+
+/* -------------------------------------------------------------- 页码/进度 */
+.reveal .progress { height: 3px; color: var(--g-red); background: var(--g-line-soft); }
+
+.reveal .slide-number {
+  right: 18px;
+  bottom: 12px;
+  padding: 0;
+  color: #a7aeb8;
+  background: none;
+  font-family: var(--r-code-font);
+  font-size: 15px;
+  letter-spacing: 0.08em;
+}
+
+.reveal .slide-number a { border: none; color: inherit; }
+
+.reveal .controls { color: #c3c9d1; bottom: 16px; left: 16px; right: auto; }
+.reveal .controls:hover { color: var(--g-red); }
+
+/* ------------------------------------------------------------ 模板装饰元素 */
+.brand-logo {
+  position: absolute;
+  top: 20px;
+  right: 26px;
+  width: 88px;
+  height: auto;
+  z-index: 25;
+  pointer-events: none;
+  user-select: none;
+}
+
+.brand-corner {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 52px;
+  height: auto;
+  z-index: 25;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* 内容区：舞台 1280×800，右上角给 logo 留 92px */
+.reveal .slides section {
+  padding: 0 92px 4px 10px;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------- 滚动条 */
+.reveal ::-webkit-scrollbar { width: 7px; height: 7px; }
+.reveal ::-webkit-scrollbar-thumb { background: #d3d8de; border-radius: 4px; }
+
+@media print {
+  .brand-logo, .brand-corner { display: none; }
+}

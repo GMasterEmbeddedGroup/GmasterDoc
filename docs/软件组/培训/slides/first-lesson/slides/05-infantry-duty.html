@@ -1,0 +1,35 @@
+<section class="ppt-page">
+  <div class="ppt-stage">
+    <img class="ppt-stage-bg" src="img/ppt-bg.png" alt="">
+    <h2 class="ppt-t-24" style="left:4.9%;top:8.5%">以一台步兵机器人举例</h2>
+
+    <div class="ppt-duty">
+      <figure class="ppt-duty-photo">
+        <img src="img/ppt-infantry-parts.jpeg" alt="步兵机器人">
+        <figcaption>一台步兵机器人，三块 STM32</figcaption>
+      </figure>
+
+      <div class="ppt-duty-wires">
+        <span class="w-v"></span>
+        <span class="w-h w-h-1"></span>
+        <span class="w-h w-h-2"></span>
+        <span class="w-h w-h-3"></span>
+      </div>
+
+      <div class="ppt-duty-boards">
+        <div class="ppt-duty-board">
+          <h3>云台（Gimbal）</h3>
+          <p>云台 pitch/yaw 电机、摩擦轮电机的 PID 控制，CAN 总线通信，遥控器接收机适配，状态机与行为树。</p>
+        </div>
+        <div class="ppt-duty-board">
+          <h3>串联腿底盘（Chassis）</h3>
+          <p>串联腿 LQR 控制，轮电机力矩控制，MPC 功率控制，底盘行为树。</p>
+        </div>
+        <div class="ppt-duty-board">
+          <h3>路由 C 板（Router）</h3>
+          <p>统筹 CAN 总线通信，上下位机通信，裁判系统通信。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

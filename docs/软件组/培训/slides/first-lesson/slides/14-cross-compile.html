@@ -1,0 +1,34 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">交叉编译</h2>
+    <p class="lead">在电脑上编译的程序无法直接运行在单片机上，因为两者的指令集架构不同。</p>
+  </div>
+
+  <table>
+    <thead><tr><th></th><th>在哪里编译</th><th>在哪里运行</th><th>用什么编译器</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><b>本机编译</b></td>
+        <td>个人电脑</td>
+        <td>个人电脑</td>
+        <td><a href="https://gcc.gnu.org/" target="_blank" rel="noopener">gcc</a></td>
+      </tr>
+      <tr>
+        <td><b><a href="https://zh.wikipedia.org/wiki/交叉编译器" target="_blank" rel="noopener">交叉编译</a></b></td>
+        <td>个人电脑</td>
+        <td>STM32 芯片</td>
+        <td>arm-none-eabi-gcc</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    "交叉"的含义：<b>编译器运行在 A 平台，产出的程序运行在 B 平台。</b>
+    名称中的 <span class="mono">arm-none-eabi</span> 即说明目标：ARM 架构、无操作系统、遵循 EABI 规范。
+  </div>
+
+  <p class="small dim" style="margin-top:0.6em">
+    因此工程中的 <span class="mono">cmake/gcc-arm-none-eabi.cmake</span> 至关重要：它指定使用哪个编译器、按什么规则编译。
+    选错工具链文件，产出的就是只能在电脑上运行、无法在芯片上运行的文件。
+  </p>
+</section>

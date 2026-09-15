@@ -1,0 +1,45 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">常见问题与解决方法</h2>
+    <p class="lead">以下五类问题是历届新队员的高频问题，点击展开查看解决方法。</p>
+  </div>
+
+  <div class="accordion" data-accordion>
+    <div class="acc-item">
+      <button class="acc-head">① 路径里有中文，或者 Windows 用户名是中文 <span class="acc-arrow">›</span></button>
+      <div class="acc-body">
+        症状为编译或生成代码时报错，甚至工具直接闪退；原因是部分工具链对非 ASCII 路径支持不佳。<br>
+        <b>解法：</b>工程与工具都放在纯英文路径下，例如 <span class="mono">D:\Dev\project</span>。
+      </div>
+    </div>
+    <div class="acc-item">
+      <button class="acc-head">② CubeMX 启动报"找不到 JVM" <span class="acc-arrow">›</span></button>
+      <div class="acc-body">
+        <b>解法：</b>安装 <a href="https://adoptium.net/" target="_blank" rel="noopener">Eclipse Temurin JDK 17</a>，
+        确认 <span class="mono">JAVA_HOME</span> 指向 JDK 目录，然后重启 CubeMX。
+      </div>
+    </div>
+    <div class="acc-item">
+      <button class="acc-head">③ 固件包下载卡住或反复失败 <span class="acc-arrow">›</span></button>
+      <div class="acc-body">
+        <b>解法：</b>换网络（手机热点常常比校园网快），或者到官网手动下载 zip 后用 <b>From Local</b> 导入。
+      </div>
+    </div>
+    <div class="acc-item">
+      <button class="acc-head">④ 插件装好了，还是提示"找不到编译器" <span class="acc-arrow">›</span></button>
+      <div class="acc-body">
+        原因是只装了编辑器，没装工具链——<b>VS Code 不是编译器</b>。<br>
+        <b>解法：</b>按 <a href="../../Lesson1 开发环境配置/" target="_top">《Lesson1 开发环境配置》</a>安装
+        <a href="https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads" target="_blank" rel="noopener">GCC 工具链</a>，
+        并把 <span class="mono">bin</span> 目录加入 <span class="mono">PATH</span>（装完要新开终端才生效）。
+      </div>
+    </div>
+    <div class="acc-item">
+      <button class="acc-head">⑤ 重新生成代码后，自己写的内容不见了 <span class="acc-arrow">›</span></button>
+      <div class="acc-body">
+        <b>解法：</b>把代码写在 <span class="mono">/* USER CODE BEGIN */</span> 与 <span class="mono">/* USER CODE END */</span> 之间。
+        CubeMX 重新生成时只会保留这两个标记之间的内容，其他部分会被覆盖。
+      </div>
+    </div>
+  </div>
+</section>

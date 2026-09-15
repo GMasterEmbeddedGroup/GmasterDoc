@@ -1,0 +1,38 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">第二步：安装必备插件</h2>
+    <p class="lead">安装完成后点击方框标记。每个插件解决一个具体问题。</p>
+  </div>
+
+  <div class="checklist">
+    <label class="check-item"><input type="checkbox">
+      <span><b><a href="https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-zh-hans" target="_blank" rel="noopener">Chinese (Simplified) Language Pack</a></b>
+      — 界面汉化</span></label>
+    <label class="check-item"><input type="checkbox">
+      <span><b><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack" target="_blank" rel="noopener">C/C++ Extension Pack</a></b>
+      — 语法分析、代码补全、跳转，自带 CMake 工具</span></label>
+    <label class="check-item"><input type="checkbox">
+      <span><b><a href="https://marketplace.visualstudio.com/items?itemName=stmicroelectronics.stm32-vscode-extension" target="_blank" rel="noopener">STM32 VS Code Extension</a></b>
+      — ST 官方，与 CubeMX 打通，可构建、烧录、调试</span></label>
+    <label class="check-item"><input type="checkbox">
+      <span><b><a href="https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug" target="_blank" rel="noopener">Cortex-Debug</a></b>
+      — 基于 OpenOCD 的断点调试前端</span></label>
+    <label class="check-item"><input type="checkbox">
+      <span><b><a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens" target="_blank" rel="noopener">GitLens</a></b>
+      — 查看每行代码的修改人与修改时间</span></label>
+    <label class="check-item"><input type="checkbox">
+      <span><b><a href="https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens" target="_blank" rel="noopener">Error Lens</a></b>
+      — 将错误信息直接显示在出错行的末尾</span></label>
+  </div>
+
+  <div class="cl-progress">
+    <span>插件进度</span>
+    <span class="cl-bar"><span class="cl-bar-fill"></span></span>
+    <span class="cl-count">0 / 6</span>
+  </div>
+
+  <div class="callout warn">
+    <b>不要同时启用 C/C++ 与 <a href="https://clangd.llvm.org/" target="_blank" rel="noopener">clangd</a>。</b>
+    两者都会接管代码解析，同时启用会导致跳转混乱与误报。
+  </div>
+</section>

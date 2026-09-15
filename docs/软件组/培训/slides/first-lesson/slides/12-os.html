@@ -1,0 +1,35 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">操作系统原理：内核与外壳</h2>
+    <p class="lead">在电脑上写程序之所以简单，是因为操作系统接管了硬件管理；裸机环境没有这一层。</p>
+  </div>
+
+  <div class="grid grid-2">
+    <div>
+      <h4 style="font-size:0.85em;margin-bottom:0.25em">一台电脑的分层</h4>
+      <div class="os-stack">
+        <div class="os-layer app"><b>应用程序</b>　浏览器、VS Code、你的程序</div>
+        <div class="os-layer shell"><b>Shell（外壳）</b>　你输入命令的地方：CMD、PowerShell、Bash</div>
+        <div class="os-layer kernel"><b>Kernel（内核）</b>　进程调度、内存管理、文件系统、设备驱动</div>
+        <div class="os-layer hw"><b>硬件</b>　CPU、内存、硬盘、网卡</div>
+      </div>
+      <p class="os-note">上一层通过<b>系统调用</b>向下请求服务；Shell 只是一层"人机翻译"。</p>
+    </div>
+
+    <div>
+      <h4 style="font-size:0.85em;margin-bottom:0.25em">必须区分的两个概念</h4>
+      <ul class="small">
+        <li><a href="https://zh.wikipedia.org/wiki/内核" target="_blank" rel="noopener">内核 Kernel</a>：真正管硬件的那部分程序，
+          运行在特权模式下。它决定"哪个程序、什么时候、用多少 CPU 和内存"。</li>
+        <li><a href="https://zh.wikipedia.org/wiki/Unix_shell" target="_blank" rel="noopener">Shell</a>：你敲命令的界面，
+          <b>不是内核</b>。它把你的命令翻译成<a href="https://zh.wikipedia.org/wiki/系统调用" target="_blank" rel="noopener">系统调用</a>再交给内核。</li>
+      </ul>
+      <p class="small dim">类比：内核相当于后厨，Shell 相当于前台服务员；更换服务员并不改变后厨的工作方式。</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    对电控开发而言，FreeRTOS 提供的是内核中最小的能力集合：<b>任务调度与同步</b>。
+    它没有 Shell，也没有文件系统，硬件仍需自行管理。
+  </div>
+</section>

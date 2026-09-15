@@ -1,0 +1,29 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">工具详解：arm-none-eabi-gcc</h2>
+    <p class="lead">负责"<b>译</b>"：把 C/C++ 源码翻译成芯片能跑的机器码。</p>
+  </div>
+
+  <div class="grid grid-2">
+    <div class="card">
+      <h4><span class="card-index">01</span>它是什么</h4>
+      <p>ARM 官方的<b>交叉编译</b>套件：编译器 gcc、链接器 ld、objcopy、调试器 GDB，一整套。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">02</span>在工作流里干什么</h4>
+      <p>在 x86 电脑上编出 Cortex-M 的机器码：<span class="mono">.c → .o → .elf → .bin</span>。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">03</span>关键操作</h4>
+      <p>安装后把 bin 目录加入 PATH；命令行输入 <span class="mono">arm-none-eabi-gcc --version</span> 能输出版本号即成功。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">04</span>常见坑</h4>
+      <p>装成普通 gcc（它编不出 ARM 指令）；PATH 没配好，CMake 报"找不到编译器"。</p>
+    </div>
+  </div>
+
+  <div class="callout">要点：电脑与单片机的指令集不同，必须使用<b>交叉编译器</b>生成目标代码。</div>
+
+  <p class="back-link"><a data-goto="9">← 返回工具链总览</a></p>
+</section>

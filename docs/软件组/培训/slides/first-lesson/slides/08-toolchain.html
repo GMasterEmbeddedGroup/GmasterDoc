@@ -1,0 +1,69 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">每个工具只管一段路</h2>
+    <p class="lead">「装好 VS Code 就能开发单片机」是常见误解。<b>编辑器不是编译器</b>，流程中的每个环节由不同工具负责。点击卡片查看各工具详解。</p>
+  </div>
+
+  <div class="tool-grid">
+    <div class="tool-card" data-goto="10">
+      <div class="tool-head">
+        <img src="img/logo-vscode.svg" alt="">
+        <h4><a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VS Code</a></h4>
+      </div>
+      <p>负责<b>代码编写</b>：高亮、补全、跳转，本身不参与编译。</p>
+    </div>
+    <div class="tool-card" data-goto="11">
+      <div class="tool-head">
+        <span class="tool-mark">MX</span>
+        <h4><a href="https://www.st.com/en/development-tools/stm32cubemx.html" target="_blank" rel="noopener">CubeMX</a></h4>
+      </div>
+      <p>负责<b>硬件配置</b>：图形化配置引脚与时钟，生成初始化代码。</p>
+    </div>
+    <div class="tool-card" data-goto="12">
+      <div class="tool-head">
+        <img src="img/logo-gcc.svg" alt="">
+        <h4><a href="https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads" target="_blank" rel="noopener">GNU 工具链</a></h4>
+      </div>
+      <p>负责<b>编译</b>：将源码翻译为芯片可执行的机器码。</p>
+    </div>
+    <div class="tool-card" data-goto="13">
+      <div class="tool-head">
+        <img src="img/logo-cmake.svg" alt="">
+        <h4><a href="https://cmake.org/" target="_blank" rel="noopener">CMake</a></h4>
+      </div>
+      <p>负责<b>构建组织</b>：规定哪些文件参与编译、按什么顺序链接。</p>
+    </div>
+    <div class="tool-card" data-goto="14">
+      <div class="tool-head">
+        <span class="tool-mark">OCD</span>
+        <h4><a href="https://openocd.org/" target="_blank" rel="noopener">OpenOCD</a></h4>
+      </div>
+      <p>负责<b>烧录与调试</b>：把固件写入芯片，支持断点调试。</p>
+    </div>
+    <div class="tool-card" data-goto="15">
+      <div class="tool-head">
+        <span class="tool-mark">STL</span>
+        <h4><a href="https://www.st.com/en/development-tools/st-link-v2.html" target="_blank" rel="noopener">ST-Link</a></h4>
+      </div>
+      <p>负责<b>物理通道</b>：USB 转 SWD 的硬件调试器。</p>
+    </div>
+    <div class="tool-card" data-goto="16">
+      <div class="tool-head">
+        <span class="tool-mark">PRG</span>
+        <h4><a href="https://www.st.com/en/development-tools/stm32cubeprog.html" target="_blank" rel="noopener">CubeProgrammer</a></h4>
+      </div>
+      <p>负责<b>兜底烧录</b>：官方工具，可擦除芯片、回读 Flash。</p>
+    </div>
+    <div class="tool-card" data-goto="17">
+      <div class="tool-head">
+        <img src="img/logo-git.svg" alt="">
+        <h4><a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a></h4>
+      </div>
+      <p>负责<b>版本管理</b>：代码有历史、可回滚、可协作。</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    整体流程：VS Code 编写代码，CubeMX 生成配置，GCC 完成编译，CMake 组织构建，OpenOCD 与 ST-Link 完成烧录与调试，Git 管理版本。点击任意卡片查看对应工具的详细介绍。
+  </div>
+</section>

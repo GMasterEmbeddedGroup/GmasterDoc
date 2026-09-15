@@ -1,0 +1,29 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">工具详解：CMake</h2>
+    <p class="lead">负责"<b>编排</b>"：决定哪些文件参与编译、按什么规则链接。</p>
+  </div>
+
+  <div class="grid grid-2">
+    <div class="card">
+      <h4><span class="card-index">01</span>它是什么</h4>
+      <p>构建"配方"生成器——读 <span class="mono">CMakeLists.txt</span>，生成 Ninja / Makefile，再调度编译器执行编译。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">02</span>在工作流里干什么</h4>
+      <p>声明源文件、头文件路径、宏定义、链接脚本；CubeMX 可以直接生成 CMake 工程。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">03</span>关键操作</h4>
+      <p><span class="mono">cmake -B build -G Ninja</span> 配置，<span class="mono">cmake --build build</span> 编译；日常在 VS Code 里一键完成。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">04</span>常见坑</h4>
+      <p>改了 CMakeLists 没重新配置；缓存异常时，删除整个 build 目录重新配置即可。</p>
+    </div>
+  </div>
+
+  <div class="callout">要点：<b>GCC 完成具体编译，CMake 统一管理构建过程</b>，日常只需维护 CMake 配置。</div>
+
+  <p class="back-link"><a data-goto="9">← 返回工具链总览</a></p>
+</section>

@@ -1,0 +1,29 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">工具详解：ST-Link</h2>
+    <p class="lead">负责"<b>通道</b>"：USB 转 SWD 的硬件，电脑和芯片之间的物理桥梁。</p>
+  </div>
+
+  <div class="grid grid-2">
+    <div class="card">
+      <h4><span class="card-index">01</span>它是什么</h4>
+      <p>ST 的调试器硬件——Nucleo 开发板上自带一个，也有独立版本可通过排针连接目标板。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">02</span>在工作流里干什么</h4>
+      <p>提供 SWD 物理通道：只要 <b>SWDIO、SWCLK、GND</b> 三根线，就能烧录和调试。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">03</span>关键操作</h4>
+      <p>装 ST-Link 驱动；固件过旧时用 CubeProgrammer 升级；接线先共地，再连信号线。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">04</span>常见坑</h4>
+      <p>杜邦线接触不良（烧录成功率不稳定时优先排查）；固件版本过旧会无法识别新型号芯片。</p>
+    </div>
+  </div>
+
+  <div class="callout">要点：软件工具链必须经由 <b>ST-Link 提供的 SWD 物理通道</b>才能到达芯片。</div>
+
+  <p class="back-link"><a data-goto="9">← 返回工具链总览</a></p>
+</section>

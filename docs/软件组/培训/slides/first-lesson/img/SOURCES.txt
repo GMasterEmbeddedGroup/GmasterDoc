@@ -1,0 +1,59 @@
+图片素材来源与许可（仅用于战队内部教学）
+============================================
+
+以下图片取自 Wikimedia Commons，遵循各自的许可协议，已按原文件名重命名。
+如需对外发布本课件，请保留本文件与幻灯片中的图源标注。
+
+img/nucleo-board.jpg
+  原文件：Embedded World 2016, STM Nucleo 401.jpg
+  作者：Ordercrazy ｜ 许可：CC0
+  https://commons.wikimedia.org/wiki/File:Embedded_World_2016,_STM_Nucleo_401.jpg
+
+img/debug-probe.jpg
+  原文件：Segger J-Link EDU.jpg
+  作者：SEGGER Microcontroller GmbH & Co. KG ｜ 许可：CC BY-SA 3.0
+  https://commons.wikimedia.org/wiki/File:Segger_J-Link_EDU.jpg
+
+img/shell-terminal.png
+  原文件：Linux command-line. Bash. GNOME Terminal. screenshot.png
+  作者：The GNOME Project ｜ 许可：GPL
+  https://commons.wikimedia.org/wiki/File:Linux_command-line._Bash._GNOME_Terminal._screenshot.png
+
+（编译原理一节的四张流程图为主题内自绘 SVG，无外部来源）
+
+img/logo-vscode.svg
+  原文件：Visual Studio Code 1.35 icon.svg
+  作者：Microsoft ｜ 许可：Public domain（商标归微软所有，此处仅用于指代该软件）
+  https://commons.wikimedia.org/wiki/File:Visual_Studio_Code_1.35_icon.svg
+
+img/logo-gcc.svg
+  原文件：GNU Compiler Collection logo.svg
+  作者：Free Software Foundation, Inc. ｜ 许可：CC BY-SA 3.0
+  https://commons.wikimedia.org/wiki/File:GNU_Compiler_Collection_logo.svg
+
+img/logo-cmake.svg
+  原文件：CMake logo.svg
+  作者：CMake team ｜ 许可：CC BY 2.0
+  https://commons.wikimedia.org/wiki/File:CMake_logo.svg
+
+img/logo-git.svg
+  原文件：Git-logo.svg
+  作者：Jason Long ｜ 许可：CC BY 3.0
+  https://commons.wikimedia.org/wiki/File:Git-logo.svg
+
+img/brand-logo.png、img/brand-corner.png
+  从战队幻灯片模板（template-reference.png）中裁切，版权归 GMaster 战队所有。
+
+img/pit-tuning-01.jpg、img/pit-preparation-portrait.jpg
+  取自战队官网 gmaster.team，版权归 GMaster 战队所有。
+  （备用素材：原用于"电控组的三件事"一页，该页已改版，图片保留待用）
+
+img/infantry-hero.jpg
+  来源：https://gmaster.team/robots/seasons/2022-season/infantry-4-v1.jpg
+  2022 赛季 4 号步兵机器人定妆照，版权归 GMaster 战队所有。
+  已缩放至宽 1500px 并压缩（原文件 1757×1279）。
+
+img/infantry-field.jpg
+  来源：https://gmaster.team/robots/field/2026-regional-infantry-3-field-01.png
+  2026 区域赛 3 号步兵机器人赛场风采，版权归 GMaster 战队所有。
+  已缩放至宽 1400px 并转为 JPEG。

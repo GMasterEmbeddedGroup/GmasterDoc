@@ -1,0 +1,41 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">CMake 是什么</h2>
+    <p class="lead">工程中 CMake 相关文件较多，先明确以下概念。</p>
+  </div>
+
+  <table>
+    <thead><tr><th>名词</th><th>是什么</th><th>在本工程里</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><b><a href="https://zh.wikipedia.org/wiki/编译器" target="_blank" rel="noopener">编译器</a></b></td>
+        <td>把源码翻译成机器码</td>
+        <td>arm-none-eabi-gcc</td>
+      </tr>
+      <tr>
+        <td><b>构建系统</b></td>
+        <td>决定先编谁、后编谁，哪个文件变了要重编</td>
+        <td>Make、Ninja（CMake 自动生成）</td>
+      </tr>
+      <tr>
+        <td><b><a href="https://cmake.org/" target="_blank" rel="noopener">CMake</a></b></td>
+        <td>用 CMakeLists.txt 描述工程，再生成构建脚本</td>
+        <td>CMakeLists.txt、CMakePresets.json</td>
+      </tr>
+      <tr>
+        <td><b>工具链文件</b></td>
+        <td>告诉 CMake 用哪个编译器、什么参数</td>
+        <td>cmake/gcc-arm-none-eabi.cmake</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <b>为什么不直接在终端敲 gcc？</b>
+    一是工程有几十上百个源文件，手敲命令不现实；二是改一个文件只应重编它和依赖它的部分；三是换芯片、换电脑时只改配置。
+  </div>
+
+  <p class="lead" style="margin-top:0.5em">
+    实际开发中很少需要直接编写 CMake 配置：CubeMX 已自动生成，VS Code 的 CMake 插件负责调用。需要明确的是：<b>CMake 管构建，不管烧录</b>。
+  </p>
+</section>

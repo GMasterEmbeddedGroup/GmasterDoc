@@ -1,0 +1,29 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">工具详解：OpenOCD</h2>
+    <p class="lead">负责"<b>烧</b>"与"<b>调</b>"：把固件送进芯片，还能打断点、单步、看变量。</p>
+  </div>
+
+  <div class="grid grid-2">
+    <div class="card">
+      <h4><span class="card-index">01</span>它是什么</h4>
+      <p>开源的片上调试服务（Open On-Chip Debugger），在 GDB 和调试器硬件之间当桥梁。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">02</span>在工作流里干什么</h4>
+      <p>通过 ST-Link 把 elf 烧进 Flash；同时开一个 GDB server，断点、单步、查看变量全靠它。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">03</span>关键操作</h4>
+      <p>VS Code 的 STM32 扩展点"烧录"时后台就在调它；也可手动 <span class="mono">openocd -f interface/stlink.cfg -f target/stm32f4x.cfg</span>。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">04</span>常见坑</h4>
+      <p>连不上先查接线与驱动；报 target 相关错误，多半是线序、共地或复位配置问题。</p>
+    </div>
+  </div>
+
+  <div class="callout">要点：OpenOCD 同时承担<b>固件烧录与在线调试</b>两项职责。</div>
+
+  <p class="back-link"><a data-goto="9">← 返回工具链总览</a></p>
+</section>

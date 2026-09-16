@@ -41,7 +41,7 @@
 
 ## 配套资源
 
-- **STM32CubeMX 下载**：[官网页面](https://www.st.com/en/development-tools/stm32cubemx.html) ｜ [6.18.1（Windows）下载入口](https://www.st.com/en/development-tools/stm32cubemx.html?softwareProduct=STM32CubeMX-Win&softwareVersion=6.18.1#get-software)（ST 需要在页面上点一次 Download 并接受许可，无需登录）
+- **STM32CubeMX 下载**：[官网页面](https://www.st.com/en/development-tools/stm32cubemx.html) ｜ [课件中使用的 6.12.1 安装包直链](https://www.st.com/content/ccc/resource/technical/software/sw_development_suite/group1/2a/7f/09/90/25/59/44/10/stm32cubemx-win-v6-12-1/files/SetupSTM32CubeMX-6.12.1-Win.zip/jcr:content/translations/en.SetupSTM32CubeMX-6.12.1-Win.zip)
 - **装工具链**：[Lesson1 开发环境配置](Lesson1%20开发环境配置.md)
 - **学基础**：[嵌入式基础](嵌入式基础/index.md)、[C++ 基础](C++基础/index.md)
 - **学协作**：[Git 工作流](../../文档站指南/git工作流.md)

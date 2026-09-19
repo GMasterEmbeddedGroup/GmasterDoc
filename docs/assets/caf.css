@@ -58,10 +58,18 @@
   display: inline-block;
   padding: 0.3rem 0.8rem;
   border-radius: 0.4rem;
-  background-color: var(--md-primary-fg-color, #4051b5);
-  color: var(--md-primary-bg-color, #fff);
   font-size: 0.75rem;
   text-decoration: none;
+}
+
+/* 按钮的底色与文字色：mkdocs-material 自带 `.md-typeset a { color: var(--md-typeset-a-color) }`
+   优先级比单个类高，会把我这里设的白色文字覆盖成链接蓝，结果蓝底蓝字、几乎看不清。
+   所以用 `.md-typeset .caf-gate__btn`（两个类）压过它，并连同 hover/focus 一起钉死。 */
+.md-typeset .caf-gate__btn,
+.md-typeset .caf-gate__btn:focus,
+.md-typeset .caf-gate__btn:hover {
+  color: var(--md-primary-bg-color, #fff);
+  background-color: var(--md-primary-fg-color, #4051b5);
 }
 
 .caf-gate__btn:hover {
@@ -75,11 +83,6 @@
 /* 侧边目录里「内部资料目录」入口：与普通章节一致，只把标题加粗一点 */
 .caf-nav-entry > .caf-nav-entry__title {
   font-weight: 700;
-}
-
-.caf-nav-entry > .caf-nav-entry__title::after {
-  content: " 🔒";
-  font-size: 0.7em;
 }
 
 /* 窄屏下顶栏空间紧张，只保留按钮 */

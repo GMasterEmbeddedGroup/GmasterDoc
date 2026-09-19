@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 486 486" width="486" height="486" role="img" aria-labelledby="ttl dsc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Noto Sans Mono CJK SC', 'Microsoft YaHei', monospace">
+  <title id="ttl">CAN 中断触发</title>
+  <desc id="dsc">自动由 ASCII 示意图矢量化生成，源：docs/软件组/培训/嵌入式基础/05-回调机制与HAL中断处理.md 第 310-333 行</desc>
+  <g transform="scale(1)">
+    <rect x="0.75" y="0.75" width="100%" height="100%" rx="14" fill="#f7f9fc" stroke="#dce3ec" stroke-width="1.5"/>
+    <g stroke="#8b97b5" stroke-width="1.4" stroke-linecap="round">
+    <line x1="121.2" y1="70.6" x2="348.1" y2="70.6"/>
+    <line x1="56.4" y1="111.1" x2="186.0" y2="111.1"/>
+    <line x1="275.1" y1="111.1" x2="437.1" y2="111.1"/>
+    <line x1="56.4" y1="192.1" x2="186.0" y2="192.1"/>
+    <line x1="275.1" y1="192.1" x2="437.1" y2="192.1"/>
+    <line x1="291.3" y1="252.9" x2="453.3" y2="252.9"/>
+    <line x1="121.2" y1="333.9" x2="283.2" y2="333.9"/>
+    <line x1="287.3" y1="333.9" x2="445.2" y2="333.9"/>
+    <line x1="137.4" y1="394.6" x2="283.2" y2="394.6"/>
+    <line x1="137.4" y1="455.4" x2="283.2" y2="455.4"/>
+    <line x1="56.4" y1="111.1" x2="56.4" y2="192.1"/>
+    <line x1="121.2" y1="70.6" x2="121.2" y2="80.8"/>
+    <line x1="121.2" y1="202.2" x2="121.2" y2="333.9"/>
+    <line x1="137.4" y1="394.6" x2="137.4" y2="455.4"/>
+    <line x1="186.0" y1="111.1" x2="186.0" y2="121.2"/>
+    <line x1="186.0" y1="182.0" x2="186.0" y2="192.1"/>
+    <line x1="194.2" y1="121.2" x2="194.2" y2="182.0"/>
+    <line x1="210.3" y1="333.9" x2="210.3" y2="364.2"/>
+    <line x1="234.6" y1="40.2" x2="234.6" y2="70.6"/>
+    <line x1="275.1" y1="111.1" x2="275.1" y2="121.2"/>
+    <line x1="275.1" y1="182.0" x2="275.1" y2="192.1"/>
+    <line x1="283.2" y1="121.2" x2="283.2" y2="182.0"/>
+    <line x1="283.2" y1="323.8" x2="283.2" y2="333.9"/>
+    <line x1="283.2" y1="394.6" x2="283.2" y2="425.0"/>
+    <line x1="283.2" y1="445.2" x2="283.2" y2="455.4"/>
+    <line x1="291.3" y1="252.9" x2="291.3" y2="323.8"/>
+    <line x1="291.3" y1="425.0" x2="291.3" y2="445.2"/>
+    <line x1="348.1" y1="70.6" x2="348.1" y2="80.8"/>
+    <line x1="364.2" y1="192.1" x2="364.2" y2="222.5"/>
+    <line x1="437.1" y1="111.1" x2="437.1" y2="121.2"/>
+    <line x1="437.1" y1="182.0" x2="437.1" y2="192.1"/>
+    <line x1="445.2" y1="323.8" x2="445.2" y2="333.9"/>
+    <line x1="453.3" y1="121.2" x2="453.3" y2="141.5"/>
+    <line x1="453.3" y1="161.8" x2="453.3" y2="182.0"/>
+    <line x1="453.3" y1="252.9" x2="453.3" y2="263.0"/>
+    <line x1="453.3" y1="303.5" x2="453.3" y2="323.8"/>
+    <line x1="461.4" y1="141.5" x2="461.4" y2="161.8"/>
+    <line x1="461.4" y1="263.0" x2="461.4" y2="303.5"/>
+    </g>
+    <g fill="#1f2430" font-size="13.5">
+    <text x="190.1" y="35.8" xml:space="preserve">CAN</text>
+    <text x="222.5" y="35.8" xml:space="preserve">中</text>
+    <text x="238.7" y="35.8" xml:space="preserve">断</text>
+    <text x="254.9" y="35.8" xml:space="preserve">触</text>
+    <text x="271.1" y="35.8" xml:space="preserve">发</text>
+    <text x="117.2" y="96.5" xml:space="preserve">▼</text>
+    <text x="344.0" y="96.5" xml:space="preserve">▼</text>
+    <text x="68.6" y="137.0" xml:space="preserve">用</text>
+    <text x="84.8" y="137.0" xml:space="preserve">户</text>
+    <text x="101.0" y="137.0" xml:space="preserve">回</text>
+    <text x="117.2" y="137.0" xml:space="preserve">调</text>
+    <text x="141.5" y="137.0" xml:space="preserve">(ISR)</text>
+    <text x="295.4" y="137.0" xml:space="preserve">FreeRTOS</text>
+    <text x="368.3" y="137.0" xml:space="preserve">队</text>
+    <text x="384.5" y="137.0" xml:space="preserve">列</text>
+    <text x="68.6" y="157.3" xml:space="preserve">直</text>
+    <text x="84.8" y="157.3" xml:space="preserve">接</text>
+    <text x="101.0" y="157.3" xml:space="preserve">解</text>
+    <text x="117.2" y="157.3" xml:space="preserve">析</text>
+    <text x="133.4" y="157.3" xml:space="preserve">数</text>
+    <text x="149.6" y="157.3" xml:space="preserve">据</text>
+    <text x="295.4" y="157.3" xml:space="preserve">延</text>
+    <text x="311.6" y="157.3" xml:space="preserve">迟</text>
+    <text x="327.8" y="157.3" xml:space="preserve">到</text>
+    <text x="344.0" y="157.3" xml:space="preserve">任</text>
+    <text x="360.2" y="157.3" xml:space="preserve">务</text>
+    <text x="376.4" y="157.3" xml:space="preserve">中</text>
+    <text x="392.6" y="157.3" xml:space="preserve">解</text>
+    <text x="408.8" y="157.3" xml:space="preserve">析</text>
+    <text x="68.6" y="177.5" xml:space="preserve">(</text>
+    <text x="76.7" y="177.5" xml:space="preserve">轻</text>
+    <text x="92.9" y="177.5" xml:space="preserve">量</text>
+    <text x="109.1" y="177.5" xml:space="preserve">操</text>
+    <text x="125.3" y="177.5" xml:space="preserve">作</text>
+    <text x="141.5" y="177.5" xml:space="preserve">)</text>
+    <text x="295.4" y="177.5" xml:space="preserve">(</text>
+    <text x="303.5" y="177.5" xml:space="preserve">重</text>
+    <text x="319.7" y="177.5" xml:space="preserve">量</text>
+    <text x="335.9" y="177.5" xml:space="preserve">操</text>
+    <text x="352.1" y="177.5" xml:space="preserve">作</text>
+    <text x="368.3" y="177.5" xml:space="preserve">)</text>
+    <text x="360.2" y="238.3" xml:space="preserve">▼</text>
+    <text x="303.5" y="278.8" xml:space="preserve">任</text>
+    <text x="319.7" y="278.8" xml:space="preserve">务</text>
+    <text x="335.9" y="278.8" xml:space="preserve">线</text>
+    <text x="352.1" y="278.8" xml:space="preserve">程</text>
+    <text x="368.3" y="278.8" xml:space="preserve">中</text>
+    <text x="384.5" y="278.8" xml:space="preserve">调</text>
+    <text x="400.7" y="278.8" xml:space="preserve">用</text>
+    <text x="303.5" y="299.0" xml:space="preserve">decodeCanRxMessage</text>
+    <text x="303.5" y="319.3" xml:space="preserve">FromQueue()</text>
+    <text x="206.3" y="380.0" xml:space="preserve">▼</text>
+    <text x="149.6" y="420.5" xml:space="preserve">Motor</text>
+    <text x="198.2" y="420.5" xml:space="preserve">对</text>
+    <text x="214.4" y="420.5" xml:space="preserve">象</text>
+    <text x="149.6" y="440.8" xml:space="preserve">更</text>
+    <text x="165.8" y="440.8" xml:space="preserve">新</text>
+    <text x="182.0" y="440.8" xml:space="preserve">电</text>
+    <text x="198.2" y="440.8" xml:space="preserve">机</text>
+    <text x="214.4" y="440.8" xml:space="preserve">状</text>
+    <text x="230.6" y="440.8" xml:space="preserve">态</text>
+    </g>
+  </g>
+</svg>

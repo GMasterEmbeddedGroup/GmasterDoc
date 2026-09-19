@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 299 121" width="299" height="121" role="img" aria-labelledby="ttl dsc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Noto Sans Mono CJK SC', 'Microsoft YaHei', monospace">
+  <title id="ttl">str3:</title>
+  <desc id="dsc">自动由 ASCII 示意图矢量化生成，源：docs/软件组/培训/C++基础/08-数组与字符串.md 第 116-121 行</desc>
+  <g transform="scale(1)">
+    <rect x="0.75" y="0.75" width="100%" height="100%" rx="14" fill="#f7f9fc" stroke="#dce3ec" stroke-width="1.5"/>
+    <g stroke="#8b97b5" stroke-width="1.4" stroke-linecap="round">
+    <line x1="80.8" y1="30.1" x2="275.1" y2="30.1"/>
+    <line x1="80.8" y1="70.6" x2="275.1" y2="70.6"/>
+    <line x1="80.8" y1="30.1" x2="80.8" y2="70.6"/>
+    <line x1="113.1" y1="30.1" x2="113.1" y2="70.6"/>
+    <line x1="145.6" y1="30.1" x2="145.6" y2="70.6"/>
+    <line x1="177.9" y1="30.1" x2="177.9" y2="70.6"/>
+    <line x1="210.3" y1="30.1" x2="210.3" y2="70.6"/>
+    <line x1="242.8" y1="30.1" x2="242.8" y2="70.6"/>
+    <line x1="275.1" y1="30.1" x2="275.1" y2="70.6"/>
+    </g>
+    <g fill="#1f2430" font-size="13.5">
+    <text x="20.0" y="35.8" xml:space="preserve">str3:</text>
+    <text x="92.9" y="56.0" xml:space="preserve">H</text>
+    <text x="125.3" y="56.0" xml:space="preserve">e</text>
+    <text x="157.7" y="56.0" xml:space="preserve">l</text>
+    <text x="190.1" y="56.0" xml:space="preserve">l</text>
+    <text x="222.5" y="56.0" xml:space="preserve">o</text>
+    <text x="246.8" y="56.0" xml:space="preserve">\0</text>
+    <text x="20.0" y="96.5" xml:space="preserve">索</text>
+    <text x="36.2" y="96.5" xml:space="preserve">引</text>
+    <text x="52.4" y="96.5" xml:space="preserve">:</text>
+    <text x="92.9" y="96.5" xml:space="preserve">0</text>
+    <text x="125.3" y="96.5" xml:space="preserve">1</text>
+    <text x="157.7" y="96.5" xml:space="preserve">2</text>
+    <text x="190.1" y="96.5" xml:space="preserve">3</text>
+    <text x="222.5" y="96.5" xml:space="preserve">4</text>
+    <text x="254.9" y="96.5" xml:space="preserve">5</text>
+    </g>
+  </g>
+</svg>

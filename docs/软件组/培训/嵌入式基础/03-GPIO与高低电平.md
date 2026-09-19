@@ -12,13 +12,11 @@ GPIO 是 MCU 与外部世界交互的最基本方式。本章从物理层的"高
 
 在数字电路中，一切信息最终都归结为**电压**：
 
-```
-电压
- │  3.3V ────────────────  高电平 (High / 1 / SET)
- │
- │  0V   ────────────────  低电平 (Low  / 0 / RESET)
- └────────────────────────────→ 时间
-```
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d040-80f0b2.svg" alt="电压">
+  <figcaption>图：电压</figcaption>
+</figure>
+
 
 - **高电平**：电压接近供电电压（STM32 通常为 3.3V），逻辑上记为 `1`
 - **低电平**：电压接近 0V（GND），逻辑上记为 `0`
@@ -28,22 +26,11 @@ GPIO 是 MCU 与外部世界交互的最基本方式。本章从物理层的"高
 
 每个 GPIO 引脚内部有一个**推挽电路**（两个 MOSFET 开关），可以将其切换到 VDD 或 GND：
 
-```
-输出高电平:              输出低电平:
-    VDD(3.3V)               VDD(3.3V)
-       │                        │
-    ┌──┴──┐                 ┌──┴──┐
-    │ PMOS│ ON              │ PMOS│ OFF
-    └──┬──┘                 └──┬──┘
-       │                        │
-       ├──────→ 引脚 3.3V       ├──────→ 引脚 0V
-       │                        │
-    ┌──┴──┐                 ┌──┴──┐
-    │ NMOS│ OFF             │ NMOS│ ON
-    └──┬──┘                 └──┬──┘
-       │                        │
-      GND                      GND
-```
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d041-cb2205.svg" alt="输出高电平: / 输出低电平:">
+  <figcaption>图：输出高电平: / 输出低电平:</figcaption>
+</figure>
+
 
 ---
 
@@ -66,20 +53,11 @@ GPIO 是 MCU 与外部世界交互的最基本方式。本章从物理层的"高
 
 但推挽输出有一个**致命缺陷**：设想两个推挽输出引脚直接连在一起，一个输出高电平（PMOS 导通到 VDD），另一个输出低电平（NMOS 导通到 GND）——VDD 和 GND 之间形成了一条近乎零电阻的通路：
 
-```
-致命短路路径：
-    VDD
-     │
-  ┌──┴──┐  ON  ← GPIO_A 输出高
-  └──┬──┘
-     │
-     ├────────── 短路！大电流直接流入
-     │
-  ┌──┴──┐  ON  ← GPIO_B 输出低
-  └──┬──┘
-     │
-    GND
-```
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d042-88a4d1.svg" alt="致命短路路径：">
+  <figcaption>图：致命短路路径：</figcaption>
+</figure>
+
 
 这一瞬间会有数百毫安甚至更大的电流流过两个引脚，足以烧毁 MCU 的 IO 驱动管。**这正是在总线上必须使用开漏输出的根本原因**——在多设备共享的信号线上，如果每个设备都用推挽输出，只要有任意两个设备输出状态不同，就会发生短路。
 
@@ -93,19 +71,11 @@ HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET); // LED 灭
 
 开漏输出只能主动输出低电平（拉低），不能主动输出高电平。要输出高电平，需要外部上拉电阻将引脚拉到 VDD。
 
-```
-开漏输出结构:
-    VDD ──[上拉电阻]──┬── 引脚
-                      │
-                  ┌───┴───┐
-                  │ NMOS   │  ← 只有一个下拉管
-                  └───┬───┘
-                      │
-                     GND
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d043-3998cc.svg" alt="开漏输出结构:">
+  <figcaption>图：开漏输出结构:</figcaption>
+</figure>
 
-NMOS 导通 → 引脚被拉到 GND → 低电平
-NMOS 截止 → 上拉电阻把引脚拉到 VDD → 高电平
-```
 
 开漏输出的核心优势在于**安全性**：多个开漏输出可以直接并接在同一根线上，不会产生短路。
 
@@ -150,16 +120,11 @@ NMOS 截止 → 上拉电阻把引脚拉到 VDD → 高电平
 
 当引脚配置为输入时，如果外部没有明确的电平驱动，引脚处于"悬空"状态，电平不确定（容易受电磁干扰影响）。STM32 内部集成了可配置的上拉/下拉电阻（约 40kΩ）：
 
-```
-上拉输入:                下拉输入:
-    VDD                       │
-     │                        │
-  [~40kΩ]                     │
-     │                     [~40kΩ]
-     ├─── 引脚                 ├─── 引脚
-     │                        │
-    默认高电平              GND 默认低电平
-```
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d044-941e26.svg" alt="上拉输入: / 下拉输入:">
+  <figcaption>图：上拉输入: / 下拉输入:</figcaption>
+</figure>
+
 
 典型应用——按键检测：
 

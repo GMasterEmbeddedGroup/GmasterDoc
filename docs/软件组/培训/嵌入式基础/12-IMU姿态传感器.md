@@ -25,16 +25,11 @@ IMU（Inertial Measurement Unit，惯性测量单元）是机器人感知自身�
 
 MEMS 加速度计的物理原理：微机械结构中的质量块在加速度作用下发生位移，通过电容变化检测位移量。
 
-```
-简化模型:
-         ┌────────────┐
-   弹簧 ←│  质量块 m  │→ 弹簧
-         └────────────┘
-              │
-         ┌────┴────┐
-         │ 电容检测 │  → 位移 → 电压 → 加速度值
-         └─────────┘
-```
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d084-a5bd14.svg" alt="简化模型:">
+  <figcaption>图：简化模型:</figcaption>
+</figure>
+
 
 > **为什么不能只用加速度计测角度？** 加速度计测量的是比力（重力 + 运动加速度的合力），而非纯重力方向。当机器人向前加速时，加速度计会"看到"一个斜向后的"伪重力"，误以为机体发生了倾斜。例如，机器人以 1g 向前加速时，加速度计读数相当于向后倾斜了 45°——但机体实际上是水平的。陀螺仪直接测量旋转角速度，不受线性加速度干扰，因此不存在这个问题。
 >
@@ -95,20 +90,11 @@ BMI088 是 Bosch 的高性能 6 轴 IMU，专为无人机和机器人设计：
 
 ### 2.2 SPI 连接拓扑
 
-```
- STM32F407                          BMI088
-┌──────────┐                   ┌──────────────┐
-│          │──SCLK─────────────│SCL_ACC       │
-│  SPI1    │──MOSI─────────────│MOSI_ACC      │
-│          │──MISO─────────────│MISO_ACC/GYRO │ ← 共用 MISO
-│          │                   │              │
-│  GPIO_CS1│───────────────────│CS_ACC        │ ← 加速度计片选
-│  GPIO_CS2│───────────────────│CS_GYRO       │ ← 陀螺仪片选
-│          │                   │              │
-│  GPIO    │──INT1_ACC─────────│INT1_ACC      │ ← 加速度计数据就绪
-│  GPIO    │──INT1_GYRO────────│INT1_GYRO     │ ← 陀螺仪数据就绪
-└──────────┘                   └──────────────┘
-```
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d085-bbeba8.svg" alt="STM32F407 / BMI088">
+  <figcaption>图：STM32F407 / BMI088</figcaption>
+</figure>
+
 
 > **注意**：加速度计和陀螺仪的 MISO 引脚可以共用，因为它们通过不同的 CS 信号分时选通。只有被 CS 拉低的芯片才会驱动 MISO。
 
@@ -221,43 +207,11 @@ void AHRS::convertQuaternionToEulerAngle()
 
 ### 4.1 完整流程
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                     数据采集 (中断驱动)                       │
-│                                                             │
-│  BMI088 INT1 ──→ EXTI4 中断                                 │
-│    │                                                        │
-│    ├── readRawData()                                        │
-│    │   ├── SPI 读加速度计 X/Y/Z (6 字节)                     │
-│    │   └── SPI 读陀螺仪 X/Y/Z (6 字节，跳过 chipID)          │
-│    │                                                        │
-│    ├── dataCalibration()                                    │
-│    │   ├── 修正安装误差旋转矩阵 (installSpinMatrix)           │
-│    │   └── 减去零飘偏移 (gyroOffset / accelOffset)           │
-│    │                                                        │
-│    └── IMU::solveAttitude()                                 │
-│        │                                                    │
-│        ▼                                                    │
-│  ┌──────────────────────────────────────────────┐          │
-│  │        AHRS 姿态解算 (solveAttitude)         │          │
-│  │                                              │          │
-│  │  AHRS::update(gyro, accel, magnet)           │          │
-│  │    │                                         │          │
-│  │    ├── 第一次调用：initQuaternion()           │          │
-│  │    │   用加速度计估算初始 Roll/Pitch          │          │
-│  │    │   用磁力计估算初始 Yaw                   │          │
-│  │    │                                         │          │
-│  │    └── 后续调用：dataProcess()                │          │
-│  │        ├── 陀螺仪数据更新四元数（预测）       │          │
-│  │        ├── 加速度计修正 Roll/Pitch（观测）    │          │
-│  │        ├── 磁力计修正 Yaw（观测，可选）       │          │
-│  │        └── 四元数归一化 → 欧拉角              │          │
-│  │                                              │          │
-│  │  输出: m_eulerAngle [Roll, Pitch, Yaw]       │          │
-│  │        m_quaternion [q0, q1, q2, q3]        │          │
-│  └──────────────────────────────────────────────┘          │
-└─────────────────────────────────────────────────────────────┘
-```
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d086-b7fa72.svg" alt="数据采集 (中断驱动)">
+  <figcaption>图：数据采集 (中断驱动)</figcaption>
+</figure>
+
 
 ### 4.2 中断驱动的读取时机
 
@@ -287,30 +241,11 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 
 GSRL 中 `BMI088::init()` 的完整初始化和自检流程：
 
-```
-BMI088::init()
-    │
-    ├── selfTestAccel()     ← 加速度计自检
-    │   └── 检测芯片 ID、配置寄存器读写验证
-    │
-    ├── initAccel()          ← 加速度计初始化
-    │   ├── 配置量程 (±3g)
-    │   ├── 配置输出速率 (2kHz)
-    │   ├── 配置 INT1 输出
-    │   └── 配置低通滤波器
-    │
-    ├── selfTestGyro()       ← 陀螺仪自检
-    │   └── 检测芯片 ID、配置寄存器读写验证
-    │
-    ├── initGyro()           ← 陀螺仪初始化
-    │   ├── 配置量程 (±2000°/s)
-    │   ├── 配置带宽
-    │   ├── 配置 INT1 输出
-    │   └── 配置低通滤波器
-    │
-    └── 启动温度控制 PWM（可选）
-        └── HAL_TIM_PWM_Start()
-```
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d087-4f08d4.svg" alt="BMI088::init()">
+  <figcaption>图：BMI088::init()</figcaption>
+</figure>
+
 
 ### 4.4 校准（Calibration）
 
@@ -353,36 +288,19 @@ struct CalibrationInfo {
 
 ### 5.1 在分层架构中的位置
 
-```
-Task 层:
-  test_task() → imu.getEulerAngle()  // 直接获取欧拉角
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d088-1551e8.svg" alt="Task 层:">
+  <figcaption>图：Task 层:</figcaption>
+</figure>
 
-Device 层 (dvc_imu.hpp/cpp):
-  IMU (抽象基类)
-    └── BMI088 (SPI 驱动 + 数据校准 + 调用 AHRS)
-
-Algorithm 层 (alg_ahrs.hpp/cpp):
-  AHRS (姿态解算抽象接口)
-    ├── Mahony (PI 互补滤波)
-    └── QuaternionEKF (扩展卡尔曼滤波)
-
-Algorithm 层 (alg_filter.hpp/cpp):
-  KalmanFilter / LowPassFilter (EKF 底层使用的滤波器)
-
-Driver 层 (drv_spi.c):
-  SPI_Init / SPI_TransmitReceive_DMA / HAL_SPI_TxRxCpltCallback
-```
 
 ### 5.2 依赖关系
 
-```
-BMI088
-  ├── 依赖 drv_spi (SPI 通信)
-  ├── 依赖 AHRS (姿态解算)
-  │     └── 依赖 KalmanFilter / LowPassFilter
-  ├── 依赖 IST8310 (磁力计，通过 I2C)
-  └── 依赖 HAL (GPIO 片选、TIM PWM 温度控制)
-```
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d089-6429b2.svg" alt="BMI088">
+  <figcaption>图：BMI088</figcaption>
+</figure>
+
 
 ---
 

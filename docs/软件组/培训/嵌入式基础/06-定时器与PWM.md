@@ -12,16 +12,11 @@
 
 定时器的核心是一个**自动递增（或递减）的计数器**。这个计数器每收到一个[时钟](./02-时钟树与总线架构.md)脉冲就加 1。当时钟频率固定时，计数值就精确地代表了时间。
 
-```
-时钟 (84MHz)  ──→  ┌──────────┐  ──→  计数值 (CNT)
-                   │  计数器   │       0 → 1 → 2 → 3 → ... → ARR → 0 → ...
-                   └──────────┘
-                        │
-                   预分频器 (PSC)
-                   ÷(PSC+1)
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d052-0df4f5.svg" alt="时钟 (84MHz) / → / → / 计数值 (CNT)">
+  <figcaption>图：时钟 (84MHz) / → / → / 计数值 (CNT)</figcaption>
+</figure>
 
-实际计数频率 = 时钟频率 / (PSC + 1)
-```
 
 ### 1.2 关键参数
 
@@ -75,15 +70,11 @@ vTaskDelay(100);  // 延时 100ms，基于 TIM7 的 1ms tick
 
 定时器在外部引脚发生边沿变化时，"捕获"当前的计数值。两次捕获之差 × 计数周期 = 脉冲宽度。
 
-```
-输入信号: ──┐     ┌──────────────────────┐     ┌──
-            │     │                      │     │
-            └─────┘                      └─────┘
-            ↑                             ↑
-       捕获计数值 C1                  捕获计数值 C2
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d053-81804e.svg" alt="输入信号:">
+  <figcaption>图：输入信号:</figcaption>
+</figure>
 
-脉宽 = (C2 - C1) × (1 / 计数频率)
-```
 
 典型用途：测量遥控接收机的 PWM 信号脉宽（1ms~2ms 对应 -100%~+100% 油门）。
 
@@ -91,19 +82,11 @@ vTaskDelay(100);  // 延时 100ms，基于 TIM7 的 1ms tick
 
 定时器的核心控制输出模式。工作原理：
 
-```
-    CNT ↑
-    ARR ┤         ┌─────┐         ┌─────
-        │        ╱       ╲       ╱
-    CCR ┤───────╱─────────╲─────╱────────
-        │      ╱           ╲   ╱
-      0 ┤─────╱─────────────╲─╱──────────→ 时间
-        │
-    输出 ┤     ┌──────────┐   ┌──────────
-        │     │          │   │
-        └─────┘          └───┘
-        ←─高电平─→←低电平→
-```
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d054-7f04d2.svg" alt="CNT ↑">
+  <figcaption>图：CNT ↑</figcaption>
+</figure>
+
 
 - **CNT < CCR**：输出高电平（或低电平，取决于 PWM 模式）
 - **CNT ≥ CCR**：输出反相
@@ -148,15 +131,11 @@ HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
 
 舵机通过 PWM 的**脉宽**（而非占空比）来控制角度：
 
-```
-脉宽        角度（典型值）
-─────────────────────────
-0.5ms       0°
-1.0ms       45°
-1.5ms       90°  (中位)
-2.0ms       135°
-2.5ms       180°
-```
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d055-728746.svg" alt="脉宽 / 角度（典型值）">
+  <figcaption>图：脉宽 / 角度（典型值）</figcaption>
+</figure>
+
 
 对应的 PWM 配置示例（周期 20ms，即 50Hz）：
 
@@ -191,15 +170,11 @@ for (int duty = 0; duty <= ARR; duty++) {
 
 在驱动**电机半桥/H桥**时，需要两路互补的 PWM（上下管交替导通），且必须在切换时插入**死区（Dead Time）**——上下管同时导通会导致电源短路（"直通"）。
 
-```
-      ┌──┐  ┌──┐  ┌──┐  ┌──
-上管   │  │  │  │  │  │  │
-      ┘  └──┘  └──┘  └──┘
-           ┌──┐  ┌──┐  ┌──┐
-下管       │  │  │  │  │  │
-      ─────┘  └──┘  └──┘  └──
-         ←死区→              ← 上下管都关断，避免直通
-```
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d056-4e8d94.svg" alt="上管">
+  <figcaption>图：上管</figcaption>
+</figure>
+
 
 STM32 高级定时器（TIM1、TIM8）内置死区发生器，只需配置 `BreakAndDeadTime` 参数即可：
 

@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 461 283" width="461" height="283" role="img" aria-labelledby="ttl dsc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Noto Sans Mono CJK SC', 'Microsoft YaHei', monospace">
+  <title id="ttl">GSRL (公共代码，不修改)</title>
+  <desc id="dsc">自动由 ASCII 示意图矢量化生成，源：docs/软件组/培训/嵌入式基础/13-GSRL工程结构与运行机制.md 第 476-489 行</desc>
+  <g transform="scale(1)">
+    <rect x="0.75" y="0.75" width="100%" height="100%" rx="14" fill="#f7f9fc" stroke="#dce3ec" stroke-width="1.5"/>
+    <g stroke="#8b97b5" stroke-width="1.4" stroke-linecap="round">
+    <line x1="56.4" y1="70.6" x2="76.7" y2="70.6"/>
+    <line x1="56.4" y1="90.9" x2="76.7" y2="90.9"/>
+    <line x1="56.4" y1="111.1" x2="76.7" y2="111.1"/>
+    <line x1="56.4" y1="131.4" x2="76.7" y2="131.4"/>
+    <line x1="56.4" y1="151.6" x2="76.7" y2="151.6"/>
+    <line x1="56.4" y1="40.2" x2="56.4" y2="151.6"/>
+    </g>
+    <g fill="#1f2430" font-size="13.5">
+    <text x="20.0" y="35.8" xml:space="preserve">GSRL</text>
+    <text x="60.5" y="35.8" xml:space="preserve">(</text>
+    <text x="68.6" y="35.8" xml:space="preserve">公</text>
+    <text x="84.8" y="35.8" xml:space="preserve">共</text>
+    <text x="101.0" y="35.8" xml:space="preserve">代</text>
+    <text x="117.2" y="35.8" xml:space="preserve">码</text>
+    <text x="133.4" y="35.8" xml:space="preserve">，</text>
+    <text x="149.6" y="35.8" xml:space="preserve">不</text>
+    <text x="165.8" y="35.8" xml:space="preserve">修</text>
+    <text x="182.0" y="35.8" xml:space="preserve">改</text>
+    <text x="198.2" y="35.8" xml:space="preserve">)</text>
+    <text x="76.7" y="76.3" xml:space="preserve">→</text>
+    <text x="92.9" y="76.3" xml:space="preserve">2025-Infantry-DL/</text>
+    <text x="246.8" y="76.3" xml:space="preserve">(</text>
+    <text x="254.9" y="76.3" xml:space="preserve">步</text>
+    <text x="271.1" y="76.3" xml:space="preserve">兵</text>
+    <text x="287.3" y="76.3" xml:space="preserve">，</text>
+    <text x="303.5" y="76.3" xml:space="preserve">使</text>
+    <text x="319.7" y="76.3" xml:space="preserve">用</text>
+    <text x="344.0" y="76.3" xml:space="preserve">GSRL)</text>
+    <text x="76.7" y="96.5" xml:space="preserve">→</text>
+    <text x="92.9" y="96.5" xml:space="preserve">2026_hero/</text>
+    <text x="246.8" y="96.5" xml:space="preserve">(</text>
+    <text x="254.9" y="96.5" xml:space="preserve">英</text>
+    <text x="271.1" y="96.5" xml:space="preserve">雄</text>
+    <text x="287.3" y="96.5" xml:space="preserve">，</text>
+    <text x="303.5" y="96.5" xml:space="preserve">使</text>
+    <text x="319.7" y="96.5" xml:space="preserve">用</text>
+    <text x="344.0" y="96.5" xml:space="preserve">GSRL)</text>
+    <text x="76.7" y="116.8" xml:space="preserve">→</text>
+    <text x="92.9" y="116.8" xml:space="preserve">2026_sentry/</text>
+    <text x="246.8" y="116.8" xml:space="preserve">(</text>
+    <text x="254.9" y="116.8" xml:space="preserve">哨</text>
+    <text x="271.1" y="116.8" xml:space="preserve">兵</text>
+    <text x="287.3" y="116.8" xml:space="preserve">，</text>
+    <text x="303.5" y="116.8" xml:space="preserve">使</text>
+    <text x="319.7" y="116.8" xml:space="preserve">用</text>
+    <text x="344.0" y="116.8" xml:space="preserve">GSRL)</text>
+    <text x="76.7" y="137.0" xml:space="preserve">→</text>
+    <text x="92.9" y="137.0" xml:space="preserve">2026_quadrotor/</text>
+    <text x="246.8" y="137.0" xml:space="preserve">(</text>
+    <text x="254.9" y="137.0" xml:space="preserve">无</text>
+    <text x="271.1" y="137.0" xml:space="preserve">人</text>
+    <text x="287.3" y="137.0" xml:space="preserve">机</text>
+    <text x="303.5" y="137.0" xml:space="preserve">，</text>
+    <text x="319.7" y="137.0" xml:space="preserve">使</text>
+    <text x="335.9" y="137.0" xml:space="preserve">用</text>
+    <text x="360.2" y="137.0" xml:space="preserve">GSRL)</text>
+    <text x="76.7" y="157.3" xml:space="preserve">→</text>
+    <text x="92.9" y="157.3" xml:space="preserve">...</text>
+    <text x="20.0" y="197.8" xml:space="preserve">每</text>
+    <text x="36.2" y="197.8" xml:space="preserve">个</text>
+    <text x="52.4" y="197.8" xml:space="preserve">工</text>
+    <text x="68.6" y="197.8" xml:space="preserve">程</text>
+    <text x="84.8" y="197.8" xml:space="preserve">的</text>
+    <text x="101.0" y="197.8" xml:space="preserve">差</text>
+    <text x="117.2" y="197.8" xml:space="preserve">异</text>
+    <text x="133.4" y="197.8" xml:space="preserve">:</text>
+    <text x="36.2" y="218.0" xml:space="preserve">-</text>
+    <text x="52.4" y="218.0" xml:space="preserve">Task/</text>
+    <text x="101.0" y="218.0" xml:space="preserve">目</text>
+    <text x="117.2" y="218.0" xml:space="preserve">录</text>
+    <text x="133.4" y="218.0" xml:space="preserve">下</text>
+    <text x="149.6" y="218.0" xml:space="preserve">的</text>
+    <text x="165.8" y="218.0" xml:space="preserve">任</text>
+    <text x="182.0" y="218.0" xml:space="preserve">务</text>
+    <text x="198.2" y="218.0" xml:space="preserve">代</text>
+    <text x="214.4" y="218.0" xml:space="preserve">码</text>
+    <text x="230.6" y="218.0" xml:space="preserve">不</text>
+    <text x="246.8" y="218.0" xml:space="preserve">同</text>
+    <text x="263.0" y="218.0" xml:space="preserve">（</text>
+    <text x="279.2" y="218.0" xml:space="preserve">不</text>
+    <text x="295.4" y="218.0" xml:space="preserve">同</text>
+    <text x="311.6" y="218.0" xml:space="preserve">兵</text>
+    <text x="327.8" y="218.0" xml:space="preserve">种</text>
+    <text x="344.0" y="218.0" xml:space="preserve">的</text>
+    <text x="360.2" y="218.0" xml:space="preserve">业</text>
+    <text x="376.4" y="218.0" xml:space="preserve">务</text>
+    <text x="392.6" y="218.0" xml:space="preserve">逻</text>
+    <text x="408.8" y="218.0" xml:space="preserve">辑</text>
+    <text x="425.0" y="218.0" xml:space="preserve">）</text>
+    <text x="36.2" y="238.3" xml:space="preserve">-</text>
+    <text x="52.4" y="238.3" xml:space="preserve">CubeMX_BSP/</text>
+    <text x="149.6" y="238.3" xml:space="preserve">配</text>
+    <text x="165.8" y="238.3" xml:space="preserve">置</text>
+    <text x="182.0" y="238.3" xml:space="preserve">可</text>
+    <text x="198.2" y="238.3" xml:space="preserve">能</text>
+    <text x="214.4" y="238.3" xml:space="preserve">不</text>
+    <text x="230.6" y="238.3" xml:space="preserve">同</text>
+    <text x="246.8" y="238.3" xml:space="preserve">（</text>
+    <text x="263.0" y="238.3" xml:space="preserve">不</text>
+    <text x="279.2" y="238.3" xml:space="preserve">同</text>
+    <text x="295.4" y="238.3" xml:space="preserve">主</text>
+    <text x="311.6" y="238.3" xml:space="preserve">控</text>
+    <text x="327.8" y="238.3" xml:space="preserve">板</text>
+    <text x="344.0" y="238.3" xml:space="preserve">的</text>
+    <text x="360.2" y="238.3" xml:space="preserve">引</text>
+    <text x="376.4" y="238.3" xml:space="preserve">脚</text>
+    <text x="392.6" y="238.3" xml:space="preserve">分</text>
+    <text x="408.8" y="238.3" xml:space="preserve">配</text>
+    <text x="425.0" y="238.3" xml:space="preserve">）</text>
+    <text x="36.2" y="258.5" xml:space="preserve">-</text>
+    <text x="52.4" y="258.5" xml:space="preserve">可</text>
+    <text x="68.6" y="258.5" xml:space="preserve">能</text>
+    <text x="84.8" y="258.5" xml:space="preserve">使</text>
+    <text x="101.0" y="258.5" xml:space="preserve">用</text>
+    <text x="117.2" y="258.5" xml:space="preserve">不</text>
+    <text x="133.4" y="258.5" xml:space="preserve">同</text>
+    <text x="149.6" y="258.5" xml:space="preserve">版</text>
+    <text x="165.8" y="258.5" xml:space="preserve">本</text>
+    <text x="182.0" y="258.5" xml:space="preserve">的</text>
+    <text x="206.3" y="258.5" xml:space="preserve">GSRL</text>
+    <text x="238.7" y="258.5" xml:space="preserve">（</text>
+    <text x="254.9" y="258.5" xml:space="preserve">F4</text>
+    <text x="279.2" y="258.5" xml:space="preserve">vs</text>
+    <text x="303.5" y="258.5" xml:space="preserve">H7</text>
+    <text x="319.7" y="258.5" xml:space="preserve">）</text>
+    </g>
+  </g>
+</svg>

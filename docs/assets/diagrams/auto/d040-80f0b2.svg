@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 461 141" width="461" height="141" role="img" aria-labelledby="ttl dsc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Noto Sans Mono CJK SC', 'Microsoft YaHei', monospace">
+  <title id="ttl">电压</title>
+  <desc id="dsc">自动由 ASCII 示意图矢量化生成，源：docs/软件组/培训/嵌入式基础/03-GPIO与高低电平.md 第 15-21 行</desc>
+  <g transform="scale(1)">
+    <rect x="0.75" y="0.75" width="100%" height="100%" rx="14" fill="#f7f9fc" stroke="#dce3ec" stroke-width="1.5"/>
+    <g stroke="#8b97b5" stroke-width="1.4" stroke-linecap="round">
+    <line x1="92.9" y1="50.4" x2="222.5" y2="50.4"/>
+    <line x1="92.9" y1="90.9" x2="222.5" y2="90.9"/>
+    <line x1="32.1" y1="111.1" x2="263.0" y2="111.1"/>
+    <line x1="32.1" y1="40.2" x2="32.1" y2="111.1"/>
+    </g>
+    <g fill="#1f2430" font-size="13.5">
+    <text x="20.0" y="35.8" xml:space="preserve">电</text>
+    <text x="36.2" y="35.8" xml:space="preserve">压</text>
+    <text x="52.4" y="56.0" xml:space="preserve">3.3V</text>
+    <text x="238.7" y="56.0" xml:space="preserve">高</text>
+    <text x="254.9" y="56.0" xml:space="preserve">电</text>
+    <text x="271.1" y="56.0" xml:space="preserve">平</text>
+    <text x="295.4" y="56.0" xml:space="preserve">(High</text>
+    <text x="344.0" y="56.0" xml:space="preserve">/</text>
+    <text x="360.2" y="56.0" xml:space="preserve">1</text>
+    <text x="376.4" y="56.0" xml:space="preserve">/</text>
+    <text x="392.6" y="56.0" xml:space="preserve">SET)</text>
+    <text x="52.4" y="96.5" xml:space="preserve">0V</text>
+    <text x="238.7" y="96.5" xml:space="preserve">低</text>
+    <text x="254.9" y="96.5" xml:space="preserve">电</text>
+    <text x="271.1" y="96.5" xml:space="preserve">平</text>
+    <text x="295.4" y="96.5" xml:space="preserve">(Low</text>
+    <text x="344.0" y="96.5" xml:space="preserve">/</text>
+    <text x="360.2" y="96.5" xml:space="preserve">0</text>
+    <text x="376.4" y="96.5" xml:space="preserve">/</text>
+    <text x="392.6" y="96.5" xml:space="preserve">RESET)</text>
+    <text x="263.0" y="116.8" xml:space="preserve">→</text>
+    <text x="279.2" y="116.8" xml:space="preserve">时</text>
+    <text x="295.4" y="116.8" xml:space="preserve">间</text>
+    </g>
+  </g>
+</svg>

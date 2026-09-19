@@ -16,15 +16,11 @@ SPI 则通过独立的时钟线同步收发双方，可以获得高得多的速�
 
 **为什么 SPI 需要 4 根线而 UART 只需 2 根？** UART 省线的代价是双方必须精确匹配波特率——任何一个设备的时钟偏差都会导致采样错误，因此 UART 速度上限通常在几 Mbps。SPI 用一根独立的时钟线（SCLK）消除了这种不确定性：主设备告诉从设备"现在采样"，从设备不需要猜测。这让 SPI 可以达到 10~50 倍于 UART 的速度。同时，CS 信号线使主设备能直接选择从设备，无需在数据流中嵌入地址字节，进一步提高了有效吞吐。
 
-```
-UART (异步)               SPI (同步)
-                          
-MCU_A      MCU_B          MCU (Master)      Sensor (Slave)
- TX ─────→ RX              SCLK ────────────→ SCLK
- RX ←───── TX              MOSI ────────────→ MOSI
-                           MISO ←──────────── MISO
-                           CS   ────────────→ CS   (低有效)
-```
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d069-c50581.svg" alt="UART (异步) / SPI (同步)">
+  <figcaption>图：UART (异步) / SPI (同步)</figcaption>
+</figure>
+
 
 ### 1.2 主从架构
 
@@ -45,27 +41,11 @@ SPI 是严格的**主从（Master-Slave）架构**：
 | **MISO** | Slave → Master | Master In, Slave Out | 从设备发送的数据 |
 | **CS** (或 SS) | Master → Slave | Chip Select / Slave Select | 低电平有效，选中从设备 |
 
-```
-典型连接拓扑（一主多从）:
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d070-bc50b6.svg" alt="典型连接拓扑（一主多从）:">
+  <figcaption>图：典型连接拓扑（一主多从）:</figcaption>
+</figure>
 
-         ┌──────────┐
-         │  Master  │
-         │  (MCU)   │
-         └──┬──┬──┬─┘
-            │  │  │
-   SCLK ────┼──┼──┼──── 所有 Slave 共享
-   MOSI ────┼──┼──┼──── 所有 Slave 共享
-   MISO ────┼──┼──┼──── 所有 Slave 共享
-            │  │  │
-   CS1  ────┤  │  │    每个 Slave 独立 CS
-   CS2  ───┼──┤  │
-   CS3  ───┼──┼──┤
-
-         ┌──┴──┐┌──┴──┐┌──┴──┐
-         │Slave││Slave││Slave│
-         │  1  ││  2  ││  3  │
-         └─────┘└─────┘└─────┘
-```
 
 **CS 是关键**：只有 CS 拉低的 Slave 才会响应总线上的 SCLK/MOSI，其余 Slave 的 MISO 引脚处于高阻态（不影响总线）。
 
@@ -84,21 +64,11 @@ SPI 通过两个参数定义时钟极性和数据采样时机：
 | **CPOL** | Clock Polarity | 时钟空闲时的电平：0=低，1=高 |
 | **CPHA** | Clock Phase | 数据采样边沿：0=第一个边沿，1=第二个边沿 |
 
-```
-Mode 0 (CPOL=0, CPHA=0) —— 最常用
-SCLK:     ──┐   ┌───┐   ┌───
-            │   │   │   │
-            └───┘   └───┘
-MOSI/MISO: ──[D7][D6][D5]...  ← 在上升沿改变数据，下降沿采样
-              ↑
-          空闲为低
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d071-b44545.svg" alt="Mode 0 (CPOL=0, CPHA=0) —— 最常用">
+  <figcaption>图：Mode 0 (CPOL=0, CPHA=0) —— 最常用</figcaption>
+</figure>
 
-Mode 3 (CPOL=1, CPHA=1)
-SCLK:     ┌───┐   ┌───┐   ┌──
-          │   │   │   │   │
-          ┘   └───┘   └───┘
-MOSI/MISO: ──[D7][D6][D5]...  ← 在上升沿采样（第二个边沿）
-```
 
 | Mode | CPOL | CPHA | 空闲电平 | 采样边沿 |
 |------|------|------|---------|---------|
@@ -126,16 +96,11 @@ MOSI/MISO: ──[D7][D6][D5]...  ← 在上升沿采样（第二个边沿）
 ④ 传输完成，Master 拉高 CS
 ```
 
-```
-Master 移位寄存器                 Slave 移位寄存器
-┌──────────────────┐            ┌──────────────────┐
-│ D7 D6 D5 ... D0  │──MOSI──→  │ D7 D6 D5 ... D0  │
-│                  │←─MISO──   │                  │
-└──────────────────┘            └──────────────────┘
-      ↑ SCLK (由 Master 产生)
-      每来一个时钟脉冲，Master 和 Slave 的寄存器
-      都右移一位，同时最高位被发送出去
-```
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d072-fffeda.svg" alt="Master 移位寄存器 / Slave 移位寄存器">
+  <figcaption>图：Master 移位寄存器 / Slave 移位寄存器</figcaption>
+</figure>
+
 
 **重要特性**：SPI 的发送和接收是**同步进行的**。即使你只想读数据，也必须发送同样数量的字节（通常是 0x00 或 0xFF 作为"空字节"），才能把 MISO 上的数据"时钟出来"。
 
@@ -205,17 +170,11 @@ void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *hspi)
 
 BMI088 是一款 6 轴 IMU（3 轴加速度计 + 3 轴陀螺仪），其加速度计和陀螺仪是**独立的两颗芯片**，各自有独立的 SPI 接口和 CS 引脚：
 
-```
- STM32                      BMI088
-┌────────┐              ┌──────────────┐
-│        │──SCLK──┬─────│SCLK_ACC      │
-│  SPI1  │──MOSI──┤     │              │
-│        │──MISO──┼─────│MISO (共用)   │
-│        │        │     │              │
-│  GPIO  │──CS1───┤     │CS_ACC        │  ← 加速度计 CS
-│  GPIO  │──CS2───┘     │CS_GYRO       │  ← 陀螺仪 CS
-└────────┘              └──────────────┘
-```
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d073-c4a881.svg" alt="STM32 / BMI088">
+  <figcaption>图：STM32 / BMI088</figcaption>
+</figure>
+
 
 ### 6.2 逐寄存器读写
 

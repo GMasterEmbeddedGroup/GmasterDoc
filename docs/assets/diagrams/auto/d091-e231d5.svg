@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 534 384" width="534" height="384" role="img" aria-labelledby="ttl dsc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Noto Sans Mono CJK SC', 'Microsoft YaHei', monospace">
+  <title id="ttl">顶层 CMakeLists.txt</title>
+  <desc id="dsc">自动由 ASCII 示意图矢量化生成，源：docs/软件组/培训/嵌入式基础/13-GSRL工程结构与运行机制.md 第 90-108 行</desc>
+  <g transform="scale(1)">
+    <rect x="0.75" y="0.75" width="100%" height="100%" rx="14" fill="#f7f9fc" stroke="#dce3ec" stroke-width="1.5"/>
+    <g stroke="#8b97b5" stroke-width="1.4" stroke-linecap="round">
+    <line x1="56.4" y1="70.6" x2="76.7" y2="70.6"/>
+    <line x1="121.2" y1="90.9" x2="141.5" y2="90.9"/>
+    <line x1="56.4" y1="131.4" x2="76.7" y2="131.4"/>
+    <line x1="121.2" y1="151.6" x2="141.5" y2="151.6"/>
+    <line x1="121.2" y1="171.9" x2="141.5" y2="171.9"/>
+    <line x1="121.2" y1="192.1" x2="141.5" y2="192.1"/>
+    <line x1="121.2" y1="212.4" x2="141.5" y2="212.4"/>
+    <line x1="121.2" y1="232.6" x2="141.5" y2="232.6"/>
+    <line x1="56.4" y1="273.1" x2="76.7" y2="273.1"/>
+    <line x1="56.4" y1="40.2" x2="56.4" y2="273.1"/>
+    <line x1="121.2" y1="80.8" x2="121.2" y2="90.9"/>
+    <line x1="121.2" y1="141.5" x2="121.2" y2="232.6"/>
+    </g>
+    <g fill="#1f2430" font-size="13.5">
+    <text x="20.0" y="35.8" xml:space="preserve">顶</text>
+    <text x="36.2" y="35.8" xml:space="preserve">层</text>
+    <text x="60.5" y="35.8" xml:space="preserve">CMakeLists.txt</text>
+    <text x="76.7" y="76.3" xml:space="preserve">→</text>
+    <text x="92.9" y="76.3" xml:space="preserve">add_subdirectory(CubeMX_BSP/cmake/stm32cubemx)</text>
+    <text x="149.6" y="96.5" xml:space="preserve">生</text>
+    <text x="165.8" y="96.5" xml:space="preserve">成</text>
+    <text x="190.1" y="96.5" xml:space="preserve">stm32cubemx</text>
+    <text x="287.3" y="96.5" xml:space="preserve">库</text>
+    <text x="303.5" y="96.5" xml:space="preserve">（</text>
+    <text x="319.7" y="96.5" xml:space="preserve">HAL</text>
+    <text x="352.1" y="96.5" xml:space="preserve">+</text>
+    <text x="368.3" y="96.5" xml:space="preserve">CMSIS</text>
+    <text x="416.9" y="96.5" xml:space="preserve">+</text>
+    <text x="433.1" y="96.5" xml:space="preserve">BSP</text>
+    <text x="457.4" y="96.5" xml:space="preserve">）</text>
+    <text x="76.7" y="137.0" xml:space="preserve">→</text>
+    <text x="92.9" y="137.0" xml:space="preserve">add_subdirectory(GSRL)</text>
+    <text x="149.6" y="157.3" xml:space="preserve">Algorithm/</text>
+    <text x="246.8" y="157.3" xml:space="preserve">→</text>
+    <text x="263.0" y="157.3" xml:space="preserve">编</text>
+    <text x="279.2" y="157.3" xml:space="preserve">译</text>
+    <text x="295.4" y="157.3" xml:space="preserve">为</text>
+    <text x="319.7" y="157.3" xml:space="preserve">gsrl</text>
+    <text x="360.2" y="157.3" xml:space="preserve">库</text>
+    <text x="376.4" y="157.3" xml:space="preserve">的</text>
+    <text x="392.6" y="157.3" xml:space="preserve">一</text>
+    <text x="408.8" y="157.3" xml:space="preserve">部</text>
+    <text x="425.0" y="157.3" xml:space="preserve">分</text>
+    <text x="149.6" y="177.5" xml:space="preserve">Device/</text>
+    <text x="246.8" y="177.5" xml:space="preserve">→</text>
+    <text x="263.0" y="177.5" xml:space="preserve">编</text>
+    <text x="279.2" y="177.5" xml:space="preserve">译</text>
+    <text x="295.4" y="177.5" xml:space="preserve">为</text>
+    <text x="319.7" y="177.5" xml:space="preserve">gsrl</text>
+    <text x="360.2" y="177.5" xml:space="preserve">库</text>
+    <text x="376.4" y="177.5" xml:space="preserve">的</text>
+    <text x="392.6" y="177.5" xml:space="preserve">一</text>
+    <text x="408.8" y="177.5" xml:space="preserve">部</text>
+    <text x="425.0" y="177.5" xml:space="preserve">分</text>
+    <text x="149.6" y="197.8" xml:space="preserve">Driver/</text>
+    <text x="246.8" y="197.8" xml:space="preserve">→</text>
+    <text x="263.0" y="197.8" xml:space="preserve">编</text>
+    <text x="279.2" y="197.8" xml:space="preserve">译</text>
+    <text x="295.4" y="197.8" xml:space="preserve">为</text>
+    <text x="319.7" y="197.8" xml:space="preserve">gsrl</text>
+    <text x="360.2" y="197.8" xml:space="preserve">库</text>
+    <text x="376.4" y="197.8" xml:space="preserve">的</text>
+    <text x="392.6" y="197.8" xml:space="preserve">一</text>
+    <text x="408.8" y="197.8" xml:space="preserve">部</text>
+    <text x="425.0" y="197.8" xml:space="preserve">分</text>
+    <text x="149.6" y="218.0" xml:space="preserve">CMSIS-DSP/</text>
+    <text x="246.8" y="218.0" xml:space="preserve">→</text>
+    <text x="263.0" y="218.0" xml:space="preserve">独</text>
+    <text x="279.2" y="218.0" xml:space="preserve">立</text>
+    <text x="295.4" y="218.0" xml:space="preserve">子</text>
+    <text x="311.6" y="218.0" xml:space="preserve">项</text>
+    <text x="327.8" y="218.0" xml:space="preserve">目</text>
+    <text x="149.6" y="238.3" xml:space="preserve">eigen/</text>
+    <text x="246.8" y="238.3" xml:space="preserve">→</text>
+    <text x="263.0" y="238.3" xml:space="preserve">独</text>
+    <text x="279.2" y="238.3" xml:space="preserve">立</text>
+    <text x="295.4" y="238.3" xml:space="preserve">子</text>
+    <text x="311.6" y="238.3" xml:space="preserve">项</text>
+    <text x="327.8" y="238.3" xml:space="preserve">目</text>
+    <text x="76.7" y="278.8" xml:space="preserve">→</text>
+    <text x="92.9" y="278.8" xml:space="preserve">target_sources(PRIVATE</text>
+    <text x="279.2" y="278.8" xml:space="preserve">Task/src/tsk_test.cpp)</text>
+    <text x="117.2" y="299.0" xml:space="preserve">↑</text>
+    <text x="133.4" y="299.0" xml:space="preserve">用</text>
+    <text x="149.6" y="299.0" xml:space="preserve">户</text>
+    <text x="165.8" y="299.0" xml:space="preserve">任</text>
+    <text x="182.0" y="299.0" xml:space="preserve">务</text>
+    <text x="198.2" y="299.0" xml:space="preserve">直</text>
+    <text x="214.4" y="299.0" xml:space="preserve">接</text>
+    <text x="230.6" y="299.0" xml:space="preserve">编</text>
+    <text x="246.8" y="299.0" xml:space="preserve">译</text>
+    <text x="263.0" y="299.0" xml:space="preserve">到</text>
+    <text x="279.2" y="299.0" xml:space="preserve">可</text>
+    <text x="295.4" y="299.0" xml:space="preserve">执</text>
+    <text x="311.6" y="299.0" xml:space="preserve">行</text>
+    <text x="327.8" y="299.0" xml:space="preserve">文</text>
+    <text x="344.0" y="299.0" xml:space="preserve">件</text>
+    <text x="360.2" y="299.0" xml:space="preserve">中</text>
+    <text x="20.0" y="339.5" xml:space="preserve">最</text>
+    <text x="36.2" y="339.5" xml:space="preserve">终</text>
+    <text x="52.4" y="339.5" xml:space="preserve">链</text>
+    <text x="68.6" y="339.5" xml:space="preserve">接</text>
+    <text x="84.8" y="339.5" xml:space="preserve">:</text>
+    <text x="52.4" y="359.8" xml:space="preserve">GMStdRobotLib.elf</text>
+    <text x="198.2" y="359.8" xml:space="preserve">=</text>
+    <text x="214.4" y="359.8" xml:space="preserve">Task/</text>
+    <text x="263.0" y="359.8" xml:space="preserve">源</text>
+    <text x="279.2" y="359.8" xml:space="preserve">码</text>
+    <text x="303.5" y="359.8" xml:space="preserve">+</text>
+    <text x="319.7" y="359.8" xml:space="preserve">gsrl</text>
+    <text x="360.2" y="359.8" xml:space="preserve">库</text>
+    <text x="384.5" y="359.8" xml:space="preserve">+</text>
+    <text x="400.7" y="359.8" xml:space="preserve">stm32cubemx</text>
+    <text x="497.9" y="359.8" xml:space="preserve">库</text>
+    </g>
+  </g>
+</svg>

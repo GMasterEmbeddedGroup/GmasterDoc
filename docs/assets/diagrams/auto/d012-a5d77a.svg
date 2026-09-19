@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 615 141" width="615" height="141" role="img" aria-labelledby="ttl dsc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Noto Sans Mono CJK SC', 'Microsoft YaHei', monospace">
+  <title id="ttl">捕获列表 / 参数列表 / 返回类型（可选） / 函数体</title>
+  <desc id="dsc">自动由 ASCII 示意图矢量化生成，源：docs/软件组/培训/C++进阶/lambda表达式.md 第 46-52 行</desc>
+  <g transform="scale(1)">
+    <rect x="0.75" y="0.75" width="100%" height="100%" rx="14" fill="#f7f9fc" stroke="#dce3ec" stroke-width="1.5"/>
+    <g stroke="#8b97b5" stroke-width="1.4" stroke-linecap="round">
+    <line x1="56.4" y1="50.4" x2="97.0" y2="50.4"/>
+    <line x1="129.3" y1="50.4" x2="210.3" y2="50.4"/>
+    <line x1="275.1" y1="50.4" x2="364.2" y2="50.4"/>
+    <line x1="396.6" y1="50.4" x2="526.2" y2="50.4"/>
+    <line x1="117.2" y1="90.9" x2="595.1" y2="90.9"/>
+    <line x1="56.4" y1="50.4" x2="56.4" y2="60.5"/>
+    <line x1="97.0" y1="50.4" x2="97.0" y2="60.5"/>
+    <line x1="129.3" y1="50.4" x2="129.3" y2="60.5"/>
+    <line x1="210.3" y1="50.4" x2="210.3" y2="60.5"/>
+    <line x1="275.1" y1="50.4" x2="275.1" y2="60.5"/>
+    <line x1="364.2" y1="50.4" x2="364.2" y2="60.5"/>
+    <line x1="396.6" y1="50.4" x2="396.6" y2="60.5"/>
+    <line x1="526.2" y1="50.4" x2="526.2" y2="60.5"/>
+    </g>
+    <g fill="#1f2430" font-size="13.5">
+    <text x="20.0" y="35.8" xml:space="preserve">//</text>
+    <text x="52.4" y="35.8" xml:space="preserve">捕</text>
+    <text x="68.6" y="35.8" xml:space="preserve">获</text>
+    <text x="84.8" y="35.8" xml:space="preserve">列</text>
+    <text x="101.0" y="35.8" xml:space="preserve">表</text>
+    <text x="149.6" y="35.8" xml:space="preserve">参</text>
+    <text x="165.8" y="35.8" xml:space="preserve">数</text>
+    <text x="182.0" y="35.8" xml:space="preserve">列</text>
+    <text x="198.2" y="35.8" xml:space="preserve">表</text>
+    <text x="295.4" y="35.8" xml:space="preserve">返</text>
+    <text x="311.6" y="35.8" xml:space="preserve">回</text>
+    <text x="327.8" y="35.8" xml:space="preserve">类</text>
+    <text x="344.0" y="35.8" xml:space="preserve">型</text>
+    <text x="360.2" y="35.8" xml:space="preserve">（</text>
+    <text x="376.4" y="35.8" xml:space="preserve">可</text>
+    <text x="392.6" y="35.8" xml:space="preserve">选</text>
+    <text x="408.8" y="35.8" xml:space="preserve">）</text>
+    <text x="441.2" y="35.8" xml:space="preserve">函</text>
+    <text x="457.4" y="35.8" xml:space="preserve">数</text>
+    <text x="473.6" y="35.8" xml:space="preserve">体</text>
+    <text x="20.0" y="56.0" xml:space="preserve">//</text>
+    <text x="52.4" y="76.3" xml:space="preserve">[&amp;x,</text>
+    <text x="92.9" y="76.3" xml:space="preserve">y](int</text>
+    <text x="149.6" y="76.3" xml:space="preserve">a,</text>
+    <text x="173.9" y="76.3" xml:space="preserve">float</text>
+    <text x="222.5" y="76.3" xml:space="preserve">b)</text>
+    <text x="246.8" y="76.3" xml:space="preserve">-&gt;</text>
+    <text x="271.1" y="76.3" xml:space="preserve">bool</text>
+    <text x="384.5" y="76.3" xml:space="preserve">{</text>
+    <text x="400.7" y="76.3" xml:space="preserve">return</text>
+    <text x="457.4" y="76.3" xml:space="preserve">a</text>
+    <text x="473.6" y="76.3" xml:space="preserve">&gt;</text>
+    <text x="489.8" y="76.3" xml:space="preserve">b</text>
+    <text x="506.0" y="76.3" xml:space="preserve">&amp;&amp;</text>
+    <text x="530.3" y="76.3" xml:space="preserve">x</text>
+    <text x="546.5" y="76.3" xml:space="preserve">&gt;</text>
+    <text x="562.7" y="76.3" xml:space="preserve">y;</text>
+    <text x="587.0" y="76.3" xml:space="preserve">}</text>
+    <text x="20.0" y="96.5" xml:space="preserve">//</text>
+    <text x="20.0" y="116.8" xml:space="preserve">//</text>
+    <text x="263.0" y="116.8" xml:space="preserve">一</text>
+    <text x="279.2" y="116.8" xml:space="preserve">个</text>
+    <text x="295.4" y="116.8" xml:space="preserve">完</text>
+    <text x="311.6" y="116.8" xml:space="preserve">整</text>
+    <text x="327.8" y="116.8" xml:space="preserve">的</text>
+    <text x="352.1" y="116.8" xml:space="preserve">lambda</text>
+    </g>
+  </g>
+</svg>

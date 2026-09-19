@@ -12,33 +12,21 @@ UART（Universal Asynchronous Receiver/Transmitter，通用异步收发器）是
 
 通信协议的第一层分类：是否需要独立的[时钟](./02-时钟树与总线架构.md)线。
 
-```
-同步通信（如 SPI）:
-  SCLK ──┐┌──┐┌──┐┌──┐┌──    ← 独立的时钟线，收发双方用同一时钟
-  MOSI ──┘└──┘└──┘└──┘└──    ← 数据线
-        上升沿采样
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d063-d6974d.svg" alt="同步通信（如 SPI）:">
+  <figcaption>图：同步通信（如 SPI）:</figcaption>
+</figure>
 
-异步通信（如 UART）:
-  TX ──┐     ┌───┐   ┌─      ← 只有数据线，没有时钟线
-       │     │   │   │
-       └─────┘   └───┘
-       收发双方各自独立计时，必须约定相同的波特率
-```
 
 ### 1.2 UART 解决的问题
 
 UART 将并行的字节数据转换为串行的比特流，通过一根 TX 线和一根 RX 线传输。异步意味着**不用共享时钟**——双方约定好传输速率（波特率）即可。
 
-```
-发送端:                            接收端:
-   ┌───┐                            ┌───┐
-   │ H │ 并行数据                    │ H │
-   │ e │ ────┐               ┌────  │ e │
-   │ l │     │   串行比特流   │      │ l │
-   │ l │     └───────────────┘      │ l │
-   │ o │  TX ───────────────── RX   │ o │
-   └───┘                            └───┘
-```
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d064-906c43.svg" alt="发送端: / 接收端:">
+  <figcaption>图：发送端: / 接收端:</figcaption>
+</figure>
+
 
 ---
 
@@ -48,14 +36,11 @@ UART 将并行的字节数据转换为串行的比特流，通过一根 TX 线�
 
 一个 UART 数据帧包含以下部分：
 
-```
-空闲    起始位    数据位 (5~9 bit)    [校验位]  停止位   空闲
-────┐   ┌───┐ ┌─┐ ┌─┐ ┌─┐ ┌─┐ ┌─┐ ┌───┐ ┌───┐
-    │   │   │ │ │ │ │ │ │ │ │ │ │ │   │ │   │
-    └───┘   └─┘ └─┘ └─┘ └─┘ └─┘ └───┘ └───┘
-        └ D0  D1  D2  D3  D4  D5  D6  D7 ┘
-        先发 LSB（最低位），最后发 MSB（最高位）
-```
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d065-91c83f.svg" alt="空闲 / 起始位 / 数据位 (5~9 bit) / [校验位] / 停止位 / 空闲">
+  <figcaption>图：空闲 / 起始位 / 数据位 (5~9 bit) / [校验位] / 停止位 / 空闲</figcaption>
+</figure>
+
 
 | 组成部分 | 长度 | 说明 |
 |---------|------|------|
@@ -103,42 +88,21 @@ UART 将并行的字节数据转换为串行的比特流，通过一根 TX 线�
 
 STM32 的 USART（Universal Synchronous/Asynchronous Receiver/Transmitter）不仅支持异步通信，还支持同步模式（带时钟线）。在 GSRL 中我们只使用异步模式（UART）。
 
-```
-┌─────────────────────────────────────────────┐
-│               USART 外设内部                  │
-│                                              │
-│  TX 引脚 ←── 发送移位寄存器 ←── 发送数据寄存器  │
-│              (并→串转换)       (TDR)          │
-│                                              │
-│  RX 引脚 ──→ 接收移位寄存器 ──→ 接收数据寄存器  │
-│              (串→并转换)       (RDR)          │
-│                                              │
-│          波特率发生器 (BRR)                    │
-│          ┌─────────────────┐                 │
-│          │ 总线时钟 ÷ BRR  │ → 采样时钟       │
-│          └─────────────────┘                 │
-│                                              │
-│          过采样 (16× 或 8×)                   │
-│          每个 bit 采样 16 次，取中间 3 次判多数  │
-└─────────────────────────────────────────────┘
-```
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d066-c2de8e.svg" alt="USART 外设内部">
+  <figcaption>图：USART 外设内部</figcaption>
+</figure>
+
 
 ### 3.2 过采样机制
 
 UART 接收端并不知道发送端的精确时钟相位，因此需要**过采样**来找到每个比特的最佳采样点：
 
-```
-发送信号:  ──┐     ┌───────────┐     ┌──
-            │     │           │     │
-            └─────┘           └─────┘
-           起始位             数据位
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d067-b49df8.svg" alt="发送信号:">
+  <figcaption>图：发送信号:</figcaption>
+</figure>
 
-16× 采样:  0123456789ABCDEF  0123456789...
-                 ↑                ↑
-           检测到下降沿      在第 8,9,10 次
-           之后第 8,9,10     采样中取多数
-           次采样确认起始位
-```
 
 ---
 
@@ -180,13 +144,11 @@ GSRL 的做法：
    准备接收下一帧
 ```
 
-```
-时间轴：
-  RX:   [字节1][字节2][字节3] ...... [字节N]  ────空闲 > 1字节时间────
-                                                    │
-                                              空闲中断触发
-                                             Size = N, 调用回调
-```
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d068-50a077.svg" alt="时间轴：">
+  <figcaption>图：时间轴：</figcaption>
+</figure>
+
 
 ### 4.3 GSRL Driver 实现
 

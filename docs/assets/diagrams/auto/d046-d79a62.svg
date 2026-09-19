@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 469 465" width="469" height="465" role="img" aria-labelledby="ttl dsc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Noto Sans Mono CJK SC', 'Microsoft YaHei', monospace">
+  <title id="ttl">Cortex-M4 内核</title>
+  <desc id="dsc">自动由 ASCII 示意图矢量化生成，源：docs/软件组/培训/嵌入式基础/04-中断与NVIC.md 第 64-86 行</desc>
+  <g transform="scale(1)">
+    <rect x="0.75" y="0.75" width="100%" height="100%" rx="14" fill="#f7f9fc" stroke="#dce3ec" stroke-width="1.5"/>
+    <g stroke="#8b97b5" stroke-width="1.4" stroke-linecap="round">
+    <line x1="24.1" y1="30.1" x2="429.0" y2="30.1"/>
+    <line x1="48.3" y1="70.6" x2="404.8" y2="70.6"/>
+    <line x1="72.7" y1="111.1" x2="113.1" y2="111.1"/>
+    <line x1="129.3" y1="111.1" x2="169.8" y2="111.1"/>
+    <line x1="186.0" y1="111.1" x2="226.5" y2="111.1"/>
+    <line x1="283.2" y1="111.1" x2="323.8" y2="111.1"/>
+    <line x1="72.7" y1="151.6" x2="113.1" y2="151.6"/>
+    <line x1="129.3" y1="151.6" x2="169.8" y2="151.6"/>
+    <line x1="186.0" y1="151.6" x2="226.5" y2="151.6"/>
+    <line x1="283.2" y1="151.6" x2="323.8" y2="151.6"/>
+    <line x1="97.0" y1="192.1" x2="307.6" y2="192.1"/>
+    <line x1="48.3" y1="252.9" x2="404.8" y2="252.9"/>
+    <line x1="24.1" y1="333.9" x2="429.0" y2="333.9"/>
+    <line x1="48.3" y1="394.6" x2="129.3" y2="394.6"/>
+    <line x1="137.4" y1="394.6" x2="202.2" y2="394.6"/>
+    <line x1="210.3" y1="394.6" x2="291.3" y2="394.6"/>
+    <line x1="48.3" y1="435.1" x2="129.3" y2="435.1"/>
+    <line x1="137.4" y1="435.1" x2="202.2" y2="435.1"/>
+    <line x1="210.3" y1="435.1" x2="291.3" y2="435.1"/>
+    <line x1="24.1" y1="30.1" x2="24.1" y2="333.9"/>
+    <line x1="48.3" y1="70.6" x2="48.3" y2="252.9"/>
+    <line x1="48.3" y1="394.6" x2="48.3" y2="435.1"/>
+    <line x1="72.7" y1="111.1" x2="72.7" y2="151.6"/>
+    <line x1="88.8" y1="364.2" x2="88.8" y2="394.6"/>
+    <line x1="97.0" y1="151.6" x2="97.0" y2="192.1"/>
+    <line x1="113.1" y1="111.1" x2="113.1" y2="151.6"/>
+    <line x1="129.3" y1="111.1" x2="129.3" y2="151.6"/>
+    <line x1="129.3" y1="394.6" x2="129.3" y2="435.1"/>
+    <line x1="137.4" y1="394.6" x2="137.4" y2="435.1"/>
+    <line x1="153.7" y1="151.6" x2="153.7" y2="192.1"/>
+    <line x1="169.8" y1="111.1" x2="169.8" y2="151.6"/>
+    <line x1="169.8" y1="384.5" x2="169.8" y2="394.6"/>
+    <line x1="177.9" y1="364.2" x2="177.9" y2="384.5"/>
+    <line x1="186.0" y1="111.1" x2="186.0" y2="151.6"/>
+    <line x1="202.2" y1="202.2" x2="202.2" y2="222.5"/>
+    <line x1="202.2" y1="252.9" x2="202.2" y2="283.2"/>
+    <line x1="202.2" y1="394.6" x2="202.2" y2="435.1"/>
+    <line x1="210.3" y1="151.6" x2="210.3" y2="192.1"/>
+    <line x1="210.3" y1="394.6" x2="210.3" y2="435.1"/>
+    <line x1="226.5" y1="111.1" x2="226.5" y2="151.6"/>
+    <line x1="250.8" y1="384.5" x2="250.8" y2="394.6"/>
+    <line x1="267.0" y1="364.2" x2="267.0" y2="384.5"/>
+    <line x1="283.2" y1="111.1" x2="283.2" y2="151.6"/>
+    <line x1="283.2" y1="404.8" x2="283.2" y2="425.0"/>
+    <line x1="291.3" y1="394.6" x2="291.3" y2="404.8"/>
+    <line x1="291.3" y1="425.0" x2="291.3" y2="435.1"/>
+    <line x1="307.6" y1="151.6" x2="307.6" y2="192.1"/>
+    <line x1="323.8" y1="111.1" x2="323.8" y2="151.6"/>
+    <line x1="388.6" y1="101.0" x2="388.6" y2="161.8"/>
+    <line x1="396.6" y1="161.8" x2="396.6" y2="202.2"/>
+    <line x1="404.8" y1="70.6" x2="404.8" y2="101.0"/>
+    <line x1="404.8" y1="202.2" x2="404.8" y2="222.5"/>
+    <line x1="404.8" y1="242.8" x2="404.8" y2="252.9"/>
+    <line x1="412.8" y1="101.0" x2="412.8" y2="161.8"/>
+    <line x1="420.9" y1="161.8" x2="420.9" y2="202.2"/>
+    <line x1="420.9" y1="222.5" x2="420.9" y2="242.8"/>
+    <line x1="429.0" y1="30.1" x2="429.0" y2="40.2"/>
+    <line x1="429.0" y1="60.5" x2="429.0" y2="101.0"/>
+    <line x1="429.0" y1="202.2" x2="429.0" y2="222.5"/>
+    <line x1="429.0" y1="242.8" x2="429.0" y2="263.0"/>
+    <line x1="429.0" y1="323.8" x2="429.0" y2="333.9"/>
+    <line x1="437.1" y1="40.2" x2="437.1" y2="60.5"/>
+    <line x1="437.1" y1="263.0" x2="437.1" y2="303.5"/>
+    <line x1="445.2" y1="222.5" x2="445.2" y2="242.8"/>
+    <line x1="445.2" y1="303.5" x2="445.2" y2="323.8"/>
+    </g>
+    <g fill="#1f2430" font-size="13.5">
+    <text x="173.9" y="56.0" xml:space="preserve">Cortex-M4</text>
+    <text x="254.9" y="56.0" xml:space="preserve">内</text>
+    <text x="271.1" y="56.0" xml:space="preserve">核</text>
+    <text x="165.8" y="96.5" xml:space="preserve">NVIC</text>
+    <text x="76.7" y="137.0" xml:space="preserve">IRQ0</text>
+    <text x="133.4" y="137.0" xml:space="preserve">IRQ1</text>
+    <text x="190.1" y="137.0" xml:space="preserve">IRQ2</text>
+    <text x="238.7" y="137.0" xml:space="preserve">...</text>
+    <text x="287.3" y="137.0" xml:space="preserve">IRQn</text>
+    <text x="133.4" y="238.3" xml:space="preserve">优</text>
+    <text x="149.6" y="238.3" xml:space="preserve">先</text>
+    <text x="165.8" y="238.3" xml:space="preserve">级</text>
+    <text x="182.0" y="238.3" xml:space="preserve">仲</text>
+    <text x="198.2" y="238.3" xml:space="preserve">裁</text>
+    <text x="222.5" y="238.3" xml:space="preserve">+</text>
+    <text x="238.7" y="238.3" xml:space="preserve">嵌</text>
+    <text x="254.9" y="238.3" xml:space="preserve">套</text>
+    <text x="271.1" y="238.3" xml:space="preserve">管</text>
+    <text x="287.3" y="238.3" xml:space="preserve">理</text>
+    <text x="198.2" y="299.0" xml:space="preserve">▼</text>
+    <text x="173.9" y="319.3" xml:space="preserve">CPU</text>
+    <text x="206.3" y="319.3" xml:space="preserve">核</text>
+    <text x="222.5" y="319.3" xml:space="preserve">心</text>
+    <text x="84.8" y="359.8" xml:space="preserve">▲</text>
+    <text x="173.9" y="359.8" xml:space="preserve">▲</text>
+    <text x="263.0" y="359.8" xml:space="preserve">▲</text>
+    <text x="60.5" y="420.5" xml:space="preserve">CAN</text>
+    <text x="92.9" y="420.5" xml:space="preserve">RX</text>
+    <text x="149.6" y="420.5" xml:space="preserve">UART</text>
+    <text x="222.5" y="420.5" xml:space="preserve">TIM</text>
+    <text x="254.9" y="420.5" xml:space="preserve">IRQ</text>
+    <text x="311.6" y="420.5" xml:space="preserve">←</text>
+    <text x="327.8" y="420.5" xml:space="preserve">外</text>
+    <text x="344.0" y="420.5" xml:space="preserve">设</text>
+    <text x="360.2" y="420.5" xml:space="preserve">中</text>
+    <text x="376.4" y="420.5" xml:space="preserve">断</text>
+    <text x="392.6" y="420.5" xml:space="preserve">信</text>
+    <text x="408.8" y="420.5" xml:space="preserve">号</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 486" width="380" height="486" role="img" aria-labelledby="ttl dsc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Noto Sans Mono CJK SC', 'Microsoft YaHei', monospace">
+  <title id="ttl">Root [Selector: 二选一]</title>
+  <desc id="dsc">自动由 ASCII 示意图矢量化生成，源：docs/软件组/培训/C++进阶/行为树.md 第 46-69 行</desc>
+  <g transform="scale(1)">
+    <rect x="0.75" y="0.75" width="100%" height="100%" rx="14" fill="#f7f9fc" stroke="#dce3ec" stroke-width="1.5"/>
+    <g stroke="#8b97b5" stroke-width="1.4" stroke-linecap="round">
+    <line x1="24.1" y1="50.4" x2="44.3" y2="50.4"/>
+    <line x1="56.4" y1="70.6" x2="76.7" y2="70.6"/>
+    <line x1="56.4" y1="90.9" x2="76.7" y2="90.9"/>
+    <line x1="24.1" y1="131.4" x2="44.3" y2="131.4"/>
+    <line x1="56.4" y1="151.6" x2="76.7" y2="151.6"/>
+    <line x1="88.8" y1="171.9" x2="109.1" y2="171.9"/>
+    <line x1="121.2" y1="192.1" x2="141.5" y2="192.1"/>
+    <line x1="121.2" y1="212.4" x2="141.5" y2="212.4"/>
+    <line x1="88.8" y1="232.6" x2="109.1" y2="232.6"/>
+    <line x1="121.2" y1="252.9" x2="141.5" y2="252.9"/>
+    <line x1="121.2" y1="273.1" x2="141.5" y2="273.1"/>
+    <line x1="88.8" y1="293.4" x2="109.1" y2="293.4"/>
+    <line x1="56.4" y1="313.6" x2="76.7" y2="313.6"/>
+    <line x1="56.4" y1="333.9" x2="76.7" y2="333.9"/>
+    <line x1="56.4" y1="354.1" x2="76.7" y2="354.1"/>
+    <line x1="56.4" y1="374.4" x2="76.7" y2="374.4"/>
+    <line x1="56.4" y1="394.6" x2="76.7" y2="394.6"/>
+    <line x1="88.8" y1="414.9" x2="109.1" y2="414.9"/>
+    <line x1="88.8" y1="435.1" x2="109.1" y2="435.1"/>
+    <line x1="56.4" y1="455.4" x2="76.7" y2="455.4"/>
+    <line x1="24.1" y1="40.2" x2="24.1" y2="131.4"/>
+    <line x1="56.4" y1="60.5" x2="56.4" y2="90.9"/>
+    <line x1="56.4" y1="141.5" x2="56.4" y2="455.4"/>
+    <line x1="88.8" y1="161.8" x2="88.8" y2="293.4"/>
+    <line x1="88.8" y1="404.8" x2="88.8" y2="435.1"/>
+    <line x1="121.2" y1="182.0" x2="121.2" y2="212.4"/>
+    <line x1="121.2" y1="242.8" x2="121.2" y2="273.1"/>
+    </g>
+    <g fill="#1f2430" font-size="13.5">
+    <text x="20.0" y="35.8" xml:space="preserve">Root</text>
+    <text x="60.5" y="35.8" xml:space="preserve">[Selector:</text>
+    <text x="149.6" y="35.8" xml:space="preserve">二</text>
+    <text x="165.8" y="35.8" xml:space="preserve">选</text>
+    <text x="182.0" y="35.8" xml:space="preserve">一</text>
+    <text x="198.2" y="35.8" xml:space="preserve">]</text>
+    <text x="52.4" y="56.0" xml:space="preserve">倒</text>
+    <text x="68.6" y="56.0" xml:space="preserve">地</text>
+    <text x="84.8" y="56.0" xml:space="preserve">自</text>
+    <text x="101.0" y="56.0" xml:space="preserve">起</text>
+    <text x="125.3" y="56.0" xml:space="preserve">[Sequence:</text>
+    <text x="214.4" y="56.0" xml:space="preserve">两</text>
+    <text x="230.6" y="56.0" xml:space="preserve">个</text>
+    <text x="246.8" y="56.0" xml:space="preserve">都</text>
+    <text x="263.0" y="56.0" xml:space="preserve">成</text>
+    <text x="279.2" y="56.0" xml:space="preserve">功</text>
+    <text x="295.4" y="56.0" xml:space="preserve">才</text>
+    <text x="311.6" y="56.0" xml:space="preserve">成</text>
+    <text x="327.8" y="56.0" xml:space="preserve">功</text>
+    <text x="344.0" y="56.0" xml:space="preserve">]</text>
+    <text x="84.8" y="76.3" xml:space="preserve">倒</text>
+    <text x="101.0" y="76.3" xml:space="preserve">地</text>
+    <text x="117.2" y="76.3" xml:space="preserve">检</text>
+    <text x="133.4" y="76.3" xml:space="preserve">测</text>
+    <text x="157.7" y="76.3" xml:space="preserve">[Condition]</text>
+    <text x="84.8" y="96.5" xml:space="preserve">自</text>
+    <text x="101.0" y="96.5" xml:space="preserve">起</text>
+    <text x="117.2" y="96.5" xml:space="preserve">状</text>
+    <text x="133.4" y="96.5" xml:space="preserve">态</text>
+    <text x="149.6" y="96.5" xml:space="preserve">机</text>
+    <text x="173.9" y="96.5" xml:space="preserve">[Action]</text>
+    <text x="52.4" y="137.0" xml:space="preserve">默</text>
+    <text x="68.6" y="137.0" xml:space="preserve">认</text>
+    <text x="84.8" y="137.0" xml:space="preserve">运</text>
+    <text x="101.0" y="137.0" xml:space="preserve">动</text>
+    <text x="117.2" y="137.0" xml:space="preserve">控</text>
+    <text x="133.4" y="137.0" xml:space="preserve">制</text>
+    <text x="157.7" y="137.0" xml:space="preserve">[Sequence:</text>
+    <text x="246.8" y="137.0" xml:space="preserve">全</text>
+    <text x="263.0" y="137.0" xml:space="preserve">部</text>
+    <text x="279.2" y="137.0" xml:space="preserve">依</text>
+    <text x="295.4" y="137.0" xml:space="preserve">次</text>
+    <text x="311.6" y="137.0" xml:space="preserve">执</text>
+    <text x="327.8" y="137.0" xml:space="preserve">行</text>
+    <text x="344.0" y="137.0" xml:space="preserve">]</text>
+    <text x="84.8" y="157.3" xml:space="preserve">动</text>
+    <text x="101.0" y="157.3" xml:space="preserve">作</text>
+    <text x="117.2" y="157.3" xml:space="preserve">模</text>
+    <text x="133.4" y="157.3" xml:space="preserve">式</text>
+    <text x="149.6" y="157.3" xml:space="preserve">选</text>
+    <text x="165.8" y="157.3" xml:space="preserve">择</text>
+    <text x="190.1" y="157.3" xml:space="preserve">[Selector:</text>
+    <text x="279.2" y="157.3" xml:space="preserve">三</text>
+    <text x="295.4" y="157.3" xml:space="preserve">选</text>
+    <text x="311.6" y="157.3" xml:space="preserve">一</text>
+    <text x="327.8" y="157.3" xml:space="preserve">]</text>
+    <text x="117.2" y="177.5" xml:space="preserve">上</text>
+    <text x="133.4" y="177.5" xml:space="preserve">台</text>
+    <text x="149.6" y="177.5" xml:space="preserve">阶</text>
+    <text x="173.9" y="177.5" xml:space="preserve">[Sequence]</text>
+    <text x="149.6" y="197.8" xml:space="preserve">上</text>
+    <text x="165.8" y="197.8" xml:space="preserve">台</text>
+    <text x="182.0" y="197.8" xml:space="preserve">阶</text>
+    <text x="198.2" y="197.8" xml:space="preserve">信</text>
+    <text x="214.4" y="197.8" xml:space="preserve">号</text>
+    <text x="230.6" y="197.8" xml:space="preserve">检</text>
+    <text x="246.8" y="197.8" xml:space="preserve">测</text>
+    <text x="271.1" y="197.8" xml:space="preserve">[Condition]</text>
+    <text x="149.6" y="218.0" xml:space="preserve">上</text>
+    <text x="165.8" y="218.0" xml:space="preserve">台</text>
+    <text x="182.0" y="218.0" xml:space="preserve">阶</text>
+    <text x="198.2" y="218.0" xml:space="preserve">执</text>
+    <text x="214.4" y="218.0" xml:space="preserve">行</text>
+    <text x="238.7" y="218.0" xml:space="preserve">[Action]</text>
+    <text x="117.2" y="238.3" xml:space="preserve">跳</text>
+    <text x="133.4" y="238.3" xml:space="preserve">跃</text>
+    <text x="157.7" y="238.3" xml:space="preserve">[Sequence]</text>
+    <text x="149.6" y="258.5" xml:space="preserve">跳</text>
+    <text x="165.8" y="258.5" xml:space="preserve">跃</text>
+    <text x="182.0" y="258.5" xml:space="preserve">信</text>
+    <text x="198.2" y="258.5" xml:space="preserve">号</text>
+    <text x="214.4" y="258.5" xml:space="preserve">检</text>
+    <text x="230.6" y="258.5" xml:space="preserve">测</text>
+    <text x="254.9" y="258.5" xml:space="preserve">[Condition]</text>
+    <text x="149.6" y="278.8" xml:space="preserve">跳</text>
+    <text x="165.8" y="278.8" xml:space="preserve">跃</text>
+    <text x="182.0" y="278.8" xml:space="preserve">状</text>
+    <text x="198.2" y="278.8" xml:space="preserve">态</text>
+    <text x="214.4" y="278.8" xml:space="preserve">机</text>
+    <text x="238.7" y="278.8" xml:space="preserve">[Action]</text>
+    <text x="117.2" y="299.0" xml:space="preserve">常</text>
+    <text x="133.4" y="299.0" xml:space="preserve">规</text>
+    <text x="149.6" y="299.0" xml:space="preserve">遥</text>
+    <text x="165.8" y="299.0" xml:space="preserve">控</text>
+    <text x="182.0" y="299.0" xml:space="preserve">目</text>
+    <text x="198.2" y="299.0" xml:space="preserve">标</text>
+    <text x="214.4" y="299.0" xml:space="preserve">设</text>
+    <text x="230.6" y="299.0" xml:space="preserve">定</text>
+    <text x="254.9" y="299.0" xml:space="preserve">[Action]</text>
+    <text x="84.8" y="319.3" xml:space="preserve">平</text>
+    <text x="101.0" y="319.3" xml:space="preserve">衡</text>
+    <text x="117.2" y="319.3" xml:space="preserve">控</text>
+    <text x="133.4" y="319.3" xml:space="preserve">制</text>
+    <text x="157.7" y="319.3" xml:space="preserve">LQR</text>
+    <text x="190.1" y="319.3" xml:space="preserve">[Action]</text>
+    <text x="84.8" y="339.5" xml:space="preserve">转</text>
+    <text x="101.0" y="339.5" xml:space="preserve">向</text>
+    <text x="117.2" y="339.5" xml:space="preserve">控</text>
+    <text x="133.4" y="339.5" xml:space="preserve">制</text>
+    <text x="157.7" y="339.5" xml:space="preserve">PID</text>
+    <text x="190.1" y="339.5" xml:space="preserve">[Action]</text>
+    <text x="84.8" y="359.8" xml:space="preserve">功</text>
+    <text x="101.0" y="359.8" xml:space="preserve">率</text>
+    <text x="117.2" y="359.8" xml:space="preserve">控</text>
+    <text x="133.4" y="359.8" xml:space="preserve">制</text>
+    <text x="157.7" y="359.8" xml:space="preserve">[Action]</text>
+    <text x="84.8" y="380.0" xml:space="preserve">防</text>
+    <text x="101.0" y="380.0" xml:space="preserve">劈</text>
+    <text x="117.2" y="380.0" xml:space="preserve">叉</text>
+    <text x="133.4" y="380.0" xml:space="preserve">补</text>
+    <text x="149.6" y="380.0" xml:space="preserve">偿</text>
+    <text x="173.9" y="380.0" xml:space="preserve">PID</text>
+    <text x="206.3" y="380.0" xml:space="preserve">[Action]</text>
+    <text x="84.8" y="400.3" xml:space="preserve">腿</text>
+    <text x="101.0" y="400.3" xml:space="preserve">长</text>
+    <text x="117.2" y="400.3" xml:space="preserve">与</text>
+    <text x="133.4" y="400.3" xml:space="preserve">姿</text>
+    <text x="149.6" y="400.3" xml:space="preserve">态</text>
+    <text x="165.8" y="400.3" xml:space="preserve">控</text>
+    <text x="182.0" y="400.3" xml:space="preserve">制</text>
+    <text x="206.3" y="400.3" xml:space="preserve">[Sequence]</text>
+    <text x="117.2" y="420.5" xml:space="preserve">腿</text>
+    <text x="133.4" y="420.5" xml:space="preserve">长</text>
+    <text x="149.6" y="420.5" xml:space="preserve">控</text>
+    <text x="165.8" y="420.5" xml:space="preserve">制</text>
+    <text x="190.1" y="420.5" xml:space="preserve">PID</text>
+    <text x="222.5" y="420.5" xml:space="preserve">[Action]</text>
+    <text x="117.2" y="440.8" xml:space="preserve">Roll</text>
+    <text x="157.7" y="440.8" xml:space="preserve">控</text>
+    <text x="173.9" y="440.8" xml:space="preserve">制</text>
+    <text x="198.2" y="440.8" xml:space="preserve">PID</text>
+    <text x="230.6" y="440.8" xml:space="preserve">[Action]</text>
+    <text x="84.8" y="461.0" xml:space="preserve">腿</text>
+    <text x="101.0" y="461.0" xml:space="preserve">部</text>
+    <text x="117.2" y="461.0" xml:space="preserve">控</text>
+    <text x="133.4" y="461.0" xml:space="preserve">制</text>
+    <text x="157.7" y="461.0" xml:space="preserve">VMC</text>
+    <text x="190.1" y="461.0" xml:space="preserve">[Action]</text>
+    </g>
+  </g>
+</svg>

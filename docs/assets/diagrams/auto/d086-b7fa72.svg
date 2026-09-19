@@ -1,0 +1,225 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 566 749" width="566" height="749" role="img" aria-labelledby="ttl dsc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Noto Sans Mono CJK SC', 'Microsoft YaHei', monospace">
+  <title id="ttl">数据采集 (中断驱动)</title>
+  <desc id="dsc">自动由 ASCII 示意图矢量化生成，源：docs/软件组/培训/嵌入式基础/12-IMU姿态传感器.md 第 224-260 行</desc>
+  <g transform="scale(1)">
+    <rect x="0.75" y="0.75" width="100%" height="100%" rx="14" fill="#f7f9fc" stroke="#dce3ec" stroke-width="1.5"/>
+    <g stroke="#8b97b5" stroke-width="1.4" stroke-linecap="round">
+    <line x1="24.1" y1="30.1" x2="526.2" y2="30.1"/>
+    <line x1="141.5" y1="90.9" x2="157.7" y2="90.9"/>
+    <line x1="64.5" y1="131.4" x2="84.8" y2="131.4"/>
+    <line x1="97.0" y1="151.6" x2="117.2" y2="151.6"/>
+    <line x1="97.0" y1="171.9" x2="117.2" y2="171.9"/>
+    <line x1="64.5" y1="212.4" x2="84.8" y2="212.4"/>
+    <line x1="97.0" y1="232.6" x2="117.2" y2="232.6"/>
+    <line x1="97.0" y1="252.9" x2="117.2" y2="252.9"/>
+    <line x1="64.5" y1="293.4" x2="84.8" y2="293.4"/>
+    <line x1="48.3" y1="354.1" x2="429.0" y2="354.1"/>
+    <line x1="88.8" y1="455.4" x2="109.1" y2="455.4"/>
+    <line x1="88.8" y1="536.4" x2="109.1" y2="536.4"/>
+    <line x1="121.2" y1="556.6" x2="141.5" y2="556.6"/>
+    <line x1="121.2" y1="576.9" x2="141.5" y2="576.9"/>
+    <line x1="121.2" y1="597.1" x2="141.5" y2="597.1"/>
+    <line x1="121.2" y1="617.4" x2="141.5" y2="617.4"/>
+    <line x1="48.3" y1="698.4" x2="429.0" y2="698.4"/>
+    <line x1="24.1" y1="718.6" x2="526.2" y2="718.6"/>
+    <line x1="24.1" y1="30.1" x2="24.1" y2="718.6"/>
+    <line x1="48.3" y1="354.1" x2="48.3" y2="698.4"/>
+    <line x1="64.5" y1="101.0" x2="64.5" y2="293.4"/>
+    <line x1="88.8" y1="425.0" x2="88.8" y2="536.4"/>
+    <line x1="97.0" y1="141.5" x2="97.0" y2="171.9"/>
+    <line x1="97.0" y1="222.5" x2="97.0" y2="252.9"/>
+    <line x1="97.0" y1="303.5" x2="97.0" y2="323.8"/>
+    <line x1="121.2" y1="546.5" x2="121.2" y2="617.4"/>
+    <line x1="420.9" y1="668.0" x2="420.9" y2="688.2"/>
+    <line x1="429.0" y1="354.1" x2="429.0" y2="445.2"/>
+    <line x1="429.0" y1="506.0" x2="429.0" y2="526.2"/>
+    <line x1="429.0" y1="627.5" x2="429.0" y2="668.0"/>
+    <line x1="429.0" y1="688.2" x2="429.0" y2="698.4"/>
+    <line x1="437.1" y1="445.2" x2="437.1" y2="506.0"/>
+    <line x1="437.1" y1="526.2" x2="437.1" y2="627.5"/>
+    <line x1="510.0" y1="668.0" x2="510.0" y2="688.2"/>
+    <line x1="518.1" y1="344.0" x2="518.1" y2="445.2"/>
+    <line x1="518.1" y1="506.0" x2="518.1" y2="526.2"/>
+    <line x1="518.1" y1="627.5" x2="518.1" y2="668.0"/>
+    <line x1="518.1" y1="688.2" x2="518.1" y2="708.5"/>
+    <line x1="526.2" y1="30.1" x2="526.2" y2="40.2"/>
+    <line x1="526.2" y1="60.5" x2="526.2" y2="141.5"/>
+    <line x1="526.2" y1="182.0" x2="526.2" y2="222.5"/>
+    <line x1="526.2" y1="263.0" x2="526.2" y2="344.0"/>
+    <line x1="526.2" y1="445.2" x2="526.2" y2="506.0"/>
+    <line x1="526.2" y1="526.2" x2="526.2" y2="627.5"/>
+    <line x1="526.2" y1="708.5" x2="526.2" y2="718.6"/>
+    <line x1="534.4" y1="141.5" x2="534.4" y2="182.0"/>
+    <line x1="534.4" y1="242.8" x2="534.4" y2="263.0"/>
+    <line x1="542.4" y1="40.2" x2="542.4" y2="60.5"/>
+    <line x1="542.4" y1="222.5" x2="542.4" y2="242.8"/>
+    </g>
+    <g fill="#1f2430" font-size="13.5">
+    <text x="198.2" y="56.0" xml:space="preserve">数</text>
+    <text x="214.4" y="56.0" xml:space="preserve">据</text>
+    <text x="230.6" y="56.0" xml:space="preserve">采</text>
+    <text x="246.8" y="56.0" xml:space="preserve">集</text>
+    <text x="271.1" y="56.0" xml:space="preserve">(</text>
+    <text x="279.2" y="56.0" xml:space="preserve">中</text>
+    <text x="295.4" y="56.0" xml:space="preserve">断</text>
+    <text x="311.6" y="56.0" xml:space="preserve">驱</text>
+    <text x="327.8" y="56.0" xml:space="preserve">动</text>
+    <text x="344.0" y="56.0" xml:space="preserve">)</text>
+    <text x="44.3" y="96.5" xml:space="preserve">BMI088</text>
+    <text x="101.0" y="96.5" xml:space="preserve">INT1</text>
+    <text x="157.7" y="96.5" xml:space="preserve">→</text>
+    <text x="173.9" y="96.5" xml:space="preserve">EXTI4</text>
+    <text x="222.5" y="96.5" xml:space="preserve">中</text>
+    <text x="238.7" y="96.5" xml:space="preserve">断</text>
+    <text x="92.9" y="137.0" xml:space="preserve">readRawData()</text>
+    <text x="125.3" y="157.3" xml:space="preserve">SPI</text>
+    <text x="157.7" y="157.3" xml:space="preserve">读</text>
+    <text x="173.9" y="157.3" xml:space="preserve">加</text>
+    <text x="190.1" y="157.3" xml:space="preserve">速</text>
+    <text x="206.3" y="157.3" xml:space="preserve">度</text>
+    <text x="222.5" y="157.3" xml:space="preserve">计</text>
+    <text x="246.8" y="157.3" xml:space="preserve">X/Y/Z</text>
+    <text x="295.4" y="157.3" xml:space="preserve">(6</text>
+    <text x="319.7" y="157.3" xml:space="preserve">字</text>
+    <text x="335.9" y="157.3" xml:space="preserve">节</text>
+    <text x="352.1" y="157.3" xml:space="preserve">)</text>
+    <text x="125.3" y="177.5" xml:space="preserve">SPI</text>
+    <text x="157.7" y="177.5" xml:space="preserve">读</text>
+    <text x="173.9" y="177.5" xml:space="preserve">陀</text>
+    <text x="190.1" y="177.5" xml:space="preserve">螺</text>
+    <text x="206.3" y="177.5" xml:space="preserve">仪</text>
+    <text x="230.6" y="177.5" xml:space="preserve">X/Y/Z</text>
+    <text x="279.2" y="177.5" xml:space="preserve">(6</text>
+    <text x="303.5" y="177.5" xml:space="preserve">字</text>
+    <text x="319.7" y="177.5" xml:space="preserve">节</text>
+    <text x="335.9" y="177.5" xml:space="preserve">，</text>
+    <text x="352.1" y="177.5" xml:space="preserve">跳</text>
+    <text x="368.3" y="177.5" xml:space="preserve">过</text>
+    <text x="392.6" y="177.5" xml:space="preserve">chipID)</text>
+    <text x="92.9" y="218.0" xml:space="preserve">dataCalibration()</text>
+    <text x="125.3" y="238.3" xml:space="preserve">修</text>
+    <text x="141.5" y="238.3" xml:space="preserve">正</text>
+    <text x="157.7" y="238.3" xml:space="preserve">安</text>
+    <text x="173.9" y="238.3" xml:space="preserve">装</text>
+    <text x="190.1" y="238.3" xml:space="preserve">误</text>
+    <text x="206.3" y="238.3" xml:space="preserve">差</text>
+    <text x="222.5" y="238.3" xml:space="preserve">旋</text>
+    <text x="238.7" y="238.3" xml:space="preserve">转</text>
+    <text x="254.9" y="238.3" xml:space="preserve">矩</text>
+    <text x="271.1" y="238.3" xml:space="preserve">阵</text>
+    <text x="295.4" y="238.3" xml:space="preserve">(installSpinMatrix)</text>
+    <text x="125.3" y="258.5" xml:space="preserve">减</text>
+    <text x="141.5" y="258.5" xml:space="preserve">去</text>
+    <text x="157.7" y="258.5" xml:space="preserve">零</text>
+    <text x="173.9" y="258.5" xml:space="preserve">飘</text>
+    <text x="190.1" y="258.5" xml:space="preserve">偏</text>
+    <text x="206.3" y="258.5" xml:space="preserve">移</text>
+    <text x="230.6" y="258.5" xml:space="preserve">(gyroOffset</text>
+    <text x="327.8" y="258.5" xml:space="preserve">/</text>
+    <text x="344.0" y="258.5" xml:space="preserve">accelOffset)</text>
+    <text x="92.9" y="299.0" xml:space="preserve">IMU::solveAttitude()</text>
+    <text x="92.9" y="339.5" xml:space="preserve">▼</text>
+    <text x="117.2" y="380.0" xml:space="preserve">AHRS</text>
+    <text x="157.7" y="380.0" xml:space="preserve">姿</text>
+    <text x="173.9" y="380.0" xml:space="preserve">态</text>
+    <text x="190.1" y="380.0" xml:space="preserve">解</text>
+    <text x="206.3" y="380.0" xml:space="preserve">算</text>
+    <text x="230.6" y="380.0" xml:space="preserve">(solveAttitude)</text>
+    <text x="68.6" y="420.5" xml:space="preserve">AHRS::update(gyro,</text>
+    <text x="222.5" y="420.5" xml:space="preserve">accel,</text>
+    <text x="279.2" y="420.5" xml:space="preserve">magnet)</text>
+    <text x="117.2" y="461.0" xml:space="preserve">第</text>
+    <text x="133.4" y="461.0" xml:space="preserve">一</text>
+    <text x="149.6" y="461.0" xml:space="preserve">次</text>
+    <text x="165.8" y="461.0" xml:space="preserve">调</text>
+    <text x="182.0" y="461.0" xml:space="preserve">用</text>
+    <text x="198.2" y="461.0" xml:space="preserve">：</text>
+    <text x="214.4" y="461.0" xml:space="preserve">initQuaternion()</text>
+    <text x="117.2" y="481.3" xml:space="preserve">用</text>
+    <text x="133.4" y="481.3" xml:space="preserve">加</text>
+    <text x="149.6" y="481.3" xml:space="preserve">速</text>
+    <text x="165.8" y="481.3" xml:space="preserve">度</text>
+    <text x="182.0" y="481.3" xml:space="preserve">计</text>
+    <text x="198.2" y="481.3" xml:space="preserve">估</text>
+    <text x="214.4" y="481.3" xml:space="preserve">算</text>
+    <text x="230.6" y="481.3" xml:space="preserve">初</text>
+    <text x="246.8" y="481.3" xml:space="preserve">始</text>
+    <text x="271.1" y="481.3" xml:space="preserve">Roll/Pitch</text>
+    <text x="117.2" y="501.5" xml:space="preserve">用</text>
+    <text x="133.4" y="501.5" xml:space="preserve">磁</text>
+    <text x="149.6" y="501.5" xml:space="preserve">力</text>
+    <text x="165.8" y="501.5" xml:space="preserve">计</text>
+    <text x="182.0" y="501.5" xml:space="preserve">估</text>
+    <text x="198.2" y="501.5" xml:space="preserve">算</text>
+    <text x="214.4" y="501.5" xml:space="preserve">初</text>
+    <text x="230.6" y="501.5" xml:space="preserve">始</text>
+    <text x="254.9" y="501.5" xml:space="preserve">Yaw</text>
+    <text x="117.2" y="542.0" xml:space="preserve">后</text>
+    <text x="133.4" y="542.0" xml:space="preserve">续</text>
+    <text x="149.6" y="542.0" xml:space="preserve">调</text>
+    <text x="165.8" y="542.0" xml:space="preserve">用</text>
+    <text x="182.0" y="542.0" xml:space="preserve">：</text>
+    <text x="198.2" y="542.0" xml:space="preserve">dataProcess()</text>
+    <text x="149.6" y="562.3" xml:space="preserve">陀</text>
+    <text x="165.8" y="562.3" xml:space="preserve">螺</text>
+    <text x="182.0" y="562.3" xml:space="preserve">仪</text>
+    <text x="198.2" y="562.3" xml:space="preserve">数</text>
+    <text x="214.4" y="562.3" xml:space="preserve">据</text>
+    <text x="230.6" y="562.3" xml:space="preserve">更</text>
+    <text x="246.8" y="562.3" xml:space="preserve">新</text>
+    <text x="263.0" y="562.3" xml:space="preserve">四</text>
+    <text x="279.2" y="562.3" xml:space="preserve">元</text>
+    <text x="295.4" y="562.3" xml:space="preserve">数</text>
+    <text x="311.6" y="562.3" xml:space="preserve">（</text>
+    <text x="327.8" y="562.3" xml:space="preserve">预</text>
+    <text x="344.0" y="562.3" xml:space="preserve">测</text>
+    <text x="360.2" y="562.3" xml:space="preserve">）</text>
+    <text x="149.6" y="582.5" xml:space="preserve">加</text>
+    <text x="165.8" y="582.5" xml:space="preserve">速</text>
+    <text x="182.0" y="582.5" xml:space="preserve">度</text>
+    <text x="198.2" y="582.5" xml:space="preserve">计</text>
+    <text x="214.4" y="582.5" xml:space="preserve">修</text>
+    <text x="230.6" y="582.5" xml:space="preserve">正</text>
+    <text x="254.9" y="582.5" xml:space="preserve">Roll/Pitch</text>
+    <text x="335.9" y="582.5" xml:space="preserve">（</text>
+    <text x="352.1" y="582.5" xml:space="preserve">观</text>
+    <text x="368.3" y="582.5" xml:space="preserve">测</text>
+    <text x="384.5" y="582.5" xml:space="preserve">）</text>
+    <text x="149.6" y="602.8" xml:space="preserve">磁</text>
+    <text x="165.8" y="602.8" xml:space="preserve">力</text>
+    <text x="182.0" y="602.8" xml:space="preserve">计</text>
+    <text x="198.2" y="602.8" xml:space="preserve">修</text>
+    <text x="214.4" y="602.8" xml:space="preserve">正</text>
+    <text x="238.7" y="602.8" xml:space="preserve">Yaw</text>
+    <text x="263.0" y="602.8" xml:space="preserve">（</text>
+    <text x="279.2" y="602.8" xml:space="preserve">观</text>
+    <text x="295.4" y="602.8" xml:space="preserve">测</text>
+    <text x="311.6" y="602.8" xml:space="preserve">，</text>
+    <text x="327.8" y="602.8" xml:space="preserve">可</text>
+    <text x="344.0" y="602.8" xml:space="preserve">选</text>
+    <text x="360.2" y="602.8" xml:space="preserve">）</text>
+    <text x="149.6" y="623.0" xml:space="preserve">四</text>
+    <text x="165.8" y="623.0" xml:space="preserve">元</text>
+    <text x="182.0" y="623.0" xml:space="preserve">数</text>
+    <text x="198.2" y="623.0" xml:space="preserve">归</text>
+    <text x="214.4" y="623.0" xml:space="preserve">一</text>
+    <text x="230.6" y="623.0" xml:space="preserve">化</text>
+    <text x="254.9" y="623.0" xml:space="preserve">→</text>
+    <text x="271.1" y="623.0" xml:space="preserve">欧</text>
+    <text x="287.3" y="623.0" xml:space="preserve">拉</text>
+    <text x="303.5" y="623.0" xml:space="preserve">角</text>
+    <text x="68.6" y="663.5" xml:space="preserve">输</text>
+    <text x="84.8" y="663.5" xml:space="preserve">出</text>
+    <text x="101.0" y="663.5" xml:space="preserve">:</text>
+    <text x="117.2" y="663.5" xml:space="preserve">m_eulerAngle</text>
+    <text x="222.5" y="663.5" xml:space="preserve">[Roll,</text>
+    <text x="279.2" y="663.5" xml:space="preserve">Pitch,</text>
+    <text x="335.9" y="663.5" xml:space="preserve">Yaw]</text>
+    <text x="117.2" y="683.8" xml:space="preserve">m_quaternion</text>
+    <text x="222.5" y="683.8" xml:space="preserve">[q0,</text>
+    <text x="263.0" y="683.8" xml:space="preserve">q1,</text>
+    <text x="295.4" y="683.8" xml:space="preserve">q2,</text>
+    <text x="327.8" y="683.8" xml:space="preserve">q3]</text>
+    </g>
+  </g>
+</svg>

@@ -43,13 +43,11 @@ std::transform(data.begin(), data.end(), data.begin(),
 
 ## 2. 语法拆解
 
-```cpp
-//  捕获列表    参数列表          返回类型（可选）  函数体
-//  ┌────┐   ┌─────────┐       ┌──────────┐   ┌───────────────┐
-    [&x, y](int a, float b) -> bool          { return a > b && x > y; }
-//          ───────────────────────────────────────────────────────────
-//                            一个完整的 lambda
-```
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d012-a5d77a.svg" alt="捕获列表 / 参数列表 / 返回类型（可选） / 函数体">
+  <figcaption>图：捕获列表 / 参数列表 / 返回类型（可选） / 函数体</figcaption>
+</figure>
+
 
 ### 2.1 参数列表和返回值
 
@@ -92,22 +90,11 @@ x = 20;
 byRef();    // 返回 20——读取的是 x 当前的值
 ```
 
-```bash
-┌───────────────┐        ┌───────────────────┐
-│ 外部 int x=10 │        │ lambda byValue    │
-│ (栈上)        │  拷贝   │  ┌──────┐         │
-│               │──────→│  │ x:10 │ (独立副本)│
-│               │        │  └──────┘         │
-└───────────────┘        └───────────────────┘
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d013-282958.svg" alt="外部 int x=10 / lambda byValue">
+  <figcaption>图：外部 int x=10 / lambda byValue</figcaption>
+</figure>
 
-┌───────────────┐        ┌───────────────────┐
-│ 外部 int x=10 │        │ lambda byRef      │
-│ (栈上)        │  引用   │  ┌──────┐         │
-│               │←──────│  │ x ──→│ (指向外部x)│
-└───────────────┘        └──│───┘────────────┘
-                            │
-                            └── 始终指向外部 x 的地址
-```
 
 ---
 

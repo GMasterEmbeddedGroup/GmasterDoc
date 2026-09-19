@@ -74,68 +74,11 @@ void onEvent(struct Driver *drv) {
 
 以 CAN 接收中断为例，完整的调用链路如下：
 
-```
-┌─────────────────────────────────────────────────────┐
-│                   硬件层                              │
-│  CAN 控制器 RX FIFO 非空 → 产生中断信号               │
-└────────────────────────┬────────────────────────────┘
-                         │
-                         ▼
-┌─────────────────────────────────────────────────────┐
-│          中断向量表 → CAN1_RX0_IRQHandler            │
-│          (startup_stm32f407xx.s / stm32f4xx_it.c)    │
-│                                                     │
-│  void CAN1_RX0_IRQHandler(void)                     │
-│  {                                                  │
-│      HAL_CAN_IRQHandler(&hcan1);  ← 传入句柄         │
-│  }                                                  │
-└────────────────────────┬────────────────────────────┘
-                         │
-                         ▼
-┌─────────────────────────────────────────────────────┐
-│             HAL_CAN_IRQHandler (HAL 库)              │
-│                                                     │
-│  ① 检查中断状态寄存器，确认是哪个事件                  │
-│  ② 读取数据：HAL_CAN_GetRxMessage()                  │
-│  ③ 清除中断标志                                      │
-│  ④ 调用回调函数                                      │
-│                                                     │
-│  if (__HAL_CAN_GET_FLAG(hcan, CAN_FLAG_RF0M))       │
-│  {                                                  │
-│      __HAL_CAN_CLEAR_FLAG(hcan, CAN_FLAG_RF0M);     │
-│      HAL_CAN_GetRxMessage(hcan, ..., &header, data);│
-│  #if USE_HAL_CAN_REGISTER_CALLBACKS                  │
-│      hcan->RxFifo0MsgPendingCallback(hcan);         │
-│  #else                                               │
-│      HAL_CAN_RxFifo0MsgPendingCallback(hcan);       │
-│  #endif                                              │
-│  }                                                  │
-└────────────────────────┬────────────────────────────┘
-                         │
-                         ▼
-┌─────────────────────────────────────────────────────┐
-│     HAL_CAN_RxFifo0MsgPendingCallback (GSRL 实现)    │
-│     (文件: GSRL/Driver/src/drv_can.c)               │
-│                                                     │
-│  void HAL_CAN_RxFifo0MsgPendingCallback(...)         │
-│  {                                                  │
-│      ① 从 HAL 句柄读取数据                           │
-│      ② 入 FreeRTOS 队列                              │
-│      ③ 调用用户注册的回调函数（如果有）                │
-│  }                                                  │
-└────────────────────────┬────────────────────────────┘
-                         │
-                         ▼
-┌─────────────────────────────────────────────────────┐
-│        用户回调 (如 tsk_test.cpp 中的 can1RxCallback)│
-│                                                     │
-│  void can1RxCallback(can_rx_message_t *pRxMsg)      │
-│  {                                                  │
-│      motor.decodeCanRxMessageFromISR(pRxMsg);       │
-│      // 解析电机反馈数据                              │
-│  }                                                  │
-└─────────────────────────────────────────────────────┘
-```
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d049-978dd9.svg" alt="硬件层">
+  <figcaption>图：硬件层</figcaption>
+</figure>
+
 
 ### 2.2 HAL 回调的类型
 
@@ -284,53 +227,21 @@ extern "C" void dr16ITCallback(uint8_t *Buffer, uint16_t Length)
 
 在嵌入式系统中，"中断处理"通常分为两半：
 
-```
-┌──────────────────────────────────────────────┐
-│          上半部 (Top Half / ISR 中)           │
-│  - 读取硬件寄存器数据                          │
-│  - 清除中断标志                                │
-│  - 将数据放入缓冲区/队列                        │
-│  - 执行时间：微秒级                            │
-│  - 不允许阻塞/耗时操作                         │
-├──────────────────────────────────────────────┤
-│          下半部 (Bottom Half / 任务中)         │
-│  - 解析协议                                    │
-│  - PID 计算                                   │
-│  - 状态机更新                                  │
-│  - 发送响应数据                                │
-│  - 执行时间：毫秒级                            │
-│  - 可以被高优先级任务打断                       │
-└──────────────────────────────────────────────┘
-```
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d050-665d2f.svg" alt="上半部 (Top Half / ISR 中)">
+  <figcaption>图：上半部 (Top Half / ISR 中)</figcaption>
+</figure>
+
 
 ### 4.2 GSRL 中的体现
 
 GSRL 的 CAN 驱动同时支持两种路径：
 
-```
-                     CAN 中断触发
-                          │
-            ┌─────────────┴─────────────┐
-            ▼                           ▼
-    ┌───────────────┐          ┌───────────────────┐
-    │ 用户回调 (ISR) │          │ FreeRTOS 队列      │
-    │ 直接解析数据   │          │ 延迟到任务中解析    │
-    │ (轻量操作)     │          │ (重量操作)         │
-    └───────────────┘          └──────────┬────────┘
-            │                             │
-            │                             ▼
-            │                    ┌───────────────────┐
-            │                    │ 任务线程中调用     │
-            │                    │ decodeCanRxMessage │
-            │                    │ FromQueue()       │
-            └──────────┬────────┘───────────────────┘
-                       │
-                       ▼
-              ┌─────────────────┐
-              │ Motor 对象      │
-              │ 更新电机状态     │
-              └─────────────────┘
-```
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d051-67f3dd.svg" alt="CAN 中断触发">
+  <figcaption>图：CAN 中断触发</figcaption>
+</figure>
+
 
 **如何选择用回调还是队列？** 这是一个执行时间和操作复杂度的权衡。ISR 回调适合 1~2 微秒级的极轻量操作——例如把 CAN 数据帧中的某几个字节提取出来赋值给一个标志位。FreeRTOS 队列适合涉及状态机、协议解析或多级计算的复杂操作。举一个具体例子：电机通过 CAN 发回位置反馈（8 字节原始数据），在 ISR 回调中只做"提取 8 字节 raw data 放到一个结构体"（约 2μs），然后通过队列发给 Motor 任务；Motor 任务收到后执行完整的协议解析、零点偏移补偿、单位换算，最终更新电机对象的状态（约 50μs）。如果这 50μs 的操作放在 ISR 回调中，不仅阻塞所有低优先级中断，还会累积出可观的 CPU 占用。
 

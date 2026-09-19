@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 494 404" width="494" height="404" role="img" aria-labelledby="ttl dsc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Noto Sans Mono CJK SC', 'Microsoft YaHei', monospace">
+  <title id="ttl">I2C 总线结构:</title>
+  <desc id="dsc">自动由 ASCII 示意图矢量化生成，源：docs/软件组/培训/嵌入式基础/10-I2C通信原理.md 第 41-60 行</desc>
+  <g transform="scale(1)">
+    <rect x="0.75" y="0.75" width="100%" height="100%" rx="14" fill="#f7f9fc" stroke="#dce3ec" stroke-width="1.5"/>
+    <g stroke="#8b97b5" stroke-width="1.4" stroke-linecap="round">
+    <line x1="84.8" y1="70.6" x2="360.2" y2="70.6"/>
+    <line x1="105.0" y1="151.6" x2="246.8" y2="151.6"/>
+    <line x1="105.0" y1="192.1" x2="246.8" y2="192.1"/>
+    <line x1="56.4" y1="232.6" x2="153.7" y2="232.6"/>
+    <line x1="169.8" y1="232.6" x2="267.0" y2="232.6"/>
+    <line x1="56.4" y1="293.4" x2="153.7" y2="293.4"/>
+    <line x1="169.8" y1="293.4" x2="267.0" y2="293.4"/>
+    <line x1="56.4" y1="232.6" x2="56.4" y2="293.4"/>
+    <line x1="105.0" y1="70.6" x2="105.0" y2="101.0"/>
+    <line x1="105.0" y1="121.2" x2="105.0" y2="232.6"/>
+    <line x1="153.7" y1="232.6" x2="153.7" y2="293.4"/>
+    <line x1="169.8" y1="232.6" x2="169.8" y2="293.4"/>
+    <line x1="202.2" y1="222.5" x2="202.2" y2="232.6"/>
+    <line x1="210.3" y1="70.6" x2="210.3" y2="101.0"/>
+    <line x1="210.3" y1="121.2" x2="210.3" y2="222.5"/>
+    <line x1="267.0" y1="232.6" x2="267.0" y2="242.8"/>
+    <line x1="267.0" y1="283.2" x2="267.0" y2="293.4"/>
+    <line x1="275.1" y1="242.8" x2="275.1" y2="283.2"/>
+    </g>
+    <g fill="#1f2430" font-size="13.5">
+    <text x="20.0" y="35.8" xml:space="preserve">I2C</text>
+    <text x="52.4" y="35.8" xml:space="preserve">总</text>
+    <text x="68.6" y="35.8" xml:space="preserve">线</text>
+    <text x="84.8" y="35.8" xml:space="preserve">结</text>
+    <text x="101.0" y="35.8" xml:space="preserve">构</text>
+    <text x="117.2" y="35.8" xml:space="preserve">:</text>
+    <text x="52.4" y="76.3" xml:space="preserve">VDD</text>
+    <text x="76.7" y="116.8" xml:space="preserve">[4.7kΩ]</text>
+    <text x="182.0" y="116.8" xml:space="preserve">[4.7kΩ]</text>
+    <text x="311.6" y="116.8" xml:space="preserve">←</text>
+    <text x="327.8" y="116.8" xml:space="preserve">上</text>
+    <text x="344.0" y="116.8" xml:space="preserve">拉</text>
+    <text x="360.2" y="116.8" xml:space="preserve">电</text>
+    <text x="376.4" y="116.8" xml:space="preserve">阻</text>
+    <text x="254.9" y="157.3" xml:space="preserve">SDA</text>
+    <text x="287.3" y="157.3" xml:space="preserve">(</text>
+    <text x="295.4" y="157.3" xml:space="preserve">数</text>
+    <text x="311.6" y="157.3" xml:space="preserve">据</text>
+    <text x="327.8" y="157.3" xml:space="preserve">线</text>
+    <text x="344.0" y="157.3" xml:space="preserve">)</text>
+    <text x="254.9" y="197.8" xml:space="preserve">SCL</text>
+    <text x="287.3" y="197.8" xml:space="preserve">(</text>
+    <text x="295.4" y="197.8" xml:space="preserve">时</text>
+    <text x="311.6" y="197.8" xml:space="preserve">钟</text>
+    <text x="327.8" y="197.8" xml:space="preserve">线</text>
+    <text x="344.0" y="197.8" xml:space="preserve">)</text>
+    <text x="84.8" y="258.5" xml:space="preserve">MCU</text>
+    <text x="190.1" y="258.5" xml:space="preserve">传</text>
+    <text x="206.3" y="258.5" xml:space="preserve">感</text>
+    <text x="222.5" y="258.5" xml:space="preserve">器</text>
+    <text x="295.4" y="258.5" xml:space="preserve">←</text>
+    <text x="311.6" y="258.5" xml:space="preserve">所</text>
+    <text x="327.8" y="258.5" xml:space="preserve">有</text>
+    <text x="344.0" y="258.5" xml:space="preserve">设</text>
+    <text x="360.2" y="258.5" xml:space="preserve">备</text>
+    <text x="376.4" y="258.5" xml:space="preserve">都</text>
+    <text x="392.6" y="258.5" xml:space="preserve">是</text>
+    <text x="408.8" y="258.5" xml:space="preserve">开</text>
+    <text x="425.0" y="258.5" xml:space="preserve">漏</text>
+    <text x="441.2" y="258.5" xml:space="preserve">输</text>
+    <text x="457.4" y="258.5" xml:space="preserve">出</text>
+    <text x="84.8" y="278.8" xml:space="preserve">(</text>
+    <text x="92.9" y="278.8" xml:space="preserve">主</text>
+    <text x="109.1" y="278.8" xml:space="preserve">)</text>
+    <text x="190.1" y="278.8" xml:space="preserve">(</text>
+    <text x="198.2" y="278.8" xml:space="preserve">从</text>
+    <text x="214.4" y="278.8" xml:space="preserve">)</text>
+    <text x="20.0" y="339.5" xml:space="preserve">开</text>
+    <text x="36.2" y="339.5" xml:space="preserve">漏</text>
+    <text x="52.4" y="339.5" xml:space="preserve">的</text>
+    <text x="68.6" y="339.5" xml:space="preserve">逻</text>
+    <text x="84.8" y="339.5" xml:space="preserve">辑</text>
+    <text x="101.0" y="339.5" xml:space="preserve">:</text>
+    <text x="20.0" y="359.8" xml:space="preserve">-</text>
+    <text x="36.2" y="359.8" xml:space="preserve">任</text>
+    <text x="52.4" y="359.8" xml:space="preserve">一</text>
+    <text x="68.6" y="359.8" xml:space="preserve">设</text>
+    <text x="84.8" y="359.8" xml:space="preserve">备</text>
+    <text x="101.0" y="359.8" xml:space="preserve">拉</text>
+    <text x="117.2" y="359.8" xml:space="preserve">低</text>
+    <text x="141.5" y="359.8" xml:space="preserve">→</text>
+    <text x="157.7" y="359.8" xml:space="preserve">总</text>
+    <text x="173.9" y="359.8" xml:space="preserve">线</text>
+    <text x="198.2" y="359.8" xml:space="preserve">=</text>
+    <text x="214.4" y="359.8" xml:space="preserve">低</text>
+    <text x="230.6" y="359.8" xml:space="preserve">电</text>
+    <text x="246.8" y="359.8" xml:space="preserve">平</text>
+    <text x="263.0" y="359.8" xml:space="preserve">（</text>
+    <text x="279.2" y="359.8" xml:space="preserve">线</text>
+    <text x="295.4" y="359.8" xml:space="preserve">与</text>
+    <text x="311.6" y="359.8" xml:space="preserve">特</text>
+    <text x="327.8" y="359.8" xml:space="preserve">性</text>
+    <text x="344.0" y="359.8" xml:space="preserve">，</text>
+    <text x="360.2" y="359.8" xml:space="preserve">Wired-AND</text>
+    <text x="433.1" y="359.8" xml:space="preserve">）</text>
+    <text x="20.0" y="380.0" xml:space="preserve">-</text>
+    <text x="36.2" y="380.0" xml:space="preserve">所</text>
+    <text x="52.4" y="380.0" xml:space="preserve">有</text>
+    <text x="68.6" y="380.0" xml:space="preserve">设</text>
+    <text x="84.8" y="380.0" xml:space="preserve">备</text>
+    <text x="101.0" y="380.0" xml:space="preserve">释</text>
+    <text x="117.2" y="380.0" xml:space="preserve">放</text>
+    <text x="141.5" y="380.0" xml:space="preserve">→</text>
+    <text x="157.7" y="380.0" xml:space="preserve">上</text>
+    <text x="173.9" y="380.0" xml:space="preserve">拉</text>
+    <text x="190.1" y="380.0" xml:space="preserve">电</text>
+    <text x="206.3" y="380.0" xml:space="preserve">阻</text>
+    <text x="222.5" y="380.0" xml:space="preserve">将</text>
+    <text x="238.7" y="380.0" xml:space="preserve">总</text>
+    <text x="254.9" y="380.0" xml:space="preserve">线</text>
+    <text x="271.1" y="380.0" xml:space="preserve">拉</text>
+    <text x="287.3" y="380.0" xml:space="preserve">到</text>
+    <text x="311.6" y="380.0" xml:space="preserve">VDD</text>
+    <text x="344.0" y="380.0" xml:space="preserve">=</text>
+    <text x="360.2" y="380.0" xml:space="preserve">高</text>
+    <text x="376.4" y="380.0" xml:space="preserve">电</text>
+    <text x="392.6" y="380.0" xml:space="preserve">平</text>
+    </g>
+  </g>
+</svg>

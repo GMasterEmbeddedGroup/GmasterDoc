@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 283" width="340" height="283" role="img" aria-labelledby="ttl dsc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Noto Sans Mono CJK SC', 'Microsoft YaHei', monospace">
+  <title id="ttl">致命短路路径：</title>
+  <desc id="dsc">自动由 ASCII 示意图矢量化生成，源：docs/软件组/培训/嵌入式基础/03-GPIO与高低电平.md 第 69-82 行</desc>
+  <g transform="scale(1)">
+    <rect x="0.75" y="0.75" width="100%" height="100%" rx="14" fill="#f7f9fc" stroke="#dce3ec" stroke-width="1.5"/>
+    <g stroke="#8b97b5" stroke-width="1.4" stroke-linecap="round">
+    <line x1="40.2" y1="90.9" x2="88.8" y2="90.9"/>
+    <line x1="40.2" y1="111.1" x2="88.8" y2="111.1"/>
+    <line x1="64.5" y1="151.6" x2="149.6" y2="151.6"/>
+    <line x1="40.2" y1="192.1" x2="88.8" y2="192.1"/>
+    <line x1="40.2" y1="212.4" x2="88.8" y2="212.4"/>
+    <line x1="40.2" y1="90.9" x2="40.2" y2="111.1"/>
+    <line x1="40.2" y1="192.1" x2="40.2" y2="212.4"/>
+    <line x1="64.5" y1="60.5" x2="64.5" y2="90.9"/>
+    <line x1="64.5" y1="111.1" x2="64.5" y2="192.1"/>
+    <line x1="64.5" y1="212.4" x2="64.5" y2="242.8"/>
+    <line x1="88.8" y1="90.9" x2="88.8" y2="111.1"/>
+    <line x1="88.8" y1="192.1" x2="88.8" y2="212.4"/>
+    </g>
+    <g fill="#1f2430" font-size="13.5">
+    <text x="20.0" y="35.8" xml:space="preserve">致</text>
+    <text x="36.2" y="35.8" xml:space="preserve">命</text>
+    <text x="52.4" y="35.8" xml:space="preserve">短</text>
+    <text x="68.6" y="35.8" xml:space="preserve">路</text>
+    <text x="84.8" y="35.8" xml:space="preserve">路</text>
+    <text x="101.0" y="35.8" xml:space="preserve">径</text>
+    <text x="117.2" y="35.8" xml:space="preserve">：</text>
+    <text x="52.4" y="56.0" xml:space="preserve">VDD</text>
+    <text x="109.1" y="96.5" xml:space="preserve">ON</text>
+    <text x="141.5" y="96.5" xml:space="preserve">←</text>
+    <text x="157.7" y="96.5" xml:space="preserve">GPIO_A</text>
+    <text x="214.4" y="96.5" xml:space="preserve">输</text>
+    <text x="230.6" y="96.5" xml:space="preserve">出</text>
+    <text x="246.8" y="96.5" xml:space="preserve">高</text>
+    <text x="157.7" y="157.3" xml:space="preserve">短</text>
+    <text x="173.9" y="157.3" xml:space="preserve">路</text>
+    <text x="190.1" y="157.3" xml:space="preserve">！</text>
+    <text x="206.3" y="157.3" xml:space="preserve">大</text>
+    <text x="222.5" y="157.3" xml:space="preserve">电</text>
+    <text x="238.7" y="157.3" xml:space="preserve">流</text>
+    <text x="254.9" y="157.3" xml:space="preserve">直</text>
+    <text x="271.1" y="157.3" xml:space="preserve">接</text>
+    <text x="287.3" y="157.3" xml:space="preserve">流</text>
+    <text x="303.5" y="157.3" xml:space="preserve">入</text>
+    <text x="109.1" y="197.8" xml:space="preserve">ON</text>
+    <text x="141.5" y="197.8" xml:space="preserve">←</text>
+    <text x="157.7" y="197.8" xml:space="preserve">GPIO_B</text>
+    <text x="214.4" y="197.8" xml:space="preserve">输</text>
+    <text x="230.6" y="197.8" xml:space="preserve">出</text>
+    <text x="246.8" y="197.8" xml:space="preserve">低</text>
+    <text x="52.4" y="258.5" xml:space="preserve">GND</text>
+    </g>
+  </g>
+</svg>

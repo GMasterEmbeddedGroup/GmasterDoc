@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445 344" width="445" height="344" role="img" aria-labelledby="ttl dsc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Noto Sans Mono CJK SC', 'Microsoft YaHei', monospace">
+  <title id="ttl">高地址</title>
+  <desc id="dsc">自动由 ASCII 示意图矢量化生成，源：docs/软件组/培训/C++进阶/内存.md 第 113-129 行</desc>
+  <g transform="scale(1)">
+    <rect x="0.75" y="0.75" width="100%" height="100%" rx="14" fill="#f7f9fc" stroke="#dce3ec" stroke-width="1.5"/>
+    <g stroke="#8b97b5" stroke-width="1.4" stroke-linecap="round">
+    <line x1="24.1" y1="50.4" x2="149.6" y2="50.4"/>
+    <line x1="48.3" y1="90.9" x2="68.6" y2="90.9"/>
+    <line x1="48.3" y1="111.1" x2="68.6" y2="111.1"/>
+    <line x1="48.3" y1="131.4" x2="68.6" y2="131.4"/>
+    <line x1="24.1" y1="151.6" x2="149.6" y2="151.6"/>
+    <line x1="48.3" y1="192.1" x2="68.6" y2="192.1"/>
+    <line x1="48.3" y1="212.4" x2="68.6" y2="212.4"/>
+    <line x1="48.3" y1="232.6" x2="68.6" y2="232.6"/>
+    <line x1="24.1" y1="252.9" x2="149.6" y2="252.9"/>
+    <line x1="24.1" y1="40.2" x2="24.1" y2="303.5"/>
+    <line x1="48.3" y1="80.8" x2="48.3" y2="131.4"/>
+    <line x1="48.3" y1="182.0" x2="48.3" y2="232.6"/>
+    </g>
+    <g fill="#1f2430" font-size="13.5">
+    <text x="20.0" y="35.8" xml:space="preserve">高</text>
+    <text x="36.2" y="35.8" xml:space="preserve">地</text>
+    <text x="52.4" y="35.8" xml:space="preserve">址</text>
+    <text x="44.3" y="76.3" xml:space="preserve">main</text>
+    <text x="84.8" y="76.3" xml:space="preserve">的</text>
+    <text x="101.0" y="76.3" xml:space="preserve">栈</text>
+    <text x="117.2" y="76.3" xml:space="preserve">帧</text>
+    <text x="76.7" y="96.5" xml:space="preserve">int</text>
+    <text x="109.1" y="96.5" xml:space="preserve">x</text>
+    <text x="125.3" y="96.5" xml:space="preserve">=</text>
+    <text x="141.5" y="96.5" xml:space="preserve">10</text>
+    <text x="76.7" y="116.8" xml:space="preserve">float</text>
+    <text x="125.3" y="116.8" xml:space="preserve">y</text>
+    <text x="141.5" y="116.8" xml:space="preserve">=</text>
+    <text x="157.7" y="116.8" xml:space="preserve">3.14</text>
+    <text x="76.7" y="137.0" xml:space="preserve">...</text>
+    <text x="44.3" y="177.5" xml:space="preserve">foo</text>
+    <text x="76.7" y="177.5" xml:space="preserve">的</text>
+    <text x="92.9" y="177.5" xml:space="preserve">栈</text>
+    <text x="109.1" y="177.5" xml:space="preserve">帧</text>
+    <text x="173.9" y="177.5" xml:space="preserve">←</text>
+    <text x="190.1" y="177.5" xml:space="preserve">调</text>
+    <text x="206.3" y="177.5" xml:space="preserve">用</text>
+    <text x="230.6" y="177.5" xml:space="preserve">foo()</text>
+    <text x="279.2" y="177.5" xml:space="preserve">时</text>
+    <text x="295.4" y="177.5" xml:space="preserve">压</text>
+    <text x="311.6" y="177.5" xml:space="preserve">入</text>
+    <text x="76.7" y="197.8" xml:space="preserve">int</text>
+    <text x="109.1" y="197.8" xml:space="preserve">a</text>
+    <text x="125.3" y="197.8" xml:space="preserve">=</text>
+    <text x="141.5" y="197.8" xml:space="preserve">42</text>
+    <text x="76.7" y="218.0" xml:space="preserve">float</text>
+    <text x="125.3" y="218.0" xml:space="preserve">b</text>
+    <text x="141.5" y="218.0" xml:space="preserve">=</text>
+    <text x="157.7" y="218.0" xml:space="preserve">3.14f</text>
+    <text x="76.7" y="238.3" xml:space="preserve">int</text>
+    <text x="109.1" y="238.3" xml:space="preserve">arr[10]</text>
+    <text x="190.1" y="238.3" xml:space="preserve">(40</text>
+    <text x="222.5" y="238.3" xml:space="preserve">字</text>
+    <text x="238.7" y="238.3" xml:space="preserve">节</text>
+    <text x="254.9" y="238.3" xml:space="preserve">)</text>
+    <text x="198.2" y="258.5" xml:space="preserve">←</text>
+    <text x="214.4" y="258.5" xml:space="preserve">foo()</text>
+    <text x="263.0" y="258.5" xml:space="preserve">返</text>
+    <text x="279.2" y="258.5" xml:space="preserve">回</text>
+    <text x="295.4" y="258.5" xml:space="preserve">后</text>
+    <text x="311.6" y="258.5" xml:space="preserve">弹</text>
+    <text x="327.8" y="258.5" xml:space="preserve">出</text>
+    <text x="344.0" y="258.5" xml:space="preserve">，</text>
+    <text x="360.2" y="258.5" xml:space="preserve">全</text>
+    <text x="376.4" y="258.5" xml:space="preserve">部</text>
+    <text x="392.6" y="258.5" xml:space="preserve">释</text>
+    <text x="408.8" y="258.5" xml:space="preserve">放</text>
+    <text x="44.3" y="278.8" xml:space="preserve">main</text>
+    <text x="84.8" y="278.8" xml:space="preserve">的</text>
+    <text x="101.0" y="278.8" xml:space="preserve">栈</text>
+    <text x="117.2" y="278.8" xml:space="preserve">帧</text>
+    <text x="133.4" y="278.8" xml:space="preserve">(</text>
+    <text x="141.5" y="278.8" xml:space="preserve">继</text>
+    <text x="157.7" y="278.8" xml:space="preserve">续</text>
+    <text x="173.9" y="278.8" xml:space="preserve">)</text>
+    <text x="44.3" y="299.0" xml:space="preserve">...</text>
+    <text x="20.0" y="319.3" xml:space="preserve">低</text>
+    <text x="36.2" y="319.3" xml:space="preserve">地</text>
+    <text x="52.4" y="319.3" xml:space="preserve">址</text>
+    </g>
+  </g>
+</svg>

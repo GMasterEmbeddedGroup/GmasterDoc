@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 242" width="680" height="242" role="img" aria-labelledby="ttl dsc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Noto Sans Mono CJK SC', 'Microsoft YaHei', monospace">
+  <title id="ttl">FreeRTOS 每 1ms 叫醒底盘任务</title>
+  <desc id="dsc">自动由 ASCII 示意图矢量化生成，源：docs/软件组/培训/C++进阶/行为树.md 第 107-118 行</desc>
+  <g transform="scale(1)">
+    <rect x="0.75" y="0.75" width="100%" height="100%" rx="14" fill="#f7f9fc" stroke="#dce3ec" stroke-width="1.5"/>
+    <g stroke="#8b97b5" stroke-width="1.4" stroke-linecap="round">
+    <line x1="56.4" y1="50.4" x2="76.7" y2="50.4"/>
+    <line x1="105.0" y1="70.6" x2="125.3" y2="70.6"/>
+    <line x1="105.0" y1="90.9" x2="125.3" y2="90.9"/>
+    <line x1="153.7" y1="111.1" x2="173.9" y2="111.1"/>
+    <line x1="202.2" y1="131.4" x2="222.5" y2="131.4"/>
+    <line x1="250.8" y1="151.6" x2="271.1" y2="151.6"/>
+    <line x1="105.0" y1="212.4" x2="125.3" y2="212.4"/>
+    <line x1="56.4" y1="40.2" x2="56.4" y2="50.4"/>
+    <line x1="105.0" y1="60.5" x2="105.0" y2="212.4"/>
+    <line x1="153.7" y1="101.0" x2="153.7" y2="111.1"/>
+    <line x1="202.2" y1="121.2" x2="202.2" y2="131.4"/>
+    <line x1="250.8" y1="141.5" x2="250.8" y2="151.6"/>
+    </g>
+    <g fill="#1f2430" font-size="13.5">
+    <text x="20.0" y="35.8" xml:space="preserve">FreeRTOS</text>
+    <text x="92.9" y="35.8" xml:space="preserve">每</text>
+    <text x="117.2" y="35.8" xml:space="preserve">1ms</text>
+    <text x="149.6" y="35.8" xml:space="preserve">叫</text>
+    <text x="165.8" y="35.8" xml:space="preserve">醒</text>
+    <text x="182.0" y="35.8" xml:space="preserve">底</text>
+    <text x="198.2" y="35.8" xml:space="preserve">盘</text>
+    <text x="214.4" y="35.8" xml:space="preserve">任</text>
+    <text x="230.6" y="35.8" xml:space="preserve">务</text>
+    <text x="84.8" y="56.0" xml:space="preserve">chassis.controlLoop()</text>
+    <text x="133.4" y="76.3" xml:space="preserve">读</text>
+    <text x="149.6" y="76.3" xml:space="preserve">传</text>
+    <text x="165.8" y="76.3" xml:space="preserve">感</text>
+    <text x="182.0" y="76.3" xml:space="preserve">器</text>
+    <text x="198.2" y="76.3" xml:space="preserve">（</text>
+    <text x="214.4" y="76.3" xml:space="preserve">IMU</text>
+    <text x="238.7" y="76.3" xml:space="preserve">、</text>
+    <text x="254.9" y="76.3" xml:space="preserve">CAN</text>
+    <text x="279.2" y="76.3" xml:space="preserve">）</text>
+    <text x="133.4" y="96.5" xml:space="preserve">m_behaviorTree-&gt;tick()</text>
+    <text x="335.9" y="96.5" xml:space="preserve">←</text>
+    <text x="352.1" y="96.5" xml:space="preserve">行</text>
+    <text x="368.3" y="96.5" xml:space="preserve">为</text>
+    <text x="384.5" y="96.5" xml:space="preserve">树</text>
+    <text x="400.7" y="96.5" xml:space="preserve">做</text>
+    <text x="416.9" y="96.5" xml:space="preserve">决</text>
+    <text x="433.1" y="96.5" xml:space="preserve">策</text>
+    <text x="182.0" y="116.8" xml:space="preserve">Selector</text>
+    <text x="254.9" y="116.8" xml:space="preserve">发</text>
+    <text x="271.1" y="116.8" xml:space="preserve">现</text>
+    <text x="287.3" y="116.8" xml:space="preserve">倒</text>
+    <text x="303.5" y="116.8" xml:space="preserve">地</text>
+    <text x="327.8" y="116.8" xml:space="preserve">→</text>
+    <text x="344.0" y="116.8" xml:space="preserve">执</text>
+    <text x="360.2" y="116.8" xml:space="preserve">行</text>
+    <text x="376.4" y="116.8" xml:space="preserve">&quot;</text>
+    <text x="384.5" y="116.8" xml:space="preserve">倒</text>
+    <text x="400.7" y="116.8" xml:space="preserve">地</text>
+    <text x="416.9" y="116.8" xml:space="preserve">自</text>
+    <text x="433.1" y="116.8" xml:space="preserve">起</text>
+    <text x="449.3" y="116.8" xml:space="preserve">&quot;</text>
+    <text x="457.4" y="116.8" xml:space="preserve">分</text>
+    <text x="473.6" y="116.8" xml:space="preserve">支</text>
+    <text x="230.6" y="137.0" xml:space="preserve">recoveryStateMachineCallback()</text>
+    <text x="489.8" y="137.0" xml:space="preserve">←</text>
+    <text x="506.0" y="137.0" xml:space="preserve">Action</text>
+    <text x="562.7" y="137.0" xml:space="preserve">内</text>
+    <text x="578.9" y="137.0" xml:space="preserve">部</text>
+    <text x="595.1" y="137.0" xml:space="preserve">的</text>
+    <text x="611.3" y="137.0" xml:space="preserve">状</text>
+    <text x="627.5" y="137.0" xml:space="preserve">态</text>
+    <text x="643.7" y="137.0" xml:space="preserve">机</text>
+    <text x="279.2" y="157.3" xml:space="preserve">switch(m_recoveryPhase):</text>
+    <text x="489.8" y="157.3" xml:space="preserve">←</text>
+    <text x="506.0" y="157.3" xml:space="preserve">逐</text>
+    <text x="522.2" y="157.3" xml:space="preserve">步</text>
+    <text x="538.4" y="157.3" xml:space="preserve">骤</text>
+    <text x="554.6" y="157.3" xml:space="preserve">推</text>
+    <text x="570.8" y="157.3" xml:space="preserve">进</text>
+    <text x="295.4" y="177.5" xml:space="preserve">case</text>
+    <text x="335.9" y="177.5" xml:space="preserve">FLIP:</text>
+    <text x="408.8" y="177.5" xml:space="preserve">旋</text>
+    <text x="425.0" y="177.5" xml:space="preserve">转</text>
+    <text x="441.2" y="177.5" xml:space="preserve">腿</text>
+    <text x="457.4" y="177.5" xml:space="preserve">部</text>
+    <text x="481.7" y="177.5" xml:space="preserve">→</text>
+    <text x="497.9" y="177.5" xml:space="preserve">BT_RUNNING</text>
+    <text x="295.4" y="197.8" xml:space="preserve">case</text>
+    <text x="335.9" y="197.8" xml:space="preserve">STANDUP:</text>
+    <text x="408.8" y="197.8" xml:space="preserve">起</text>
+    <text x="425.0" y="197.8" xml:space="preserve">立</text>
+    <text x="441.2" y="197.8" xml:space="preserve">完</text>
+    <text x="457.4" y="197.8" xml:space="preserve">成</text>
+    <text x="481.7" y="197.8" xml:space="preserve">→</text>
+    <text x="497.9" y="197.8" xml:space="preserve">BT_SUCCESS</text>
+    <text x="133.4" y="218.0" xml:space="preserve">输</text>
+    <text x="149.6" y="218.0" xml:space="preserve">出</text>
+    <text x="165.8" y="218.0" xml:space="preserve">扭</text>
+    <text x="182.0" y="218.0" xml:space="preserve">矩</text>
+    <text x="198.2" y="218.0" xml:space="preserve">到</text>
+    <text x="214.4" y="218.0" xml:space="preserve">电</text>
+    <text x="230.6" y="218.0" xml:space="preserve">机</text>
+    <text x="246.8" y="218.0" xml:space="preserve">（</text>
+    <text x="263.0" y="218.0" xml:space="preserve">CAN</text>
+    <text x="287.3" y="218.0" xml:space="preserve">）</text>
+    </g>
+  </g>
+</svg>

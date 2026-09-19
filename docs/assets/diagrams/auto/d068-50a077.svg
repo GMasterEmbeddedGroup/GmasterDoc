@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 607 141" width="607" height="141" role="img" aria-labelledby="ttl dsc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Noto Sans Mono CJK SC', 'Microsoft YaHei', monospace">
+  <title id="ttl">时间轴：</title>
+  <desc id="dsc">自动由 ASCII 示意图矢量化生成，源：docs/软件组/培训/嵌入式基础/08-UART通信原理.md 第 183-189 行</desc>
+  <g transform="scale(1)">
+    <rect x="0.75" y="0.75" width="100%" height="100%" rx="14" fill="#f7f9fc" stroke="#dce3ec" stroke-width="1.5"/>
+    <g stroke="#8b97b5" stroke-width="1.4" stroke-linecap="round">
+    <line x1="392.6" y1="50.4" x2="425.0" y2="50.4"/>
+    <line x1="554.6" y1="50.4" x2="587.0" y2="50.4"/>
+    <line x1="445.2" y1="60.5" x2="445.2" y2="80.8"/>
+    </g>
+    <g fill="#1f2430" font-size="13.5">
+    <text x="20.0" y="35.8" xml:space="preserve">时</text>
+    <text x="36.2" y="35.8" xml:space="preserve">间</text>
+    <text x="52.4" y="35.8" xml:space="preserve">轴</text>
+    <text x="68.6" y="35.8" xml:space="preserve">：</text>
+    <text x="36.2" y="56.0" xml:space="preserve">RX:</text>
+    <text x="84.8" y="56.0" xml:space="preserve">[</text>
+    <text x="92.9" y="56.0" xml:space="preserve">字</text>
+    <text x="109.1" y="56.0" xml:space="preserve">节</text>
+    <text x="125.3" y="56.0" xml:space="preserve">1][</text>
+    <text x="149.6" y="56.0" xml:space="preserve">字</text>
+    <text x="165.8" y="56.0" xml:space="preserve">节</text>
+    <text x="182.0" y="56.0" xml:space="preserve">2][</text>
+    <text x="206.3" y="56.0" xml:space="preserve">字</text>
+    <text x="222.5" y="56.0" xml:space="preserve">节</text>
+    <text x="238.7" y="56.0" xml:space="preserve">3]</text>
+    <text x="263.0" y="56.0" xml:space="preserve">......</text>
+    <text x="319.7" y="56.0" xml:space="preserve">[</text>
+    <text x="327.8" y="56.0" xml:space="preserve">字</text>
+    <text x="344.0" y="56.0" xml:space="preserve">节</text>
+    <text x="360.2" y="56.0" xml:space="preserve">N]</text>
+    <text x="425.0" y="56.0" xml:space="preserve">空</text>
+    <text x="441.2" y="56.0" xml:space="preserve">闲</text>
+    <text x="465.5" y="56.0" xml:space="preserve">&gt;</text>
+    <text x="481.7" y="56.0" xml:space="preserve">1</text>
+    <text x="489.8" y="56.0" xml:space="preserve">字</text>
+    <text x="506.0" y="56.0" xml:space="preserve">节</text>
+    <text x="522.2" y="56.0" xml:space="preserve">时</text>
+    <text x="538.4" y="56.0" xml:space="preserve">间</text>
+    <text x="392.6" y="96.5" xml:space="preserve">空</text>
+    <text x="408.8" y="96.5" xml:space="preserve">闲</text>
+    <text x="425.0" y="96.5" xml:space="preserve">中</text>
+    <text x="441.2" y="96.5" xml:space="preserve">断</text>
+    <text x="457.4" y="96.5" xml:space="preserve">触</text>
+    <text x="473.6" y="96.5" xml:space="preserve">发</text>
+    <text x="384.5" y="116.8" xml:space="preserve">Size</text>
+    <text x="425.0" y="116.8" xml:space="preserve">=</text>
+    <text x="441.2" y="116.8" xml:space="preserve">N,</text>
+    <text x="465.5" y="116.8" xml:space="preserve">调</text>
+    <text x="481.7" y="116.8" xml:space="preserve">用</text>
+    <text x="497.9" y="116.8" xml:space="preserve">回</text>
+    <text x="514.1" y="116.8" xml:space="preserve">调</text>
+    </g>
+  </g>
+</svg>

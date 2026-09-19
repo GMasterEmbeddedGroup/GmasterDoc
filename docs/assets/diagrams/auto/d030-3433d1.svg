@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 631 222" width="631" height="222" role="img" aria-labelledby="ttl dsc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Noto Sans Mono CJK SC', 'Microsoft YaHei', monospace">
+  <title id="ttl">上电 → 复位向量 → SystemInit() → main()</title>
+  <desc id="dsc">自动由 ASCII 示意图矢量化生成，源：docs/软件组/培训/嵌入式基础/01-嵌入式系统概述与HAL库.md 第 87-97 行</desc>
+  <g transform="scale(1)">
+    <rect x="0.75" y="0.75" width="100%" height="100%" rx="14" fill="#f7f9fc" stroke="#dce3ec" stroke-width="1.5"/>
+    <g stroke="#8b97b5" stroke-width="1.4" stroke-linecap="round">
+    <line x1="186.0" y1="70.6" x2="198.2" y2="70.6"/>
+    <line x1="186.0" y1="90.9" x2="198.2" y2="90.9"/>
+    <line x1="186.0" y1="111.1" x2="198.2" y2="111.1"/>
+    <line x1="186.0" y1="131.4" x2="198.2" y2="131.4"/>
+    <line x1="186.0" y1="151.6" x2="198.2" y2="151.6"/>
+    <line x1="186.0" y1="171.9" x2="198.2" y2="171.9"/>
+    <line x1="186.0" y1="192.1" x2="198.2" y2="192.1"/>
+    <line x1="186.0" y1="40.2" x2="186.0" y2="192.1"/>
+    </g>
+    <g fill="#1f2430" font-size="13.5">
+    <text x="20.0" y="35.8" xml:space="preserve">上</text>
+    <text x="36.2" y="35.8" xml:space="preserve">电</text>
+    <text x="60.5" y="35.8" xml:space="preserve">→</text>
+    <text x="76.7" y="35.8" xml:space="preserve">复</text>
+    <text x="92.9" y="35.8" xml:space="preserve">位</text>
+    <text x="109.1" y="35.8" xml:space="preserve">向</text>
+    <text x="125.3" y="35.8" xml:space="preserve">量</text>
+    <text x="149.6" y="35.8" xml:space="preserve">→</text>
+    <text x="165.8" y="35.8" xml:space="preserve">SystemInit()</text>
+    <text x="271.1" y="35.8" xml:space="preserve">→</text>
+    <text x="287.3" y="35.8" xml:space="preserve">main()</text>
+    <text x="206.3" y="76.3" xml:space="preserve">初</text>
+    <text x="222.5" y="76.3" xml:space="preserve">始</text>
+    <text x="238.7" y="76.3" xml:space="preserve">化</text>
+    <text x="254.9" y="76.3" xml:space="preserve">时</text>
+    <text x="271.1" y="76.3" xml:space="preserve">钟</text>
+    <text x="287.3" y="76.3" xml:space="preserve">树</text>
+    <text x="303.5" y="76.3" xml:space="preserve">（</text>
+    <text x="319.7" y="76.3" xml:space="preserve">配</text>
+    <text x="335.9" y="76.3" xml:space="preserve">置</text>
+    <text x="360.2" y="76.3" xml:space="preserve">HSE/PLL</text>
+    <text x="416.9" y="76.3" xml:space="preserve">，</text>
+    <text x="433.1" y="76.3" xml:space="preserve">产</text>
+    <text x="449.3" y="76.3" xml:space="preserve">生</text>
+    <text x="473.6" y="76.3" xml:space="preserve">168MHz</text>
+    <text x="530.3" y="76.3" xml:space="preserve">系</text>
+    <text x="546.5" y="76.3" xml:space="preserve">统</text>
+    <text x="562.7" y="76.3" xml:space="preserve">时</text>
+    <text x="578.9" y="76.3" xml:space="preserve">钟</text>
+    <text x="595.1" y="76.3" xml:space="preserve">）</text>
+    <text x="206.3" y="96.5" xml:space="preserve">HAL_Init()</text>
+    <text x="206.3" y="116.8" xml:space="preserve">SystemClock_Config()</text>
+    <text x="206.3" y="137.0" xml:space="preserve">MX_XXX_Init()</text>
+    <text x="327.8" y="137.0" xml:space="preserve">←</text>
+    <text x="344.0" y="137.0" xml:space="preserve">逐</text>
+    <text x="360.2" y="137.0" xml:space="preserve">个</text>
+    <text x="376.4" y="137.0" xml:space="preserve">初</text>
+    <text x="392.6" y="137.0" xml:space="preserve">始</text>
+    <text x="408.8" y="137.0" xml:space="preserve">化</text>
+    <text x="425.0" y="137.0" xml:space="preserve">外</text>
+    <text x="441.2" y="137.0" xml:space="preserve">设</text>
+    <text x="206.3" y="157.3" xml:space="preserve">osKernelInitialize()</text>
+    <text x="206.3" y="177.5" xml:space="preserve">MX_FREERTOS_Init()</text>
+    <text x="206.3" y="197.8" xml:space="preserve">osKernelStart()</text>
+    <text x="344.0" y="197.8" xml:space="preserve">←</text>
+    <text x="360.2" y="197.8" xml:space="preserve">调</text>
+    <text x="376.4" y="197.8" xml:space="preserve">度</text>
+    <text x="392.6" y="197.8" xml:space="preserve">器</text>
+    <text x="408.8" y="197.8" xml:space="preserve">接</text>
+    <text x="425.0" y="197.8" xml:space="preserve">管</text>
+    <text x="441.2" y="197.8" xml:space="preserve">，</text>
+    <text x="457.4" y="197.8" xml:space="preserve">不</text>
+    <text x="473.6" y="197.8" xml:space="preserve">再</text>
+    <text x="489.8" y="197.8" xml:space="preserve">返</text>
+    <text x="506.0" y="197.8" xml:space="preserve">回</text>
+    </g>
+  </g>
+</svg>

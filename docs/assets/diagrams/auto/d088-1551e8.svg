@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 384" width="550" height="384" role="img" aria-labelledby="ttl dsc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Noto Sans Mono CJK SC', 'Microsoft YaHei', monospace">
+  <title id="ttl">Task 层:</title>
+  <desc id="dsc">自动由 ASCII 示意图矢量化生成，源：docs/软件组/培训/嵌入式基础/12-IMU姿态传感器.md 第 356-374 行</desc>
+  <g transform="scale(1)">
+    <rect x="0.75" y="0.75" width="100%" height="100%" rx="14" fill="#f7f9fc" stroke="#dce3ec" stroke-width="1.5"/>
+    <g stroke="#8b97b5" stroke-width="1.4" stroke-linecap="round">
+    <line x1="56.4" y1="131.4" x2="76.7" y2="131.4"/>
+    <line x1="56.4" y1="212.4" x2="76.7" y2="212.4"/>
+    <line x1="56.4" y1="232.6" x2="76.7" y2="232.6"/>
+    <line x1="56.4" y1="121.2" x2="56.4" y2="131.4"/>
+    <line x1="56.4" y1="202.2" x2="56.4" y2="232.6"/>
+    </g>
+    <g fill="#1f2430" font-size="13.5">
+    <text x="20.0" y="35.8" xml:space="preserve">Task</text>
+    <text x="60.5" y="35.8" xml:space="preserve">层</text>
+    <text x="76.7" y="35.8" xml:space="preserve">:</text>
+    <text x="36.2" y="56.0" xml:space="preserve">test_task()</text>
+    <text x="133.4" y="56.0" xml:space="preserve">→</text>
+    <text x="149.6" y="56.0" xml:space="preserve">imu.getEulerAngle()</text>
+    <text x="319.7" y="56.0" xml:space="preserve">//</text>
+    <text x="344.0" y="56.0" xml:space="preserve">直</text>
+    <text x="360.2" y="56.0" xml:space="preserve">接</text>
+    <text x="376.4" y="56.0" xml:space="preserve">获</text>
+    <text x="392.6" y="56.0" xml:space="preserve">取</text>
+    <text x="408.8" y="56.0" xml:space="preserve">欧</text>
+    <text x="425.0" y="56.0" xml:space="preserve">拉</text>
+    <text x="441.2" y="56.0" xml:space="preserve">角</text>
+    <text x="20.0" y="96.5" xml:space="preserve">Device</text>
+    <text x="76.7" y="96.5" xml:space="preserve">层</text>
+    <text x="101.0" y="96.5" xml:space="preserve">(dvc_imu.hpp/cpp):</text>
+    <text x="36.2" y="116.8" xml:space="preserve">IMU</text>
+    <text x="68.6" y="116.8" xml:space="preserve">(</text>
+    <text x="76.7" y="116.8" xml:space="preserve">抽</text>
+    <text x="92.9" y="116.8" xml:space="preserve">象</text>
+    <text x="109.1" y="116.8" xml:space="preserve">基</text>
+    <text x="125.3" y="116.8" xml:space="preserve">类</text>
+    <text x="141.5" y="116.8" xml:space="preserve">)</text>
+    <text x="84.8" y="137.0" xml:space="preserve">BMI088</text>
+    <text x="141.5" y="137.0" xml:space="preserve">(SPI</text>
+    <text x="182.0" y="137.0" xml:space="preserve">驱</text>
+    <text x="198.2" y="137.0" xml:space="preserve">动</text>
+    <text x="222.5" y="137.0" xml:space="preserve">+</text>
+    <text x="238.7" y="137.0" xml:space="preserve">数</text>
+    <text x="254.9" y="137.0" xml:space="preserve">据</text>
+    <text x="271.1" y="137.0" xml:space="preserve">校</text>
+    <text x="287.3" y="137.0" xml:space="preserve">准</text>
+    <text x="311.6" y="137.0" xml:space="preserve">+</text>
+    <text x="327.8" y="137.0" xml:space="preserve">调</text>
+    <text x="344.0" y="137.0" xml:space="preserve">用</text>
+    <text x="368.3" y="137.0" xml:space="preserve">AHRS)</text>
+    <text x="20.0" y="177.5" xml:space="preserve">Algorithm</text>
+    <text x="101.0" y="177.5" xml:space="preserve">层</text>
+    <text x="125.3" y="177.5" xml:space="preserve">(alg_ahrs.hpp/cpp):</text>
+    <text x="36.2" y="197.8" xml:space="preserve">AHRS</text>
+    <text x="76.7" y="197.8" xml:space="preserve">(</text>
+    <text x="84.8" y="197.8" xml:space="preserve">姿</text>
+    <text x="101.0" y="197.8" xml:space="preserve">态</text>
+    <text x="117.2" y="197.8" xml:space="preserve">解</text>
+    <text x="133.4" y="197.8" xml:space="preserve">算</text>
+    <text x="149.6" y="197.8" xml:space="preserve">抽</text>
+    <text x="165.8" y="197.8" xml:space="preserve">象</text>
+    <text x="182.0" y="197.8" xml:space="preserve">接</text>
+    <text x="198.2" y="197.8" xml:space="preserve">口</text>
+    <text x="214.4" y="197.8" xml:space="preserve">)</text>
+    <text x="84.8" y="218.0" xml:space="preserve">Mahony</text>
+    <text x="141.5" y="218.0" xml:space="preserve">(PI</text>
+    <text x="173.9" y="218.0" xml:space="preserve">互</text>
+    <text x="190.1" y="218.0" xml:space="preserve">补</text>
+    <text x="206.3" y="218.0" xml:space="preserve">滤</text>
+    <text x="222.5" y="218.0" xml:space="preserve">波</text>
+    <text x="238.7" y="218.0" xml:space="preserve">)</text>
+    <text x="84.8" y="238.3" xml:space="preserve">QuaternionEKF</text>
+    <text x="198.2" y="238.3" xml:space="preserve">(</text>
+    <text x="206.3" y="238.3" xml:space="preserve">扩</text>
+    <text x="222.5" y="238.3" xml:space="preserve">展</text>
+    <text x="238.7" y="238.3" xml:space="preserve">卡</text>
+    <text x="254.9" y="238.3" xml:space="preserve">尔</text>
+    <text x="271.1" y="238.3" xml:space="preserve">曼</text>
+    <text x="287.3" y="238.3" xml:space="preserve">滤</text>
+    <text x="303.5" y="238.3" xml:space="preserve">波</text>
+    <text x="319.7" y="238.3" xml:space="preserve">)</text>
+    <text x="20.0" y="278.8" xml:space="preserve">Algorithm</text>
+    <text x="101.0" y="278.8" xml:space="preserve">层</text>
+    <text x="125.3" y="278.8" xml:space="preserve">(alg_filter.hpp/cpp):</text>
+    <text x="36.2" y="299.0" xml:space="preserve">KalmanFilter</text>
+    <text x="141.5" y="299.0" xml:space="preserve">/</text>
+    <text x="157.7" y="299.0" xml:space="preserve">LowPassFilter</text>
+    <text x="271.1" y="299.0" xml:space="preserve">(EKF</text>
+    <text x="311.6" y="299.0" xml:space="preserve">底</text>
+    <text x="327.8" y="299.0" xml:space="preserve">层</text>
+    <text x="344.0" y="299.0" xml:space="preserve">使</text>
+    <text x="360.2" y="299.0" xml:space="preserve">用</text>
+    <text x="376.4" y="299.0" xml:space="preserve">的</text>
+    <text x="392.6" y="299.0" xml:space="preserve">滤</text>
+    <text x="408.8" y="299.0" xml:space="preserve">波</text>
+    <text x="425.0" y="299.0" xml:space="preserve">器</text>
+    <text x="441.2" y="299.0" xml:space="preserve">)</text>
+    <text x="20.0" y="339.5" xml:space="preserve">Driver</text>
+    <text x="76.7" y="339.5" xml:space="preserve">层</text>
+    <text x="101.0" y="339.5" xml:space="preserve">(drv_spi.c):</text>
+    <text x="36.2" y="359.8" xml:space="preserve">SPI_Init</text>
+    <text x="109.1" y="359.8" xml:space="preserve">/</text>
+    <text x="125.3" y="359.8" xml:space="preserve">SPI_TransmitReceive_DMA</text>
+    <text x="319.7" y="359.8" xml:space="preserve">/</text>
+    <text x="335.9" y="359.8" xml:space="preserve">HAL_SPI_TxRxCpltCallback</text>
+    </g>
+  </g>
+</svg>

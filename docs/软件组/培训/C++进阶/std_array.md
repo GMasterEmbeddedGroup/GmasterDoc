@@ -29,22 +29,11 @@ float motorPositions[4] = {0.0f, 0.0f, 0.0f, 0.0f};
 std::array<float, 4> motorPositions = {0.0f, 0.0f, 0.0f, 0.0f};
 ```
 
-```bash
-          C 风格数组                          std::array
-┌─────────────────────────┐        ┌─────────────────────────┐
-│ float[4]                │        │ std::array<float, 4>    │
-│  ├── [0] 0.0f           │        │  ├── _M_elems[0] 0.0f   │
-│  ├── [1] 0.0f           │        │  ├── _M_elems[1] 0.0f   │
-│  ├── [2] 0.0f           │        │  ├── _M_elems[2] 0.0f   │
-│  ├── [3] 0.0f           │        │  ├── _M_elems[3] 0.0f   │
-│  └── 没有 size()        │        │  └── size()  → 4        │
-│      不能赋值             │        │      可以直接赋值        │
-│      退化为指针           │        │      传递时不退化        │
-└─────────────────────────┘        └─────────────────────────┘
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d014-f7830e.svg" alt="C 风格数组 / std::array">
+  <figcaption>图：C 风格数组 / std::array</figcaption>
+</figure>
 
-内存布局完全相同——数据紧挨着放在栈上，没有任何额外开销。
-区别在于 std::array 在类型系统中携带了大小信息。
-```
 
 **关键理解：`std::array` 是零开销抽象（zero-overhead abstraction）——它的内存布局与 C 风格数组完全一致，所有的大小信息和成员函数都在编译期处理，不产生任何运行时开销。**
 

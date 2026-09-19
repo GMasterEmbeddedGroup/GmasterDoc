@@ -1,0 +1,237 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 453 1073" width="453" height="1073" role="img" aria-labelledby="ttl dsc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Noto Sans Mono CJK SC', 'Microsoft YaHei', monospace">
+  <title id="ttl">HSE (8MHz 外部晶振)</title>
+  <desc id="dsc">自动由 ASCII 示意图矢量化生成，源：docs/软件组/培训/嵌入式基础/02-时钟树与总线架构.md 第 153-205 行</desc>
+  <g transform="scale(1)">
+    <rect x="0.75" y="0.75" width="100%" height="100%" rx="14" fill="#f7f9fc" stroke="#dce3ec" stroke-width="1.5"/>
+    <g stroke="#8b97b5" stroke-width="1.4" stroke-linecap="round">
+    <line x1="137.4" y1="111.1" x2="182.0" y2="111.1"/>
+    <line x1="368.3" y1="111.1" x2="412.8" y2="111.1"/>
+    <line x1="64.5" y1="232.6" x2="299.4" y2="232.6"/>
+    <line x1="64.5" y1="354.1" x2="84.8" y2="354.1"/>
+    <line x1="129.3" y1="394.6" x2="149.6" y2="394.6"/>
+    <line x1="194.2" y1="435.1" x2="214.4" y2="435.1"/>
+    <line x1="194.2" y1="455.4" x2="214.4" y2="455.4"/>
+    <line x1="194.2" y1="475.6" x2="214.4" y2="475.6"/>
+    <line x1="194.2" y1="495.9" x2="214.4" y2="495.9"/>
+    <line x1="194.2" y1="536.4" x2="214.4" y2="536.4"/>
+    <line x1="258.9" y1="576.9" x2="279.2" y2="576.9"/>
+    <line x1="258.9" y1="637.6" x2="279.2" y2="637.6"/>
+    <line x1="194.2" y1="759.1" x2="214.4" y2="759.1"/>
+    <line x1="258.9" y1="799.6" x2="279.2" y2="799.6"/>
+    <line x1="258.9" y1="860.4" x2="279.2" y2="860.4"/>
+    <line x1="129.3" y1="961.6" x2="149.6" y2="961.6"/>
+    <line x1="190.1" y1="1002.1" x2="222.5" y2="1002.1"/>
+    <line x1="214.4" y1="1022.4" x2="230.6" y2="1022.4"/>
+    <line x1="182.0" y1="1042.6" x2="222.5" y2="1042.6"/>
+    <line x1="64.5" y1="232.6" x2="64.5" y2="263.0"/>
+    <line x1="64.5" y1="323.8" x2="64.5" y2="1052.8"/>
+    <line x1="129.3" y1="242.8" x2="129.3" y2="263.0"/>
+    <line x1="129.3" y1="364.2" x2="129.3" y2="961.6"/>
+    <line x1="137.4" y1="111.1" x2="137.4" y2="161.8"/>
+    <line x1="137.4" y1="202.2" x2="137.4" y2="242.8"/>
+    <line x1="194.2" y1="404.8" x2="194.2" y2="759.1"/>
+    <line x1="202.2" y1="242.8" x2="202.2" y2="263.0"/>
+    <line x1="210.3" y1="232.6" x2="210.3" y2="242.8"/>
+    <line x1="258.9" y1="546.5" x2="258.9" y2="637.6"/>
+    <line x1="258.9" y1="769.2" x2="258.9" y2="860.4"/>
+    <line x1="267.0" y1="40.2" x2="267.0" y2="80.8"/>
+    <line x1="299.4" y1="232.6" x2="299.4" y2="242.8"/>
+    <line x1="307.6" y1="242.8" x2="307.6" y2="263.0"/>
+    <line x1="412.8" y1="111.1" x2="412.8" y2="121.2"/>
+    <line x1="420.9" y1="121.2" x2="420.9" y2="242.8"/>
+    <line x1="420.9" y1="263.0" x2="420.9" y2="344.0"/>
+    <line x1="420.9" y1="364.2" x2="420.9" y2="384.5"/>
+    <line x1="420.9" y1="404.8" x2="420.9" y2="425.0"/>
+    <line x1="420.9" y1="445.2" x2="420.9" y2="526.2"/>
+    <line x1="420.9" y1="546.5" x2="420.9" y2="587.0"/>
+    <line x1="420.9" y1="607.2" x2="420.9" y2="668.0"/>
+    <line x1="420.9" y1="688.2" x2="420.9" y2="749.0"/>
+    <line x1="420.9" y1="769.2" x2="420.9" y2="809.8"/>
+    <line x1="420.9" y1="830.0" x2="420.9" y2="890.8"/>
+    <line x1="420.9" y1="911.0" x2="420.9" y2="951.5"/>
+    <line x1="420.9" y1="971.8" x2="420.9" y2="992.0"/>
+    <line x1="420.9" y1="1012.2" x2="420.9" y2="1032.5"/>
+    <line x1="429.0" y1="242.8" x2="429.0" y2="263.0"/>
+    <line x1="429.0" y1="344.0" x2="429.0" y2="364.2"/>
+    <line x1="429.0" y1="384.5" x2="429.0" y2="404.8"/>
+    <line x1="429.0" y1="425.0" x2="429.0" y2="445.2"/>
+    <line x1="429.0" y1="526.2" x2="429.0" y2="546.5"/>
+    <line x1="429.0" y1="587.0" x2="429.0" y2="607.2"/>
+    <line x1="429.0" y1="668.0" x2="429.0" y2="688.2"/>
+    <line x1="429.0" y1="749.0" x2="429.0" y2="769.2"/>
+    <line x1="429.0" y1="809.8" x2="429.0" y2="830.0"/>
+    <line x1="429.0" y1="890.8" x2="429.0" y2="911.0"/>
+    <line x1="429.0" y1="951.5" x2="429.0" y2="971.8"/>
+    <line x1="429.0" y1="992.0" x2="429.0" y2="1012.2"/>
+    <line x1="429.0" y1="1032.5" x2="429.0" y2="1052.8"/>
+    </g>
+    <g fill="#1f2430" font-size="13.5">
+    <text x="230.6" y="35.8" xml:space="preserve">HSE</text>
+    <text x="263.0" y="35.8" xml:space="preserve">(8MHz</text>
+    <text x="311.6" y="35.8" xml:space="preserve">外</text>
+    <text x="327.8" y="35.8" xml:space="preserve">部</text>
+    <text x="344.0" y="35.8" xml:space="preserve">晶</text>
+    <text x="360.2" y="35.8" xml:space="preserve">振</text>
+    <text x="376.4" y="35.8" xml:space="preserve">)</text>
+    <text x="279.2" y="76.3" xml:space="preserve">÷M</text>
+    <text x="303.5" y="76.3" xml:space="preserve">(PLLM=6)</text>
+    <text x="263.0" y="96.5" xml:space="preserve">▼</text>
+    <text x="198.2" y="116.8" xml:space="preserve">PLL</text>
+    <text x="230.6" y="116.8" xml:space="preserve">输</text>
+    <text x="246.8" y="116.8" xml:space="preserve">入</text>
+    <text x="271.1" y="116.8" xml:space="preserve">=</text>
+    <text x="287.3" y="116.8" xml:space="preserve">1.333MHz</text>
+    <text x="149.6" y="157.3" xml:space="preserve">×N</text>
+    <text x="173.9" y="157.3" xml:space="preserve">(PLLN=336)</text>
+    <text x="133.4" y="177.5" xml:space="preserve">▼</text>
+    <text x="92.9" y="197.8" xml:space="preserve">VCO</text>
+    <text x="125.3" y="197.8" xml:space="preserve">=</text>
+    <text x="141.5" y="197.8" xml:space="preserve">448MHz</text>
+    <text x="76.7" y="258.5" xml:space="preserve">÷P=2</text>
+    <text x="141.5" y="258.5" xml:space="preserve">÷Q=7</text>
+    <text x="214.4" y="258.5" xml:space="preserve">其</text>
+    <text x="230.6" y="258.5" xml:space="preserve">他</text>
+    <text x="246.8" y="258.5" xml:space="preserve">PLL</text>
+    <text x="271.1" y="258.5" xml:space="preserve">输</text>
+    <text x="287.3" y="258.5" xml:space="preserve">出</text>
+    <text x="60.5" y="278.8" xml:space="preserve">▼</text>
+    <text x="125.3" y="278.8" xml:space="preserve">▼</text>
+    <text x="198.2" y="278.8" xml:space="preserve">▼</text>
+    <text x="295.4" y="278.8" xml:space="preserve">▼</text>
+    <text x="36.2" y="299.0" xml:space="preserve">PLLCLK</text>
+    <text x="101.0" y="299.0" xml:space="preserve">PLL48CK</text>
+    <text x="173.9" y="299.0" xml:space="preserve">PLLI2SCLK</text>
+    <text x="263.0" y="299.0" xml:space="preserve">PLLSAICLK</text>
+    <text x="36.2" y="319.3" xml:space="preserve">=168MHz</text>
+    <text x="101.0" y="319.3" xml:space="preserve">=64MHz</text>
+    <text x="182.0" y="319.3" xml:space="preserve">(I2S)</text>
+    <text x="271.1" y="319.3" xml:space="preserve">(SAI)</text>
+    <text x="84.8" y="359.8" xml:space="preserve">→</text>
+    <text x="101.0" y="359.8" xml:space="preserve">SYSCLK</text>
+    <text x="157.7" y="359.8" xml:space="preserve">(</text>
+    <text x="165.8" y="359.8" xml:space="preserve">系</text>
+    <text x="182.0" y="359.8" xml:space="preserve">统</text>
+    <text x="198.2" y="359.8" xml:space="preserve">时</text>
+    <text x="214.4" y="359.8" xml:space="preserve">钟</text>
+    <text x="230.6" y="359.8" xml:space="preserve">)</text>
+    <text x="246.8" y="359.8" xml:space="preserve">=</text>
+    <text x="263.0" y="359.8" xml:space="preserve">168MHz</text>
+    <text x="149.6" y="400.3" xml:space="preserve">→</text>
+    <text x="165.8" y="400.3" xml:space="preserve">HCLK</text>
+    <text x="206.3" y="400.3" xml:space="preserve">(AHB</text>
+    <text x="238.7" y="400.3" xml:space="preserve">总</text>
+    <text x="254.9" y="400.3" xml:space="preserve">线</text>
+    <text x="271.1" y="400.3" xml:space="preserve">)</text>
+    <text x="287.3" y="400.3" xml:space="preserve">=</text>
+    <text x="303.5" y="400.3" xml:space="preserve">168MHz</text>
+    <text x="214.4" y="440.8" xml:space="preserve">→</text>
+    <text x="230.6" y="440.8" xml:space="preserve">Cortex</text>
+    <text x="287.3" y="440.8" xml:space="preserve">内</text>
+    <text x="303.5" y="440.8" xml:space="preserve">核</text>
+    <text x="327.8" y="440.8" xml:space="preserve">(168MHz)</text>
+    <text x="214.4" y="461.0" xml:space="preserve">→</text>
+    <text x="230.6" y="461.0" xml:space="preserve">DMA1,</text>
+    <text x="279.2" y="461.0" xml:space="preserve">DMA2</text>
+    <text x="214.4" y="481.3" xml:space="preserve">→</text>
+    <text x="230.6" y="481.3" xml:space="preserve">GPIO</text>
+    <text x="271.1" y="481.3" xml:space="preserve">(AHB1)</text>
+    <text x="214.4" y="501.5" xml:space="preserve">→</text>
+    <text x="230.6" y="501.5" xml:space="preserve">ETH,</text>
+    <text x="271.1" y="501.5" xml:space="preserve">USB_OTG</text>
+    <text x="214.4" y="542.0" xml:space="preserve">→</text>
+    <text x="230.6" y="542.0" xml:space="preserve">APB1</text>
+    <text x="271.1" y="542.0" xml:space="preserve">预</text>
+    <text x="287.3" y="542.0" xml:space="preserve">分</text>
+    <text x="303.5" y="542.0" xml:space="preserve">频</text>
+    <text x="319.7" y="542.0" xml:space="preserve">器</text>
+    <text x="344.0" y="542.0" xml:space="preserve">(÷4)</text>
+    <text x="279.2" y="582.5" xml:space="preserve">→</text>
+    <text x="295.4" y="582.5" xml:space="preserve">PCLK1</text>
+    <text x="344.0" y="582.5" xml:space="preserve">=</text>
+    <text x="360.2" y="582.5" xml:space="preserve">42MHz</text>
+    <text x="287.3" y="602.8" xml:space="preserve">(APB1</text>
+    <text x="335.9" y="602.8" xml:space="preserve">外</text>
+    <text x="352.1" y="602.8" xml:space="preserve">设</text>
+    <text x="368.3" y="602.8" xml:space="preserve">时</text>
+    <text x="384.5" y="602.8" xml:space="preserve">钟</text>
+    <text x="400.7" y="602.8" xml:space="preserve">)</text>
+    <text x="279.2" y="643.3" xml:space="preserve">→</text>
+    <text x="295.4" y="643.3" xml:space="preserve">★</text>
+    <text x="311.6" y="643.3" xml:space="preserve">APB1</text>
+    <text x="352.1" y="643.3" xml:space="preserve">Timer</text>
+    <text x="295.4" y="663.5" xml:space="preserve">Clk</text>
+    <text x="327.8" y="663.5" xml:space="preserve">=</text>
+    <text x="344.0" y="663.5" xml:space="preserve">84MHz</text>
+    <text x="295.4" y="683.8" xml:space="preserve">(</text>
+    <text x="303.5" y="683.8" xml:space="preserve">当</text>
+    <text x="319.7" y="683.8" xml:space="preserve">分</text>
+    <text x="335.9" y="683.8" xml:space="preserve">频</text>
+    <text x="352.1" y="683.8" xml:space="preserve">≠1</text>
+    <text x="368.3" y="683.8" xml:space="preserve">时</text>
+    <text x="384.5" y="683.8" xml:space="preserve">×2!)</text>
+    <text x="295.4" y="704.0" xml:space="preserve">TIM2~TIM7,</text>
+    <text x="295.4" y="724.3" xml:space="preserve">TIM12~TIM14</text>
+    <text x="214.4" y="764.8" xml:space="preserve">→</text>
+    <text x="230.6" y="764.8" xml:space="preserve">APB2</text>
+    <text x="271.1" y="764.8" xml:space="preserve">预</text>
+    <text x="287.3" y="764.8" xml:space="preserve">分</text>
+    <text x="303.5" y="764.8" xml:space="preserve">频</text>
+    <text x="319.7" y="764.8" xml:space="preserve">器</text>
+    <text x="344.0" y="764.8" xml:space="preserve">(÷2)</text>
+    <text x="279.2" y="805.3" xml:space="preserve">→</text>
+    <text x="295.4" y="805.3" xml:space="preserve">PCLK2</text>
+    <text x="344.0" y="805.3" xml:space="preserve">=</text>
+    <text x="360.2" y="805.3" xml:space="preserve">84MHz</text>
+    <text x="287.3" y="825.5" xml:space="preserve">(APB2</text>
+    <text x="335.9" y="825.5" xml:space="preserve">外</text>
+    <text x="352.1" y="825.5" xml:space="preserve">设</text>
+    <text x="368.3" y="825.5" xml:space="preserve">时</text>
+    <text x="384.5" y="825.5" xml:space="preserve">钟</text>
+    <text x="400.7" y="825.5" xml:space="preserve">)</text>
+    <text x="279.2" y="866.0" xml:space="preserve">→</text>
+    <text x="295.4" y="866.0" xml:space="preserve">★</text>
+    <text x="311.6" y="866.0" xml:space="preserve">APB2</text>
+    <text x="352.1" y="866.0" xml:space="preserve">Timer</text>
+    <text x="295.4" y="886.3" xml:space="preserve">Clk</text>
+    <text x="327.8" y="886.3" xml:space="preserve">=</text>
+    <text x="344.0" y="886.3" xml:space="preserve">168MHz</text>
+    <text x="295.4" y="906.5" xml:space="preserve">(</text>
+    <text x="303.5" y="906.5" xml:space="preserve">当</text>
+    <text x="319.7" y="906.5" xml:space="preserve">分</text>
+    <text x="335.9" y="906.5" xml:space="preserve">频</text>
+    <text x="352.1" y="906.5" xml:space="preserve">≠1</text>
+    <text x="368.3" y="906.5" xml:space="preserve">时</text>
+    <text x="384.5" y="906.5" xml:space="preserve">×2!)</text>
+    <text x="295.4" y="926.8" xml:space="preserve">TIM1,</text>
+    <text x="344.0" y="926.8" xml:space="preserve">TIM8~11</text>
+    <text x="149.6" y="967.3" xml:space="preserve">→</text>
+    <text x="165.8" y="967.3" xml:space="preserve">SysTick</text>
+    <text x="230.6" y="967.3" xml:space="preserve">定</text>
+    <text x="246.8" y="967.3" xml:space="preserve">时</text>
+    <text x="263.0" y="967.3" xml:space="preserve">器</text>
+    <text x="287.3" y="967.3" xml:space="preserve">(168MHz</text>
+    <text x="352.1" y="967.3" xml:space="preserve">或</text>
+    <text x="376.4" y="967.3" xml:space="preserve">÷8)</text>
+    <text x="84.8" y="1007.8" xml:space="preserve">HSI</text>
+    <text x="117.2" y="1007.8" xml:space="preserve">(16MHz)</text>
+    <text x="230.6" y="1007.8" xml:space="preserve">备</text>
+    <text x="246.8" y="1007.8" xml:space="preserve">用</text>
+    <text x="263.0" y="1007.8" xml:space="preserve">时</text>
+    <text x="279.2" y="1007.8" xml:space="preserve">钟</text>
+    <text x="295.4" y="1007.8" xml:space="preserve">源</text>
+    <text x="84.8" y="1028.0" xml:space="preserve">LSE</text>
+    <text x="117.2" y="1028.0" xml:space="preserve">(32.768kHz)</text>
+    <text x="238.7" y="1028.0" xml:space="preserve">RTC</text>
+    <text x="271.1" y="1028.0" xml:space="preserve">时</text>
+    <text x="287.3" y="1028.0" xml:space="preserve">钟</text>
+    <text x="84.8" y="1048.3" xml:space="preserve">LSI</text>
+    <text x="117.2" y="1048.3" xml:space="preserve">(32kHz)</text>
+    <text x="230.6" y="1048.3" xml:space="preserve">IWDG</text>
+    <text x="271.1" y="1048.3" xml:space="preserve">独</text>
+    <text x="287.3" y="1048.3" xml:space="preserve">立</text>
+    <text x="303.5" y="1048.3" xml:space="preserve">看</text>
+    <text x="319.7" y="1048.3" xml:space="preserve">门</text>
+    <text x="335.9" y="1048.3" xml:space="preserve">狗</text>
+    </g>
+  </g>
+</svg>

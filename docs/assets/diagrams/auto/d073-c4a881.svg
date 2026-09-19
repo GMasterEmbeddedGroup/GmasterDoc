@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 486 222" width="486" height="222" role="img" aria-labelledby="ttl dsc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Noto Sans Mono CJK SC', 'Microsoft YaHei', monospace">
+  <title id="ttl">STM32 / BMI088</title>
+  <desc id="dsc">自动由 ASCII 示意图矢量化生成，源：docs/软件组/培训/嵌入式基础/09-SPI通信原理.md 第 208-218 行</desc>
+  <g transform="scale(1)">
+    <rect x="0.75" y="0.75" width="100%" height="100%" rx="14" fill="#f7f9fc" stroke="#dce3ec" stroke-width="1.5"/>
+    <g stroke="#8b97b5" stroke-width="1.4" stroke-linecap="round">
+    <line x1="24.1" y1="50.4" x2="97.0" y2="50.4"/>
+    <line x1="218.4" y1="50.4" x2="339.9" y2="50.4"/>
+    <line x1="101.0" y1="70.6" x2="117.2" y2="70.6"/>
+    <line x1="149.6" y1="70.6" x2="214.4" y2="70.6"/>
+    <line x1="101.0" y1="90.9" x2="117.2" y2="90.9"/>
+    <line x1="149.6" y1="90.9" x2="169.8" y2="90.9"/>
+    <line x1="101.0" y1="111.1" x2="117.2" y2="111.1"/>
+    <line x1="149.6" y1="111.1" x2="214.4" y2="111.1"/>
+    <line x1="101.0" y1="151.6" x2="117.2" y2="151.6"/>
+    <line x1="141.5" y1="151.6" x2="169.8" y2="151.6"/>
+    <line x1="101.0" y1="171.9" x2="117.2" y2="171.9"/>
+    <line x1="141.5" y1="171.9" x2="169.8" y2="171.9"/>
+    <line x1="24.1" y1="192.1" x2="97.0" y2="192.1"/>
+    <line x1="218.4" y1="192.1" x2="339.9" y2="192.1"/>
+    <line x1="24.1" y1="50.4" x2="24.1" y2="192.1"/>
+    <line x1="97.0" y1="50.4" x2="97.0" y2="192.1"/>
+    <line x1="169.8" y1="70.6" x2="169.8" y2="171.9"/>
+    <line x1="218.4" y1="50.4" x2="218.4" y2="192.1"/>
+    <line x1="339.9" y1="50.4" x2="339.9" y2="192.1"/>
+    </g>
+    <g fill="#1f2430" font-size="13.5">
+    <text x="28.1" y="35.8" xml:space="preserve">STM32</text>
+    <text x="246.8" y="35.8" xml:space="preserve">BMI088</text>
+    <text x="117.2" y="76.3" xml:space="preserve">SCLK</text>
+    <text x="222.5" y="76.3" xml:space="preserve">SCLK_ACC</text>
+    <text x="44.3" y="96.5" xml:space="preserve">SPI1</text>
+    <text x="117.2" y="96.5" xml:space="preserve">MOSI</text>
+    <text x="117.2" y="116.8" xml:space="preserve">MISO</text>
+    <text x="222.5" y="116.8" xml:space="preserve">MISO</text>
+    <text x="263.0" y="116.8" xml:space="preserve">(</text>
+    <text x="271.1" y="116.8" xml:space="preserve">共</text>
+    <text x="287.3" y="116.8" xml:space="preserve">用</text>
+    <text x="303.5" y="116.8" xml:space="preserve">)</text>
+    <text x="44.3" y="157.3" xml:space="preserve">GPIO</text>
+    <text x="117.2" y="157.3" xml:space="preserve">CS1</text>
+    <text x="222.5" y="157.3" xml:space="preserve">CS_ACC</text>
+    <text x="360.2" y="157.3" xml:space="preserve">←</text>
+    <text x="376.4" y="157.3" xml:space="preserve">加</text>
+    <text x="392.6" y="157.3" xml:space="preserve">速</text>
+    <text x="408.8" y="157.3" xml:space="preserve">度</text>
+    <text x="425.0" y="157.3" xml:space="preserve">计</text>
+    <text x="449.3" y="157.3" xml:space="preserve">CS</text>
+    <text x="44.3" y="177.5" xml:space="preserve">GPIO</text>
+    <text x="117.2" y="177.5" xml:space="preserve">CS2</text>
+    <text x="222.5" y="177.5" xml:space="preserve">CS_GYRO</text>
+    <text x="360.2" y="177.5" xml:space="preserve">←</text>
+    <text x="376.4" y="177.5" xml:space="preserve">陀</text>
+    <text x="392.6" y="177.5" xml:space="preserve">螺</text>
+    <text x="408.8" y="177.5" xml:space="preserve">仪</text>
+    <text x="433.1" y="177.5" xml:space="preserve">CS</text>
+    </g>
+  </g>
+</svg>

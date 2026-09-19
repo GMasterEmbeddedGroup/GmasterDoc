@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 437 465" width="437" height="465" role="img" aria-labelledby="ttl dsc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Noto Sans Mono CJK SC', 'Microsoft YaHei', monospace">
+  <title id="ttl">#include &lt;stdio.h&gt;</title>
+  <desc id="dsc">自动由 ASCII 示意图矢量化生成，源：docs/软件组/培训/C++基础/03-变量与常量.md 第 48-70 行</desc>
+  <g transform="scale(1)">
+    <rect x="0.75" y="0.75" width="100%" height="100%" rx="14" fill="#f7f9fc" stroke="#dce3ec" stroke-width="1.5"/>
+    <g stroke="#8b97b5" stroke-width="1.4" stroke-linecap="round">
+    <line x1="24.1" y1="30.1" x2="396.6" y2="30.1"/>
+    <line x1="226.5" y1="151.6" x2="380.4" y2="151.6"/>
+    <line x1="226.5" y1="212.4" x2="380.4" y2="212.4"/>
+    <line x1="226.5" y1="273.1" x2="380.4" y2="273.1"/>
+    <line x1="226.5" y1="414.9" x2="380.4" y2="414.9"/>
+    <line x1="24.1" y1="435.1" x2="396.6" y2="435.1"/>
+    <line x1="24.1" y1="30.1" x2="24.1" y2="435.1"/>
+    <line x1="226.5" y1="151.6" x2="226.5" y2="161.8"/>
+    <line x1="226.5" y1="202.2" x2="226.5" y2="212.4"/>
+    <line x1="226.5" y1="273.1" x2="226.5" y2="283.2"/>
+    <line x1="226.5" y1="323.8" x2="226.5" y2="344.0"/>
+    <line x1="226.5" y1="364.2" x2="226.5" y2="384.5"/>
+    <line x1="226.5" y1="404.8" x2="226.5" y2="414.9"/>
+    <line x1="234.6" y1="161.8" x2="234.6" y2="202.2"/>
+    <line x1="234.6" y1="283.2" x2="234.6" y2="323.8"/>
+    <line x1="234.6" y1="344.0" x2="234.6" y2="364.2"/>
+    <line x1="380.4" y1="151.6" x2="380.4" y2="161.8"/>
+    <line x1="380.4" y1="202.2" x2="380.4" y2="212.4"/>
+    <line x1="380.4" y1="273.1" x2="380.4" y2="283.2"/>
+    <line x1="380.4" y1="323.8" x2="380.4" y2="344.0"/>
+    <line x1="380.4" y1="404.8" x2="380.4" y2="414.9"/>
+    <line x1="388.6" y1="303.5" x2="388.6" y2="323.8"/>
+    <line x1="388.6" y1="364.2" x2="388.6" y2="384.5"/>
+    <line x1="396.6" y1="30.1" x2="396.6" y2="40.2"/>
+    <line x1="396.6" y1="141.5" x2="396.6" y2="222.5"/>
+    <line x1="396.6" y1="242.8" x2="396.6" y2="303.5"/>
+    <line x1="396.6" y1="323.8" x2="396.6" y2="364.2"/>
+    <line x1="396.6" y1="384.5" x2="396.6" y2="435.1"/>
+    <line x1="404.8" y1="40.2" x2="404.8" y2="141.5"/>
+    <line x1="404.8" y1="222.5" x2="404.8" y2="242.8"/>
+    <line x1="404.8" y1="303.5" x2="404.8" y2="323.8"/>
+    <line x1="404.8" y1="364.2" x2="404.8" y2="384.5"/>
+    <line x1="412.8" y1="161.8" x2="412.8" y2="202.2"/>
+    <line x1="412.8" y1="283.2" x2="412.8" y2="303.5"/>
+    <line x1="412.8" y1="344.0" x2="412.8" y2="364.2"/>
+    <line x1="412.8" y1="384.5" x2="412.8" y2="404.8"/>
+    </g>
+    <g fill="#1f2430" font-size="13.5">
+    <text x="44.3" y="56.0" xml:space="preserve">#include</text>
+    <text x="117.2" y="56.0" xml:space="preserve">&lt;stdio.h&gt;</text>
+    <text x="44.3" y="96.5" xml:space="preserve">int</text>
+    <text x="76.7" y="96.5" xml:space="preserve">global</text>
+    <text x="133.4" y="96.5" xml:space="preserve">=</text>
+    <text x="149.6" y="96.5" xml:space="preserve">100;</text>
+    <text x="246.8" y="96.5" xml:space="preserve">←</text>
+    <text x="263.0" y="96.5" xml:space="preserve">全</text>
+    <text x="279.2" y="96.5" xml:space="preserve">局</text>
+    <text x="295.4" y="96.5" xml:space="preserve">变</text>
+    <text x="311.6" y="96.5" xml:space="preserve">量</text>
+    <text x="238.7" y="116.8" xml:space="preserve">文</text>
+    <text x="254.9" y="116.8" xml:space="preserve">件</text>
+    <text x="271.1" y="116.8" xml:space="preserve">作</text>
+    <text x="287.3" y="116.8" xml:space="preserve">用</text>
+    <text x="303.5" y="116.8" xml:space="preserve">域</text>
+    <text x="44.3" y="137.0" xml:space="preserve">void</text>
+    <text x="84.8" y="137.0" xml:space="preserve">func()</text>
+    <text x="44.3" y="157.3" xml:space="preserve">{</text>
+    <text x="76.7" y="177.5" xml:space="preserve">int</text>
+    <text x="109.1" y="177.5" xml:space="preserve">local</text>
+    <text x="157.7" y="177.5" xml:space="preserve">=</text>
+    <text x="173.9" y="177.5" xml:space="preserve">10;</text>
+    <text x="246.8" y="177.5" xml:space="preserve">局</text>
+    <text x="263.0" y="177.5" xml:space="preserve">部</text>
+    <text x="279.2" y="177.5" xml:space="preserve">变</text>
+    <text x="295.4" y="177.5" xml:space="preserve">量</text>
+    <text x="76.7" y="197.8" xml:space="preserve">//</text>
+    <text x="101.0" y="197.8" xml:space="preserve">...</text>
+    <text x="246.8" y="197.8" xml:space="preserve">函</text>
+    <text x="263.0" y="197.8" xml:space="preserve">数</text>
+    <text x="279.2" y="197.8" xml:space="preserve">作</text>
+    <text x="295.4" y="197.8" xml:space="preserve">用</text>
+    <text x="311.6" y="197.8" xml:space="preserve">域</text>
+    <text x="44.3" y="218.0" xml:space="preserve">}</text>
+    <text x="44.3" y="258.5" xml:space="preserve">int</text>
+    <text x="76.7" y="258.5" xml:space="preserve">main()</text>
+    <text x="44.3" y="278.8" xml:space="preserve">{</text>
+    <text x="76.7" y="299.0" xml:space="preserve">for</text>
+    <text x="109.1" y="299.0" xml:space="preserve">(int</text>
+    <text x="149.6" y="299.0" xml:space="preserve">i</text>
+    <text x="165.8" y="299.0" xml:space="preserve">=</text>
+    <text x="182.0" y="299.0" xml:space="preserve">0;</text>
+    <text x="246.8" y="299.0" xml:space="preserve">i</text>
+    <text x="263.0" y="299.0" xml:space="preserve">仅</text>
+    <text x="279.2" y="299.0" xml:space="preserve">在</text>
+    <text x="295.4" y="299.0" xml:space="preserve">循</text>
+    <text x="311.6" y="299.0" xml:space="preserve">环</text>
+    <text x="327.8" y="299.0" xml:space="preserve">体</text>
+    <text x="344.0" y="299.0" xml:space="preserve">内</text>
+    <text x="117.2" y="319.3" xml:space="preserve">i</text>
+    <text x="133.4" y="319.3" xml:space="preserve">&lt;</text>
+    <text x="149.6" y="319.3" xml:space="preserve">5;</text>
+    <text x="173.9" y="319.3" xml:space="preserve">i++)</text>
+    <text x="246.8" y="319.3" xml:space="preserve">有</text>
+    <text x="263.0" y="319.3" xml:space="preserve">效</text>
+    <text x="279.2" y="319.3" xml:space="preserve">（</text>
+    <text x="295.4" y="319.3" xml:space="preserve">C99</text>
+    <text x="319.7" y="319.3" xml:space="preserve">起</text>
+    <text x="335.9" y="319.3" xml:space="preserve">）</text>
+    <text x="76.7" y="339.5" xml:space="preserve">{</text>
+    <text x="109.1" y="359.8" xml:space="preserve">int</text>
+    <text x="141.5" y="359.8" xml:space="preserve">j</text>
+    <text x="157.7" y="359.8" xml:space="preserve">=</text>
+    <text x="173.9" y="359.8" xml:space="preserve">i</text>
+    <text x="190.1" y="359.8" xml:space="preserve">*</text>
+    <text x="206.3" y="359.8" xml:space="preserve">2;</text>
+    <text x="246.8" y="359.8" xml:space="preserve">j</text>
+    <text x="263.0" y="359.8" xml:space="preserve">仅</text>
+    <text x="279.2" y="359.8" xml:space="preserve">在</text>
+    <text x="295.4" y="359.8" xml:space="preserve">此</text>
+    <text x="311.6" y="359.8" xml:space="preserve">代</text>
+    <text x="327.8" y="359.8" xml:space="preserve">码</text>
+    <text x="344.0" y="359.8" xml:space="preserve">块</text>
+    <text x="360.2" y="359.8" xml:space="preserve">内</text>
+    <text x="76.7" y="380.0" xml:space="preserve">}</text>
+    <text x="238.7" y="380.0" xml:space="preserve">有</text>
+    <text x="254.9" y="380.0" xml:space="preserve">效</text>
+    <text x="76.7" y="400.3" xml:space="preserve">//</text>
+    <text x="101.0" y="400.3" xml:space="preserve">i</text>
+    <text x="117.2" y="400.3" xml:space="preserve">和</text>
+    <text x="141.5" y="400.3" xml:space="preserve">j</text>
+    <text x="157.7" y="400.3" xml:space="preserve">在</text>
+    <text x="173.9" y="400.3" xml:space="preserve">此</text>
+    <text x="190.1" y="400.3" xml:space="preserve">处</text>
+    <text x="206.3" y="400.3" xml:space="preserve">不</text>
+    <text x="222.5" y="400.3" xml:space="preserve">可</text>
+    <text x="238.7" y="400.3" xml:space="preserve">见</text>
+    <text x="44.3" y="420.5" xml:space="preserve">}</text>
+    </g>
+  </g>
+</svg>

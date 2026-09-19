@@ -9,23 +9,11 @@ MkDocs 是一个静态站点生成器，能将 Markdown 文件编译为 HTML 网
 
 ## 2. 文件结构
 
-```
-GmasterDoc/
-├── mkdocs.yml          ← 站点配置文件（导航、主题、插件等）
-├── docs/               ← 所有 Markdown 文档放这里
-│   ├── index.md        ← 首页
-│   ├── 软件组/          ← 各组文件夹
-│   │   ├── index.md
-│   │   ├── 培训/
-│   │   ├── 开发/
-│   │   └── checklist/
-│   ├── 硬件组/
-│   ├── 机械组/
-│   ├── 视觉组/
-│   ├── 宣运组/
-│   └── 文档站指南/      ← 本指南
-└── site/               ← 编译输出（自动生成，勿手动修改）
-```
+<figure class="diagram">
+  <img src="/assets/diagrams/auto/d001-7261e0.svg" alt="GmasterDoc">
+  <figcaption>图：GmasterDoc</figcaption>
+</figure>
+
 
 ## 3. 如何新增页面
 

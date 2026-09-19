@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 672 324" width="672" height="324" role="img" aria-labelledby="ttl dsc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Noto Sans Mono CJK SC', 'Microsoft YaHei', monospace">
+  <title id="ttl">内存地址 / 内容</title>
+  <desc id="dsc">自动由 ASCII 示意图矢量化生成，源：docs/软件组/培训/嵌入式基础/04-中断与NVIC.md 第 131-146 行</desc>
+  <g transform="scale(1)">
+    <rect x="0.75" y="0.75" width="100%" height="100%" rx="14" fill="#f7f9fc" stroke="#dce3ec" stroke-width="1.5"/>
+    <g stroke="#8b97b5" stroke-width="1.4" stroke-linecap="round">
+    <line x1="20.0" y1="50.4" x2="287.3" y2="50.4"/>
+    </g>
+    <g fill="#1f2430" font-size="13.5">
+    <text x="20.0" y="35.8" xml:space="preserve">内</text>
+    <text x="36.2" y="35.8" xml:space="preserve">存</text>
+    <text x="52.4" y="35.8" xml:space="preserve">地</text>
+    <text x="68.6" y="35.8" xml:space="preserve">址</text>
+    <text x="198.2" y="35.8" xml:space="preserve">内</text>
+    <text x="214.4" y="35.8" xml:space="preserve">容</text>
+    <text x="20.0" y="76.3" xml:space="preserve">0x0000_0000</text>
+    <text x="182.0" y="76.3" xml:space="preserve">初</text>
+    <text x="198.2" y="76.3" xml:space="preserve">始</text>
+    <text x="214.4" y="76.3" xml:space="preserve">栈</text>
+    <text x="230.6" y="76.3" xml:space="preserve">指</text>
+    <text x="246.8" y="76.3" xml:space="preserve">针</text>
+    <text x="271.1" y="76.3" xml:space="preserve">(SP)</text>
+    <text x="20.0" y="96.5" xml:space="preserve">0x0000_0004</text>
+    <text x="182.0" y="96.5" xml:space="preserve">Reset_Handler</text>
+    <text x="335.9" y="96.5" xml:space="preserve">←</text>
+    <text x="352.1" y="96.5" xml:space="preserve">上</text>
+    <text x="368.3" y="96.5" xml:space="preserve">电</text>
+    <text x="384.5" y="96.5" xml:space="preserve">/</text>
+    <text x="392.6" y="96.5" xml:space="preserve">复</text>
+    <text x="408.8" y="96.5" xml:space="preserve">位</text>
+    <text x="425.0" y="96.5" xml:space="preserve">入</text>
+    <text x="441.2" y="96.5" xml:space="preserve">口</text>
+    <text x="20.0" y="116.8" xml:space="preserve">0x0000_0008</text>
+    <text x="182.0" y="116.8" xml:space="preserve">NMI_Handler</text>
+    <text x="335.9" y="116.8" xml:space="preserve">←</text>
+    <text x="352.1" y="116.8" xml:space="preserve">不</text>
+    <text x="368.3" y="116.8" xml:space="preserve">可</text>
+    <text x="384.5" y="116.8" xml:space="preserve">屏</text>
+    <text x="400.7" y="116.8" xml:space="preserve">蔽</text>
+    <text x="416.9" y="116.8" xml:space="preserve">中</text>
+    <text x="433.1" y="116.8" xml:space="preserve">断</text>
+    <text x="20.0" y="137.0" xml:space="preserve">0x0000_000C</text>
+    <text x="182.0" y="137.0" xml:space="preserve">HardFault_Handler</text>
+    <text x="335.9" y="137.0" xml:space="preserve">←</text>
+    <text x="352.1" y="137.0" xml:space="preserve">硬</text>
+    <text x="368.3" y="137.0" xml:space="preserve">件</text>
+    <text x="384.5" y="137.0" xml:space="preserve">错</text>
+    <text x="400.7" y="137.0" xml:space="preserve">误</text>
+    <text x="20.0" y="157.3" xml:space="preserve">0x0000_0010</text>
+    <text x="182.0" y="157.3" xml:space="preserve">MemManage_Handler</text>
+    <text x="20.0" y="177.5" xml:space="preserve">0x0000_0014</text>
+    <text x="182.0" y="177.5" xml:space="preserve">BusFault_Handler</text>
+    <text x="20.0" y="197.8" xml:space="preserve">0x0000_0018</text>
+    <text x="182.0" y="197.8" xml:space="preserve">UsageFault_Handler</text>
+    <text x="20.0" y="218.0" xml:space="preserve">...</text>
+    <text x="182.0" y="218.0" xml:space="preserve">...</text>
+    <text x="20.0" y="238.3" xml:space="preserve">0x0000_0058</text>
+    <text x="182.0" y="238.3" xml:space="preserve">SysTick_Handler</text>
+    <text x="335.9" y="238.3" xml:space="preserve">←</text>
+    <text x="352.1" y="238.3" xml:space="preserve">系</text>
+    <text x="368.3" y="238.3" xml:space="preserve">统</text>
+    <text x="384.5" y="238.3" xml:space="preserve">滴</text>
+    <text x="400.7" y="238.3" xml:space="preserve">答</text>
+    <text x="416.9" y="238.3" xml:space="preserve">[</text>
+    <text x="425.0" y="238.3" xml:space="preserve">定</text>
+    <text x="441.2" y="238.3" xml:space="preserve">时</text>
+    <text x="457.4" y="238.3" xml:space="preserve">器</text>
+    <text x="473.6" y="238.3" xml:space="preserve">](./06-</text>
+    <text x="530.3" y="238.3" xml:space="preserve">定</text>
+    <text x="546.5" y="238.3" xml:space="preserve">时</text>
+    <text x="562.7" y="238.3" xml:space="preserve">器</text>
+    <text x="578.9" y="238.3" xml:space="preserve">与</text>
+    <text x="595.1" y="238.3" xml:space="preserve">PWM.md)</text>
+    <text x="20.0" y="258.5" xml:space="preserve">...</text>
+    <text x="182.0" y="258.5" xml:space="preserve">...</text>
+    <text x="20.0" y="278.8" xml:space="preserve">0x0000_00C4</text>
+    <text x="182.0" y="278.8" xml:space="preserve">CAN1_RX0_IRQHandler</text>
+    <text x="352.1" y="278.8" xml:space="preserve">←</text>
+    <text x="368.3" y="278.8" xml:space="preserve">CAN1</text>
+    <text x="408.8" y="278.8" xml:space="preserve">接</text>
+    <text x="425.0" y="278.8" xml:space="preserve">收</text>
+    <text x="441.2" y="278.8" xml:space="preserve">中</text>
+    <text x="457.4" y="278.8" xml:space="preserve">断</text>
+    <text x="20.0" y="299.0" xml:space="preserve">...</text>
+    <text x="182.0" y="299.0" xml:space="preserve">...</text>
+    </g>
+  </g>
+</svg>

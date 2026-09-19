@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 534 162" width="534" height="162" role="img" aria-labelledby="ttl dsc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Noto Sans Mono CJK SC', 'Microsoft YaHei', monospace">
+  <title id="ttl">逻辑视图： / 内存中的实际排列（按行存放）：</title>
+  <desc id="dsc">自动由 ASCII 示意图矢量化生成，源：docs/软件组/培训/C++基础/08-数组与字符串.md 第 81-88 行</desc>
+  <g transform="scale(1)">
+    <rect x="0.75" y="0.75" width="100%" height="100%" rx="14" fill="#f7f9fc" stroke="#dce3ec" stroke-width="1.5"/>
+    <g stroke="#8b97b5" stroke-width="1.4" stroke-linecap="round">
+    <line x1="24.1" y1="50.4" x2="137.4" y2="50.4"/>
+    <line x1="210.3" y1="50.4" x2="501.9" y2="50.4"/>
+    <line x1="218.4" y1="90.9" x2="510.0" y2="90.9"/>
+    <line x1="24.1" y1="131.4" x2="137.4" y2="131.4"/>
+    <line x1="24.1" y1="50.4" x2="24.1" y2="131.4"/>
+    <line x1="137.4" y1="50.4" x2="137.4" y2="60.5"/>
+    <line x1="137.4" y1="121.2" x2="137.4" y2="131.4"/>
+    <line x1="145.6" y1="60.5" x2="145.6" y2="121.2"/>
+    <line x1="210.3" y1="50.4" x2="210.3" y2="60.5"/>
+    <line x1="218.4" y1="60.5" x2="218.4" y2="90.9"/>
+    <line x1="234.6" y1="50.4" x2="234.6" y2="60.5"/>
+    <line x1="242.8" y1="60.5" x2="242.8" y2="90.9"/>
+    <line x1="258.9" y1="50.4" x2="258.9" y2="60.5"/>
+    <line x1="267.0" y1="60.5" x2="267.0" y2="90.9"/>
+    <line x1="283.2" y1="50.4" x2="283.2" y2="60.5"/>
+    <line x1="291.3" y1="60.5" x2="291.3" y2="90.9"/>
+    <line x1="307.6" y1="50.4" x2="307.6" y2="60.5"/>
+    <line x1="315.6" y1="60.5" x2="315.6" y2="90.9"/>
+    <line x1="331.8" y1="50.4" x2="331.8" y2="60.5"/>
+    <line x1="339.9" y1="60.5" x2="339.9" y2="90.9"/>
+    <line x1="356.1" y1="50.4" x2="356.1" y2="60.5"/>
+    <line x1="364.2" y1="60.5" x2="364.2" y2="90.9"/>
+    <line x1="380.4" y1="50.4" x2="380.4" y2="60.5"/>
+    <line x1="388.6" y1="60.5" x2="388.6" y2="90.9"/>
+    <line x1="404.8" y1="50.4" x2="404.8" y2="60.5"/>
+    <line x1="412.8" y1="60.5" x2="412.8" y2="90.9"/>
+    <line x1="429.0" y1="50.4" x2="429.0" y2="60.5"/>
+    <line x1="437.1" y1="60.5" x2="437.1" y2="90.9"/>
+    <line x1="453.3" y1="50.4" x2="453.3" y2="60.5"/>
+    <line x1="461.4" y1="60.5" x2="461.4" y2="90.9"/>
+    <line x1="477.6" y1="50.4" x2="477.6" y2="60.5"/>
+    <line x1="485.8" y1="60.5" x2="485.8" y2="90.9"/>
+    <line x1="501.9" y1="50.4" x2="501.9" y2="60.5"/>
+    <line x1="510.0" y1="60.5" x2="510.0" y2="90.9"/>
+    </g>
+    <g fill="#1f2430" font-size="13.5">
+    <text x="20.0" y="35.8" xml:space="preserve">逻</text>
+    <text x="36.2" y="35.8" xml:space="preserve">辑</text>
+    <text x="52.4" y="35.8" xml:space="preserve">视</text>
+    <text x="68.6" y="35.8" xml:space="preserve">图</text>
+    <text x="84.8" y="35.8" xml:space="preserve">：</text>
+    <text x="206.3" y="35.8" xml:space="preserve">内</text>
+    <text x="222.5" y="35.8" xml:space="preserve">存</text>
+    <text x="238.7" y="35.8" xml:space="preserve">中</text>
+    <text x="254.9" y="35.8" xml:space="preserve">的</text>
+    <text x="271.1" y="35.8" xml:space="preserve">实</text>
+    <text x="287.3" y="35.8" xml:space="preserve">际</text>
+    <text x="303.5" y="35.8" xml:space="preserve">排</text>
+    <text x="319.7" y="35.8" xml:space="preserve">列</text>
+    <text x="335.9" y="35.8" xml:space="preserve">（</text>
+    <text x="352.1" y="35.8" xml:space="preserve">按</text>
+    <text x="368.3" y="35.8" xml:space="preserve">行</text>
+    <text x="384.5" y="35.8" xml:space="preserve">存</text>
+    <text x="400.7" y="35.8" xml:space="preserve">放</text>
+    <text x="416.9" y="35.8" xml:space="preserve">）</text>
+    <text x="433.1" y="35.8" xml:space="preserve">：</text>
+    <text x="36.2" y="76.3" xml:space="preserve">1</text>
+    <text x="68.6" y="76.3" xml:space="preserve">2</text>
+    <text x="101.0" y="76.3" xml:space="preserve">3</text>
+    <text x="133.4" y="76.3" xml:space="preserve">4</text>
+    <text x="222.5" y="76.3" xml:space="preserve">1</text>
+    <text x="246.8" y="76.3" xml:space="preserve">2</text>
+    <text x="271.1" y="76.3" xml:space="preserve">3</text>
+    <text x="295.4" y="76.3" xml:space="preserve">4</text>
+    <text x="319.7" y="76.3" xml:space="preserve">5</text>
+    <text x="344.0" y="76.3" xml:space="preserve">6</text>
+    <text x="368.3" y="76.3" xml:space="preserve">7</text>
+    <text x="392.6" y="76.3" xml:space="preserve">8</text>
+    <text x="416.9" y="76.3" xml:space="preserve">9</text>
+    <text x="441.2" y="76.3" xml:space="preserve">10</text>
+    <text x="465.5" y="76.3" xml:space="preserve">11</text>
+    <text x="489.8" y="76.3" xml:space="preserve">12</text>
+    <text x="36.2" y="96.5" xml:space="preserve">5</text>
+    <text x="68.6" y="96.5" xml:space="preserve">6</text>
+    <text x="101.0" y="96.5" xml:space="preserve">7</text>
+    <text x="133.4" y="96.5" xml:space="preserve">8</text>
+    <text x="36.2" y="116.8" xml:space="preserve">9</text>
+    <text x="60.5" y="116.8" xml:space="preserve">10</text>
+    <text x="92.9" y="116.8" xml:space="preserve">11</text>
+    <text x="125.3" y="116.8" xml:space="preserve">12</text>
+    <text x="214.4" y="116.8" xml:space="preserve">第</text>
+    <text x="230.6" y="116.8" xml:space="preserve">0</text>
+    <text x="238.7" y="116.8" xml:space="preserve">行</text>
+    <text x="303.5" y="116.8" xml:space="preserve">第</text>
+    <text x="319.7" y="116.8" xml:space="preserve">1</text>
+    <text x="327.8" y="116.8" xml:space="preserve">行</text>
+    <text x="392.6" y="116.8" xml:space="preserve">第</text>
+    <text x="408.8" y="116.8" xml:space="preserve">2</text>
+    <text x="416.9" y="116.8" xml:space="preserve">行</text>
+    </g>
+  </g>
+</svg>

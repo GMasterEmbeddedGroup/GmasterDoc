@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 162" width="583" height="162" role="img" aria-labelledby="ttl dsc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Noto Sans Mono CJK SC', 'Microsoft YaHei', monospace">
+  <title id="ttl">栈 / 堆</title>
+  <desc id="dsc">自动由 ASCII 示意图矢量化生成，源：docs/软件组/培训/C++进阶/内存.md 第 159-166 行</desc>
+  <g transform="scale(1)">
+    <rect x="0.75" y="0.75" width="100%" height="100%" rx="14" fill="#f7f9fc" stroke="#dce3ec" stroke-width="1.5"/>
+    <g stroke="#8b97b5" stroke-width="1.4" stroke-linecap="round">
+    <line x1="56.4" y1="50.4" x2="145.6" y2="50.4"/>
+    <line x1="250.8" y1="50.4" x2="372.3" y2="50.4"/>
+    <line x1="149.6" y1="70.6" x2="198.2" y2="70.6"/>
+    <line x1="56.4" y1="90.9" x2="145.6" y2="90.9"/>
+    <line x1="250.8" y1="90.9" x2="372.3" y2="90.9"/>
+    <line x1="149.6" y1="111.1" x2="198.2" y2="111.1"/>
+    <line x1="56.4" y1="131.4" x2="145.6" y2="131.4"/>
+    <line x1="250.8" y1="131.4" x2="372.3" y2="131.4"/>
+    <line x1="56.4" y1="50.4" x2="56.4" y2="131.4"/>
+    <line x1="145.6" y1="50.4" x2="145.6" y2="131.4"/>
+    <line x1="250.8" y1="50.4" x2="250.8" y2="131.4"/>
+    <line x1="372.3" y1="50.4" x2="372.3" y2="131.4"/>
+    </g>
+    <g fill="#1f2430" font-size="13.5">
+    <text x="84.8" y="35.8" xml:space="preserve">栈</text>
+    <text x="303.5" y="35.8" xml:space="preserve">堆</text>
+    <text x="68.6" y="76.3" xml:space="preserve">p</text>
+    <text x="84.8" y="76.3" xml:space="preserve">(</text>
+    <text x="92.9" y="76.3" xml:space="preserve">指</text>
+    <text x="109.1" y="76.3" xml:space="preserve">针</text>
+    <text x="125.3" y="76.3" xml:space="preserve">)</text>
+    <text x="198.2" y="76.3" xml:space="preserve">→</text>
+    <text x="287.3" y="76.3" xml:space="preserve">42</text>
+    <text x="392.6" y="76.3" xml:space="preserve">←</text>
+    <text x="408.8" y="76.3" xml:space="preserve">int</text>
+    <text x="433.1" y="76.3" xml:space="preserve">，</text>
+    <text x="449.3" y="76.3" xml:space="preserve">4</text>
+    <text x="465.5" y="76.3" xml:space="preserve">字</text>
+    <text x="481.7" y="76.3" xml:space="preserve">节</text>
+    <text x="68.6" y="116.8" xml:space="preserve">arr(</text>
+    <text x="101.0" y="116.8" xml:space="preserve">指</text>
+    <text x="117.2" y="116.8" xml:space="preserve">针</text>
+    <text x="133.4" y="116.8" xml:space="preserve">)</text>
+    <text x="198.2" y="116.8" xml:space="preserve">→</text>
+    <text x="263.0" y="116.8" xml:space="preserve">[0][1]...[99]</text>
+    <text x="392.6" y="116.8" xml:space="preserve">←</text>
+    <text x="408.8" y="116.8" xml:space="preserve">fp32[100]</text>
+    <text x="481.7" y="116.8" xml:space="preserve">，</text>
+    <text x="497.9" y="116.8" xml:space="preserve">400</text>
+    <text x="530.3" y="116.8" xml:space="preserve">字</text>
+    <text x="546.5" y="116.8" xml:space="preserve">节</text>
+    </g>
+  </g>
+</svg>

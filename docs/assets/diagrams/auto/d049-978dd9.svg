@@ -1,0 +1,235 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 510 1255" width="510" height="1255" role="img" aria-labelledby="ttl dsc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Noto Sans Mono CJK SC', 'Microsoft YaHei', monospace">
+  <title id="ttl">硬件层</title>
+  <desc id="dsc">自动由 ASCII 示意图矢量化生成，源：docs/软件组/培训/嵌入式基础/05-回调机制与HAL中断处理.md 第 77-138 行</desc>
+  <g transform="scale(1)">
+    <rect x="0.75" y="0.75" width="100%" height="100%" rx="14" fill="#f7f9fc" stroke="#dce3ec" stroke-width="1.5"/>
+    <g stroke="#8b97b5" stroke-width="1.4" stroke-linecap="round">
+    <line x1="24.1" y1="30.1" x2="461.4" y2="30.1"/>
+    <line x1="24.1" y1="90.9" x2="461.4" y2="90.9"/>
+    <line x1="24.1" y1="151.6" x2="461.4" y2="151.6"/>
+    <line x1="24.1" y1="313.6" x2="461.4" y2="313.6"/>
+    <line x1="24.1" y1="374.4" x2="461.4" y2="374.4"/>
+    <line x1="24.1" y1="738.9" x2="461.4" y2="738.9"/>
+    <line x1="24.1" y1="799.6" x2="461.4" y2="799.6"/>
+    <line x1="24.1" y1="1002.1" x2="461.4" y2="1002.1"/>
+    <line x1="24.1" y1="1062.9" x2="461.4" y2="1062.9"/>
+    <line x1="24.1" y1="1224.9" x2="461.4" y2="1224.9"/>
+    <line x1="24.1" y1="30.1" x2="24.1" y2="90.9"/>
+    <line x1="24.1" y1="151.6" x2="24.1" y2="313.6"/>
+    <line x1="24.1" y1="374.4" x2="24.1" y2="738.9"/>
+    <line x1="24.1" y1="799.6" x2="24.1" y2="1002.1"/>
+    <line x1="24.1" y1="1062.9" x2="24.1" y2="1224.9"/>
+    <line x1="226.5" y1="90.9" x2="226.5" y2="121.2"/>
+    <line x1="226.5" y1="313.6" x2="226.5" y2="344.0"/>
+    <line x1="226.5" y1="738.9" x2="226.5" y2="769.2"/>
+    <line x1="226.5" y1="1002.1" x2="226.5" y2="1032.5"/>
+    <line x1="461.4" y1="30.1" x2="461.4" y2="40.2"/>
+    <line x1="461.4" y1="80.8" x2="461.4" y2="90.9"/>
+    <line x1="461.4" y1="151.6" x2="461.4" y2="161.8"/>
+    <line x1="461.4" y1="202.2" x2="461.4" y2="263.0"/>
+    <line x1="461.4" y1="283.2" x2="461.4" y2="313.6"/>
+    <line x1="461.4" y1="374.4" x2="461.4" y2="384.5"/>
+    <line x1="461.4" y1="404.8" x2="461.4" y2="425.0"/>
+    <line x1="461.4" y1="506.0" x2="461.4" y2="607.2"/>
+    <line x1="461.4" y1="627.5" x2="461.4" y2="647.8"/>
+    <line x1="461.4" y1="668.0" x2="461.4" y2="688.2"/>
+    <line x1="461.4" y1="708.5" x2="461.4" y2="738.9"/>
+    <line x1="461.4" y1="799.6" x2="461.4" y2="809.8"/>
+    <line x1="461.4" y1="830.0" x2="461.4" y2="870.5"/>
+    <line x1="461.4" y1="890.8" x2="461.4" y2="911.0"/>
+    <line x1="461.4" y1="971.8" x2="461.4" y2="1002.1"/>
+    <line x1="461.4" y1="1062.9" x2="461.4" y2="1073.0"/>
+    <line x1="461.4" y1="1093.2" x2="461.4" y2="1174.2"/>
+    <line x1="461.4" y1="1194.5" x2="461.4" y2="1224.9"/>
+    <line x1="469.5" y1="161.8" x2="469.5" y2="202.2"/>
+    <line x1="469.5" y1="263.0" x2="469.5" y2="283.2"/>
+    <line x1="469.5" y1="384.5" x2="469.5" y2="404.8"/>
+    <line x1="469.5" y1="445.2" x2="469.5" y2="506.0"/>
+    <line x1="469.5" y1="607.2" x2="469.5" y2="627.5"/>
+    <line x1="469.5" y1="647.8" x2="469.5" y2="668.0"/>
+    <line x1="469.5" y1="688.2" x2="469.5" y2="708.5"/>
+    <line x1="469.5" y1="809.8" x2="469.5" y2="830.0"/>
+    <line x1="469.5" y1="870.5" x2="469.5" y2="890.8"/>
+    <line x1="469.5" y1="911.0" x2="469.5" y2="951.5"/>
+    <line x1="469.5" y1="1073.0" x2="469.5" y2="1093.2"/>
+    <line x1="477.6" y1="40.2" x2="477.6" y2="80.8"/>
+    <line x1="477.6" y1="1174.2" x2="477.6" y2="1194.5"/>
+    <line x1="485.8" y1="425.0" x2="485.8" y2="445.2"/>
+    <line x1="485.8" y1="951.5" x2="485.8" y2="971.8"/>
+    </g>
+    <g fill="#1f2430" font-size="13.5">
+    <text x="182.0" y="56.0" xml:space="preserve">硬</text>
+    <text x="198.2" y="56.0" xml:space="preserve">件</text>
+    <text x="214.4" y="56.0" xml:space="preserve">层</text>
+    <text x="44.3" y="76.3" xml:space="preserve">CAN</text>
+    <text x="76.7" y="76.3" xml:space="preserve">控</text>
+    <text x="92.9" y="76.3" xml:space="preserve">制</text>
+    <text x="109.1" y="76.3" xml:space="preserve">器</text>
+    <text x="133.4" y="76.3" xml:space="preserve">RX</text>
+    <text x="157.7" y="76.3" xml:space="preserve">FIFO</text>
+    <text x="198.2" y="76.3" xml:space="preserve">非</text>
+    <text x="214.4" y="76.3" xml:space="preserve">空</text>
+    <text x="238.7" y="76.3" xml:space="preserve">→</text>
+    <text x="254.9" y="76.3" xml:space="preserve">产</text>
+    <text x="271.1" y="76.3" xml:space="preserve">生</text>
+    <text x="287.3" y="76.3" xml:space="preserve">中</text>
+    <text x="303.5" y="76.3" xml:space="preserve">断</text>
+    <text x="319.7" y="76.3" xml:space="preserve">信</text>
+    <text x="335.9" y="76.3" xml:space="preserve">号</text>
+    <text x="222.5" y="137.0" xml:space="preserve">▼</text>
+    <text x="109.1" y="177.5" xml:space="preserve">中</text>
+    <text x="125.3" y="177.5" xml:space="preserve">断</text>
+    <text x="141.5" y="177.5" xml:space="preserve">向</text>
+    <text x="157.7" y="177.5" xml:space="preserve">量</text>
+    <text x="173.9" y="177.5" xml:space="preserve">表</text>
+    <text x="198.2" y="177.5" xml:space="preserve">→</text>
+    <text x="214.4" y="177.5" xml:space="preserve">CAN1_RX0_IRQHandler</text>
+    <text x="109.1" y="197.8" xml:space="preserve">(startup_stm32f407xx.s</text>
+    <text x="295.4" y="197.8" xml:space="preserve">/</text>
+    <text x="311.6" y="197.8" xml:space="preserve">stm32f4xx_it.c)</text>
+    <text x="44.3" y="238.3" xml:space="preserve">void</text>
+    <text x="84.8" y="238.3" xml:space="preserve">CAN1_RX0_IRQHandler(void)</text>
+    <text x="44.3" y="258.5" xml:space="preserve">{</text>
+    <text x="76.7" y="278.8" xml:space="preserve">HAL_CAN_IRQHandler(&amp;hcan1);</text>
+    <text x="311.6" y="278.8" xml:space="preserve">←</text>
+    <text x="327.8" y="278.8" xml:space="preserve">传</text>
+    <text x="344.0" y="278.8" xml:space="preserve">入</text>
+    <text x="360.2" y="278.8" xml:space="preserve">句</text>
+    <text x="376.4" y="278.8" xml:space="preserve">柄</text>
+    <text x="44.3" y="299.0" xml:space="preserve">}</text>
+    <text x="222.5" y="359.8" xml:space="preserve">▼</text>
+    <text x="133.4" y="400.3" xml:space="preserve">HAL_CAN_IRQHandler</text>
+    <text x="287.3" y="400.3" xml:space="preserve">(HAL</text>
+    <text x="327.8" y="400.3" xml:space="preserve">库</text>
+    <text x="344.0" y="400.3" xml:space="preserve">)</text>
+    <text x="44.3" y="440.8" xml:space="preserve">①</text>
+    <text x="60.5" y="440.8" xml:space="preserve">检</text>
+    <text x="76.7" y="440.8" xml:space="preserve">查</text>
+    <text x="92.9" y="440.8" xml:space="preserve">中</text>
+    <text x="109.1" y="440.8" xml:space="preserve">断</text>
+    <text x="125.3" y="440.8" xml:space="preserve">状</text>
+    <text x="141.5" y="440.8" xml:space="preserve">态</text>
+    <text x="157.7" y="440.8" xml:space="preserve">寄</text>
+    <text x="173.9" y="440.8" xml:space="preserve">存</text>
+    <text x="190.1" y="440.8" xml:space="preserve">器</text>
+    <text x="206.3" y="440.8" xml:space="preserve">，</text>
+    <text x="222.5" y="440.8" xml:space="preserve">确</text>
+    <text x="238.7" y="440.8" xml:space="preserve">认</text>
+    <text x="254.9" y="440.8" xml:space="preserve">是</text>
+    <text x="271.1" y="440.8" xml:space="preserve">哪</text>
+    <text x="287.3" y="440.8" xml:space="preserve">个</text>
+    <text x="303.5" y="440.8" xml:space="preserve">事</text>
+    <text x="319.7" y="440.8" xml:space="preserve">件</text>
+    <text x="44.3" y="461.0" xml:space="preserve">②</text>
+    <text x="60.5" y="461.0" xml:space="preserve">读</text>
+    <text x="76.7" y="461.0" xml:space="preserve">取</text>
+    <text x="92.9" y="461.0" xml:space="preserve">数</text>
+    <text x="109.1" y="461.0" xml:space="preserve">据</text>
+    <text x="125.3" y="461.0" xml:space="preserve">：</text>
+    <text x="141.5" y="461.0" xml:space="preserve">HAL_CAN_GetRxMessage()</text>
+    <text x="44.3" y="481.3" xml:space="preserve">③</text>
+    <text x="60.5" y="481.3" xml:space="preserve">清</text>
+    <text x="76.7" y="481.3" xml:space="preserve">除</text>
+    <text x="92.9" y="481.3" xml:space="preserve">中</text>
+    <text x="109.1" y="481.3" xml:space="preserve">断</text>
+    <text x="125.3" y="481.3" xml:space="preserve">标</text>
+    <text x="141.5" y="481.3" xml:space="preserve">志</text>
+    <text x="44.3" y="501.5" xml:space="preserve">④</text>
+    <text x="60.5" y="501.5" xml:space="preserve">调</text>
+    <text x="76.7" y="501.5" xml:space="preserve">用</text>
+    <text x="92.9" y="501.5" xml:space="preserve">回</text>
+    <text x="109.1" y="501.5" xml:space="preserve">调</text>
+    <text x="125.3" y="501.5" xml:space="preserve">函</text>
+    <text x="141.5" y="501.5" xml:space="preserve">数</text>
+    <text x="44.3" y="542.0" xml:space="preserve">if</text>
+    <text x="68.6" y="542.0" xml:space="preserve">(__HAL_CAN_GET_FLAG(hcan,</text>
+    <text x="279.2" y="542.0" xml:space="preserve">CAN_FLAG_RF0M))</text>
+    <text x="44.3" y="562.3" xml:space="preserve">{</text>
+    <text x="76.7" y="582.5" xml:space="preserve">__HAL_CAN_CLEAR_FLAG(hcan,</text>
+    <text x="295.4" y="582.5" xml:space="preserve">CAN_FLAG_RF0M);</text>
+    <text x="76.7" y="602.8" xml:space="preserve">HAL_CAN_GetRxMessage(hcan,</text>
+    <text x="295.4" y="602.8" xml:space="preserve">...,</text>
+    <text x="335.9" y="602.8" xml:space="preserve">&amp;header,</text>
+    <text x="408.8" y="602.8" xml:space="preserve">data);</text>
+    <text x="44.3" y="623.0" xml:space="preserve">#if</text>
+    <text x="76.7" y="623.0" xml:space="preserve">USE_HAL_CAN_REGISTER_CALLBACKS</text>
+    <text x="76.7" y="643.3" xml:space="preserve">hcan-&gt;RxFifo0MsgPendingCallback(hcan);</text>
+    <text x="44.3" y="663.5" xml:space="preserve">#else</text>
+    <text x="76.7" y="683.8" xml:space="preserve">HAL_CAN_RxFifo0MsgPendingCallback(hcan);</text>
+    <text x="44.3" y="704.0" xml:space="preserve">#endif</text>
+    <text x="44.3" y="724.3" xml:space="preserve">}</text>
+    <text x="222.5" y="785.0" xml:space="preserve">▼</text>
+    <text x="68.6" y="825.5" xml:space="preserve">HAL_CAN_RxFifo0MsgPendingCallback</text>
+    <text x="344.0" y="825.5" xml:space="preserve">(GSRL</text>
+    <text x="392.6" y="825.5" xml:space="preserve">实</text>
+    <text x="408.8" y="825.5" xml:space="preserve">现</text>
+    <text x="425.0" y="825.5" xml:space="preserve">)</text>
+    <text x="68.6" y="845.8" xml:space="preserve">(</text>
+    <text x="76.7" y="845.8" xml:space="preserve">文</text>
+    <text x="92.9" y="845.8" xml:space="preserve">件</text>
+    <text x="109.1" y="845.8" xml:space="preserve">:</text>
+    <text x="125.3" y="845.8" xml:space="preserve">GSRL/Driver/src/drv_can.c)</text>
+    <text x="44.3" y="886.3" xml:space="preserve">void</text>
+    <text x="84.8" y="886.3" xml:space="preserve">HAL_CAN_RxFifo0MsgPendingCallback(...)</text>
+    <text x="44.3" y="906.5" xml:space="preserve">{</text>
+    <text x="76.7" y="926.8" xml:space="preserve">①</text>
+    <text x="92.9" y="926.8" xml:space="preserve">从</text>
+    <text x="117.2" y="926.8" xml:space="preserve">HAL</text>
+    <text x="149.6" y="926.8" xml:space="preserve">句</text>
+    <text x="165.8" y="926.8" xml:space="preserve">柄</text>
+    <text x="182.0" y="926.8" xml:space="preserve">读</text>
+    <text x="198.2" y="926.8" xml:space="preserve">取</text>
+    <text x="214.4" y="926.8" xml:space="preserve">数</text>
+    <text x="230.6" y="926.8" xml:space="preserve">据</text>
+    <text x="76.7" y="947.0" xml:space="preserve">②</text>
+    <text x="92.9" y="947.0" xml:space="preserve">入</text>
+    <text x="117.2" y="947.0" xml:space="preserve">FreeRTOS</text>
+    <text x="190.1" y="947.0" xml:space="preserve">队</text>
+    <text x="206.3" y="947.0" xml:space="preserve">列</text>
+    <text x="76.7" y="967.3" xml:space="preserve">③</text>
+    <text x="92.9" y="967.3" xml:space="preserve">调</text>
+    <text x="109.1" y="967.3" xml:space="preserve">用</text>
+    <text x="125.3" y="967.3" xml:space="preserve">用</text>
+    <text x="141.5" y="967.3" xml:space="preserve">户</text>
+    <text x="157.7" y="967.3" xml:space="preserve">注</text>
+    <text x="173.9" y="967.3" xml:space="preserve">册</text>
+    <text x="190.1" y="967.3" xml:space="preserve">的</text>
+    <text x="206.3" y="967.3" xml:space="preserve">回</text>
+    <text x="222.5" y="967.3" xml:space="preserve">调</text>
+    <text x="238.7" y="967.3" xml:space="preserve">函</text>
+    <text x="254.9" y="967.3" xml:space="preserve">数</text>
+    <text x="271.1" y="967.3" xml:space="preserve">（</text>
+    <text x="287.3" y="967.3" xml:space="preserve">如</text>
+    <text x="303.5" y="967.3" xml:space="preserve">果</text>
+    <text x="319.7" y="967.3" xml:space="preserve">有</text>
+    <text x="335.9" y="967.3" xml:space="preserve">）</text>
+    <text x="44.3" y="987.5" xml:space="preserve">}</text>
+    <text x="222.5" y="1048.3" xml:space="preserve">▼</text>
+    <text x="92.9" y="1088.8" xml:space="preserve">用</text>
+    <text x="109.1" y="1088.8" xml:space="preserve">户</text>
+    <text x="125.3" y="1088.8" xml:space="preserve">回</text>
+    <text x="141.5" y="1088.8" xml:space="preserve">调</text>
+    <text x="165.8" y="1088.8" xml:space="preserve">(</text>
+    <text x="173.9" y="1088.8" xml:space="preserve">如</text>
+    <text x="198.2" y="1088.8" xml:space="preserve">tsk_test.cpp</text>
+    <text x="303.5" y="1088.8" xml:space="preserve">中</text>
+    <text x="319.7" y="1088.8" xml:space="preserve">的</text>
+    <text x="344.0" y="1088.8" xml:space="preserve">can1RxCallback)</text>
+    <text x="44.3" y="1129.3" xml:space="preserve">void</text>
+    <text x="84.8" y="1129.3" xml:space="preserve">can1RxCallback(can_rx_message_t</text>
+    <text x="344.0" y="1129.3" xml:space="preserve">*pRxMsg)</text>
+    <text x="44.3" y="1149.5" xml:space="preserve">{</text>
+    <text x="76.7" y="1169.8" xml:space="preserve">motor.decodeCanRxMessageFromISR(pRxMsg);</text>
+    <text x="76.7" y="1190.0" xml:space="preserve">//</text>
+    <text x="101.0" y="1190.0" xml:space="preserve">解</text>
+    <text x="117.2" y="1190.0" xml:space="preserve">析</text>
+    <text x="133.4" y="1190.0" xml:space="preserve">电</text>
+    <text x="149.6" y="1190.0" xml:space="preserve">机</text>
+    <text x="165.8" y="1190.0" xml:space="preserve">反</text>
+    <text x="182.0" y="1190.0" xml:space="preserve">馈</text>
+    <text x="198.2" y="1190.0" xml:space="preserve">数</text>
+    <text x="214.4" y="1190.0" xml:space="preserve">据</text>
+    <text x="44.3" y="1210.3" xml:space="preserve">}</text>
+    </g>
+  </g>
+</svg>

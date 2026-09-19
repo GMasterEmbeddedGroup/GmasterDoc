@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 461 384" width="461" height="384" role="img" aria-labelledby="ttl dsc" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Noto Sans Mono CJK SC', 'Microsoft YaHei', monospace">
+  <title id="ttl">轮询模式:</title>
+  <desc id="dsc">自动由 ASCII 示意图矢量化生成，源：docs/软件组/培训/嵌入式基础/04-中断与NVIC.md 第 18-36 行</desc>
+  <g transform="scale(1)">
+    <rect x="0.75" y="0.75" width="100%" height="100%" rx="14" fill="#f7f9fc" stroke="#dce3ec" stroke-width="1.5"/>
+    <g stroke="#8b97b5" stroke-width="1.4" stroke-linecap="round">
+    <line x1="24.1" y1="50.4" x2="80.8" y2="50.4"/>
+    <line x1="121.2" y1="50.4" x2="177.9" y2="50.4"/>
+    <line x1="218.4" y1="50.4" x2="275.1" y2="50.4"/>
+    <line x1="315.6" y1="50.4" x2="372.3" y2="50.4"/>
+    <line x1="24.1" y1="90.9" x2="80.8" y2="90.9"/>
+    <line x1="121.2" y1="90.9" x2="177.9" y2="90.9"/>
+    <line x1="218.4" y1="90.9" x2="275.1" y2="90.9"/>
+    <line x1="315.6" y1="90.9" x2="372.3" y2="90.9"/>
+    <line x1="24.1" y1="171.9" x2="356.1" y2="171.9"/>
+    <line x1="165.8" y1="212.4" x2="169.8" y2="212.4"/>
+    <line x1="113.1" y1="252.9" x2="210.3" y2="252.9"/>
+    <line x1="113.1" y1="313.6" x2="210.3" y2="313.6"/>
+    <line x1="24.1" y1="333.9" x2="356.1" y2="333.9"/>
+    <line x1="24.1" y1="50.4" x2="24.1" y2="90.9"/>
+    <line x1="24.1" y1="171.9" x2="24.1" y2="333.9"/>
+    <line x1="80.8" y1="50.4" x2="80.8" y2="60.5"/>
+    <line x1="80.8" y1="80.8" x2="80.8" y2="90.9"/>
+    <line x1="88.8" y1="60.5" x2="88.8" y2="80.8"/>
+    <line x1="113.1" y1="252.9" x2="113.1" y2="313.6"/>
+    <line x1="121.2" y1="50.4" x2="121.2" y2="60.5"/>
+    <line x1="121.2" y1="80.8" x2="121.2" y2="90.9"/>
+    <line x1="129.3" y1="60.5" x2="129.3" y2="80.8"/>
+    <line x1="161.8" y1="222.5" x2="161.8" y2="252.9"/>
+    <line x1="169.8" y1="212.4" x2="169.8" y2="222.5"/>
+    <line x1="177.9" y1="50.4" x2="177.9" y2="60.5"/>
+    <line x1="177.9" y1="80.8" x2="177.9" y2="90.9"/>
+    <line x1="186.0" y1="60.5" x2="186.0" y2="80.8"/>
+    <line x1="210.3" y1="252.9" x2="210.3" y2="263.0"/>
+    <line x1="210.3" y1="283.2" x2="210.3" y2="313.6"/>
+    <line x1="218.4" y1="50.4" x2="218.4" y2="60.5"/>
+    <line x1="218.4" y1="80.8" x2="218.4" y2="90.9"/>
+    <line x1="218.4" y1="263.0" x2="218.4" y2="283.2"/>
+    <line x1="226.5" y1="60.5" x2="226.5" y2="80.8"/>
+    <line x1="275.1" y1="50.4" x2="275.1" y2="60.5"/>
+    <line x1="275.1" y1="80.8" x2="275.1" y2="90.9"/>
+    <line x1="291.3" y1="60.5" x2="291.3" y2="80.8"/>
+    <line x1="315.6" y1="50.4" x2="315.6" y2="60.5"/>
+    <line x1="315.6" y1="80.8" x2="315.6" y2="90.9"/>
+    <line x1="331.8" y1="60.5" x2="331.8" y2="80.8"/>
+    <line x1="356.1" y1="171.9" x2="356.1" y2="182.0"/>
+    <line x1="356.1" y1="222.5" x2="356.1" y2="263.0"/>
+    <line x1="356.1" y1="283.2" x2="356.1" y2="333.9"/>
+    <line x1="364.2" y1="182.0" x2="364.2" y2="222.5"/>
+    <line x1="372.3" y1="50.4" x2="372.3" y2="60.5"/>
+    <line x1="372.3" y1="80.8" x2="372.3" y2="90.9"/>
+    <line x1="372.3" y1="263.0" x2="372.3" y2="283.2"/>
+    <line x1="388.6" y1="60.5" x2="388.6" y2="80.8"/>
+    </g>
+    <g fill="#1f2430" font-size="13.5">
+    <text x="20.0" y="35.8" xml:space="preserve">轮</text>
+    <text x="36.2" y="35.8" xml:space="preserve">询</text>
+    <text x="52.4" y="35.8" xml:space="preserve">模</text>
+    <text x="68.6" y="35.8" xml:space="preserve">式</text>
+    <text x="84.8" y="35.8" xml:space="preserve">:</text>
+    <text x="36.2" y="76.3" xml:space="preserve">做</text>
+    <text x="52.4" y="76.3" xml:space="preserve">正</text>
+    <text x="68.6" y="76.3" xml:space="preserve">事</text>
+    <text x="101.0" y="76.3" xml:space="preserve">→</text>
+    <text x="133.4" y="76.3" xml:space="preserve">查</text>
+    <text x="149.6" y="76.3" xml:space="preserve">标</text>
+    <text x="165.8" y="76.3" xml:space="preserve">志</text>
+    <text x="198.2" y="76.3" xml:space="preserve">→</text>
+    <text x="238.7" y="76.3" xml:space="preserve">做</text>
+    <text x="254.9" y="76.3" xml:space="preserve">正</text>
+    <text x="271.1" y="76.3" xml:space="preserve">事</text>
+    <text x="303.5" y="76.3" xml:space="preserve">→</text>
+    <text x="335.9" y="76.3" xml:space="preserve">查</text>
+    <text x="352.1" y="76.3" xml:space="preserve">标</text>
+    <text x="368.3" y="76.3" xml:space="preserve">志</text>
+    <text x="400.7" y="76.3" xml:space="preserve">→</text>
+    <text x="416.9" y="76.3" xml:space="preserve">...</text>
+    <text x="44.3" y="116.8" xml:space="preserve">↑</text>
+    <text x="60.5" y="116.8" xml:space="preserve">浪</text>
+    <text x="76.7" y="116.8" xml:space="preserve">费</text>
+    <text x="92.9" y="116.8" xml:space="preserve">时</text>
+    <text x="109.1" y="116.8" xml:space="preserve">间</text>
+    <text x="125.3" y="116.8" xml:space="preserve">查</text>
+    <text x="141.5" y="116.8" xml:space="preserve">标</text>
+    <text x="157.7" y="116.8" xml:space="preserve">志</text>
+    <text x="173.9" y="116.8" xml:space="preserve">，</text>
+    <text x="190.1" y="116.8" xml:space="preserve">事</text>
+    <text x="206.3" y="116.8" xml:space="preserve">件</text>
+    <text x="222.5" y="116.8" xml:space="preserve">响</text>
+    <text x="238.7" y="116.8" xml:space="preserve">应</text>
+    <text x="254.9" y="116.8" xml:space="preserve">有</text>
+    <text x="271.1" y="116.8" xml:space="preserve">延</text>
+    <text x="287.3" y="116.8" xml:space="preserve">迟</text>
+    <text x="20.0" y="157.3" xml:space="preserve">中</text>
+    <text x="36.2" y="157.3" xml:space="preserve">断</text>
+    <text x="52.4" y="157.3" xml:space="preserve">模</text>
+    <text x="68.6" y="157.3" xml:space="preserve">式</text>
+    <text x="84.8" y="157.3" xml:space="preserve">:</text>
+    <text x="125.3" y="197.8" xml:space="preserve">做</text>
+    <text x="141.5" y="197.8" xml:space="preserve">正</text>
+    <text x="157.7" y="197.8" xml:space="preserve">事</text>
+    <text x="182.0" y="197.8" xml:space="preserve">(</text>
+    <text x="190.1" y="197.8" xml:space="preserve">主</text>
+    <text x="206.3" y="197.8" xml:space="preserve">程</text>
+    <text x="222.5" y="197.8" xml:space="preserve">序</text>
+    <text x="238.7" y="197.8" xml:space="preserve">)</text>
+    <text x="60.5" y="218.0" xml:space="preserve">←</text>
+    <text x="76.7" y="218.0" xml:space="preserve">被</text>
+    <text x="92.9" y="218.0" xml:space="preserve">中</text>
+    <text x="109.1" y="218.0" xml:space="preserve">断</text>
+    <text x="125.3" y="218.0" xml:space="preserve">打</text>
+    <text x="141.5" y="218.0" xml:space="preserve">断</text>
+    <text x="125.3" y="278.8" xml:space="preserve">中</text>
+    <text x="141.5" y="278.8" xml:space="preserve">断</text>
+    <text x="157.7" y="278.8" xml:space="preserve">服</text>
+    <text x="173.9" y="278.8" xml:space="preserve">务</text>
+    <text x="230.6" y="278.8" xml:space="preserve">→</text>
+    <text x="246.8" y="278.8" xml:space="preserve">处</text>
+    <text x="263.0" y="278.8" xml:space="preserve">理</text>
+    <text x="279.2" y="278.8" xml:space="preserve">完</text>
+    <text x="295.4" y="278.8" xml:space="preserve">毕</text>
+    <text x="311.6" y="278.8" xml:space="preserve">返</text>
+    <text x="327.8" y="278.8" xml:space="preserve">回</text>
+    <text x="125.3" y="299.0" xml:space="preserve">函</text>
+    <text x="141.5" y="299.0" xml:space="preserve">数</text>
+    <text x="165.8" y="299.0" xml:space="preserve">ISR</text>
+    <text x="44.3" y="359.8" xml:space="preserve">↑</text>
+    <text x="60.5" y="359.8" xml:space="preserve">无</text>
+    <text x="76.7" y="359.8" xml:space="preserve">需</text>
+    <text x="92.9" y="359.8" xml:space="preserve">轮</text>
+    <text x="109.1" y="359.8" xml:space="preserve">询</text>
+    <text x="125.3" y="359.8" xml:space="preserve">，</text>
+    <text x="141.5" y="359.8" xml:space="preserve">事</text>
+    <text x="157.7" y="359.8" xml:space="preserve">件</text>
+    <text x="173.9" y="359.8" xml:space="preserve">发</text>
+    <text x="190.1" y="359.8" xml:space="preserve">生</text>
+    <text x="206.3" y="359.8" xml:space="preserve">时</text>
+    <text x="222.5" y="359.8" xml:space="preserve">自</text>
+    <text x="238.7" y="359.8" xml:space="preserve">动</text>
+    <text x="254.9" y="359.8" xml:space="preserve">响</text>
+    <text x="271.1" y="359.8" xml:space="preserve">应</text>
+    </g>
+  </g>
+</svg>

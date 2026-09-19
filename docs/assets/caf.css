@@ -72,6 +72,16 @@
   padding: 0.2rem 0;
 }
 
+/* 侧边目录里「内部资料目录」入口：与普通章节一致，只把标题加粗一点 */
+.caf-nav-entry > .caf-nav-entry__title {
+  font-weight: 700;
+}
+
+.caf-nav-entry > .caf-nav-entry__title::after {
+  content: " 🔒";
+  font-size: 0.7em;
+}
+
 /* 窄屏下顶栏空间紧张，只保留按钮 */
 @media screen and (max-width: 44.9375em) {
   .caf-chip__name,

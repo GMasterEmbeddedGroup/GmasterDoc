@@ -3,7 +3,8 @@
  * 由 mkdocs.yml 的 extra_javascript 引入，公开站与私有站共用同一份。
  * 两个职责：
  *   1. 在顶栏显示「登录 / 已登录：xxx 退出」；
- *   2. 处理页面里 <div data-caf-gate data-src="..."> 的登录后才显示内容。
+ *   2. 处理页面里 <div data-caf-gate data-src="..."> 的登录后才显示内容；
+ *   3. 已登录时在左侧目录里挂上「内部资料目录」入口（按权限节点列出各组私有资料）。
  *
  * 注意：这里只是「界面上的开关」。真正的拦截在服务器（/_private/ 由 caf-wiki-gate
  * 校验会话与 CAF 权限节点），所以即使有人改了前端，也拿不到未授权的内容。
@@ -136,6 +137,98 @@
     for (var i = 0; i < nodes.length; i++) { loadGate(nodes[i]); }
   }
 
+  /* ------------------------------------------------------- 侧边目录里的内部资料入口 */
+
+  // 权限节点 → 私有站落地页。只有拿到节点的人才看得到对应条目（真正的拦截在服务器端）。
+  var PRIVATE_ENTRIES = [
+    { node: "wiki.private.software", label: "软件组内部资料", href: "/_private/软件组/内部资料/" },
+    { node: "wiki.private.mechanical", label: "机械组内部资料", href: "/_private/机械组/内部资料/" },
+    { node: "wiki.private.vision", label: "视觉组内部资料", href: "/_private/视觉组/内部资料/" },
+    { node: "wiki.private.hardware", label: "硬件组内部资料", href: "/_private/硬件组/内部资料/" },
+    { node: "wiki.private.media", label: "宣运组内部资料", href: "/_private/宣运组/内部资料/" },
+    { node: "wiki.private.management", label: "管理组资料", href: "/_private/管理/权限说明/" }
+  ];
+
+  function navEntries() {
+    if (!state.authenticated) { return []; }
+    var items = [{ label: "内部资料首页", href: "/_private/" }];
+    PRIVATE_ENTRIES.forEach(function (entry) {
+      if (nodeCovers(entry.node)) { items.push({ label: entry.label, href: entry.href }); }
+    });
+    return items;
+  }
+
+  // 用 mkdocs-material 自己的结构（checkbox + label + nav[data-md-level]），这样展开/收起由它托管
+  function buildNavEntry() {
+    var items = navEntries();
+    if (items.length < 2) { return null; }
+
+    var toggleId = "__caf_private_nav";
+    var item = document.createElement("li");
+    item.className = "md-nav__item md-nav__item--nested caf-nav-entry";
+
+    var toggle = document.createElement("input");
+    toggle.className = "md-nav__toggle md-toggle";
+    toggle.type = "checkbox";
+    toggle.id = toggleId;
+    toggle.checked = true; // 默认展开：登录后一眼就能看到各组内部资料入口
+    item.appendChild(toggle);
+
+    var label = document.createElement("label");
+    label.className = "md-nav__link caf-nav-entry__title";
+    label.setAttribute("for", toggleId);
+    label.appendChild(document.createTextNode("内部资料目录"));
+    var icon = document.createElement("span");
+    icon.className = "md-nav__icon md-icon";
+    label.appendChild(icon);
+    item.appendChild(label);
+
+    var nav = document.createElement("nav");
+    nav.className = "md-nav";
+    nav.setAttribute("data-md-level", "1");
+    nav.setAttribute("aria-label", "内部资料目录");
+
+    var navTitle = document.createElement("label");
+    navTitle.className = "md-nav__title";
+    navTitle.setAttribute("for", toggleId);
+    navTitle.appendChild(icon.cloneNode());
+    navTitle.appendChild(document.createTextNode("内部资料目录"));
+    nav.appendChild(navTitle);
+
+    var list = document.createElement("ul");
+    list.className = "md-nav__list";
+    items.forEach(function (entry) {
+      var child = document.createElement("li");
+      child.className = "md-nav__item";
+      var link = document.createElement("a");
+      link.className = "md-nav__link";
+      link.href = entry.href;
+      link.textContent = entry.label;
+      child.appendChild(link);
+      list.appendChild(child);
+    });
+    nav.appendChild(list);
+    item.appendChild(nav);
+    return item;
+  }
+
+  function mountNav() {
+    var existing = document.querySelectorAll(".caf-nav-entry");
+    for (var i = 0; i < existing.length; i++) {
+      existing[i].parentNode.removeChild(existing[i]);
+    }
+    var entry = buildNavEntry();
+    if (!entry) { return; }
+    var list = document.querySelector(".md-nav--primary > .md-nav__list");
+    if (!list) { return; }
+    var first = list.firstElementChild;
+    if (first && first.nextElementSibling) {
+      list.insertBefore(entry, first.nextElementSibling);
+    } else {
+      list.appendChild(entry);
+    }
+  }
+
   /* ---------------------------------------------------------------- 启动 */
 
   function refresh() {
@@ -149,6 +242,7 @@
         state.nodes = data.nodes || [];
         mountChip();
         mountGates();
+        mountNav();
         return state;
       });
   }
@@ -156,7 +250,7 @@
   function start() {
     refresh();
     if (window.document$) {
-      window.document$.subscribe(function () { mountChip(); mountGates(); });
+      window.document$.subscribe(function () { mountChip(); mountGates(); mountNav(); });
     }
   }
 

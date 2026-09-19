@@ -1,0 +1,45 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">位、字节与存储单位</h2>
+    <p class="lead">计算机里最小的数据单位是<b>位（bit）</b>；能存 0 或 1 两种状态。8 位组成 1 个<b>字节（byte）</b>。</p>
+  </div>
+
+  <div class="bits">
+    <span class="bit is-on"><span class="w">128</span><span class="v">1</span></span>
+    <span class="bit"><span class="w">64</span><span class="v">0</span></span>
+    <span class="bit"><span class="w">32</span><span class="v">0</span></span>
+    <span class="bit is-on"><span class="w">16</span><span class="v">1</span></span>
+    <span class="bit is-on"><span class="w">8</span><span class="v">1</span></span>
+    <span class="bit is-on"><span class="w">4</span><span class="v">1</span></span>
+    <span class="bit"><span class="w">2</span><span class="v">0</span></span>
+    <span class="bit"><span class="w">1</span><span class="v">0</span></span>
+  </div>
+  <p class="lead" style="margin:-0.2em 0 0.5em">这 8 位的组合是 <span class="mono">1001 1100</span>，按每位权重相加：
+    128 + 16 + 8 + 4 = <b>156</b>。红色格子就是「这一位是 1」。</p>
+
+  <div class="deflist">
+    <div>
+      <dt>1 位（bit）</dt>
+      <dd>只有 2 种取值：0 或 1，单位记作 <span class="mono">b</span>。</dd>
+    </div>
+    <div>
+      <dt>1 字节（byte）</dt>
+      <dd>8 位，能表示 2<sup>8</sup> = <b>256</b> 种状态，单位记作 <span class="mono">B</span>。</dd>
+    </div>
+    <div>
+      <dt>K / M / G</dt>
+      <dd>1 KB = 1024 B，1 MB = 1024 KB（<b>1024 = 2<sup>10</sup></b>，不是 1000）。</dd>
+    </div>
+  </div>
+
+  <div class="compare" style="margin-top:0.4em">
+    <div>
+      <h4>n 位能表示多少种状态</h4>
+      <p>2<sup>n</sup> 种：8 位 → 256 种；无符号范围是 <span class="mono">0 ~ 2<sup>n</sup>-1</span>。</p>
+    </div>
+    <div>
+      <h4>几个常见规模</h4>
+      <p>STM32F407 的 Flash 是 1 MB，SRAM 192 KB；一帧 CAN 报文数据段最多 8 字节 = 64 位。</p>
+    </div>
+  </div>
+</section>

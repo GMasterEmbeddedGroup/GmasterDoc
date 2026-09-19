@@ -1,0 +1,28 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">随堂小测：函数</h2>
+    <p class="lead">三道题都来自真实踩坑现场。</p>
+  </div>
+
+  <div class="quiz" data-quiz>
+    <p class="quiz-q">1. <span class="mono">void add_one(int x) { x = x + 1; }</span>，调用 <span class="mono">add_one(a)</span> 之后，<span class="mono">a</span> 的值会变吗？</p>
+    <div class="quiz-opts">
+      <button class="quiz-opt" data-explain="形参是实参的副本，函数里改的是副本。">会加 1</button>
+      <button class="quiz-opt" data-correct="1" data-explain="值传递：传进去的是 a 的一份拷贝，函数里修改拷贝不影响原来的 a。想改变 a 必须传地址。">不会变</button>
+      <button class="quiz-opt" data-explain="编译器不会报错，只是结果和你以为的不一样 —— 这类 bug 最难查。">会编译错误</button>
+      <button class="quiz-opt" data-explain="与变量名无关，是值传递机制决定的。">取决于变量名</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz" data-quiz>
+    <p class="quiz-q">2. 一个函数只负责打印一行提示、不返回任何值，它的返回类型应该写什么？</p>
+    <div class="quiz-opts">
+      <button class="quiz-opt" data-correct="1" data-explain="void 表示「没有返回值」。调用它时不能写成 int x = print_hint();。">void</button>
+      <button class="quiz-opt" data-explain="int 表示要返回一个整数，这个函数并不返回。">int</button>
+      <button class="quiz-opt" data-explain="C 语言没有 function 这个关键字。">function</button>
+      <button class="quiz-opt" data-explain="bool 需要 <stdbool.h>，且这个函数没有返回值。">bool</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+</section>

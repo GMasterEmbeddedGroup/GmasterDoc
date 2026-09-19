@@ -1,0 +1,39 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">小结</h2>
+    <p class="lead">这一讲把「写一个能跑的程序」所需要的全部基础件过了一遍。</p>
+  </div>
+
+  <div class="grid grid-2">
+    <div class="card">
+      <h4><span class="card-index">01</span>程序结构与编译</h4>
+      <p>一个程序 = 预处理指令 + 函数；必须有 <span class="mono">main</span>。
+        源文件到可执行程序要经过<b>预处理 → 编译 → 汇编 → 链接</b>四步，
+        报错分编译期错误与链接错误两类。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">02</span>变量与数据类型</h4>
+      <p>类型决定占几个字节和怎么解释这串 0/1。常用 <span class="mono">char / int / unsigned / float / double</span>，
+        大小用 <span class="mono">sizeof</span> 量。整数的溢出会「绕回」，是最危险的 bug 来源。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">03</span>二进制与进制转换</h4>
+      <p>计算机只用 0/1，8 位 = 1 字节 = 256 种状态。
+        十进制 ↔ 二进制用「除 2 取余 / 按位权相加」，4 位二进制 = 1 位十六进制。
+        负数用补码表示，位运算直接操作每一位。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">04</span>函数与输入输出</h4>
+      <p>函数把「一件事」封装起来，靠参数输入、靠返回值输出；参数是值传递。
+        <span class="mono">printf</span> / <span class="mono">scanf</span> 是调试与交互的基础工具，
+        格式符必须与参数类型一致。</p>
+    </div>
+  </div>
+
+  <div class="callout tip">
+    <b>下一讲预告：</b>判断与循环（<span class="mono">if</span> / <span class="mono">switch</span> / <span class="mono">for</span> / <span class="mono">while</span>）→
+    数组与字符串 → 指针与结构体 → 最后写一个能读串口数据的完整程序。
+    配套文档见 <a href="../../../C++基础/" target="_top">C++ 基础</a>（C 与 C++ 语法通用）与
+    <a href="../../../嵌入式基础/" target="_top">嵌入式基础</a>。
+  </div>
+</section>

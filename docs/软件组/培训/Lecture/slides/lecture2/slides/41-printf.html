@@ -1,0 +1,28 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">printf：把变量的值打印出来</h2>
+    <p class="lead">调试程序最基本的手段。引号里的 <span class="mono">%</span> 是<b>占位符</b>，后面的参数会按顺序填进去。</p>
+  </div>
+
+  <table class="dense">
+    <thead>
+      <tr><th>格式符</th><th>用于</th><th>例子与输出</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="mono">%d</td><td>十进制整数（<span class="mono">int</span>）</td><td><span class="mono">printf("%d", -42);</span> → <span class="mono">-42</span></td></tr>
+      <tr><td class="mono">%u</td><td>无符号整数（<span class="mono">unsigned</span>）</td><td><span class="mono">printf("%u", 4000000000u);</span> → <span class="mono">4000000000</span></td></tr>
+      <tr><td class="mono">%f</td><td>浮点数，默认保留 6 位小数</td><td><span class="mono">printf("%f", 3.14);</span> → <span class="mono">3.140000</span></td></tr>
+      <tr><td class="mono">%c</td><td>单个字符</td><td><span class="mono">printf("%c", 'A');</span> → <span class="mono">A</span></td></tr>
+      <tr><td class="mono">%s</td><td>字符串</td><td><span class="mono">printf("%s", "GMaster");</span> → <span class="mono">GMaster</span></td></tr>
+      <tr><td class="mono">%x</td><td>十六进制（<span class="mono">%X</span> 为大写）</td><td><span class="mono">printf("%x", 156);</span> → <span class="mono">9c</span></td></tr>
+      <tr><td class="mono">%p</td><td>地址（指针）</td><td><span class="mono">printf("%p", &amp;n);</span> → <span class="mono">0x7ffd1a2b3c4d</span></td></tr>
+      <tr><td class="mono">%zu</td><td><span class="mono">size_t</span>（如 <span class="mono">sizeof</span> 的结果）</td><td><span class="mono">printf("%zu", sizeof(int));</span> → <span class="mono">4</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout warn">
+    <b>占位符必须和参数类型一致：</b>用 <span class="mono">%d</span> 打印浮点数、用 <span class="mono">%s</span> 打印整数，
+    都会输出乱码甚至让程序崩溃 —— 编译器通常只给一个 <span class="mono">-Wformat</span> 警告，<b>记得看警告</b>。
+    另外 <span class="mono">%o</span> 是八进制，<span class="mono">%%</span> 用来输出一个百分号本身。
+  </div>
+</section>

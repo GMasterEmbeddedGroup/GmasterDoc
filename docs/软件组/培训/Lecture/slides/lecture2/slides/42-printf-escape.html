@@ -1,0 +1,27 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">转义字符与输出对齐</h2>
+    <p class="lead">在 <span class="mono">%</span> 和格式字母之间可以插入宽度与精度，让输出对齐，调试时一眼就能看出数据是否异常。</p>
+  </div>
+
+  <div class="codebox">
+    <div class="codebox-head"><span class="cb-file">format.c</span><span class="cb-tag">宽度 · 精度 · 对齐</span></div>
+<pre><code>printf("|%d|\n", 42);          // |42|       默认宽度
+printf("|%5d|\n", 42);         // |   42|    右对齐，宽度 5
+printf("|%-5d|\n", 42);        // |42   |    左对齐
+printf("|%05d|\n", 42);        // |00042|    用 0 补位
+printf("%.2f\n", 3.14159);     // 3.14       保留 2 位小数（会四舍五入）
+printf("%8.3f\n", 3.14159);    //    3.142   总宽 8，小数 3 位
+printf("名字\t得分\n");        // \t 制表符，用来对齐表格
+printf("路径：D:\\code\n");    // \\ 输出一个反斜杠</code></pre>
+  </div>
+
+  <div class="outbox"><span class="note">|42|    |   42|    |42   |    |00042|</span>
+3.14    3.142
+名字    得分
+路径：D:\code</div>
+
+  <div class="callout tip">
+    <b>调试技巧：</b>传感器数据一帧一帧刷屏时，用 <span class="mono">printf("%6.2f %6.2f\n", ...)</span> 让每列固定宽度，数值跳变一眼可见。
+  </div>
+</section>

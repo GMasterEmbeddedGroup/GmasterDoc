@@ -1,0 +1,41 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">动手练习：手工算一遍再让程序验算</h2>
+    <p class="lead">先在纸上算出结果，再写程序输出正确答案对照 —— 这是最快掌握进制转换的方法。</p>
+  </div>
+
+  <table class="dense">
+    <thead>
+      <tr><th>练习</th><th>要求</th><th>怎么验算</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>1</b></td>
+        <td>把十进制 <b>42、100、255</b> 转成二进制与十六进制（手工完成）</td>
+        <td>程序里写 <span class="mono">printf("%d %x\n", 42, 42);</span> 对照</td>
+      </tr>
+      <tr>
+        <td><b>2</b></td>
+        <td>把 <span class="mono">0b1011 0110</span> 转成十进制与十六进制</td>
+        <td>写 <span class="mono">int x = 0b10110110;</span> 用 <span class="mono">%d</span> 与 <span class="mono">%x</span> 打印</td>
+      </tr>
+      <tr>
+        <td><b>3</b></td>
+        <td>写出 <b>-1</b>、<b>-128</b> 用 8 位二进制表示的形式（补码）</td>
+        <td>用 <span class="mono">char c = -1;</span> 打印 <span class="mono">(int)(unsigned char)c</span></td>
+      </tr>
+      <tr>
+        <td><b>4</b></td>
+        <td>写程序：把变量 <span class="mono">x</span> 的第 3 位置 1、第 0 位清 0，其它位不变</td>
+        <td>先给 <span class="mono">x = 0x00</span>，期望得到 <span class="mono">0x08</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="checklist" style="margin-top:0.4em">
+    <label class="check-item"><input type="checkbox"><span>42 = <span class="mono">0b0010 1010</span> = <span class="mono">0x2A</span></span></label>
+    <label class="check-item"><input type="checkbox"><span>100 = <span class="mono">0b0110 0100</span> = <span class="mono">0x64</span></span></label>
+    <label class="check-item"><input type="checkbox"><span>255 = <span class="mono">0b1111 1111</span> = <span class="mono">0xFF</span></span></label>
+    <label class="check-item"><input type="checkbox"><span>0b1011 0110 = 182 = <span class="mono">0xB6</span></span></label>
+  </div>
+</section>

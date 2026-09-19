@@ -1,0 +1,36 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">计算机为什么只用 0 和 1</h2>
+    <p class="lead">不是计算机「喜欢」二进制，而是用电平表示数据时，只区分两种状态最可靠。</p>
+  </div>
+
+  <div class="grid grid-3">
+    <div class="card">
+      <h4><span class="card-index">01</span>电路天生只有两种稳态</h4>
+      <p>晶体管要么导通要么截止，电平要么高要么低。区分 10 个电平需要高精度比较器，稍有干扰就认错。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">02</span>抗干扰能力强</h4>
+      <p>规定 2.0V 以上算 1、0.8V 以下算 0，中间是「不关心」的过渡区，电机噪声很难把 0 推成 1。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">03</span>逻辑运算简单可靠</h4>
+      <p>与、或、非三种基本门电路就能搭出全部运算：加法器、比较器、寄存器都是拼出来的。</p>
+    </div>
+  </div>
+
+  <div class="compare" style="margin-top:0.5em">
+    <div>
+      <h4>十进制是给人看的</h4>
+      <p>写程序时可以用十进制，但<b>数据在内存里的样子永远是二进制</b>。</p>
+    </div>
+    <div>
+      <h4>高低电平你会天天见</h4>
+      <p><span class="mono">HAL_GPIO_WritePin(...)</span> 就是把某一位置 1（高电平），本质是在改一个二进制位。</p>
+    </div>
+  </div>
+
+  <div class="callout tip">
+    <b>为什么要学这一章：</b>CAN 报文、寄存器配置、传感器原始数据、通信协议帧，全部以十六进制或二进制出现。
+  </div>
+</section>

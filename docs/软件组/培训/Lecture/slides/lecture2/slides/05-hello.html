@@ -1,0 +1,26 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">第一个 C 程序：Hello World</h2>
+    <p class="lead">把下面 6 行原样敲进编辑器，保存为 <span class="mono">hello.c</span>，注意每一个符号都是英文半角。</p>
+  </div>
+
+  <div class="codebox">
+    <div class="codebox-head"><span class="cb-file">hello.c</span><span class="cb-tag">C 源文件</span></div>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    printf("Hello, World!\n");
+    return 0;
+}</code></pre>
+    <div class="codebox-foot">缩进用 4 个空格（按 <kbd>Tab</kbd> 也可以）；每行语句结尾的分号、成对出现的括号都不能少。</div>
+  </div>
+
+  <div class="outbox"><span class="pr">$</span> gcc hello.c -o hello
+<span class="pr">$</span> ./hello
+<span class="ok">Hello, World!</span></div>
+
+  <div class="callout tip">
+    这就是全部流程：<b>写代码 → 编译 → 运行</b>。之后所有的程序，都是在这个骨架上加东西。
+  </div>
+</section>

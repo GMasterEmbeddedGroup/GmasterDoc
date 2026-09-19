@@ -1,0 +1,42 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">负数怎么存：补码</h2>
+    <p class="lead">8 位只有 256 种组合，却要同时表示正数和负数。C 语言（以及所有现代计算机）的做法是<b>用一半组合表示负数</b>。</p>
+  </div>
+
+  <div class="bits">
+    <span class="bit is-on"><span class="w">符号</span><span class="v">1</span></span>
+    <span class="bit is-on"><span class="w">64</span><span class="v">1</span></span>
+    <span class="bit is-on"><span class="w">32</span><span class="v">1</span></span>
+    <span class="bit is-on"><span class="w">16</span><span class="v">1</span></span>
+    <span class="bit is-on"><span class="w">8</span><span class="v">1</span></span>
+    <span class="bit is-on"><span class="w">4</span><span class="v">1</span></span>
+    <span class="bit is-on"><span class="w">2</span><span class="v">1</span></span>
+    <span class="bit is-on"><span class="w">1</span><span class="v">1</span></span>
+  </div>
+  <p class="lead" style="margin:-0.2em 0 0.5em">最高位是 1 → 这是负数：<span class="mono">1111 1111</span> 就是 <b>-1</b>（而不是 255）。</p>
+
+  <div class="deflist">
+    <div>
+      <dt>无符号 unsigned</dt>
+      <dd>8 位全部用来表示大小：<span class="mono">0 ~ 255</span>。适合原始字节、掩码、计数器。</dd>
+    </div>
+    <div>
+      <dt>有符号 signed</dt>
+      <dd>最高位当符号位（1 = 负），范围变成 <span class="mono">-128 ~ 127</span>。默认的 <span class="mono">int</span>、<span class="mono">char</span> 都是有符号的。</dd>
+    </div>
+    <div>
+      <dt>补码怎么求</dt>
+      <dd><b>取反再 +1</b>：5 是 <span class="mono">0000 0101</span>，取反得 <span class="mono">1111 1010</span>，加 1 得 <span class="mono">1111 1011</span> = <span class="mono">0xFB</span>。</dd>
+    </div>
+    <div>
+      <dt>为什么这么麻烦</dt>
+      <dd>用补码后减法可以交给加法电路做，硬件简单，而且只有一个 0。</dd>
+    </div>
+  </div>
+
+  <div class="callout warn">
+    <b>经典 bug：</b>把有符号数和无符号数混在一起比较时，编译器会把有符号数转成无符号，
+    于是 <span class="mono">if (a - b &gt; 0)</span> 在两者都为 <span class="mono">unsigned</span> 时<b>永远为真</b>。
+  </div>
+</section>

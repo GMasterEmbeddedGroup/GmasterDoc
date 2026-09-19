@@ -1,0 +1,29 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">在代码里写出不同进制的数</h2>
+    <p class="lead">C 语言允许你用四种进制写同一个整数，编译器看到的前缀不同、值完全相同。</p>
+  </div>
+
+  <div class="codebox">
+    <div class="codebox-head"><span class="cb-file">bases.c</span><span class="cb-tag">同一个数，四种写法</span></div>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    int a = 156;          // 十进制：直接写
+    int b = 0x9C;         // 十六进制：前缀 0x
+    int c = 0234;         // 八进制：前缀 0（2*64+3*8+4 = 156）
+    int d = 0b10011100;   // 二进制：前缀 0b（GCC 扩展，C23 起成为标准）
+
+    printf("%d %d %d %d\n", a, b, c, d);   // 都用十进制打印 → 156 156 156 156
+    printf("%x  %o\n", 156, 156);          // 十六进制 9c，八进制 234
+    return 0;
+}</code></pre>
+    <div class="codebox-foot">同一个数用不同进制字面量写出，值完全一样：进制只是「写给人看的形式」，内存里都是二进制。</div>
+  </div>
+
+  <div class="callout warn">
+    <b>两个坑：</b>① <span class="mono">0b</span> 是 GCC 扩展（C23 前不是标准 C），换编译器可能不被支持；
+    ② 前缀 <span class="mono">0</span> 开头就是八进制，写 <span class="mono">int n = 010;</span> 得到的不是 10 而是 8。
+  </div>
+</section>

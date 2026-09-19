@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img"
+     aria-labelledby="seqTitle seqDesc" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', sans-serif">
+  <title id="seqTitle">登录与私有内容的鉴权时序</title>
+  <desc id="seqDesc">未登录访问 /_private/ 会经 nginx 转到网关，网关 302 跳 CAF 登录；登录回调后网关换 token、拉取权限节点并种下会话 Cookie；之后访问由网关校验后经 X-Accel-Redirect 由 nginx 直接发出文件。</desc>
+  <defs>
+    <marker id="s-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#4051b5"/>
+    </marker>
+    <marker id="s-arrow-back" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#8a93a3"/>
+    </marker>
+    <style>
+      .line { stroke: #c9d3e0; stroke-width: 1.4; stroke-dasharray: 4 5; }
+      .flow { stroke: #4051b5; stroke-width: 1.8; fill: none; }
+      .back { stroke: #8a93a3; stroke-width: 1.6; fill: none; }
+      .actor { font-size: 14.5px; font-weight: 700; fill: #1f2430; }
+      .note { font-size: 12.5px; fill: #5b6472; }
+      .lbl { font-size: 12.5px; font-weight: 600; fill: #4051b5; }
+      .num { font-size: 12.5px; font-weight: 700; fill: #7b6bd6; }
+    </style>
+  </defs>
+
+  <rect x="0.75" y="0.75" width="958.5" height="538.5" rx="16" fill="#f7f9fc" stroke="#dce3ec"/>
+
+  <!-- 参与方 -->
+  <rect x="34" y="26" width="180" height="52" rx="10" fill="#eef4ff" stroke="#88aaf0" stroke-width="1.5"/>
+  <text class="actor" x="124" y="58" text-anchor="middle">队员浏览器</text>
+  <rect x="268" y="26" width="180" height="52" rx="10" fill="#ffffff" stroke="#dce3ec" stroke-width="1.5"/>
+  <text class="actor" x="358" y="58" text-anchor="middle">nginx</text>
+  <rect x="502" y="26" width="200" height="52" rx="10" fill="#fff8ea" stroke="#e2b862" stroke-width="1.5"/>
+  <text class="actor" x="602" y="58" text-anchor="middle">caf-wiki-gate</text>
+  <rect x="756" y="26" width="170" height="52" rx="10" fill="#f4f1ff" stroke="#a99bea" stroke-width="1.5"/>
+  <text class="actor" x="841" y="58" text-anchor="middle">CAF 认证中心</text>
+
+  <!-- 生命线 -->
+  <line class="line" x1="124" y1="78" x2="124" y2="470"/>
+  <line class="line" x1="358" y1="78" x2="358" y2="470"/>
+  <line class="line" x1="602" y1="78" x2="602" y2="470"/>
+  <line class="line" x1="841" y1="78" x2="841" y2="470"/>
+
+  <!-- ① 未登录访问 -->
+  <path class="flow" d="M124 104 H354" marker-end="url(#s-arrow)"/>
+  <text class="lbl" x="239" y="98" text-anchor="middle">① GET /_private/软件组/…</text>
+  <path class="flow" d="M358 130 H598" marker-end="url(#s-arrow)"/>
+  <text class="lbl" x="478" y="124" text-anchor="middle">② 反代（proxy_cache off）</text>
+
+  <!-- ③ 跳登录 -->
+  <path class="back" d="M598 168 H128" marker-end="url(#s-arrow-back)"/>
+  <text class="note" x="363" y="162" text-anchor="middle">③ 没有会话 → 302 /_caf/login?rd=…</text>
+
+  <!-- ④ 走 CAF -->
+  <path class="flow" d="M124 200 H837" marker-end="url(#s-arrow)"/>
+  <text class="lbl" x="480" y="194" text-anchor="middle">④ 授权码流程：登录 → 同意 → 回调 /_caf/callback?code=…</text>
+
+  <!-- ⑤ 网关换 token -->
+  <path class="flow" d="M602 236 H837" marker-end="url(#s-arrow)"/>
+  <text class="lbl" x="719" y="230" text-anchor="middle">⑤ 用 code 换 access_token</text>
+  <path class="back" d="M837 262 H606" marker-end="url(#s-arrow-back)"/>
+  <text class="note" x="721" y="256" text-anchor="middle">userinfo + permission-nodes（命名空间 gmaster）</text>
+
+  <!-- ⑥ 种会话 -->
+  <path class="back" d="M598 300 H128" marker-end="url(#s-arrow-back)"/>
+  <text class="note" x="363" y="294" text-anchor="middle">⑥ 种下 caf_wiki_sid 会话 Cookie（HttpOnly · Secure · Lax）</text>
+  <text class="note" x="363" y="314" text-anchor="middle">并把你送回原来想看的页面</text>
+
+  <!-- ⑦ 已登录访问 -->
+  <path class="flow" d="M124 356 H354" marker-end="url(#s-arrow)"/>
+  <text class="lbl" x="239" y="350" text-anchor="middle">⑦ 再访问私有页</text>
+  <path class="flow" d="M358 382 H598" marker-end="url(#s-arrow)"/>
+  <text class="lbl" x="478" y="376" text-anchor="middle">⑧ 校验会话 + 权限节点</text>
+
+  <!-- ⑨ 放行 -->
+  <path class="back" d="M602 418 H362" marker-end="url(#s-arrow-back)"/>
+  <text class="note" x="482" y="412" text-anchor="middle">⑨ 200 + X-Accel-Redirect: /__caf_files/…</text>
+  <path class="back" d="M358 444 H128" marker-end="url(#s-arrow-back)"/>
+  <text class="note" x="243" y="438" text-anchor="middle">⑩ nginx 直接读内部文件并返回</text>
+
+  <!-- 说明 -->
+  <rect x="34" y="482" width="892" height="44" rx="12" fill="#ffffff" stroke="#dce3ec" stroke-width="1.5"/>
+  <text class="note" x="480" y="509" text-anchor="middle">
+    网关只做鉴权，文件始终由 nginx 发出；access token 只存在服务器端会话里，不下发到浏览器
+  </text>
+</svg>

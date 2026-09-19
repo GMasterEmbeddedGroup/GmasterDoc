@@ -1,0 +1,52 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">四个高频运算符陷阱</h2>
+    <p class="lead">这四类错误几乎每个人都踩过，且编译器多半<b>不会报错</b>——只会安静地给你错误的结果。</p>
+  </div>
+
+  <div class="accordion" data-accordion>
+    <div class="acc-item">
+      <button class="acc-head">① 把 <span class="mono">==</span> 写成 <span class="mono">=</span>：判断条件永远成立 <span class="acc-arrow">›</span></button>
+      <div class="acc-body">
+        <span class="mono">if (speed = 0)</span> 的意思是「把 0 赋给 speed，然后判断这个值是否为真」——结果是永远为假；
+        写成 <span class="mono">if (speed = 100)</span> 则永远为真。<br>
+        <b>解法：</b>把常量写在左边：<span class="mono">if (0 == speed)</span>，这样少写一个等号会直接报错。
+        编译器会给警告 <span class="mono">suggest parentheses around assignment used as truth value</span>，<b>不要忽略警告</b>。
+      </div>
+    </div>
+    <div class="acc-item">
+      <button class="acc-head">② 整数除法丢掉小数：<span class="mono">5 / 2</span> 得到 2 <span class="acc-arrow">›</span></button>
+      <div class="acc-body">
+        只要两边都是整数，结果就一定是整数，小数部分被直接砍掉（不是四舍五入）。<br>
+        <b>解法：</b>把其中一边变成浮点：<span class="mono">5.0 / 2</span>、<span class="mono">(float)a / b</span>。
+        求平均值、算比例时尤其要注意。
+      </div>
+    </div>
+    <div class="acc-item">
+      <button class="acc-head">③ 取余的符号跟着被除数：<span class="mono">-5 % 3</span> 等于 -2 <span class="acc-arrow">›</span></button>
+      <div class="acc-body">
+        C 语言规定：<span class="mono">a % b</span> 的结果符号与 <span class="mono">a</span> 相同。于是
+        <span class="mono">-5 % 3 = -2</span>，而不是数学上的 1。<br>
+        <b>解法：</b>需要「始终为正」的余数（环形数组下标、角度归一化）时，写
+        <span class="mono">((a % b) + b) % b</span>。
+      </div>
+    </div>
+    <div class="acc-item">
+      <button class="acc-head">④ 优先级踩坑：<span class="mono">a &amp; b == 0</span> 不是你想的意思 <span class="acc-arrow">›</span></button>
+      <div class="acc-body">
+        <span class="mono">==</span> 的优先级<b>高于</b> <span class="mono">&amp;</span>，所以它实际是
+        <span class="mono">a &amp; (b == 0)</span>。<br>
+        <b>解法：</b>加括号 —— <span class="mono">(a &amp; b) == 0</span>。同理
+        <span class="mono">flag &amp; 1 &lt;&lt; n</span> 要写成 <span class="mono">flag &amp; (1 &lt;&lt; n)</span>。
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <b>优先级速记（从高到低）：</b>
+    括号 <span class="mono">()</span> → 单目 <span class="mono">! ~ ++ -- (int)</span> → 算术 <span class="mono">* / % + -</span>
+    → 移位 <span class="mono">&lt;&lt; &gt;&gt;</span> → 关系 <span class="mono">&lt; &gt; &lt;= &gt;=</span> → 相等 <span class="mono">== !=</span>
+    → 位与/异或/位或 <span class="mono">&amp; ^ |</span> → 逻辑 <span class="mono">&amp;&amp; ||</span> → 赋值 <span class="mono">= +=</span>。
+    <b>记不住就加括号，括号不要钱。</b>
+  </div>
+</section>

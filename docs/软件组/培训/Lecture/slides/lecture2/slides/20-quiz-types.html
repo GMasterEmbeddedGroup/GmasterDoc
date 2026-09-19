@@ -1,0 +1,28 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">随堂小测：变量与数据类型</h2>
+    <p class="lead">先想再点，点完会显示解析。</p>
+  </div>
+
+  <div class="quiz" data-quiz>
+    <p class="quiz-q">1. <span class="mono">int a = 7; int b = 2;</span> 那么 <span class="mono">a / b</span> 的值是？</p>
+    <div class="quiz-opts">
+      <button class="quiz-opt" data-explain="两边都是 int，除法是整除，小数部分被直接砍掉。">3.5</button>
+      <button class="quiz-opt" data-explain="两边都是 int，结果是 3（7 除以 2 的整数商）。">3</button>
+      <button class="quiz-opt" data-correct="1" data-explain="整除：7 / 2 = 3，小数部分 .5 被丢掉。想要 3.5 得写成 7.0 / 2 或 (float)a / b。">3</button>
+      <button class="quiz-opt" data-explain="能编译通过，只是结果与数学上的除法不同。">编译错误</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz" data-quiz>
+    <p class="quiz-q">2. <span class="mono">char c = 'A' + 1;</span> 之后，<span class="mono">printf("%c", c)</span> 输出什么？</p>
+    <div class="quiz-opts">
+      <button class="quiz-opt" data-explain="字符在内存里就是它的编码（ASCII）。">A</button>
+      <button class="quiz-opt" data-correct="1" data-explain="'A' 的 ASCII 码是 65，加 1 得 66，也就是字符 'B'。所以 %c 打印出 B，用 %d 打印则是 66。">B</button>
+      <button class="quiz-opt" data-explain="阿拉伯数字 1 的 ASCII 是 49，与本题无关。">1</button>
+      <button class="quiz-opt" data-explain="字符参与算术运算会先转成整数，这是合法写法。">编译错误</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+</section>

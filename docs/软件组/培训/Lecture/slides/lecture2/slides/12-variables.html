@@ -1,0 +1,28 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">变量：给内存里的一块空间起名字</h2>
+    <p class="lead">程序要处理的数据都存在内存里，变量就是「内存地址」的别名。写变量名，编译器负责换算成地址。</p>
+  </div>
+
+  <div class="codebox">
+    <div class="codebox-head"><span class="cb-file">variables.c</span><span class="cb-tag">声明 · 初始化 · 赋值</span></div>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    int   team_number = 2026;     // 声明并初始化：类型 名字 = 初值;
+    float motor_speed = 3.14f;    // 浮点数要带小数点
+    char  grade       = 'A';      // 单引号里只能放一个字符
+
+    team_number = 2027;           // 赋值：把右边的值写进左边这块内存
+    printf("%d %.2f %c\n", team_number, motor_speed, grade);
+    return 0;
+}</code></pre>
+    <div class="codebox-foot"><b>变量三要素：</b>类型决定占几个字节、怎么解释这些 0/1；名字用来引用它；值随时可以被新值覆盖。</div>
+  </div>
+
+  <div class="callout warn">
+    <b>未初始化的局部变量是随机值</b>：<span class="mono">int n;</span> 之后直接 <span class="mono">printf</span>，可能打印出一串莫名其妙的大数；
+    而想定义「不可更改的量」，要用 <span class="mono">const</span> 或 <span class="mono">#define</span>。
+  </div>
+</section>

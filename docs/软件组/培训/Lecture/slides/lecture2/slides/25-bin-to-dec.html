@@ -1,0 +1,39 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">二进制 → 十进制：按位权相加</h2>
+    <p class="lead">从右往左数，第 n 位的权重是 2<sup>n-1</sup>：1、2、4、8、16、32、64、128……
+    把「这一位是 1」的权重加起来即可。</p>
+  </div>
+
+  <div class="bits">
+    <span class="bit is-on"><span class="w">128</span><span class="v">1</span></span>
+    <span class="bit"><span class="w">64</span><span class="v">0</span></span>
+    <span class="bit"><span class="w">32</span><span class="v">0</span></span>
+    <span class="bit is-on"><span class="w">16</span><span class="v">1</span></span>
+    <span class="bit is-on"><span class="w">8</span><span class="v">1</span></span>
+    <span class="bit is-on"><span class="w">4</span><span class="v">1</span></span>
+    <span class="bit"><span class="w">2</span><span class="v">0</span></span>
+    <span class="bit"><span class="w">1</span><span class="v">0</span></span>
+  </div>
+
+  <div class="outbox"><span class="note">128 + 16 + 8 + 4 = 156</span>
+<span class="note">位权： 1×128 + 0×64 + 0×32 + 1×16 + 1×8 + 1×4 + 0×2 + 0×1</span></div>
+
+  <div class="compare">
+    <div>
+      <h4>几个必须一眼认出的值</h4>
+      <ul>
+        <li><span class="mono">0b0000 0001</span> = 1　　<span class="mono">0b0000 1111</span> = 15</li>
+        <li><span class="mono">0b1000 0000</span> = 128　<span class="mono">0b1111 1111</span> = 255</li>
+        <li><span class="mono">0b1010 1010</span> = 170　<span class="mono">0b0101 0101</span> = 85</li>
+        <li>8 位全 1 = <b>255</b>，就是把一个字节「用满」</li>
+      </ul>
+    </div>
+    <div>
+      <h4>两种方向都要熟练</h4>
+      <p><b>正着算</b>（二进制 → 十进制）：按位权相加，看寄存器里的位最常用；<br>
+        <b>倒着算</b>（十进制 → 二进制）：除 2 取余，写掩码时最常用。</p>
+      <p class="tiny">练到看见 <span class="mono">0x9C</span> 就能反应出 <span class="mono">1001 1100</span>，看硬件手册会快很多。</p>
+    </div>
+  </div>
+</section>

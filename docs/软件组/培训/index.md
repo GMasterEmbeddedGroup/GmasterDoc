@@ -8,7 +8,7 @@
 
 ## 培训体系
 
-开课之前，建议先过一遍 [开学第一课 —— 电控组](./27Lecture1.md) —— 它讲清楚电控组做什么、用什么工具、以及如何用 CubeMX 跑通第一个工程。
+开课之前，建议先过一遍 [从零开始电控开发 —— Lecture 1](./Lecture/Lecture1.md) —— 它讲清楚电控组做什么、用什么工具、以及如何用 CubeMX 跑通第一个工程；随后用 [C 语言第一次培训 —— Lecture 2](./Lecture/Lecture2.md) 补齐 C 语言基础。两次课的交互式课件都收在 [培训课程（Lecture 系列）](./Lecture/index.md) 里。
 
 随后按以下三大模块的顺序学习：
 
@@ -28,8 +28,10 @@ STM32 嵌入式开发入门，从 GPIO 到 CAN 通信，再到 GSRL 工程全景
 
 ## 快速链接
 
-- [开学第一课 —— 电控组](./27Lecture1.md) — 组别认知与开发环境入门（含可交互课件）
-- [使用 STM32CubeMX 新建工程](./Lecture1小作业.md) — 第一课配套实操：安装、配置工程与交叉编译
+- [从零开始电控开发 —— Lecture 1](./Lecture/Lecture1.md) — 组别认知与开发环境入门（含可交互课件）
+- [C 语言第一次培训 —— Lecture 2](./Lecture/Lecture2.md) — Hello World、数据类型、进制转换、函数与输入输出（含可交互课件）
+- [培训课程（Lecture 系列）](./Lecture/index.md) — 课次目录与学习建议
+- [使用 STM32CubeMX 新建工程](./Lecture/Lecture1小作业.md) — 第一课配套实操：安装、配置工程与交叉编译
 - [自学清单](./自学清单.md) — 推荐的外部学习资源汇总
 - [Lesson1 开发环境配置](./Lesson1%20开发环境配置.md) — 本地开发环境搭建
 - [Github Education 认证](./Github%20Education认证.md) — 获取学生认证与免费工具

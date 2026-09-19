@@ -1,0 +1,35 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">位运算：直接操作每一位</h2>
+    <p class="lead">配置寄存器、解析报文、生成掩码都要用它。这一页是嵌入式开发中使用频率最高的一组运算符。</p>
+  </div>
+
+  <div class="codebox">
+    <div class="codebox-head"><span class="cb-file">bits.c</span><span class="cb-tag">点灯与熄灯</span></div>
+<pre><code>#define LED_PIN  5              // 第 5 位对应 PA5
+uint16_t odr = 0x0000;          // 假装这是 GPIOA 的输出寄存器
+
+odr |=  (1 &lt;&lt; LED_PIN);         // 置 1：把第 5 位置为高电平，点亮 LED
+odr &amp;= ~(1 &lt;&lt; LED_PIN);         // 清 0：第 5 位变低电平，熄灭 LED
+odr ^=  (1 &lt;&lt; LED_PIN);         // 取反：翻转第 5 位（闪灯时常用）
+if (odr &amp; (1 &lt;&lt; LED_PIN)) {     /* 读某一位的实际状态：非 0 就是 1 */ }</code></pre>
+    <div class="codebox-foot">HAL 库里的 <span class="mono">HAL_GPIO_WritePin()</span> / <span class="mono">HAL_GPIO_ReadPin()</span> 内部做的正是这几件事，只是帮你把细节包起来了。</div>
+  </div>
+
+  <div class="compare">
+    <div>
+      <h4>两条万能公式</h4>
+      <ul>
+        <li>把第 n 位<b>置 1</b>：<span class="mono">x |= (1 &lt;&lt; n);</span></li>
+        <li>把第 n 位<b>清 0</b>：<span class="mono">x &amp;= ~(1 &lt;&lt; n);</span></li>
+        <li>取第 n 位：<span class="mono">(x &gt;&gt; n) &amp; 1</span></li>
+        <li>连续 k 位掩码：<span class="mono">x &amp; 0x0F</span>（低 4 位）</li>
+      </ul>
+    </div>
+    <div>
+      <h4>移位就是乘除 2 的幂</h4>
+      <p><span class="mono">x &lt;&lt; 1</span> 相当于 <span class="mono">x × 2</span>，<span class="mono">x &gt;&gt; 3</span> 相当于 <span class="mono">x ÷ 8</span>。</p>
+      <p class="tiny">无符号数右移补 0；有符号负数右移补什么由实现决定，所以<b>不要对有符号负数右移</b>。</p>
+    </div>
+  </div>
+</section>

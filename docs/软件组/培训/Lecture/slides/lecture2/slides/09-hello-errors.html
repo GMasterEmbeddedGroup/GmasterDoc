@@ -1,0 +1,46 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">五个最常见的入门报错</h2>
+    <p class="lead">报错信息不是敌人，它已经告诉了你错在哪一行。点击展开查看原因与解法。</p>
+  </div>
+
+  <div class="accordion" data-accordion>
+    <div class="acc-item">
+      <button class="acc-head">① expected ';' before '}' token —— 少写分号 <span class="acc-arrow">›</span></button>
+      <div class="acc-body">
+        编译器在报错的那一行找不到分号，于是把问题指向了<b>上一行</b>。<br>
+        <b>解法：</b>顺着报错行往上看一行，给那条语句补上分号。
+      </div>
+    </div>
+    <div class="acc-item">
+      <button class="acc-head">② implicit declaration of function 'printf' —— 忘了头文件 <span class="acc-arrow">›</span></button>
+      <div class="acc-body">
+        编译器不认识 <span class="mono">printf</span>，只能猜它的参数类型（C99 之后这会变成警告甚至错误）。<br>
+        <b>解法：</b>在文件开头补上 <span class="mono">#include &lt;stdio.h&gt;</span>。
+      </div>
+    </div>
+    <div class="acc-item">
+      <button class="acc-head">③ stray '\357' in program —— 混进了中文标点 <span class="acc-arrow">›</span></button>
+      <div class="acc-body">
+        输入法还停在中文状态下写下了 <span class="mono">； ， “ ”（）</span>，它们是多字节字符，编译器读不懂。<br>
+        <b>解法：</b>把报错行的标点重新用英文输入法敲一遍；写代码时保持输入法为英文。
+      </div>
+    </div>
+    <div class="acc-item">
+      <button class="acc-head">④ undefined reference to 'main' —— 没有主函数 <span class="acc-arrow">›</span></button>
+      <div class="acc-body">
+        链接器找不到程序入口，常见原因是把 <span class="mono">main</span> 拼成了 <span class="mono">mian</span>，
+        或者文件名带后缀错误（保存成了 <span class="mono">hello.c.txt</span>）。<br>
+        <b>解法：</b>确认函数名是 <span class="mono">main</span>，并用 <span class="mono">ls</span> / 资源管理器确认文件真的叫 <span class="mono">hello.c</span>。
+      </div>
+    </div>
+    <div class="acc-item">
+      <button class="acc-head">⑤ expected declaration or statement at end of input —— 大括号没配对 <span class="acc-arrow">›</span></button>
+      <div class="acc-body">
+        编译器一直到文件末尾都没等到该有的 <span class="mono">}</span>。<br>
+        <b>解法：</b>在 VS Code 里把光标移到任意一个 <span class="mono">{</span> 或 <span class="mono">}</span> 上，
+        它配对的另一个括号会高亮，逐对检查即可。
+      </div>
+    </div>
+  </div>
+</section>

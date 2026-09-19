@@ -1,4 +1,4 @@
-# 开学第一课 —— 电控组
+# 从零开始电控开发 —— Lecture 1
 
 面向新队员的第一次课，回答三个问题：**电控组做什么**、**我装的每个工具有什么用**、**怎么跑通第一个工程**。
 
@@ -10,15 +10,15 @@
 
 <div style="border:1px solid var(--md-default-fg-color--lightest);border-radius:8px;overflow:hidden;background:#fff">
   <iframe
-    src="../slides/first-lesson/index.html"
-    title="开学第一课 —— 电控组（交互式课件）"
+    src="slides/lecture1/index.html"
+    title="从零开始电控开发 —— Lecture 1（交互式课件）"
     style="display:block;width:100%;aspect-ratio:16/10;border:0"
     allowfullscreen
     loading="lazy"
     onclick="this.contentWindow.focus()"></iframe>
 </div>
 
-<a href="../slides/first-lesson/index.html" target="_blank" rel="noopener">全屏打开课件</a>
+<a href="slides/lecture1/index.html" target="_blank" rel="noopener">全屏打开课件</a>
 
 > **操作提示**：先点击课件区域（让键盘焦点进入课件），再用 <kbd>←</kbd> <kbd>→</kbd> / <kbd>空格</kbd> 翻页；<kbd>Esc</kbd> 打开总览；<kbd>F</kbd> 全屏。若键盘没有反应，直接点右下角的翻页箭头即可。
 
@@ -35,16 +35,18 @@
 
 其中 **4.2 工程结构与 CMake** 覆盖了 CubeMX 生成工程中的 `.ioc`、`Core/`、`Drivers/`、启动文件、链接脚本、`CMakeLists.txt`、`CMakePresets.json`、`build/` 等文件的作用。
 
-课件中的配图取自 [Wikimedia Commons](https://commons.wikimedia.org/)（CC0 / CC BY / CC BY-SA 等）与战队官网，逐张的出处与许可见 `slides/first-lesson/img/SOURCES.txt`。
+课件中的配图取自 [Wikimedia Commons](https://commons.wikimedia.org/)（CC0 / CC BY / CC BY-SA 等）与战队官网，逐张的出处与许可见 `slides/lecture1/img/SOURCES.txt`。
 
 ---
 
 ## 配套资源
 
+- **下一篇**：[C 语言第一次培训 —— Lecture 2](./Lecture2.md)（Hello World、数据类型、进制转换、函数、输入输出）
+- **课程目录**：[培训课程（Lecture 系列）](./index.md)
 - **STM32CubeMX 下载**：[官网页面](https://www.st.com/en/development-tools/stm32cubemx.html) ｜ [课件中使用的 6.12.1 安装包直链](https://www.st.com/content/ccc/resource/technical/software/sw_development_suite/group1/2a/7f/09/90/25/59/44/10/stm32cubemx-win-v6-12-1/files/SetupSTM32CubeMX-6.12.1-Win.zip/jcr:content/translations/en.SetupSTM32CubeMX-6.12.1-Win.zip)
-- **装工具链**：[Lesson1 开发环境配置](Lesson1%20开发环境配置.md)
-- **学基础**：[嵌入式基础](嵌入式基础/index.md)、[C++ 基础](C++基础/index.md)
-- **学协作**：[Git 工作流](../../文档站指南/git工作流.md)
+- **装工具链**：[Lesson1 开发环境配置](../Lesson1%20开发环境配置.md)
+- **学基础**：[嵌入式基础](../嵌入式基础/index.md)、[C++ 基础](../C++基础/index.md)
+- **学协作**：[Git 工作流](../../../文档站指南/git工作流.md)
 
 ---
 

@@ -1,0 +1,30 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">把代码拆到多个文件</h2>
+    <p class="lead">当程序超过几百行，就按功能拆分：<b>头文件放声明，源文件放实现</b>，别人只需 <span class="mono">#include</span> 头文件就能用。</p>
+  </div>
+
+  <div class="codebox">
+    <div class="codebox-head"><span class="cb-file">math_utils.h</span><span class="cb-tag">接口：告诉别人「有什么」</span></div>
+<pre><code>#ifndef MATH_UTILS_H          /* 防止同一个头文件被重复包含 */
+#define MATH_UTILS_H
+int   clamp(int value, int low, int high);
+float average(const int data[], int count);
+#endif</code></pre>
+  </div>
+
+  <div class="codebox">
+    <div class="codebox-head"><span class="cb-file">math_utils.c</span><span class="cb-tag">实现：把函数体写在这里</span></div>
+<pre><code>#include "math_utils.h"
+
+int clamp(int value, int low, int high)
+{
+    if (value &lt; low)  { return low;  }
+    if (value &gt; high) { return high; }
+    return value;
+}</code></pre>
+    <div class="codebox-foot">编译时把所有源文件一起交给 gcc：<span class="mono">gcc main.c math_utils.c -o app</span>（头文件不写进命令）。
+      在 <span class="mono">main.c</span> 里只需 <span class="mono">#include "math_utils.h"</span> 就能调用它 —— 这就是 GSRL 里
+      <span class="mono">bsp/</span>、<span class="mono">module/</span>、<span class="mono">task/</span> 的组织方式。</div>
+  </div>
+</section>

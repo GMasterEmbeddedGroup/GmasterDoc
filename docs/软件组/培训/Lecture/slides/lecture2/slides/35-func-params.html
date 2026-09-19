@@ -1,0 +1,32 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">参数是「拷贝」，不是原件</h2>
+    <p class="lead">把变量传给函数时，传进去的是它<b>值的一份副本</b>（值传递）。函数里改形参，不影响调用者手里的变量。</p>
+  </div>
+
+  <div class="codebox">
+    <div class="codebox-head"><span class="cb-file">pass_by_value.c</span><span class="cb-tag">一个会让你踩坑的例子</span></div>
+<pre><code>#include &lt;stdio.h&gt;
+void add_one(int x) { x = x + 1; }   /* 形参只是副本，改它不影响外面 */
+
+int main(void)
+{
+    int a = 10;
+    add_one(a);                      /* 实参：把 a 的值拷贝一份传进去 */
+    printf("a = %d\n", a);           /* 仍然是 10 */
+    return 0;
+}</code></pre>
+    <div class="codebox-foot">运行结果：<span class="mono">a = 10</span>。想让函数改动外面的变量，需要传地址（指针）。</div>
+  </div>
+
+  <div class="compare">
+    <div>
+      <h4>返回值只能有一个</h4>
+      <p><span class="mono">return</span> 一次只能交回一个值；需要「算两个结果」时，常见做法是拆成两个函数。</p>
+    </div>
+    <div>
+      <h4>写好函数的检查清单</h4>
+      <p>名字能说明它做什么；参数是否为空、是否越界，都在函数内部先检查一遍。</p>
+    </div>
+  </div>
+</section>

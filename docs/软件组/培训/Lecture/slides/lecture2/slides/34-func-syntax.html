@@ -1,0 +1,39 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">函数的定义、声明与调用</h2>
+    <p class="lead">一个函数由四部分组成：返回类型、函数名、参数列表、函数体。写好了就能像 <span class="mono">printf</span> 一样被调用。</p>
+  </div>
+
+  <div class="codebox">
+    <div class="codebox-head"><span class="cb-file">add.c</span><span class="cb-tag">最简单的函数</span></div>
+<pre><code>#include &lt;stdio.h&gt;
+
+int add(int a, int b)     /* 函数定义 */
+{
+    return a + b;         /* return 把结果交回调用者 */
+}
+
+int main(void)
+{
+    int sum = add(3, 5);  /* 函数调用：函数名(实参1, 实参2) */
+    printf("3 + 5 = %d\n", sum);
+    return 0;
+}</code></pre>
+    <div class="codebox-foot">执行顺序：进入 <span class="mono">main</span> → 遇到 <span class="mono">add(3, 5)</span> 跳进去执行 → <span class="mono">return</span> 带回 8 → 继续执行下一行。</div>
+  </div>
+
+  <div class="deflist">
+    <div>
+      <dt>返回类型</dt>
+      <dd>函数交回什么类型的结果；不返回任何值就写 <span class="mono">void</span>。</dd>
+    </div>
+    <div>
+      <dt>参数列表</dt>
+      <dd>外部要提供的数据，每个参数都要写类型；<span class="mono">void</span> 表示不需要参数。</dd>
+    </div>
+    <div>
+      <dt>函数体</dt>
+      <dd>花括号之间的语句；遇到 <span class="mono">return</span> 立刻结束。函数必须先出现过再调用（否则要在开头补声明）。</dd>
+    </div>
+  </div>
+</section>

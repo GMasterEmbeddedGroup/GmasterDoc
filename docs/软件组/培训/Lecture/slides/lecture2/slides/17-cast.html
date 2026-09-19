@@ -1,0 +1,36 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">类型转换：整数除法是最经典的坑</h2>
+    <p class="lead">不同类型混在一起运算时，编译器会先「统一类型」再计算。这一步往往是新手最容易出错的地方。</p>
+  </div>
+
+  <div class="codebox">
+    <div class="codebox-head"><span class="cb-file">cast.c</span><span class="cb-tag">看得见的差异</span></div>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    printf("%d\n", 5 / 2);            // 两边都是整数 → 整除，结果是 2
+    printf("%.2f\n", 5.0 / 2);        // 有一个是浮点 → 结果是 2.50
+    printf("%.2f\n", (float)5 / 2);   // 强制转换：(float)5 变成 5.0
+    printf("%d\n", (int)3.99);        // 显式转换：截断成 3
+    return 0;
+}</code></pre>
+    <div class="codebox-foot"><b>写除法前先问一句：</b>「我希望结果是小数吗？」如果是，两个操作数里至少要有一个是浮点，否则结果会被悄悄截断。</div>
+  </div>
+
+  <div class="deflist">
+    <div>
+      <dt>隐式转换</dt>
+      <dd>小范围类型自动转成大范围类型（<span class="mono">int</span> → <span class="mono">double</span>）是安全的；反方向转可能丢数据，编译器通常只给警告。</dd>
+    </div>
+    <div>
+      <dt>显式转换</dt>
+      <dd>写法是 <span class="mono">(目标类型)表达式</span>，只改变这一次运算的类型，<b>不改变变量本身的类型</b>。</dd>
+    </div>
+    <div>
+      <dt>浮点数比较</dt>
+      <dd>不要写 <span class="mono">if (a == 0.1)</span>；浮点有精度误差，应写成 <span class="mono">if (fabs(a - 0.1) &lt; 1e-6)</span>。</dd>
+    </div>
+  </div>
+</section>

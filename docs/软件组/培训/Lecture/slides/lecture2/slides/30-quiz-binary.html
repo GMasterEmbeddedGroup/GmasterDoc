@@ -1,0 +1,28 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">随堂小测：二进制与进制转换</h2>
+    <p class="lead">先自己算一遍再点选项。</p>
+  </div>
+
+  <div class="quiz" data-quiz>
+    <p class="quiz-q">1. 二进制 <span class="mono">0000 1101</span> 的十进制值是？</p>
+    <div class="quiz-opts">
+      <button class="quiz-opt" data-explain="注意位权：最低位是 1，不是 0。">11</button>
+      <button class="quiz-opt" data-correct="1" data-explain="8 + 4 + 0 + 1 = 13，也就是十六进制的 0x0D。">13</button>
+      <button class="quiz-opt" data-explain="1101 是 13 而不是 26；26 要写成 0001 1010。">26</button>
+      <button class="quiz-opt" data-explain="13 是十进制写法，题目问的就是十进制值。">0x0D</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz" data-quiz>
+    <p class="quiz-q">2. 十进制 200 写成十六进制是多少？</p>
+    <div class="quiz-opts">
+      <button class="quiz-opt" data-explain="0xC8 = 12×16 + 8 = 200，这才是答案。">0x200</button>
+      <button class="quiz-opt" data-correct="1" data-explain="200 = 128 + 64 + 8 = 1100 1000 → 分组得到 C8，即 0xC8。">0xC8</button>
+      <button class="quiz-opt" data-explain="0xD0 = 208，比 200 大。">0xD0</button>
+      <button class="quiz-opt" data-explain="0xB8 = 184，比 200 小。">0xB8</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+</section>

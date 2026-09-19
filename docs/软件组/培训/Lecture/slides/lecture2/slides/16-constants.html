@@ -1,0 +1,36 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">常量与字面量</h2>
+    <p class="lead">程序里出现的「值」有两种写法：直接写出来的<b>字面量</b>，和起了名字的<b>常量</b>。</p>
+  </div>
+
+  <div class="deflist">
+    <div>
+      <dt>字面量</dt>
+      <dd><span class="mono">42</span>、<span class="mono">3.14</span>、<span class="mono">'A'</span>（单引号）、<span class="mono">"Hello"</span>（双引号）—— 直接写死在代码里。</dd>
+    </div>
+    <div>
+      <dt>#define</dt>
+      <dd>预处理阶段做纯文本替换，<b>没有类型、行尾不加分号</b>：<span class="mono">#define MAX_SPEED 8000</span>。</dd>
+    </div>
+    <div>
+      <dt>const</dt>
+      <dd><b>只读变量</b>：<span class="mono">const int max_speed = 8000;</span> 有类型、有作用域，写它赋值会直接报错。</dd>
+    </div>
+  </div>
+
+  <div class="compare" style="margin-top:0.4em">
+    <div>
+      <h4>该用哪个？</h4>
+      <p>数值常量优先 <span class="mono">const</span>；跨文件共享的硬件地址、条件编译开关用 <span class="mono">#define</span>。</p>
+    </div>
+    <div>
+      <h4>为什么不要写「魔法数字」</h4>
+      <p><span class="mono">if (speed &gt; MAX_SPEED)</span> 一看就懂，调参数也只改一处。</p>
+    </div>
+  </div>
+
+  <div class="callout tip">
+    <b>约定：</b>宏名与常量名<b>全大写</b>，单词间用下划线，如 <span class="mono">WHEEL_RADIUS_MM</span>。
+  </div>
+</section>

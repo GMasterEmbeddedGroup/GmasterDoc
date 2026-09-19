@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="GMaster 电控（软件）组 Lecture 2《C 语言第一次培训》：从 Hello World 开始，讲程序基本结构、数据类型、二进制与进制转换、函数、标准输入输出。">
+<title>C 语言第一次培训：Lecture 2 | GMaster</title>
+<link rel="stylesheet" href="vendor/reveal.js/reveal.css">
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="deck.css">
+</head>
+<body>
+
+<!--
+  ============================================================================
+  这个文件只是外壳：每张幻灯片单独存放在 slides/ 目录下，
+  由 slides/manifest.js 列出顺序，运行时统一载入。
+  想调整某一页 → 直接改 slides/ 里对应的那个文件；
+  想单独看某一页 → 打开 one.html?p=序号
+  ============================================================================
+-->
+
+<div class="reveal">
+  <img class="brand-logo" src="img/brand-logo.png" alt="GMaster">
+  <img class="brand-corner" src="img/brand-corner.png" alt="">
+  <div class="slides"><section><h2>正在载入课件…</h2></section></div>
+</div>
+
+<script src="slides/manifest.js"></script>
+<script src="vendor/reveal.js/reveal.js"></script>
+<script src="vendor/reveal.js/plugin/zoom/zoom.js"></script>
+<script src="vendor/reveal.js/plugin/search/search.js"></script>
+<script src="vendor/reveal.js/plugin/notes/notes.js"></script>
+<script src="deck.js"></script>
+<script>
+(function () {
+  var slidesEl = document.querySelector('.reveal .slides');
+  var files = window.DECK_SLIDES.map(function (s) { return s.file; });
+
+  DeckKit.loadFragments(files, slidesEl)
+    .then(function () {
+      DeckKit.initAll(document);
+      DeckKit.initReveal({
+        plugins: [window.RevealZoom, window.RevealSearch, window.RevealNotes].filter(Boolean)
+      });
+    })
+    .catch(function (err) {
+      slidesEl.innerHTML =
+        '<section><h2>课件载入失败</h2>' +
+        '<p>原因：<span class="mono">' + err.message + '</span></p>' +
+        '<p>本课件的每页内容是分开存放的，需要能读取本地文件，' +
+        '请通过 <b>http(s)</b> 访问（不能用 <span class="mono">file://</span> 直接双击打开）。</p></section>';
+    });
+})();
+</script>
+</body>
+</html>

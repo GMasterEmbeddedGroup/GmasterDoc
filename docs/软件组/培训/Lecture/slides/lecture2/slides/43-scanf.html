@@ -1,0 +1,33 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">scanf：把键盘输入读进变量</h2>
+    <p class="lead">和 <span class="mono">printf</span> 正好相反：<span class="mono">printf</span> 把值送出去，
+    <span class="mono">scanf</span> 把值读进来 —— 所以它需要知道<b>变量在哪里</b>。</p>
+  </div>
+
+  <div class="codebox">
+    <div class="codebox-head"><span class="cb-file">input.c</span><span class="cb-tag">注意那个 &amp;</span></div>
+<pre><code>#include &lt;stdio.h&gt;
+int main(void)
+{
+    int n = 0;
+    printf("请输入一个整数：");   /* 提示语不加 \n，让输入跟在后面 */
+    scanf("%d", &amp;n);              /* & 取地址：把值写到 n 所在的内存 */
+    printf("%d 的平方是 %d\n", n, n * n);
+    return 0;
+}</code></pre>
+  </div>
+
+  <div class="compare">
+    <div>
+      <h4>为什么必须加 <span class="mono">&amp;</span></h4>
+      <p><span class="mono">scanf</span> 要直接改写那块内存，光知道「值是多少」不够，得知道「存在哪儿」。</p>
+      <p class="tiny">数组名本身已经是地址，所以读字符串不加：<span class="mono">scanf("%s", name);</span></p>
+    </div>
+    <div>
+      <h4>一次读多个值</h4>
+      <p><span class="mono">scanf("%d %d", &amp;a, &amp;b);</span> 可以输入 <span class="mono">3 5</span>，也可以分两行。</p>
+      <p class="tiny">格式串里<b>不要加 <span class="mono">\n</span></b>，否则程序会一直等你再输入；要求输入整数却敲了字母时，<span class="mono">scanf</span> 会失败并留下垃圾数据。</p>
+    </div>
+  </div>
+</section>

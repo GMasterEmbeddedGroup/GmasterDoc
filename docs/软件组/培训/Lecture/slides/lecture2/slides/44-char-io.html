@@ -1,0 +1,35 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">字符输入输出与输入缓冲区</h2>
+    <p class="lead"><span class="mono">getchar</span> / <span class="mono">putchar</span> 一次只处理一个字符，
+    是理解「输入流」最直观的工具。</p>
+  </div>
+
+  <div class="codebox">
+    <div class="codebox-head"><span class="cb-file">count_chars.c</span><span class="cb-tag">统计一行里有多少个字符</span></div>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    int c, count = 0;
+    printf("输入一行文字，回车结束：\n");
+    while ((c = getchar()) != '\n' &amp;&amp; c != EOF) {  /* 读到回车才停 */
+        count++; putchar(c);                       /* 计数并原样回显 */
+    }
+    printf("\n共 %d 个字符\n", count);
+    return 0;
+}</code></pre>
+  </div>
+
+  <div class="compare">
+    <div>
+      <h4>缓冲区是什么</h4>
+      <p>你敲的字符先攒在系统的一块内存里，按回车才一起交给程序。所以 <span class="mono">scanf("%d")</span> 读完后，<b>回车还留在缓冲区</b>。</p>
+    </div>
+    <div>
+      <h4>于是出现经典现象</h4>
+      <p><span class="mono">scanf("%d", &amp;n)</span> 后紧跟 <span class="mono">scanf("%c", &amp;c)</span>，<span class="mono">c</span> 会直接读到残留的换行。</p>
+      <p class="tiny"><b>解法：</b><span class="mono">scanf(" %c", &amp;c);</span>（前面加空格＝先跳过空白字符），或先 <span class="mono">getchar();</span> 吃掉回车。</p>
+    </div>
+  </div>
+</section>

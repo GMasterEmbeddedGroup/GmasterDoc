@@ -1,0 +1,33 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">为什么要用函数</h2>
+    <p class="lead"><span class="mono">main</span> 里把所有代码一路写下来当然能跑，但超过 50 行就会开始失控。</p>
+  </div>
+
+  <div class="compare">
+    <div>
+      <h4>不拆函数的后果</h4>
+      <ul>
+        <li>同一段计算在三个地方复制粘贴，改一处忘了另外两处</li>
+        <li>想单独测一下「算平均值」这段逻辑，只能把整个程序跑起来</li>
+        <li>出错时不知道该看哪一行，只能从头往下读</li>
+      </ul>
+      <p class="tiny">GSRL 的一个 <span class="mono">main.c</span> 只有几十行，其余全是函数调用。</p>
+    </div>
+    <div>
+      <h4>函数带来的好处</h4>
+      <ul>
+        <li><b>复用</b>：写一次、调无数次，改一次就全部生效</li>
+        <li><b>可读</b>：<span class="mono">clamp(speed, 0, MAX)</span> 比一长串 <span class="mono">if</span> 自解释得多</li>
+        <li><b>可测</b>：给定输入、检查输出，不必启动整个程序</li>
+        <li><b>分工</b>：一人写电机控制，一人写通信，互不干扰</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout tip">
+    <b>写好函数的三个原则：</b>① 只做一件事，名字能概括它（20 行以内看完）；
+    ② 需要的数据从参数传进来，不要偷读全局变量；
+    ③ 结果通过 <span class="mono">return</span> 交回去，而不是直接打印。
+  </div>
+</section>

@@ -1,0 +1,27 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">局部变量与作用域</h2>
+    <p class="lead">变量在哪个花括号里定义，就只能在那个花括号里使用 —— 这个「可见范围」就是<b>作用域</b>。</p>
+  </div>
+
+  <div class="codebox">
+    <div class="codebox-head"><span class="cb-file">scope.c</span><span class="cb-tag">同名变量互不干扰</span></div>
+<pre><code>int counter = 0;             /* 全局变量：所有函数都能访问 */
+
+void tick(void)
+{
+    int step = 3;            /* 局部变量：只在 tick 里存在 */
+    counter += step;
+}
+
+int main(void)
+{
+    int step = 100;          /* 与 tick 里的 step 互不干扰 */
+    tick(); tick();
+    printf("%d %d\n", counter, step);   /* 6 100 */
+    return 0;
+}</code></pre>
+    <div class="codebox-foot"><b>三个坑：</b>① 局部变量没初始化就是随机值；② 函数返回后局部变量的内存被回收，<b>不要返回它的地址</b>；
+      ③ 全局变量虽方便，但以后调试时很难查是「谁改了它」，能不用就不用。</div>
+  </div>
+</section>

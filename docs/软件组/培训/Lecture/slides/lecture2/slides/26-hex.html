@@ -1,0 +1,39 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">十六进制：二进制的「速记写法」</h2>
+    <p class="lead">4 位二进制正好有 16 种组合，于是用 1 个十六进制字符就能代替 4 位二进制 —— 长度缩短到 1/4，还不容易数错。</p>
+  </div>
+
+  <div class="grid grid-4 hexgrid" style="gap:0.2em">
+    <div class="card" style="padding:0.3em 0.45em;border-top-width:2px"><h4 style="font-size:0.68em"><span class="mono">0</span></h4><p class="mono" style="font-size:0.6em">0000　= 0</p></div>
+    <div class="card" style="padding:0.3em 0.45em;border-top-width:2px"><h4 style="font-size:0.68em"><span class="mono">1</span></h4><p class="mono" style="font-size:0.6em">0001　= 1</p></div>
+    <div class="card" style="padding:0.3em 0.45em;border-top-width:2px"><h4 style="font-size:0.68em"><span class="mono">2</span></h4><p class="mono" style="font-size:0.6em">0010　= 2</p></div>
+    <div class="card" style="padding:0.3em 0.45em;border-top-width:2px"><h4 style="font-size:0.68em"><span class="mono">3</span></h4><p class="mono" style="font-size:0.6em">0011　= 3</p></div>
+    <div class="card" style="padding:0.3em 0.45em;border-top-width:2px"><h4 style="font-size:0.68em"><span class="mono">4</span></h4><p class="mono" style="font-size:0.6em">0100　= 4</p></div>
+    <div class="card" style="padding:0.3em 0.45em;border-top-width:2px"><h4 style="font-size:0.68em"><span class="mono">5</span></h4><p class="mono" style="font-size:0.6em">0101　= 5</p></div>
+    <div class="card" style="padding:0.3em 0.45em;border-top-width:2px"><h4 style="font-size:0.68em"><span class="mono">6</span></h4><p class="mono" style="font-size:0.6em">0110　= 6</p></div>
+    <div class="card" style="padding:0.3em 0.45em;border-top-width:2px"><h4 style="font-size:0.68em"><span class="mono">7</span></h4><p class="mono" style="font-size:0.6em">0111　= 7</p></div>
+    <div class="card" style="padding:0.3em 0.45em;border-top-width:2px"><h4 style="font-size:0.68em"><span class="mono">8</span></h4><p class="mono" style="font-size:0.6em">1000　= 8</p></div>
+    <div class="card" style="padding:0.3em 0.45em;border-top-width:2px"><h4 style="font-size:0.68em"><span class="mono">9</span></h4><p class="mono" style="font-size:0.6em">1001　= 9</p></div>
+    <div class="card" style="padding:0.3em 0.45em;border-top-width:2px"><h4 style="font-size:0.68em"><span class="mono">A</span></h4><p class="mono" style="font-size:0.6em">1010　= 10</p></div>
+    <div class="card" style="padding:0.3em 0.45em;border-top-width:2px"><h4 style="font-size:0.68em"><span class="mono">B</span></h4><p class="mono" style="font-size:0.6em">1011　= 11</p></div>
+    <div class="card" style="padding:0.3em 0.45em;border-top-width:2px"><h4 style="font-size:0.68em"><span class="mono">C</span></h4><p class="mono" style="font-size:0.6em">1100　= 12</p></div>
+    <div class="card" style="padding:0.3em 0.45em;border-top-width:2px"><h4 style="font-size:0.68em"><span class="mono">D</span></h4><p class="mono" style="font-size:0.6em">1101　= 13</p></div>
+    <div class="card" style="padding:0.3em 0.45em;border-top-width:2px"><h4 style="font-size:0.68em"><span class="mono">E</span></h4><p class="mono" style="font-size:0.6em">1110　= 14</p></div>
+    <div class="card" style="padding:0.3em 0.45em;border-top-width:2px"><h4 style="font-size:0.68em"><span class="mono">F</span></h4><p class="mono" style="font-size:0.6em">1111　= 15</p></div>
+  </div>
+
+  <div class="compare" style="margin-top:0.5em">
+    <div>
+      <h4>怎么换算：4 位一组，直接替换</h4>
+      <p><span class="mono">1001 1100</span> → <span class="mono">9C</span>，写成 <span class="mono">0x9C</span>；
+        <span class="mono">0xFF</span> → <span class="mono">1111 1111</span> = 255。</p>
+      <p class="tiny">位数不够 4 的倍数时<b>左边补 0</b>：<span class="mono">0b10111</span> → <span class="mono">0001 0111</span> → <span class="mono">0x17</span> = 23。</p>
+    </div>
+    <div>
+      <h4>为什么工程里到处是十六进制</h4>
+      <p>寄存器地址 <span class="mono">0x40020014</span>、CAN 标识符 <span class="mono">0x1FF</span>、颜色 <span class="mono">#FF8800</span> 都习惯用它。</p>
+      <p class="tiny">还有一个冷门进制：八进制，3 位一组，前缀 <span class="mono">0</span>，现在几乎只在文件权限里见到。</p>
+    </div>
+  </div>
+</section>

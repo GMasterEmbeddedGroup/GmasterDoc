@@ -1,0 +1,57 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">输入输出的六个坑</h2>
+    <p class="lead">这些错误都不会在编译时报错，只会在运行时「表现得很奇怪」。点击展开。</p>
+  </div>
+
+  <div class="accordion" data-accordion>
+    <div class="acc-item">
+      <button class="acc-head">① <span class="mono">scanf</span> 忘了写 <span class="mono">&amp;</span>：程序直接崩溃 <span class="acc-arrow">›</span></button>
+      <div class="acc-body">
+        <b>症状：</b>运行到那一行就闪退 / 提示「程序已停止工作」。<br>
+        <b>原因：</b><span class="mono">scanf</span> 拿到的是变量的值（比如 0），把 0 当地址去写内存，属于非法访问。<br>
+        <b>解法：</b>所有基本类型变量都要加 <span class="mono">&amp;</span>；只有字符数组（字符串）不用加。
+      </div>
+    </div>
+    <div class="acc-item">
+      <button class="acc-head">② 格式符与变量类型不匹配：输出乱码 <span class="acc-arrow">›</span></button>
+      <div class="acc-body">
+        用 <span class="mono">%d</span> 打印 <span class="mono">float</span>、用 <span class="mono">%f</span> 打印 <span class="mono">int</span>，
+        都会按错误的字节数去解释内存。<br>
+        <b>解法：</b>核对占位符；打开编译器的 <span class="mono">-Wall</span> 选项，它会提示
+        <span class="mono">format '%d' expects argument of type 'int'</span>。
+      </div>
+    </div>
+    <div class="acc-item">
+      <button class="acc-head">③ 上一次输入的回车被下一次读走 <span class="acc-arrow">›</span></button>
+      <div class="acc-body">
+        <b>症状：</b>连续输入时程序「跳过了」某一步。原因见上一页的输入缓冲区。<br>
+        <b>解法：</b>读字符用 <span class="mono">scanf(" %c", &amp;c);</span>（前面加空格），或先 <span class="mono">getchar();</span> 吃掉换行。
+      </div>
+    </div>
+    <div class="acc-item">
+      <button class="acc-head">④ 中文输出乱码：编码不一致 <span class="acc-arrow">›</span></button>
+      <div class="acc-body">
+        源文件用 UTF-8 保存，而 Windows 终端默认用 GBK 解释字节，于是中文变成「锟斤拷」一类字符。<br>
+        <b>解法：</b>编译时加 <span class="mono">-fexec-charset=GBK</span>，或把终端编码切成 UTF-8
+        （PowerShell 执行 <span class="mono">chcp 65001</span>）。教学阶段更省事的办法：先用英文输出调试信息。
+      </div>
+    </div>
+    <div class="acc-item">
+      <button class="acc-head">⑤ 提示语忘了写 <span class="mono">\n</span>，输入看起来没反应 <span class="acc-arrow">›</span></button>
+      <div class="acc-body">
+        <span class="mono">printf("请输入：");</span> 后面没有换行，光标停在提示语右边等着你输入 ——
+        这是正常的。反过来，如果你在 <span class="mono">scanf</span> 之前写了很多没有换行的输出，界面会显得很乱。<br>
+        <b>解法：</b>输入前不换行（提示更紧凑），结果输出后换行。
+      </div>
+    </div>
+    <div class="acc-item">
+      <button class="acc-head">⑥ 用 <span class="mono">=</span> 而不是 <span class="mono">==</span> 判断相等 <span class="acc-arrow">›</span></button>
+      <div class="acc-body">
+        <span class="mono">if (n = 5)</span> 把 5 赋给 n 并判断 5 是否为真 —— 永远成立。<br>
+        <b>解法：</b>常量写左边：<span class="mono">if (5 == n)</span>；并且认真读编译器给出的
+        <span class="mono">suggest parentheses</span> 警告。
+      </div>
+    </div>
+  </div>
+</section>

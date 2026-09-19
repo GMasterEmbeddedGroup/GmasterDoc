@@ -1,0 +1,39 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">程序的基本结构与书写规范</h2>
+    <p class="lead">编译器不关心空格和换行，但人读代码时全靠它们。规范不是形式主义，是让别人（和未来的你）能看懂。</p>
+  </div>
+
+  <div class="compare">
+    <div>
+      <h4>一个 C 程序由什么组成</h4>
+      <ul>
+        <li><b>预处理指令</b>：<span class="mono">#include</span>、<span class="mono">#define</span>，行尾不加分号</li>
+        <li><b>函数</b>：程序的基本单位，必须有且只有一个 <span class="mono">main</span></li>
+        <li><b>语句</b>：函数体里的一行操作，以分号结尾</li>
+        <li><b>注释</b>：<span class="mono">//</span> 与 <span class="mono">/* */</span>，写给人看，编译时会被删掉</li>
+      </ul>
+    </div>
+    <div>
+      <h4>必须遵守的硬规则</h4>
+      <ul>
+        <li><b>区分大小写</b>：<span class="mono">main</span> 与 <span class="mono">Main</span> 是两个名字</li>
+        <li><b>英文半角符号</b>：分号写 <span class="mono">;</span> 不是 <span class="mono">；</span></li>
+        <li><b>括号成对</b>：<span class="mono">{ }</span>、<span class="mono">( )</span>、<span class="mono">" "</span> 一起写</li>
+        <li><b>先声明后使用</b>：变量、函数都要先出现在使用位置之前</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="grid grid-2" style="margin-top:0.5em">
+    <div class="card">
+      <h4>推荐写法</h4>
+      <p>一个花括号一层缩进（4 空格）；运算符两侧留空格；变量名用小写下划线
+        <span class="mono">motor_speed</span>。</p>
+    </div>
+    <div class="card">
+      <h4>注释怎么写</h4>
+      <p>写「为什么这么做」：<span class="mono">// 电机最大转速，单位 rpm</span>。</p>
+    </div>
+  </div>
+</section>

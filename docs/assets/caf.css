@@ -80,6 +80,39 @@
   padding: 0.2rem 0;
 }
 
+/* ---------- SVG 图表 ----------
+   站点上的示意图一律用 SVG（docs/assets/diagrams/ 或私有站的 /_private/assets/diagrams/），
+   用 <figure class="diagram"> 包起来：图片自适应宽度、底下带图注。 */
+.md-typeset figure.diagram {
+  margin: 1.4rem 0 1.2rem;
+  padding: 0;
+  text-align: center;
+}
+
+.md-typeset figure.diagram img {
+  display: block;
+  width: 100%;
+  max-width: 52rem;
+  height: auto;
+  margin: 0 auto;
+  border: 0;
+  background: none;
+}
+
+.md-typeset figure.diagram figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.72rem;
+  line-height: 1.6;
+  color: var(--md-default-fg-color--light, #6b7280);
+  text-align: center;
+}
+
+/* 裸 SVG 图片（没套 figure 的）也自适应，避免被原来代码块的字号风格带歪 */
+.md-typeset img[src$=".svg"] {
+  max-width: 100%;
+  height: auto;
+}
+
 /* 侧边目录里「内部资料目录」入口：与普通章节一致，只把标题加粗一点 */
 .caf-nav-entry > .caf-nav-entry__title {
   font-weight: 700;

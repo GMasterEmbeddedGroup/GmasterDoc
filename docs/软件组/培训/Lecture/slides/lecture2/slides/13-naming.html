@@ -1,0 +1,43 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">标识符与关键字</h2>
+    <p class="lead">变量、函数、结构体……凡是需要起名字的东西，用的名字都叫<b>标识符</b>。</p>
+  </div>
+
+  <div class="compare">
+    <div>
+      <h4>语法硬规则（错了就编译不过）</h4>
+      <ul>
+        <li>只能由<b>字母、数字、下划线</b>组成</li>
+        <li><b>不能以数字开头</b>：<span class="mono">2speed</span> ✗</li>
+        <li><b>不能含空格或符号</b>：<span class="mono">motor-speed</span> ✗</li>
+        <li><b>区分大小写</b>：<span class="mono">speed</span> 与 <span class="mono">Speed</span> 是两个变量</li>
+        <li>不能和<b>关键字</b>重名：<span class="mono">int</span>、<span class="mono">for</span>、<span class="mono">return</span>……</li>
+      </ul>
+    </div>
+    <div>
+      <h4>工程约定（团队协作靠它）</h4>
+      <ul>
+        <li><b>见名知意</b>：<span class="mono">motor_speed</span> ✔　<span class="mono">a1</span> ✗</li>
+        <li><b>小写下划线</b>用于变量与函数：<span class="mono">chassis_power_limit</span></li>
+        <li><b>全大写</b>用于常量与宏：<span class="mono">MAX_SPEED</span>、<span class="mono">PI</span></li>
+        <li>避免拼音与英文混写，更不要用中文拼音缩写</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tags" style="margin-top:0.5em">
+    <span class="tag">C 语言关键字（常用）</span>
+    <span class="pill">int</span><span class="pill">char</span><span class="pill">float</span><span class="pill">double</span>
+    <span class="pill">void</span><span class="pill">if</span><span class="pill">else</span><span class="pill">for</span>
+    <span class="pill">while</span><span class="pill">switch</span><span class="pill">case</span><span class="pill">break</span>
+    <span class="pill">continue</span><span class="pill">return</span><span class="pill">struct</span><span class="pill">const</span>
+    <span class="pill">static</span><span class="pill">sizeof</span><span class="pill">unsigned</span><span class="pill">enum</span>
+    <span class="pill">typedef</span><span class="pill">extern</span><span class="pill">union</span><span class="pill">goto</span>
+  </div>
+
+  <div class="callout">
+    <b>关键字不需要背：</b>VS Code 会把它们标成特殊颜色。真正要背的是
+    <a href="https://zh.cppreference.com/w/c/keyword" target="_blank" rel="noopener">C 关键字表</a>里你经常用到的那十几个。
+  </div>
+</section>

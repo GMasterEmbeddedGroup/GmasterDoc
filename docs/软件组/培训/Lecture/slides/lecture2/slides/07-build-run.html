@@ -1,0 +1,54 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">一条命令，四个步骤</h2>
+    <p class="lead">平时只写 <span class="mono">gcc hello.c -o hello</span>，但编译器内部是按四步走的。点击左侧步骤查看每一步做了什么。</p>
+  </div>
+
+  <div data-stepper>
+    <div class="stepper">
+      <div class="step-rail">
+        <button class="step-item"><span class="step-idx">01</span>预处理</button>
+        <button class="step-item"><span class="step-idx">02</span>编译</button>
+        <button class="step-item"><span class="step-idx">03</span>汇编</button>
+        <button class="step-item"><span class="step-idx">04</span>链接</button>
+      </div>
+      <div class="step-stage">
+        <div class="step-panel">
+          <h4>① 预处理：把 <span class="mono">#</span> 开头的都处理掉</h4>
+          <span class="mono">#include &lt;stdio.h&gt;</span> 把头文件内容原样展开，
+          <span class="mono">#define</span> 做文本替换，<span class="mono">#ifdef</span> 决定哪些代码留下。
+          <span class="dim">这一步只做文本拼接，不检查语法。</span>
+          <span class="artifact">gcc -E hello.c -o hello.i</span>
+        </div>
+        <div class="step-panel">
+          <h4>② 编译：C 语言 → 汇编</h4>
+          检查语法与类型，做优化，再把每条 C 语句翻译成对应 CPU 的汇编指令。
+          <span class="dim">你能看懂的报错几乎都出在这一步，比如漏了分号、变量没定义、类型不匹配。</span>
+          <span class="artifact">gcc -S hello.i -o hello.s</span>
+        </div>
+        <div class="step-panel">
+          <h4>③ 汇编：汇编 → 机器码</h4>
+          汇编器把指令逐条翻译成 CPU 真正执行的二进制，得到<b>目标文件</b>。
+          <span class="dim">此时还不能运行：函数地址没定下来，用到的库函数也还没加进来。</span>
+          <span class="artifact">gcc -c hello.s -o hello.o</span>
+        </div>
+        <div class="step-panel">
+          <h4>④ 链接：拼成一个完整程序</h4>
+          链接器把目标文件和标准库合并、解析函数地址，最后按链接脚本把代码与数据放到正确的位置。
+          <span class="dim">在 STM32 上，这一步决定哪些代码进 Flash、哪些变量进 RAM。</span>
+          <span class="artifact">gcc hello.o -o hello</span>
+        </div>
+        <div class="step-controls">
+          <button type="button" data-step="prev">← 上一步</button>
+          <button type="button" data-step="next">下一步 →</button>
+          <span class="step-counter"><span class="step-current">01</span> / 04</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <b>报错分两类：</b><span class="mono">error: ...</span> 是编译期错误（语法写错了）；
+    <span class="mono">undefined reference to ...</span> 是第 ④ 步的链接错误（函数只有声明，没有实现）。
+  </div>
+</section>

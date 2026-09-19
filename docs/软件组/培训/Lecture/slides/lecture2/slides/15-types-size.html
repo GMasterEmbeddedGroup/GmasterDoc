@@ -1,0 +1,33 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">用 sizeof 量出真实大小</h2>
+    <p class="lead"><span class="mono">sizeof</span> 不是函数，而是一个运算符：它在编译期就算出结果，不产生任何运行开销。</p>
+  </div>
+
+  <div class="codebox">
+    <div class="codebox-head"><span class="cb-file">sizes.c</span><span class="cb-tag">自己动手量一遍</span></div>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    printf("char   = %zu 字节\n", sizeof(char));
+    printf("int    = %zu 字节\n", sizeof(int));
+    printf("float  = %zu 字节\n", sizeof(float));
+    printf("double = %zu 字节\n", sizeof(double));
+    return 0;
+}</code></pre>
+    <div class="codebox-foot">占位符用 <span class="mono">%zu</span>：<span class="mono">sizeof</span> 的结果类型是 <span class="mono">size_t</span>（无符号），用 <span class="mono">%d</span> 打印会有警告。</div>
+  </div>
+
+  <div class="compare">
+    <div>
+      <h4>为什么会「溢出」</h4>
+      <p><span class="mono">char</span> 的范围是 -128~127：<span class="mono">char c = 127; c = c + 1;</span>
+        不会得到 128，而是<b>绕回到 -128</b>。</p>
+    </div>
+    <div>
+      <h4>为什么这很危险</h4>
+      <p>机器人上这类 bug 很常见：编码器计数超出 <span class="mono">short</span> 范围后突然变成负数，电机随即反转。</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,31 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">十进制 → 二进制：除 2 取余</h2>
+    <p class="lead">方法只有一句话：<b>不断除以 2 记下余数，直到商为 0，再把余数从下往上读</b>。下面把 156 拆一遍。</p>
+  </div>
+
+  <div class="grid grid-4" style="gap:0.3em">
+    <div class="card" style="padding:0.35em 0.5em"><h4 style="font-size:0.66em"><span class="card-index">1</span>156 ÷ 2 = 78</h4><p>余 <b>0</b></p></div>
+    <div class="card" style="padding:0.35em 0.5em"><h4 style="font-size:0.66em"><span class="card-index">2</span>78 ÷ 2 = 39</h4><p>余 <b>0</b></p></div>
+    <div class="card" style="padding:0.35em 0.5em"><h4 style="font-size:0.66em"><span class="card-index">3</span>39 ÷ 2 = 19</h4><p>余 <b>1</b></p></div>
+    <div class="card" style="padding:0.35em 0.5em"><h4 style="font-size:0.66em"><span class="card-index">4</span>19 ÷ 2 = 9</h4><p>余 <b>1</b></p></div>
+    <div class="card" style="padding:0.35em 0.5em"><h4 style="font-size:0.66em"><span class="card-index">5</span>9 ÷ 2 = 4</h4><p>余 <b>1</b></p></div>
+    <div class="card" style="padding:0.35em 0.5em"><h4 style="font-size:0.66em"><span class="card-index">6</span>4 ÷ 2 = 2</h4><p>余 <b>0</b></p></div>
+    <div class="card" style="padding:0.35em 0.5em"><h4 style="font-size:0.66em"><span class="card-index">7</span>2 ÷ 2 = 1</h4><p>余 <b>0</b></p></div>
+    <div class="card" style="padding:0.35em 0.5em"><h4 style="font-size:0.66em"><span class="card-index">8</span>1 ÷ 2 = 0</h4><p>余 <b>1</b>（结束）</p></div>
+  </div>
+
+  <div class="flow" style="margin-top:0.5em">
+    <div class="flow-box"><b>① 一直除</b><span class="fx">商放在左边继续除</span></div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-box"><b>② 记余数</b><span class="fx">余数只能是 0 或 1</span></div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-box is-hi"><b>③ 从下往上读</b><span class="fx">10011100</span></div>
+  </div>
+
+  <div class="callout">
+    <b>结果：</b>156 = <span class="mono">0b10011100</span> = <span class="mono">0x9C</span>。
+    验算：128 + 16 + 8 + 4 = 156 ✔　
+    <b>提示：</b>最下面的余数是最<b>高位</b>，顺序写反是最常见的错误。
+  </div>
+</section>

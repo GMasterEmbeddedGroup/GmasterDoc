@@ -1,0 +1,40 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">动手练习：输入 → 计算 → 输出</h2>
+    <p class="lead">这三个练习把本讲的所有知识点串起来，建议当场写完前两个。</p>
+  </div>
+
+  <div class="grid grid-3">
+    <div class="card">
+      <h4><span class="card-index">练习 1</span>四则运算</h4>
+      <p>输入两个整数，输出它们的<b>和、差、积、商</b>。<br>
+        提示：商要用浮点输出，注意整除陷阱；除数不能为 0。<br>
+        <span class="tiny">进阶：把 <span class="mono">%d</span> 换成 <span class="mono">%x</span>，观察两个数的十六进制形式。</span></p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">练习 2</span>圆的周长与面积</h4>
+      <p>输入半径（浮点），输出周长与面积，<b>保留两位小数</b>。<br>
+        提示：用 <span class="mono">double</span> 与 <span class="mono">3.1415926</span>，
+        输出用 <span class="mono">%.2f</span>；想想为什么不用 <span class="mono">float</span>。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">练习 3</span>无循环打印二进制</h4>
+      <p>输入一个 0~255 的整数，输出它的十六进制与二进制。<br>
+        提示：十六进制直接 <span class="mono">%x</span>；二进制先手工写出 8 位，
+        再用位运算 <span class="mono">(x &gt;&gt; n) &amp; 1</span> 逐位打印（循环下节课讲）。</p>
+    </div>
+  </div>
+
+  <div class="codebox" style="margin-top:0.55em">
+    <div class="codebox-head"><span class="cb-file">练习 1 的运行效果参考</span><span class="cb-tag">输入输出长这样</span></div>
+    <div class="outbox" style="margin:0">请输入两个整数：<span class="note">12 5</span>
+和 = 17    差 = 7     积 = 60
+商 = 2.40
+<span class="note">十六进制：0xc 0x5</span></div>
+  </div>
+
+    <div class="callout tip">
+      <b>判题方式：</b>输出不必与我们完全一样，但要有提示语与说明文字。
+    </div>
+  </div>
+</section>

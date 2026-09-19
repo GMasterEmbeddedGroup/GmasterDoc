@@ -1,0 +1,31 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">递归：函数自己调用自己</h2>
+    <p class="lead">递归不是炫技，而是「把大问题拆成同样形状的小问题」的写法。它必须有一个<b>终止条件</b>。</p>
+  </div>
+
+  <div class="codebox">
+    <div class="codebox-head"><span class="cb-file">factorial.c</span><span class="cb-tag">n! = n × (n-1)!</span></div>
+<pre><code>#include &lt;stdio.h&gt;
+
+int factorial(int n)
+{
+    if (n &lt;= 1) { return 1; }        /* 终止条件：没有它就会无限递归 */
+    return n * factorial(n - 1);     /* 把问题缩小一号，再交给自己 */
+}
+
+int main(void) { printf("5! = %d\n", factorial(5)); return 0; }</code></pre>
+    <div class="codebox-foot">展开过程：factorial(5) → 5 × factorial(4) → 5 × 4 × factorial(3) → … → 5 × 4 × 3 × 2 × 1 = 120。</div>
+  </div>
+
+  <div class="compare">
+    <div>
+      <h4>什么时候适合用</h4>
+      <p>问题本身具有递归结构时：树的遍历（行为树！）、分治算法、汉诺塔、目录遍历。</p>
+    </div>
+    <div>
+      <h4>什么时候不要用</h4>
+      <p>每层递归都占<b>栈空间</b>（STM32 默认只有几 KB）。程序「跑着跑着就重启」时，先怀疑栈溢出。</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,32 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">在电脑上编译运行 C 程序</h2>
+    <p class="lead">Lecture 1 装的 <span class="mono">arm-none-eabi-gcc</span> 是给 STM32 用的交叉编译器，它生成的程序<b>不能在 Windows 上运行</b>。</p>
+  </div>
+
+  <div class="compare">
+    <div>
+      <h4>还需要一个本机编译器（host 编译器）</h4>
+      <p>它生成的程序能在你自己的电脑上跑，用来练语法、验证算法。<b>三选一即可：</b></p>
+      <ul>
+        <li><a href="https://www.msys2.org/" target="_blank" rel="noopener">MSYS2</a>：装完执行 <span class="mono">pacman -S mingw-w64-ucrt-x86_64-gcc</span>（推荐，附带 gdb 调试器）</li>
+        <li><a href="https://winlibs.com/" target="_blank" rel="noopener">WinLibs</a>：下载 zip 解压，把 <span class="mono">bin</span> 目录加进 <span class="mono">PATH</span></li>
+        <li><a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/" target="_blank" rel="noopener">MSVC Build Tools</a>：用 VS Code 的 C/C++ 插件自动识别</li>
+      </ul>
+    </div>
+    <div>
+      <h4>验证与运行</h4>
+      <p>新开一个终端（改过 <span class="mono">PATH</span> 必须重开），依次输入：</p>
+      <div class="outbox"><span class="pr">&gt;</span> gcc --version
+<span class="ok">gcc (MinGW-W64 x86_64-ucrt) 14.2.0</span>
+<span class="pr">&gt;</span> gcc hello.c -o hello.exe
+<span class="pr">&gt;</span> .\hello.exe
+<span class="ok">Hello, World!</span></div>
+      <p class="tiny">PowerShell 里运行当前目录的程序要写 <span class="mono">.\</span> 前缀，只敲 <span class="mono">hello.exe</span> 会提示「无法识别」。</p>
+    </div>
+  </div>
+
+  <div class="callout warn">
+    <b>不要双击 exe 看结果：</b>程序输出闪一下就没了。所有编译、运行都在 VS Code 的终端里做。
+  </div>
+</section>

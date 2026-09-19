@@ -1,0 +1,28 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">基本数据类型</h2>
+    <p class="lead">C 语言的数据类型一共只有几个，先把用在单片机上的这几类记熟。下表是 32 位平台上最常见的大小。</p>
+  </div>
+
+  <table class="dense">
+    <thead>
+      <tr><th>类型</th><th>典型大小</th><th>取值范围</th><th>典型用途</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="mono">char</td><td>1 字节</td><td>-128 ~ 127</td><td>单个字符、很小的整数</td></tr>
+      <tr><td class="mono">unsigned char</td><td>1 字节</td><td>0 ~ 255</td><td>原始字节数据（串口、CAN 报文）</td></tr>
+      <tr><td class="mono">short</td><td>2 字节</td><td>-32768 ~ 32767</td><td>够用就好时比 int 省内存</td></tr>
+      <tr><td class="mono">int</td><td>4 字节</td><td>-21 亿 ~ 21 亿</td><td>最常用的整数类型</td></tr>
+      <tr><td class="mono">unsigned int</td><td>4 字节</td><td>0 ~ 42.9 亿</td><td>计数器、位运算掩码</td></tr>
+      <tr><td class="mono">long long</td><td>8 字节</td><td>约 ±9.2×10<sup>18</sup></td><td>计算总量、时间戳</td></tr>
+      <tr><td class="mono">float</td><td>4 字节</td><td>约 ±3.4×10<sup>38</sup>（6~7 位有效数字）</td><td>传感器、PID 计算</td></tr>
+      <tr><td class="mono">double</td><td>8 字节</td><td>约 ±1.8×10<sup>308</sup>（15~16 位有效数字）</td><td>需要更高精度的计算</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout warn">
+    <b>大小不是绝对的：</b>它由编译器与目标平台决定（STM32 上 <span class="mono">int</span> 是 4 字节，
+    某些 8 位单片机上只有 2 字节）。<b>不要背，用 <span class="mono">sizeof</span> 量出来。</b>
+    浮点数有效位数只有 6~7 位，机器人的姿态解算要小心精度损失。
+  </div>
+</section>

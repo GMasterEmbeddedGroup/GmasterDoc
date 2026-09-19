@@ -1,0 +1,29 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">为什么从 C 语言开始</h2>
+    <p class="lead">机器人上每块 STM32 跑的代码，几乎都是 C / C++ 写的。</p>
+  </div>
+
+  <div class="grid grid-3">
+    <div class="card">
+      <h4><span class="card-index">01</span>离硬件最近</h4>
+      <p>C 只比汇编高一层：一个变量对应内存里的一块空间，一条语句往往对应几条机器指令。
+        这让你能准确地知道「代码在硬件上做了什么」。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">02</span>机器人的通用语言</h4>
+      <p>STM32 的 HAL 库、电机驱动、CAN 通信、裁判系统协议，官方例程与开源工程全部是 C。
+        看不懂 C，就看不懂车上的任何一行业码。</p>
+    </div>
+    <div class="card">
+      <h4><span class="card-index">03</span>工具链统一</h4>
+      <p>Lecture 1 装的 GCC 工具链、CMake、OpenOCD 都是围绕 C/C++ 设计的。
+        在电脑上写 C，和在 STM32 上写 C，语法与命令是同一套。</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <b>本讲目标：</b>不要求背下所有语法，只要求两件事 —— 能读懂一段 C 代码在做什么；
+    能自己写出程序、编译通过、跑出正确结果。
+  </div>
+</section>

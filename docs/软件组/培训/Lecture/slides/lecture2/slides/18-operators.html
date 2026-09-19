@@ -1,0 +1,90 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">运算符总览</h2>
+    <p class="lead">点击上方的分类标签，查看每一类运算符的写法与例子。</p>
+  </div>
+
+  <div data-tabs>
+    <div class="tabbar">
+      <button class="tab-btn" data-tab="arith">算术</button>
+      <button class="tab-btn" data-tab="rel">关系</button>
+      <button class="tab-btn" data-tab="logic">逻辑</button>
+      <button class="tab-btn" data-tab="assign">赋值</button>
+      <button class="tab-btn" data-tab="inc">自增自减</button>
+      <button class="tab-btn" data-tab="bit">位运算</button>
+    </div>
+
+    <div class="tab-panel" data-panel="arith">
+      <table class="dense">
+        <thead><tr><th>运算符</th><th>含义</th><th>例子</th><th>结果</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">+ - *</td><td>加、减、乘</td><td class="mono">3 * 4</td><td>12</td></tr>
+          <tr><td class="mono">/</td><td>除（两边都是整数时做整除）</td><td class="mono">7 / 2</td><td>3</td></tr>
+          <tr><td class="mono">%</td><td>取余，<b>只能用于整数</b></td><td class="mono">7 % 2</td><td>1</td></tr>
+        </tbody>
+      </table>
+      <p class="lead">取余最常用于判断奇偶（<span class="mono">n % 2</span>）和环形计数（<span class="mono">index % 8</span>）。</p>
+    </div>
+
+    <div class="tab-panel" data-panel="rel">
+      <table class="dense">
+        <thead><tr><th>运算符</th><th>含义</th><th>例子</th><th>结果</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">==</td><td>等于</td><td class="mono">3 == 3</td><td>1（真）</td></tr>
+          <tr><td class="mono">!=</td><td>不等于</td><td class="mono">3 != 3</td><td>0（假）</td></tr>
+          <tr><td class="mono">&gt; &lt; &gt;= &lt;=</td><td>大于 / 小于 / 不小于 / 不大于</td><td class="mono">5 &gt;= 4</td><td>1（真）</td></tr>
+        </tbody>
+      </table>
+      <p class="lead">C 语言里<b>没有真正的布尔类型</b>（C99 的 <span class="mono">_Bool</span> 除外）：比较的结果是整数 <b>1 表示真、0 表示假</b>。</p>
+    </div>
+
+    <div class="tab-panel" data-panel="logic">
+      <table class="dense">
+        <thead><tr><th>运算符</th><th>含义</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">&amp;&amp;</td><td>逻辑与</td><td>两边都为真才为真；左边为假时<b>右边不再计算</b>（短路）</td></tr>
+          <tr><td class="mono">||</td><td>逻辑或</td><td>任一边为真即为真；左边为真时右边不再计算</td></tr>
+          <tr><td class="mono">!</td><td>逻辑非</td><td><span class="mono">!0</span> 得 1，<span class="mono">!3</span> 得 0（非 0 即为真）</td></tr>
+        </tbody>
+      </table>
+      <p class="lead">短路特性很有用：<span class="mono">if (p != NULL &amp;&amp; p-&gt;value &gt; 0)</span> 可以避免野指针（这一写法在 GSRL 里到处都有）。</p>
+    </div>
+
+    <div class="tab-panel" data-panel="assign">
+      <table class="dense">
+        <thead><tr><th>运算符</th><th>等价写法</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">=</td><td>—</td><td>把右边的值写进左边：<span class="mono">speed = 100;</span></td></tr>
+          <tr><td class="mono">+= -= *= /= %=</td><td class="mono">a = a + b</td><td><span class="mono">a += b;</span> 是简写，读起来更短也更少出错</td></tr>
+        </tbody>
+      </table>
+      <p class="lead">注意 <span class="mono">=</span> 是赋值，<span class="mono">==</span> 才是比较。这两者写错编译器通常不报错，是经典 bug。</p>
+    </div>
+
+    <div class="tab-panel" data-panel="inc">
+      <table class="dense">
+        <thead><tr><th>写法</th><th>含义</th><th>使用后</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">i++</td><td>先用 i 的值，再加 1</td><td><span class="mono">int i = 3; n = i++;</span> → <span class="mono">n = 3, i = 4</span></td></tr>
+          <tr><td class="mono">++i</td><td>先加 1，再用 i 的值</td><td><span class="mono">int i = 3; n = ++i;</span> → <span class="mono">n = 4, i = 4</span></td></tr>
+          <tr><td class="mono">i-- / --i</td><td>同理，减 1</td><td>一般用于循环计数</td></tr>
+        </tbody>
+      </table>
+      <p class="lead">单独写成一行 <span class="mono">i++;</span> 时两者没有区别。<b>不要在同一行里对同一个变量既自增又使用</b>，那是未定义行为。</p>
+    </div>
+
+    <div class="tab-panel" data-panel="bit">
+      <table class="dense">
+        <thead><tr><th>运算符</th><th>含义</th><th>典型用途</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">&amp;</td><td>按位与</td><td>掩码取值、把某一位清 0</td></tr>
+          <tr><td class="mono">|</td><td>按位或</td><td>把某一位置 1</td></tr>
+          <tr><td class="mono">^</td><td>按位异或</td><td>翻转某一位</td></tr>
+          <tr><td class="mono">~</td><td>按位取反</td><td>配合 &amp; 做清零</td></tr>
+          <tr><td class="mono">&lt;&lt; &gt;&gt;</td><td>左移 / 右移</td><td>快速乘除 2 的幂、生成位掩码</td></tr>
+        </tbody>
+      </table>
+      <p class="lead">这一组是嵌入式开发的重头戏，第 3 章会专门用一页配合寄存器操作讲透。</p>
+    </div>
+  </div>
+</section>

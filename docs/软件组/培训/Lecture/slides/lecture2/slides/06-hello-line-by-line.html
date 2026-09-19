@@ -1,0 +1,65 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">逐行读懂这 6 行</h2>
+    <p class="lead">点击左侧任意一行，右侧显示这一行的作用。每一行都不是可有可无的。</p>
+  </div>
+
+  <div class="explorer" data-explorer>
+    <div class="ex-tree">
+      <button class="ex-item" data-key="inc">#include &lt;stdio.h&gt;</button>
+      <button class="ex-item" data-key="main">int main(void)</button>
+      <button class="ex-item" data-key="brace">{    }</button>
+      <button class="ex-item" data-key="printf">printf("Hello, World!\n");</button>
+      <button class="ex-item" data-key="semi">;</button>
+      <button class="ex-item" data-key="nl">\n</button>
+      <button class="ex-item" data-key="ret">return 0;</button>
+    </div>
+    <div class="ex-panels">
+      <div class="ex-panel" data-panel="inc">
+        <h4>#include &lt;stdio.h&gt;</h4>
+        <span class="ex-tag">预处理指令</span>
+        <p>把「标准输入输出头文件」的内容原样抄到这一行的位置。它告诉编译器
+          <span class="mono">printf</span> 这个名字长什么样（参数、返回值），否则编译器根本不认识它。</p>
+        <p class="tiny">凡是以 <span class="mono">#</span> 开头的都叫预处理指令，<b>行尾不加分号</b>。</p>
+      </div>
+      <div class="ex-panel" data-panel="main">
+        <h4>int main(void)</h4>
+        <span class="ex-tag">主函数：程序的入口</span>
+        <p>操作系统从这个函数开始执行程序。<span class="mono">int</span> 是它的返回类型，
+          <span class="mono">(void)</span> 表示它不接受任何参数。</p>
+        <p class="tiny">一个程序<b>有且只有一个</b> <span class="mono">main</span>，大小写敏感，<span class="mono">Main</span> 不算数。</p>
+      </div>
+      <div class="ex-panel" data-panel="brace">
+        <h4>{    }</h4>
+        <span class="ex-tag">函数体</span>
+        <p>一对花括号把「这个函数要做什么」括起来：函数体里的语句由大括号整体控制，必须成对出现。</p>
+        <p class="tiny">大括号不配对时的典型报错是 <span class="mono">expected declaration or statement at end of input</span>（文件末尾少了一个 <span class="mono">}</span>）。</p>
+      </div>
+      <div class="ex-panel" data-panel="printf">
+        <h4>printf("Hello, World!\n");</h4>
+        <span class="ex-tag">函数调用</span>
+        <p>调用 <span class="mono">printf</span> 把双引号里的内容输出到屏幕。引号中的部分叫<b>字符串</b>。</p>
+        <p class="tiny">后面讲输入输出时这行会再出现一次：<span class="mono">%d</span> 这类占位符可以把变量的值插进字符串。</p>
+      </div>
+      <div class="ex-panel" data-panel="semi">
+        <h4>;</h4>
+        <span class="ex-tag">语句结束符</span>
+        <p>分号表示「一条语句写完了」。C 语言用分号而不是换行来断句，所以一条语句可以写好几行，
+          但分号忘了写编译器一定报错。</p>
+        <p class="tiny">最常见的报错 <span class="mono">expected ';' before '}' token</span>，通常就是<b>上一行</b>少写了分号。</p>
+      </div>
+      <div class="ex-panel" data-panel="nl">
+        <h4>\n</h4>
+        <span class="ex-tag">转义字符：换行</span>
+        <p>它不是一个真的反斜杠加 n，而是「换行」这一个字符。没有它，下次输出的内容会接在同一行后面。</p>
+        <p class="tiny">类似的还有 <span class="mono">\t</span>（制表符）、<span class="mono">\\</span>（一个反斜杠）、<span class="mono">\"</span>（一个双引号）。</p>
+      </div>
+      <div class="ex-panel" data-panel="ret">
+        <h4>return 0;</h4>
+        <span class="ex-tag">返回状态码</span>
+        <p>把 0 交还给操作系统，约定 <b>0 表示正常结束</b>，非 0 表示出错。其他程序（比如编译脚本）会读这个值判断你的程序有没有跑成功。</p>
+        <p class="tiny">写 <span class="mono">return 0;</span> 是好习惯，尤其在机器人这类多程序协作的场景里。</p>
+      </div>
+    </div>
+  </div>
+</section>

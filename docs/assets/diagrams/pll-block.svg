@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 456" width="960" height="456" role="img" aria-labelledby="ttl dsc" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
+  <title id="ttl">PLL 锁相环原理</title>
+  <desc id="dsc">输入频率经鉴相器、环路滤波器、压控振荡器输出；VCO 输出经 N 分频器反馈回鉴相器，锁定后输出频率等于输入频率乘以 N/M。</desc>
+    <rect x="0.75" y="0.75" width="958.5" height="454.5" rx="14" fill="#f7f9fc" stroke="#dce3ec" stroke-width="1.5"/>
+    <rect x="150" y="96" width="150" height="76" rx="9" fill="#ffffff" stroke="#88aaf0" stroke-width="1.4"/>
+    <text x="225" y="121" font-size="13" font-weight="700" fill="#1f2430" text-anchor="middle">鉴相器</text>
+    <text x="225" y="139" font-size="13" font-weight="400" fill="#5b6472" text-anchor="middle">(PFD)</text>
+    <rect x="350" y="96" width="180" height="76" rx="9" fill="#ffffff" stroke="#88aaf0" stroke-width="1.4"/>
+    <text x="440" y="121" font-size="13" font-weight="700" fill="#1f2430" text-anchor="middle">环路滤波器</text>
+    <text x="440" y="139" font-size="13" font-weight="400" fill="#5b6472" text-anchor="middle">(LPF)</text>
+    <rect x="580" y="96" width="160" height="76" rx="9" fill="#ffffff" stroke="#88aaf0" stroke-width="1.4"/>
+    <text x="660" y="121" font-size="13" font-weight="700" fill="#1f2430" text-anchor="middle">压控振荡器</text>
+    <text x="660" y="139" font-size="13" font-weight="400" fill="#5b6472" text-anchor="middle">(VCO)</text>
+    <rect x="350" y="286" width="180" height="74" rx="9" fill="#ffffff" stroke="#a99bea" stroke-width="1.4"/>
+    <text x="440" y="310" font-size="13" font-weight="700" fill="#1f2430" text-anchor="middle">N 分频器</text>
+    <text x="440" y="328" font-size="13" font-weight="400" fill="#5b6472" text-anchor="middle">(÷N)</text>
+    <path d="M 46 134 L 150 134" stroke="#4051b5" stroke-width="1.8" fill="none" stroke-linejoin="round"/>
+    <path d="M 150 134 L 143 129.66 L 143 138.34 z" fill="#4051b5"/>
+    <text x="98" y="122" font-size="12" font-weight="400" fill="#4051b5" text-anchor="middle">输入频率 f_in</text>
+    <path d="M 300 134 L 350 134" stroke="#4051b5" stroke-width="1.8" fill="none" stroke-linejoin="round"/>
+    <path d="M 350 134 L 343 129.66 L 343 138.34 z" fill="#4051b5"/>
+    <path d="M 530 134 L 580 134" stroke="#4051b5" stroke-width="1.8" fill="none" stroke-linejoin="round"/>
+    <path d="M 580 134 L 573 129.66 L 573 138.34 z" fill="#4051b5"/>
+    <path d="M 740 134 L 900 134" stroke="#4051b5" stroke-width="1.8" fill="none" stroke-linejoin="round"/>
+    <path d="M 900 134 L 893 129.66 L 893 138.34 z" fill="#4051b5"/>
+    <text x="830" y="122" font-size="12" font-weight="400" fill="#4051b5" text-anchor="middle">输出频率 f_out</text>
+    <path d="M 660 172 L 660 323 L 530 323" stroke="#7b6bd6" stroke-width="1.8" fill="none" stroke-linejoin="round"/>
+    <path d="M 530 323 L 537 318.66 L 537 327.34 z" fill="#7b6bd6"/>
+    <path d="M 350 323 L 120 323 L 120 134 L 150 134" stroke="#7b6bd6" stroke-width="1.8" fill="none" stroke-linejoin="round"/>
+    <path d="M 150 134 L 143 129.66 L 143 138.34 z" fill="#7b6bd6"/>
+    <text x="676" y="300" font-size="12" font-weight="400" fill="#7b6bd6" text-anchor="start">VCO 输出反馈回来分频</text>
+    <rect x="60" y="384" width="840" height="56" rx="12" fill="#ffffff" stroke="#dce3ec" stroke-width="1.5"/>
+    <text x="480" y="408" font-size="12.5" font-weight="400" fill="#5b6472" text-anchor="middle">原理：VCO 产生高频信号 → ÷N 分频后与输入信号比较 → 调整 VCO 使分频后频率 = 输入频率</text>
+    <text x="480" y="426" font-size="12.5" font-weight="400" fill="#5b6472" text-anchor="middle">锁定后：f_out / N = f_in，即 f_out = f_in × N/M</text>
+</svg>

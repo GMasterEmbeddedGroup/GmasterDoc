@@ -15,8 +15,8 @@
 嵌入式系统则不同：它只做一件事，但要做到极致——实时、可靠、低功耗。你的微波炉、无人机飞控、汽车 ECU 都是嵌入式系统。
 
 <figure class="diagram">
-  <img src="/assets/diagrams/auto/d028-d35822.svg" alt="PC (通用计算)">
-  <figcaption>图：PC (通用计算)</figcaption>
+  <img src="/assets/diagrams/pc-vs-embedded.svg" alt="PC 与嵌入式系统的对比：左侧是通用 PC 的多任务结构，右侧是可选的 FreeRTOS、STM32F407 与直连外设">
+  <figcaption>图：PC（通用计算）与嵌入式系统（专用）的对比</figcaption>
 </figure>
 
 
@@ -33,8 +33,8 @@ GSRL 项目所用的 STM32F407 基于 **ARM Cortex-M4** 内核，主频 168MHz�
 ### 2.1 三大核心组成
 
 <figure class="diagram">
-  <img src="/assets/diagrams/auto/d029-e743aa.svg" alt="STM32 MCU">
-  <figcaption>图：STM32 MCU</figcaption>
+  <img src="/assets/diagrams/stm32-mcu-block.svg" alt="STM32 MCU 内部结构：Cortex-M4 内核与 Flash 挂在总线矩阵上，下面接 RAM、GPIO、UART 以及 SPI/I2C/CAN/TIM 等外设">
+  <figcaption>图：STM32 MCU 内部结构（内核 / Flash / 总线矩阵 / RAM / 外设）</figcaption>
 </figure>
 
 

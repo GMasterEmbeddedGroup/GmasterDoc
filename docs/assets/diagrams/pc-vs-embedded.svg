@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" width="960" height="430" role="img" aria-labelledby="ttl dsc" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
+  <title id="ttl">PC 与嵌入式系统的对比</title>
+  <desc id="dsc">左边是通用 PC：浏览器/编辑器/播放器多个任务由操作系统调度，下面是操作系统与 CPU/内存/硬盘；右边是嵌入式系统：可选的 FreeRTOS、STM32F407 本体、以及 GPIO/UART/CAN/SPI 等直连外设。</desc>
+    <rect x="0.75" y="0.75" width="958.5" height="428.5" rx="14" fill="#f7f9fc" stroke="#dce3ec" stroke-width="1.5"/>
+    <rect x="28" y="22" width="444" height="386" rx="14" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="250" y="56" font-size="16" font-weight="700" fill="#334155" text-anchor="middle">PC（通用计算）</text>
+    <rect x="55" y="80" width="112" height="54" rx="9" fill="#ffffff" stroke="#dce3ec" stroke-width="1.4"/>
+    <text x="111" y="103" font-size="13" font-weight="400" fill="#5b6472" text-anchor="middle">浏览器</text>
+    <rect x="185" y="80" width="112" height="54" rx="9" fill="#ffffff" stroke="#dce3ec" stroke-width="1.4"/>
+    <text x="241" y="103" font-size="13" font-weight="400" fill="#5b6472" text-anchor="middle">VS Code</text>
+    <rect x="315" y="80" width="112" height="54" rx="9" fill="#ffffff" stroke="#dce3ec" stroke-width="1.4"/>
+    <text x="371" y="103" font-size="13" font-weight="400" fill="#5b6472" text-anchor="middle">播放器</text>
+    <text x="241" y="156" font-size="12" font-weight="400" fill="#5b6472" text-anchor="middle">← 多任务（操作系统调度）</text>
+    <rect x="55" y="176" width="356" height="58" rx="9" fill="#ffffff" stroke="#dce3ec" stroke-width="1.4"/>
+    <text x="233" y="201" font-size="13" font-weight="400" fill="#5b6472" text-anchor="middle">Windows / Linux 操作系统</text>
+    <rect x="55" y="252" width="356" height="58" rx="9" fill="#ffffff" stroke="#dce3ec" stroke-width="1.4"/>
+    <text x="233" y="277" font-size="13" font-weight="400" fill="#5b6472" text-anchor="middle">Intel/AMD CPU + 内存 + 硬盘</text>
+    <text x="233" y="340" font-size="12" font-weight="400" fill="#5b6472" text-anchor="middle">通用 · 多任务 · 功耗高 · 断电即停</text>
+    <rect x="488" y="22" width="444" height="386" rx="14" fill="#eefaf7" stroke="#7fcfc3" stroke-width="1.5"/>
+    <text x="710" y="56" font-size="16" font-weight="700" fill="#1d7f76" text-anchor="middle">嵌入式系统（专用）</text>
+    <rect x="515" y="80" width="356" height="58" rx="9" fill="#ffffff" stroke="#dce3ec" stroke-width="1.4"/>
+    <text x="693" y="105" font-size="13" font-weight="400" fill="#5b6472" text-anchor="middle">FreeRTOS（轻量实时操作系统）</text>
+    <text x="693" y="156" font-size="12" font-weight="400" fill="#5b6472" text-anchor="middle">↑ 可选：不跑 RTOS 也能裸机跑</text>
+    <rect x="515" y="176" width="356" height="74" rx="9" fill="#ffffff" stroke="#dce3ec" stroke-width="1.4"/>
+    <text x="693" y="200" font-size="13" font-weight="400" fill="#5b6472" text-anchor="middle">STM32F407（ARM Cortex-M4, 168MHz）</text>
+    <text x="693" y="218" font-size="13" font-weight="400" fill="#5b6472" text-anchor="middle">192KB RAM · 512KB Flash</text>
+    <rect x="515" y="268" width="80" height="52" rx="9" fill="#ffffff" stroke="#dce3ec" stroke-width="1.4"/>
+    <text x="555" y="290" font-size="13" font-weight="400" fill="#5b6472" text-anchor="middle">GPIO</text>
+    <rect x="607" y="268" width="80" height="52" rx="9" fill="#ffffff" stroke="#dce3ec" stroke-width="1.4"/>
+    <text x="647" y="290" font-size="13" font-weight="400" fill="#5b6472" text-anchor="middle">UART</text>
+    <rect x="699" y="268" width="80" height="52" rx="9" fill="#ffffff" stroke="#dce3ec" stroke-width="1.4"/>
+    <text x="739" y="290" font-size="13" font-weight="400" fill="#5b6472" text-anchor="middle">CAN</text>
+    <rect x="791" y="268" width="80" height="52" rx="9" fill="#ffffff" stroke="#dce3ec" stroke-width="1.4"/>
+    <text x="831" y="290" font-size="13" font-weight="400" fill="#5b6472" text-anchor="middle">SPI</text>
+    <text x="699" y="340" font-size="12" font-weight="400" fill="#5b6472" text-anchor="middle">↑ 外设直连：引脚上的信号自己管</text>
+</svg>

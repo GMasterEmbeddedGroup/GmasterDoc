@@ -48,8 +48,8 @@ ARM Cortex-M 处理器有两类中断：
 NVIC（Nested Vectored Interrupt Controller）是 Cortex-M 内核的一部分，负责管理所有外设中断：
 
 <figure class="diagram">
-  <img src="/assets/diagrams/auto/d046-d79a62.svg" alt="Cortex-M4 内核">
-  <figcaption>图：Cortex-M4 内核</figcaption>
+  <img src="/assets/diagrams/nvic-irq-flow.svg" alt="CAN/UART/TIM 等外设的中断信号进入 NVIC 的 IRQ0…IRQn，经优先级仲裁与嵌套管理后交给 CPU 核心">
+  <figcaption>图：外设中断怎么走到 CPU —— NVIC 的优先级仲裁与嵌套管理</figcaption>
 </figure>
 
 

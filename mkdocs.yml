@@ -5,9 +5,9 @@ theme:
 
 # CAF 登录态与「登录后才显示」的内容门禁（见 docs/文档站指南/登录与权限.md）
 extra_javascript:
-  - assets/caf.js
+  - assets/caf.js?v=20260920
 extra_css:
-  - assets/caf.css
+  - assets/caf.css?v=20260920
 
 nav:
   - 首页: index.md

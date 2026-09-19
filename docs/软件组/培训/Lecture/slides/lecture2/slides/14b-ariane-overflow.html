@@ -1,0 +1,40 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">先看一个真实的教训：整数溢出炸掉一枚火箭</h2>
+    <p class="lead">1996 年，阿丽亚娜 5 号运载火箭首飞 37 秒后解体。<b>罪魁祸首是一行整数转换代码。</b></p>
+  </div>
+
+  <div class="videorow">
+    <div class="videobox">
+      <div class="vb-frame">
+        <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=2319355&bvid=BV1zs411D7ez&cid=3619317&p=1"
+          scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" loading="lazy"
+          title="1996年欧洲阿丽亚娜5型运载火箭首飞发射失败"></iframe>
+      </div>
+      <div class="vb-cap">B 站：《1996 年欧洲阿丽亚娜 5 型运载火箭首飞发射失败》—— 升空后 37 秒，火箭在高空解体。</div>
+    </div>
+
+    <div>
+      <div class="deflist">
+        <div>
+          <dt>损失</dt>
+          <dd>四颗卫星随火箭一起损失，直接经济损失约 <b>3.7 亿美元</b>，是史上最贵的一次软件事故之一。</dd>
+        </div>
+        <div>
+          <dt>原因</dt>
+          <dd>制导系统沿用上一代火箭的代码：把一个 <b>64 位浮点数</b>转换成了 <b>16 位有符号整数</b>。
+            阿丽亚娜 5 号速度更快，数值超过了 16 位上限 32767 —— <b>转换溢出</b>。</dd>
+        </div>
+        <div>
+          <dt>为什么没救回来</dt>
+          <dd>溢出后制导计算机停机，而<b>备份计算机执行的是同一段代码</b>，于是同时失效。
+            备份只能防硬件故障，防不住软件 bug。</dd>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout warn">
+    <b>溢出的可怕之处：不报错、不闪退，只是安静地算出一个错值。</b>下一页看它变成什么。
+  </div>
+</section>

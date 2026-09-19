@@ -5,7 +5,8 @@ window.DECK_SLIDES = [
   { file: '03-chapter-01.html',         title: '章节 01：从 Hello World 开始' },
   { file: '04-why-c.html',              title: '1.1 为什么从 C 语言开始' },
   { file: '05-hello.html',              title: '1.1 第一个 C 程序' },
-  { file: '06-hello-line-by-line.html', title: '1.1 逐行读懂这 6 行' },
+  { file: '06-hello-line-by-line.html', title: '1.1 逐行读懂这段代码' },
+  { file: '06a-crlf.html',              title: '1.1 回车与换行（视频：电传打字机）' },
   { file: '06b-pc-compiler.html',       title: '1.2 在电脑上编译运行 C 程序' },
   { file: '07-build-run.html',          title: '1.2 编译的四个步骤' },
   { file: '08-program-structure.html',  title: '1.3 程序结构与书写规范' },
@@ -16,6 +17,7 @@ window.DECK_SLIDES = [
   { file: '12-variables.html',          title: '2.1 变量' },
   { file: '13-naming.html',             title: '2.1 标识符与关键字' },
   { file: '14-types.html',              title: '2.2 基本数据类型' },
+  { file: '14b-ariane-overflow.html',   title: '2.2 真实事故：整数溢出（视频：阿丽亚娜 5 号）' },
   { file: '15-types-size.html',         title: '2.2 sizeof 与取值范围' },
   { file: '16-constants.html',          title: '2.2 常量与字面量' },
   { file: '17-cast.html',               title: '2.2 类型转换' },
@@ -52,6 +54,7 @@ window.DECK_SLIDES = [
   { file: '45-io-pitfalls.html',        title: '5.3 输入输出的六个坑' },
   { file: '46-practice-io.html',        title: '5.3 动手练习：输入 → 计算 → 输出' },
   { file: '47-summary.html',            title: '小结' },
+  { file: '47b-homework-fun.html',      title: '轻松一下：别人的第一次 C 语言作业（视频）' },
   { file: '48-homework.html',           title: '课后作业' },
   { file: '49-end.html',                title: '结束页' }
 ];

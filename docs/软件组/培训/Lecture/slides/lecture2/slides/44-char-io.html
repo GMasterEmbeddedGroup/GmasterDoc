@@ -8,28 +8,24 @@
   <div class="codebox">
     <div class="codebox-head"><span class="cb-file">count_chars.c</span><span class="cb-tag">统计一行里有多少个字符</span></div>
 <pre><code>#include &lt;stdio.h&gt;
-
 int main(void)
 {
     int c, count = 0;
     printf("输入一行文字，回车结束：\n");
-    while ((c = getchar()) != '\n' &amp;&amp; c != EOF) {  /* 读到回车才停 */
-        count++; putchar(c);                       /* 计数并原样回显 */
-    }
+    while ((c = getchar()) != '\n' &amp;&amp; c != EOF) { count++; putchar(c); }
     printf("\n共 %d 个字符\n", count);
-    return 0;
-}</code></pre>
+    return 0; }</code></pre>
   </div>
 
   <div class="compare">
     <div>
       <h4>缓冲区是什么</h4>
-      <p>你敲的字符先攒在系统的一块内存里，按回车才一起交给程序。所以 <span class="mono">scanf("%d")</span> 读完后，<b>回车还留在缓冲区</b>。</p>
+      <p>你敲的字符先攒在系统内存里，按回车才一起交给程序 —— 所以 <span class="mono">scanf("%d")</span> 读完后<b>回车还留着</b>。</p>
     </div>
     <div>
       <h4>于是出现经典现象</h4>
-      <p><span class="mono">scanf("%d", &amp;n)</span> 后紧跟 <span class="mono">scanf("%c", &amp;c)</span>，<span class="mono">c</span> 会直接读到残留的换行。</p>
-      <p class="tiny"><b>解法：</b><span class="mono">scanf(" %c", &amp;c);</span>（前面加空格＝先跳过空白字符），或先 <span class="mono">getchar();</span> 吃掉回车。</p>
+      <p><span class="mono">scanf("%d", &amp;n)</span> 后紧跟 <span class="mono">scanf("%c", &amp;c)</span>，<span class="mono">c</span> 会读到残留的换行。</p>
+      <p class="tiny"><b>解法：</b><span class="mono">scanf(" %c", &amp;c);</span>（前面加空格）或先 <span class="mono">getchar();</span> 吃掉回车。</p>
     </div>
   </div>
 </section>

@@ -1,0 +1,42 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">「回车」和「换行」为什么是两个词？</h2>
+    <p class="lead">为什么换行要写 <span class="mono">\n</span>？为什么它被叫作 newline，而另一个字符叫「回车」？
+      答案在一百年前的电传打字机上。</p>
+  </div>
+
+  <div class="videorow">
+    <div class="videobox">
+      <div class="vb-frame">
+        <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=117270391035672&bvid=BV1bLeV6uECW&cid=41897166712&p=1"
+          scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" loading="lazy"
+          title="古代电传电报机作为 TTY 登录"></iframe>
+      </div>
+      <div class="vb-cap">B 站：《古代电传电报机作为 TTY 登录》（UP：有田兄）—— 一台还能用的老式电传打字机，敲键盘、走纸、回字车，全靠机械动作。</div>
+    </div>
+
+    <div>
+      <div class="deflist">
+        <div>
+          <dt>电传打字机</dt>
+          <dd>Teletype / TTY：键盘打字 → 电信号 → 对面那台一模一样的机器打印出来。它就是最早的计算机终端，
+            Linux 里的 <span class="mono">/dev/tty</span> 至今还叫这个名字。</dd>
+        </div>
+        <div>
+          <dt>回车 CR</dt>
+          <dd><b>Carriage Return</b>：把打字头（字车）推回<b>行首</b>。ASCII 13，C 里写 <span class="mono">\r</span>。</dd>
+        </div>
+        <div>
+          <dt>换行 LF</dt>
+          <dd><b>Line Feed</b>：把纸向上<b>滚一行</b>。ASCII 10，C 里写 <span class="mono">\n</span>。</dd>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <b>沿用至今的两个字符：</b>Linux / macOS 用 <b>LF</b>（<span class="mono">\n</span>），Windows 用 <b>CRLF</b>（<span class="mono">\r\n</span>），
+    老的 Mac 系统用 CR —— 这就是 Git 提示 <span class="mono">LF will be replaced by CRLF</span>、编辑器右下角写着 <span class="mono">CRLF</span> 的由来。
+    在 C 里写 <span class="mono">"\n"</span> 就是 LF。
+  </div>
+</section>

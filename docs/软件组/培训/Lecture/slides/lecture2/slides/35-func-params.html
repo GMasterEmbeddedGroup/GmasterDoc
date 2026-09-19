@@ -8,7 +8,6 @@
     <div class="codebox-head"><span class="cb-file">pass_by_value.c</span><span class="cb-tag">一个会让你踩坑的例子</span></div>
 <pre><code>#include &lt;stdio.h&gt;
 void add_one(int x) { x = x + 1; }   /* 形参只是副本，改它不影响外面 */
-
 int main(void)
 {
     int a = 10;

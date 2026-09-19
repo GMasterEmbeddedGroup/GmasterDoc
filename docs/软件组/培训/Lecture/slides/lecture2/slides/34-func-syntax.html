@@ -7,16 +7,10 @@
   <div class="codebox">
     <div class="codebox-head"><span class="cb-file">add.c</span><span class="cb-tag">最简单的函数</span></div>
 <pre><code>#include &lt;stdio.h&gt;
-
-int add(int a, int b)     /* 函数定义 */
-{
-    return a + b;         /* return 把结果交回调用者 */
-}
-
+int add(int a, int b) { return a + b; }   /* 函数定义 */
 int main(void)
 {
-    int sum = add(3, 5);  /* 函数调用：函数名(实参1, 实参2) */
-    printf("3 + 5 = %d\n", sum);
+    printf("3 + 5 = %d\n", add(3, 5));    /* 函数调用 */
     return 0;
 }</code></pre>
     <div class="codebox-foot">执行顺序：进入 <span class="mono">main</span> → 遇到 <span class="mono">add(3, 5)</span> 跳进去执行 → <span class="mono">return</span> 带回 8 → 继续执行下一行。</div>
@@ -29,11 +23,11 @@ int main(void)
     </div>
     <div>
       <dt>参数列表</dt>
-      <dd>外部要提供的数据，每个参数都要写类型；<span class="mono">void</span> 表示不需要参数。</dd>
+      <dd>外部要提供的数据，每个参数都要写类型。</dd>
     </div>
     <div>
       <dt>函数体</dt>
-      <dd>花括号之间的语句；遇到 <span class="mono">return</span> 立刻结束。函数必须先出现过再调用（否则要在开头补声明）。</dd>
+      <dd>花括号之间的语句；遇到 <span class="mono">return</span> 立刻结束。函数必须先出现过再调用。</dd>
     </div>
   </div>
 </section>

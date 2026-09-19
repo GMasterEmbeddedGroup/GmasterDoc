@@ -1015,10 +1015,44 @@ body.on-ppt-page .brand-corner { display: none; }
 
 .pill.red { color: var(--g-red); border-color: #e6c9cb; background: var(--g-red-soft); }
 
+/* ------------------------------------------------------ 视频页（外链播放器） */
+/* 用 loading="lazy" 的 iframe：只有翻到这一页才会去加载播放器，不拖慢整个课件 */
+.videorow { display: grid; grid-template-columns: 1.05fr 1fr; gap: 0.75em; align-items: start; }
+
+.videobox {
+  border: 1px solid var(--g-line);
+  border-left: 3px solid var(--g-red);
+  background: #fff;
+}
+
+.videobox .vb-frame { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000; }
+
+.videobox .vb-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.videobox .vb-cap {
+  padding: 0.35em 0.7em;
+  font-size: 0.54em;
+  line-height: 1.5;
+  color: var(--g-mute);
+  border-top: 1px solid var(--g-line-soft);
+}
+
+/* 单栏视频页：整体居中，宽度收一点，避免超过舞台高度 */
+.videobox.center { max-width: 62%; margin: 0.35em auto 0; }
+.videobox.center .vb-cap { text-align: center; }
+
 /* 十六进制对照表的紧凑卡片 */
 .hexgrid .card { padding: 0.18em 0.4em 0.22em; border-top-width: 2px; }
 .hexgrid .card h4 { font-size: 0.64em; }
 .hexgrid .card p { font-size: 0.56em; line-height: 1.4; }
+
+.grid-8 { grid-template-columns: repeat(8, minmax(0, 1fr)); }
 
 @media print {
   .ppt-stage-bg { display: none; }

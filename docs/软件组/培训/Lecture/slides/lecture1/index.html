@@ -6,8 +6,8 @@
 <meta name="description" content="GMaster 电控（软件）组 Lecture 1《从零开始电控开发》：电控导论（以一台步兵机器人为例、培养计划与学习路线图）、开发平台与工作流介绍、VS Code 与 STM32CubeMX 的安装。">
 <title>从零开始电控开发：Lecture 1 | GMaster</title>
 <link rel="stylesheet" href="vendor/reveal.js/reveal.css">
-<link rel="stylesheet" href="theme.css?v=20260920b">
-<link rel="stylesheet" href="deck.css?v=20260920b">
+<link rel="stylesheet" href="theme.css?v=20260920c">
+<link rel="stylesheet" href="deck.css?v=20260920c">
 </head>
 <body>
 
@@ -26,18 +26,20 @@
   <div class="slides"><section><h2>正在载入课件…</h2></section></div>
 </div>
 
-<script src="slides/manifest.js?v=20260920b"></script>
 <script src="vendor/reveal.js/reveal.js"></script>
 <script src="vendor/reveal.js/plugin/zoom/zoom.js"></script>
 <script src="vendor/reveal.js/plugin/search/search.js"></script>
 <script src="vendor/reveal.js/plugin/notes/notes.js"></script>
-<script src="deck.js?v=20260920b"></script>
+<script src="deck.js?v=20260920c"></script>
 <script>
 (function () {
   var slidesEl = document.querySelector('.reveal .slides');
-  var files = window.DECK_SLIDES.map(function (s) { return s.file; });
 
-  DeckKit.loadFragments(files, slidesEl)
+  DeckKit.loadManifest('slides/manifest.js')
+    .then(function () {
+      var files = window.DECK_SLIDES.map(function (s) { return s.file; });
+      return DeckKit.loadFragments(files, slidesEl);
+    })
     .then(function () {
       DeckKit.initAll(document);
       DeckKit.initReveal({

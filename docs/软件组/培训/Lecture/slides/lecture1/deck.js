@@ -149,12 +149,29 @@
   }
 
   /* ------------------------------------------------------ 片段加载与初始化 */
+  /* 页面清单用 fetch(no-cache) 读：静态站会给 .js 加长缓存，
+     <script src> 会一直读到旧页序（删页后就会 404 打不开整份课件）。 */
+  function loadManifest(path) {
+    return fetch(path, { cache: 'no-cache' }).then(function (r) {
+      if (!r.ok) { throw new Error(path + ' → HTTP ' + r.status); }
+      return r.text();
+    }).then(function (txt) {
+      window.DECK_SLIDES = new Function(txt + '\nreturn window.DECK_SLIDES;')();
+      return window.DECK_SLIDES;
+    });
+  }
+
   function loadFragments(files, container, base) {
     var dir = base || 'slides/';
     return Promise.all(files.map(function (f) {
       return fetch(dir + f, { cache: 'no-cache' }).then(function (r) {
         if (!r.ok) { throw new Error(f + ' → HTTP ' + r.status); }
         return r.text();
+      }).catch(function (err) {
+        /* 单页缺失（例如浏览器缓存了旧页序）不能让整份课件打不开 */
+        return '<section><h2>这一页暂时载入失败</h2>' +
+          '<p class="mono">' + err.message + '</p>' +
+          '<p>刷新页面（Ctrl+F5）通常就好了。</p></section>';
       });
     })).then(function (parts) {
       container.innerHTML = parts.join('\n');
@@ -209,6 +226,7 @@
   }
 
   window.DeckKit = {
+    loadManifest: loadManifest,
     loadFragments: loadFragments,
     initAll: initAll,
     initReveal: initReveal,

@@ -1,0 +1,81 @@
+/* CAF 登录态与内容门禁的样式（公开站与私有站共用） */
+
+.caf-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-left: 0.6rem;
+  font-size: 0.68rem;
+  white-space: nowrap;
+}
+
+.caf-chip__avatar {
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.caf-chip__name {
+  max-width: 8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--md-primary-bg-color, #fff);
+  opacity: 0.92;
+}
+
+.caf-chip__link {
+  padding: 0.12rem 0.55rem;
+  border: 1px solid currentColor;
+  border-radius: 0.5rem;
+  color: var(--md-primary-bg-color, #fff);
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.caf-chip__link:hover,
+.caf-chip__link:focus {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* 未登录/无权限时的占位框，以及加载后的片段容器 */
+.caf-gate {
+  margin: 1rem 0;
+  padding: 0.9rem 1rem;
+  border: 1px dashed var(--md-default-fg-color--lighter, #c7ccd8);
+  border-radius: 0.4rem;
+  background-color: var(--md-code-bg-color, #f6f6f8);
+}
+
+.caf-gate__hint {
+  margin: 0 0 0.5rem;
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+.caf-gate__btn {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.4rem;
+  background-color: var(--md-primary-fg-color, #4051b5);
+  color: var(--md-primary-bg-color, #fff);
+  font-size: 0.75rem;
+  text-decoration: none;
+}
+
+.caf-gate__btn:hover {
+  opacity: 0.9;
+}
+
+.caf-fragment {
+  padding: 0.2rem 0;
+}
+
+/* 窄屏下顶栏空间紧张，只保留按钮 */
+@media screen and (max-width: 44.9375em) {
+  .caf-chip__name,
+  .caf-chip__avatar {
+    display: none;
+  }
+}

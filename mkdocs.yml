@@ -3,8 +3,15 @@ site_url: https://www.gmaster.wiki
 theme:
   name: material
 
+# CAF 登录态与「登录后才显示」的内容门禁（见 docs/文档站指南/登录与权限.md）
+extra_javascript:
+  - assets/caf.js
+extra_css:
+  - assets/caf.css
+
 nav:
   - 首页: index.md
+  - 内部资料: 内部资料.md
   - 软件组:
       - 软件组首页: 软件组/index.md
       - 培训:
@@ -81,6 +88,7 @@ nav:
       - MkDocs介绍与配置: 文档站指南/mkdocs介绍与配置.md
       - Markdown语法速查: 文档站指南/markdown语法.md
       - Git工作流: 文档站指南/git工作流.md
+      - 登录与权限: 文档站指南/登录与权限.md
       - 文档规范: 文档站指南/文档规范.md
       - 问题反馈: 文档站指南/问题反馈.md
       - 建站者说: 文档站指南/建站者说.md

@@ -8,9 +8,12 @@
 
 ## 课件
 
+<!-- 注意：本页 URL 是 …/Lecture/Lecture1/（目录型），所以课件要写 ../slides/…；
+     删掉 ../ 会变成 …/Lecture1/slides/… → 课件 404。 -->
+
 <div style="border:1px solid var(--md-default-fg-color--lightest);border-radius:8px;overflow:hidden;background:#fff">
   <iframe
-    src="slides/lecture1/index.html"
+    src="../slides/lecture1/index.html"
     title="从零开始电控开发 —— Lecture 1（交互式课件）"
     style="display:block;width:100%;aspect-ratio:16/10;border:0"
     allowfullscreen
@@ -18,7 +21,7 @@
     onclick="this.contentWindow.focus()"></iframe>
 </div>
 
-<a href="slides/lecture1/index.html" target="_blank" rel="noopener">全屏打开课件</a>
+<a href="../slides/lecture1/index.html" target="_blank" rel="noopener">全屏打开课件</a>
 
 > **操作提示**：先点击课件区域（让键盘焦点进入课件），再用 <kbd>←</kbd> <kbd>→</kbd> / <kbd>空格</kbd> 翻页；<kbd>Esc</kbd> 打开总览；<kbd>F</kbd> 全屏。若键盘没有反应，直接点右下角的翻页箭头即可。
 

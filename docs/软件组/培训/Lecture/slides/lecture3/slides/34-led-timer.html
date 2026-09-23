@@ -1,0 +1,13 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">等级 2：定时器中断闪烁</h2><p class="lead">主循环不再延时，TIM2 每 500 ms 触发一次回调。</p></div>
+  <div class="codebox"><pre><code>// 初始化完成后启动更新中断
+HAL_TIM_Base_Start_IT(&amp;htim2);
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
+    if (htim-&gt;Instance == TIM2) {
+        HAL_GPIO_TogglePin(LED_R_GPIO_Port, LED_R_Pin);
+    }
+}</code></pre></div>
+  <div class="flow"><div class="flow-box"><b>72 MHz</b><span class="fx">timer clock</span></div><span class="flow-arrow">÷</span><div class="flow-box"><b>7200</b><span class="fx">PSC + 1</span></div><span class="flow-arrow">÷</span><div class="flow-box"><b>5000</b><span class="fx">ARR + 1</span></div><span class="flow-arrow">=</span><div class="flow-box is-hi"><b>2 Hz</b><span class="fx">update event</span></div></div>
+  <div class="callout"><b>结果：</b>每秒两次翻转，完整亮灭周期仍为 1 秒。实际定时器时钟需按 APB 分频规则确认。</div>
+</section>

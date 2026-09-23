@@ -1,0 +1,19 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">结构体类型、变量与成员</h2><p class="lead">先写出“档案卡模板”，再创建一张具体的卡，最后用点号找到其中一栏。</p></div>
+  <div class="codebox"><div class="codebox-head"><span class="cb-file">motor.c</span><span class="cb-tag">C99 指定成员初始化</span></div><pre><code>struct Motor {
+    uint8_t id;
+    float speed;
+    float current;
+};
+
+struct Motor yaw = {
+    .id = 1, .speed = 0.0f, .current = 0.0f
+};
+
+yaw.speed = 120.0f;</code></pre></div>
+  <div class="grid grid-3">
+    <div class="card"><h4><span class="card-index">类型</span><span class="mono">struct Motor</span></h4><p>规定栏目及每栏类型，本身不是一台电机。</p></div>
+    <div class="card"><h4><span class="card-index">变量</span><span class="mono">yaw</span></h4><p>按模板分配内存，保存一台具体电机的数据。</p></div>
+    <div class="card"><h4><span class="card-index">成员</span><span class="mono">yaw.speed</span></h4><p>点号左边是对象，右边是要访问的栏目。</p></div>
+  </div>
+</section>

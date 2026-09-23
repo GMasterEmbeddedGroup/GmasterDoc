@@ -1,0 +1,18 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">STM32 HAL 的中断调用链</h2><p class="lead">你通常实现最右侧的弱定义回调，而不是重写整条 IRQ 处理流程。</p></div>
+  <div class="flow compact">
+    <div class="flow-box"><b>GPIO 边沿</b><span class="fx">硬件置位</span></div><span class="flow-arrow">→</span>
+    <div class="flow-box"><b>EXTI IRQ</b><span class="fx">向量表入口</span></div><span class="flow-arrow">→</span>
+    <div class="flow-box"><b class="mono">EXTI15_10_<br>IRQHandler</b><span class="fx">stm32f1xx_it.c</span></div><span class="flow-arrow">→</span>
+    <div class="flow-box"><b class="mono">HAL_GPIO_EXTI_<br>IRQHandler</b><span class="fx">HAL 清标志</span></div><span class="flow-arrow">→</span>
+    <div class="flow-box is-hi"><b class="mono">HAL_GPIO_EXTI_<br>Callback</b><span class="fx">用户代码</span></div>
+  </div>
+  <div class="codebox"><pre><code>void EXTI15_10_IRQHandler(void) {
+    HAL_GPIO_EXTI_IRQHandler(USER_BTN_Pin);
+}
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
+    if (GPIO_Pin == USER_BTN_Pin) button_pending = true;
+}</code></pre></div>
+  <div class="callout tip"><b>定位问题：</b>断点从右向左排查。回调不进，先看 IRQHandler 是否进入，再看 NVIC、引脚模式和边沿选择。</div>
+</section>

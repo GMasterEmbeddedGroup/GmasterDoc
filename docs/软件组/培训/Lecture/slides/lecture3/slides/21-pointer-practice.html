@@ -1,0 +1,13 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">自编练习：只用指针</h2><p class="lead">本题不依赖在线评测，直接在本机用断言验收。</p></div>
+  <div class="codebox"><pre><code>void swap_int(int *a, int *b);
+void reverse(int *first, int *last);       // [first, last)
+const int *max_element(const int *first,
+                       const int *last);</code></pre></div>
+  <div class="grid grid-3">
+    <div class="card"><h4><span class="card-index">限制</span>禁用下标</h4><p>函数体内不能出现 <span class="mono">[]</span>，只能移动和解引用指针。</p></div>
+    <div class="card"><h4><span class="card-index">边界</span>空区间</h4><p><span class="mono">first == last</span> 时，<span class="mono">max_element</span> 返回 <span class="mono">NULL</span>。</p></div>
+    <div class="card"><h4><span class="card-index">验收</span>断言</h4><p>覆盖 0、1、偶数、奇数长度，以及含重复最大值的数组。</p></div>
+  </div>
+  <div class="callout"><b>进阶：</b>把比较规则改为函数指针，做一个通用的 <span class="mono">max_element_by</span>。</div>
+</section>

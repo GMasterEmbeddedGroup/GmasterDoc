@@ -1,0 +1,14 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">洛谷练习：结构体</h2><p class="lead">这两题都适合用“读入结构体数组，再逐个处理”的写法。</p></div>
+  <div class="grid grid-2">
+    <div class="card"><h4><span class="card-index">P5740</span>最厉害的学生</h4><p>保存姓名与三科成绩，求总分最大的记录。练习结构体定义、数组和成员比较。<br><a href="https://www.luogu.com.cn/problem/P5740" target="_blank" rel="noopener">打开洛谷题目</a></p></div>
+    <div class="card"><h4><span class="card-index">P5744</span>培训</h4><p>批量更新学员的年龄和成绩，再按格式输出。练习结构体数组的遍历与修改。<br><a href="https://www.luogu.com.cn/problem/P5744" target="_blank" rel="noopener">打开洛谷题目</a></p></div>
+  </div>
+  <div class="codebox"><div class="codebox-head"><span class="cb-file">建议骨架</span></div><pre><code>typedef struct {
+    char name[16];
+    int score_a, score_b, score_c;
+} Student;
+
+Student students[1000];</code></pre></div>
+  <div class="callout"><b>提交要求：</b>先用结构体完成，再尝试把“求总分”封装成函数。</div>
+</section>

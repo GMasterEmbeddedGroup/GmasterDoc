@@ -1,0 +1,12 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">等级 1：轮询闪烁</h2><p class="lead">先确认 GPIO、下载和时钟配置都正常。</p></div>
+  <div class="codebox"><div class="codebox-head"><span class="cb-file">main.c</span><span class="cb-tag">while (1)</span></div><pre><code>while (1) {
+    HAL_GPIO_TogglePin(LED_R_GPIO_Port, LED_R_Pin);
+    HAL_Delay(500);
+}</code></pre></div>
+  <div class="grid grid-2">
+    <div class="card"><h4><span class="card-index">现象</span>1 Hz 完整闪烁周期</h4><p>每 500 ms 翻转一次，亮 500 ms、灭 500 ms。</p></div>
+    <div class="card"><h4><span class="card-index">局限</span>CPU 在等待</h4><p><span class="mono">HAL_Delay</span> 阻塞主循环，不适合同时处理多个需要及时响应的任务。</p></div>
+  </div>
+  <div class="callout tip"><b>验收：</b>把 500 改成 100 和 1000，确认现象与计算一致；再用逻辑分析仪测 PC13 周期。</div>
+</section>

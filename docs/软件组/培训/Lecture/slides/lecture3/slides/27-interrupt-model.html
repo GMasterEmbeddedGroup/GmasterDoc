@@ -1,0 +1,8 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">轮询与中断</h2><p class="lead">两种方式都能响应事件，差别在 CPU 何时检查。</p></div>
+  <div class="compare">
+    <div><h4>轮询</h4><div class="flow vertical"><div class="flow-box"><b>读状态</b></div><div class="flow-box"><b>没发生</b></div><div class="flow-box"><b>继续读</b></div></div><p>流程直接，适合简单主循环；检查太频繁会浪费 CPU，太慢会增加延迟。</p></div>
+    <div><h4>中断</h4><div class="flow vertical"><div class="flow-box"><b>主程序运行</b></div><div class="flow-box is-hi"><b>硬件发出 IRQ</b></div><div class="flow-box"><b>ISR 处理后返回</b></div></div><p>事件到来时响应，延迟可控；共享数据、优先级和执行时间需要严格管理。</p></div>
+  </div>
+  <div class="callout"><b>中断不是并行线程。</b>CPU 暂停当前代码，保存现场，执行 ISR，再从原位置继续。</div>
+</section>

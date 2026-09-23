@@ -1,0 +1,17 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">等级 3：按键外部中断</h2><p class="lead">中断只记录事件，主循环负责切换灯效，避免在 ISR 里做复杂工作。</p></div>
+  <div class="codebox"><pre><code>static volatile bool button_pending;
+
+void HAL_GPIO_EXTI_Callback(uint16_t pin) {
+    if (pin == USER_BTN_Pin) button_pending = true;
+}
+
+while (1) {
+    if (button_pending) {
+        button_pending = false;
+        led_mode = (led_mode + 1) % LED_MODE_COUNT;
+    }
+    led_update();
+}</code></pre></div>
+  <div class="callout warn"><b>按键抖动：</b>一次按下可能产生多个边沿。可在主循环中用时间戳消抖，或用定时器在边沿后延迟采样；不要在中断里 <span class="mono">HAL_Delay</span>。</div>
+</section>

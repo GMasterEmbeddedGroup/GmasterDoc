@@ -1,0 +1,20 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">等级 4：回调驱动的灯效</h2><p class="lead">灯效模块只管理时间和状态，具体“亮灭动作”由调用者注入。</p></div>
+  <div class="codebox"><pre><code>typedef void (*LedWrite)(bool on);
+
+typedef struct {
+    LedWrite write;
+    uint32_t period_ms;
+    uint32_t last_ms;
+    bool state;
+} Blinker;
+
+void blinker_update(Blinker *b, uint32_t now) {
+    if (now - b-&gt;last_ms &gt;= b-&gt;period_ms) {
+        b-&gt;last_ms = now;
+        b-&gt;state = !b-&gt;state;
+        b-&gt;write(b-&gt;state);
+    }
+}</code></pre></div>
+  <div class="callout tip"><b>这一页串起全讲：</b>结构体保存状态，指针传递对象，函数指针实现回调，定时器或主循环提供时间事件。</div>
+</section>

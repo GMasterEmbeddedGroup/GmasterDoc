@@ -1,0 +1,19 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">例子：12 字节怎样变成 7 字节</h2><p class="lead">仍假设 <span class="mono">uint32_t / uint16_t</span> 的自然对齐为 4 / 2。</p></div>
+  <div class="compare">
+    <div>
+      <h4>自然对齐：<span class="mono">sizeof = 12</span></h4>
+      <div class="memory-row" aria-label="自然对齐布局"><span class="mem c">tag</span><span class="mem pad">·</span><span class="mem pad">·</span><span class="mem pad">·</span><span class="mem i">value ×4</span><span class="mem s">crc ×2</span><span class="mem pad">·</span><span class="mem pad">·</span></div>
+      <p><span class="mono">tag@0, value@4, crc@8</span>；中间 3 字节、末尾 2 字节为填充。</p>
+    </div>
+    <div>
+      <h4>1 字节 packing：<span class="mono">sizeof = 7</span></h4>
+      <div class="memory-row" aria-label="紧凑布局"><span class="mem c">tag</span><span class="mem i">value ×4</span><span class="mem s">crc ×2</span></div>
+      <p><span class="mono">tag@0, value@1, crc@5</span>；没有填充，但 <span class="mono">value</span> 很可能落在非 4 字节边界。</p>
+    </div>
+  </div>
+  <div class="codebox"><pre><code>_Static_assert(sizeof(GccPacket) == 7, "unexpected layout");
+printf("%zu %zu %zu\n", sizeof(GccPacket),
+       offsetof(GccPacket, value), offsetof(GccPacket, crc)); // 7 1 5</code></pre></div>
+  <div class="callout warn"><b>代价与边界：</b>未对齐成员访问可能更慢，某些目标上甚至会触发异常；不要随意把 <span class="mono">&amp;p.value</span> 交给要求自然对齐的指针。packing 也不会处理大小端、字段宽度或版本兼容，通信协议仍优先逐字段编解码。</div>
+</section>

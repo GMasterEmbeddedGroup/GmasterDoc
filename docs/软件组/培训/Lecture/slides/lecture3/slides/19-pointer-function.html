@@ -1,0 +1,16 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">函数指针</h2><p class="lead">函数也有地址；函数指针让“调用哪段逻辑”变成可传递的数据。</p></div>
+  <div class="codebox"><pre><code>typedef void (*EventCallback)(int event);
+
+void on_button(int event) {
+    printf("button: %d\n", event);
+}
+
+void dispatch(EventCallback cb, int event) {
+    if (cb != NULL) cb(event);
+}
+
+dispatch(on_button, 1);</code></pre></div>
+  <div class="flow"><div class="flow-box"><b>注册</b><span class="fx">保存函数地址</span></div><span class="flow-arrow">→</span><div class="flow-box is-hi"><b>事件发生</b><span class="fx">timer / gpio / uart</span></div><span class="flow-arrow">→</span><div class="flow-box"><b>调用</b><span class="fx">cb(event)</span></div></div>
+  <div class="callout"><b>回调的基础：</b>“函数地址 + 约定好的参数与返回值”。</div>
+</section>

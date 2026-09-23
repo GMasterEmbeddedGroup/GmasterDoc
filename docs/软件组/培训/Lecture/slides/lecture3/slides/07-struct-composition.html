@@ -1,0 +1,20 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">数组、嵌套与结构体指针</h2><p class="lead">结构体可以像其他类型一样组合。</p></div>
+  <div class="codebox"><pre><code>typedef struct { float x, y, z; } Vec3;
+typedef struct {
+    uint8_t id;
+    Vec3 gyro;
+} ImuSample;
+
+ImuSample samples[16];
+ImuSample *p = &amp;samples[0];
+
+samples[0].gyro.z = 1.25f;
+p-&gt;gyro.z = 1.25f;       // 等价于 (*p).gyro.z</code></pre></div>
+  <div class="flow">
+    <div class="flow-box"><b>对象</b><span class="fx">sample.member</span></div><span class="flow-arrow">→</span>
+    <div class="flow-box is-hi"><b>对象的地址</b><span class="fx">&amp;sample</span></div><span class="flow-arrow">→</span>
+    <div class="flow-box"><b>结构体指针</b><span class="fx">p-&gt;member</span></div>
+  </div>
+  <div class="callout tip"><b>参数较大时：</b>传 <span class="mono">const ImuSample *sample</span>，避免复制整个结构体，也表达函数不会修改它。</div>
+</section>

@@ -1,0 +1,13 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">三类危险指针</h2><p class="lead">地址必须指向仍然存在、允许访问、类型匹配的对象。</p></div>
+  <div class="grid grid-3">
+    <div class="card"><h4><span class="card-index">空</span><span class="mono">NULL</span></h4><p>明确表示“当前不指向对象”。可以比较，不能解引用。调用回调前先判断。</p></div>
+    <div class="card"><h4><span class="card-index">野</span>未初始化</h4><p><span class="mono">int *p;</span> 中的地址不确定。声明时初始化为有效地址或 <span class="mono">NULL</span>。</p></div>
+    <div class="card"><h4><span class="card-index">悬空</span>对象已失效</h4><p>返回局部变量地址、释放后继续使用，都会留下看似有效但不能访问的地址。</p></div>
+  </div>
+  <div class="codebox"><pre><code>int *bad(void) {
+    int local = 7;
+    return &amp;local;  // 函数返回后 local 的生命周期结束
+}</code></pre></div>
+  <div class="callout warn"><b>排错信号：</b>HardFault、偶发数据错误、优化等级一改就坏，都要检查指针、越界与对象生命周期。</div>
+</section>

@@ -12,6 +12,7 @@
 | --- | --- | --- | --- |
 | **Lecture 1** | [从零开始电控开发](./Lecture1.md) | 电控导论（以一台步兵机器人为例、培养计划与学习路线图）、开发平台与工作流（每个工具解决什么问题、编译原理、裸机与交叉编译）、VS Code 与 STM32CubeMX 的安装、用 CubeMX 跑通第一个工程 | [打开课件](slides/lecture1/index.html) |
 | **Lecture 2** | [C 语言第一次培训](./Lecture2.md) | 从 Hello World 开始：程序结构与基本语法、数据类型与运算符、二进制与进制转换（除 2 取余 / 位权相加 / 补码 / 位运算）、函数（定义调用 / 作用域 / 多文件 / 递归）、标准输入输出（printf 与 scanf） | [打开课件](slides/lecture2/index.html) |
+| **Lecture 3** | [C 语言程序设计（二）](./Lecture3.md) | 结构体、内存对齐、指针、大小端、中断与回调函数；以 STM32F103 的“点灯大师”实战收尾 | [打开课件](slides/lecture3/index.html) |
 
 ---
 

@@ -1,0 +1,12 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title"><span class="mono">const</span> 与指针</h2><p class="lead">从变量名向左读；遇到最左边再向右读。</p></div>
+  <table class="dense"><thead><tr><th>声明</th><th>指向的数据</th><th>指针自身</th><th>典型用途</th></tr></thead><tbody>
+    <tr><td class="mono">int *p</td><td>可改</td><td>可改</td><td>普通输入输出参数</td></tr>
+    <tr><td class="mono">const int *p</td><td>不可通过 p 修改</td><td>可改</td><td>只读输入参数</td></tr>
+    <tr><td class="mono">int * const p</td><td>可改</td><td>不可改</td><td>固定映射到某个对象</td></tr>
+    <tr><td class="mono">const int * const p</td><td>不可通过 p 修改</td><td>不可改</td><td>固定只读视图</td></tr>
+  </tbody></table>
+  <div class="codebox"><pre><code>float average(const int *data, size_t count);
+// 函数承诺不会通过 data 修改数组内容</code></pre></div>
+  <div class="callout tip"><b>接口设计：</b>能只读就加 <span class="mono">const</span>。编译器会帮你挡住误修改。</div>
+</section>

@@ -1,0 +1,18 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">回调函数</h2><p class="lead">库在约定时机调用用户提供的函数，实现控制反转。</p></div>
+  <div class="codebox"><pre><code>typedef void (*OnByte)(uint8_t byte);
+
+void uart_set_callback(OnByte cb);
+
+static void parse_byte(uint8_t byte) {
+    // 用户逻辑
+}
+
+uart_set_callback(parse_byte);</code></pre></div>
+  <div class="grid grid-3">
+    <div class="card"><h4><span class="card-index">签名</span>必须一致</h4><p>参数和返回值组成接口契约。类型不匹配会造成编译错误或未定义行为。</p></div>
+    <div class="card"><h4><span class="card-index">上下文</span>看调用者</h4><p>回调可能在中断、主循环或 RTOS 任务中执行，能做什么取决于调用上下文。</p></div>
+    <div class="card"><h4><span class="card-index">空值</span>调用前检查</h4><p>可选回调用 <span class="mono">NULL</span> 表示未注册，调用前必须判断。</p></div>
+  </div>
+  <div class="callout"><b>区分：</b>回调是一种软件设计方式；中断是硬件事件机制。两者经常连用，但并不等价。</div>
+</section>

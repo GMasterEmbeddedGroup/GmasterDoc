@@ -1,0 +1,10 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">内存对齐的定义</h2><p class="lead"><b>定义：</b>编译器让成员的起始地址满足对齐量要求；当前地址不合要求时，就插入不保存数据的填充字节。</p></div>
+  <div class="grid grid-3">
+    <div class="card"><h4><span class="card-index">01</span>“4 字节对齐”</h4><p>起始地址必须能被 4 整除，例如 offset 0、4、8、12。</p></div>
+    <div class="card"><h4><span class="card-index">02</span>成员前填充</h4><p>当前 offset 是 1，下一个能被 4 整除的是 4，因此中间补 3 字节。</p></div>
+    <div class="card"><h4><span class="card-index">03</span>结构体尾部填充</h4><p>最大对齐量是 4 时，总长度也补成 4 的倍数，数组中的下一个元素才能继续对齐。</p></div>
+  </div>
+  <div class="memory-row" aria-label="示意内存"><span class="mem c">char</span><span class="mem pad">pad</span><span class="mem pad">pad</span><span class="mem pad">pad</span><span class="mem i">int</span><span class="mem i">int</span><span class="mem i">int</span><span class="mem i">int</span></div>
+  <div class="memory-hook"><b>记忆点：</b><span class="mono">n</span> 字节对齐，就是“起点门牌号能被 <span class="mono">n</span> 整除”。不会整除，就往后找到最近的整除位置。</div>
+</section>

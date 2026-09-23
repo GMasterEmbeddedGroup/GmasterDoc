@@ -1,0 +1,19 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">中断服务函数的工作边界</h2><p class="lead">ISR 只做必须立刻完成的事，把耗时工作交回主循环或任务。</p></div>
+  <div class="grid grid-2">
+    <div class="card"><h4><span class="card-index">可以</span>快速收尾</h4><p>读取并清除中断标志；保存少量数据；更新计数器；设置事件标志；唤醒任务。</p></div>
+    <div class="card"><h4><span class="card-index">避免</span>阻塞与重活</h4><p><span class="mono">HAL_Delay</span>、长循环、大量打印、动态内存、等待锁，以及不可重入函数。</p></div>
+  </div>
+  <div class="codebox"><pre><code>static volatile bool button_pending = false;
+
+void HAL_GPIO_EXTI_Callback(uint16_t pin) {
+    if (pin == USER_BTN_Pin) button_pending = true;
+}
+
+// 主循环中处理耗时工作
+if (button_pending) {
+    button_pending = false;
+    handle_button();
+}</code></pre></div>
+  <div class="callout warn"><b><span class="mono">volatile</span> 的边界：</b>它要求每次都访问内存，但不保证复合操作原子，也不能替代临界区或内存屏障。</div>
+</section>

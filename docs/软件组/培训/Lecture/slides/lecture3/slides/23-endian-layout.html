@@ -1,0 +1,8 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">同一数值的两种字节顺序</h2><p class="lead">把 <span class="mono">uint32_t x = 0x12345678</span> 放到地址从低到高的四个字节。</p></div>
+  <div class="compare">
+    <div><h4>小端：低有效字节放低地址</h4><div class="memory-row large"><span class="mem i">78<br><small>低地址</small></span><span class="mem s">56</span><span class="mem c">34</span><span class="mem dim">12<br><small>高地址</small></span></div><p>STM32F103 使用小端字节序。</p></div>
+    <div><h4>大端：高有效字节放低地址</h4><div class="memory-row large"><span class="mem dim">12<br><small>低地址</small></span><span class="mem c">34</span><span class="mem s">56</span><span class="mem i">78<br><small>高地址</small></span></div><p>网络协议常用大端，也称网络字节序。</p></div>
+  </div>
+  <div class="callout"><b>不受影响：</b>单字节值没有大小端之分；位在字节内部的编号是另一个问题。</div>
+</section>

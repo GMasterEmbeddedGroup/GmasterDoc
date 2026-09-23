@@ -1,0 +1,14 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">指针与数组</h2><p class="lead">在多数表达式里，数组名会转换为首元素指针。</p></div>
+  <div class="codebox"><pre><code>int data[4] = {10, 20, 30, 40};
+int *p = data;            // 等价于 &amp;data[0]
+
+data[2] == *(data + 2);  // 都是 30
+p + 1;                   // 前进 sizeof(int) 字节</code></pre></div>
+  <table class="dense"><thead><tr><th>表达式</th><th>含义</th><th>常见误解</th></tr></thead><tbody>
+    <tr><td class="mono">sizeof(data)</td><td>整个数组的字节数，仅在数组仍是数组的作用域中成立</td><td>不是指针大小</td></tr>
+    <tr><td class="mono">sizeof(p)</td><td>指针变量本身的字节数</td><td>不知道数组有几个元素</td></tr>
+    <tr><td class="mono">p[i]</td><td class="mono">*(p + i)</td><td>指针运算按所指类型缩放</td></tr>
+  </tbody></table>
+  <div class="callout warn"><b>边界：</b>C 不检查下标。越过数组两端后再解引用属于未定义行为。</div>
+</section>

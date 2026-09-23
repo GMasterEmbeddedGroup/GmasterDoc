@@ -1,0 +1,26 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">两种 packing 写法如何工作</h2><p class="lead">二者目的相似，但控制范围与可移植性不同；都不是 ISO C 标准语法。</p></div>
+  <div class="compare">
+    <div>
+      <h4><span class="mono">#pragma pack</span>：改变后续声明的状态</h4>
+      <div class="codebox"><pre><code>#pragma pack(push, 1)  // 保存旧值，最大对齐量设为 1
+typedef struct {
+    uint8_t  tag;
+    uint32_t value;
+    uint16_t crc;
+} PragmaPacket;
+#pragma pack(pop)      // 恢复旧值，避免影响别的结构体</code></pre></div>
+      <p><span class="mono">pack(n)</span> 把成员的有效对齐限制为“不超过 n”；<span class="mono">push/pop</span> 用来限定影响范围。具体支持的 n 由编译器决定。</p>
+    </div>
+    <div>
+      <h4><span class="mono">packed</span>：只标记这个类型</h4>
+      <div class="codebox"><pre><code>typedef struct __attribute__((packed)) {
+    uint8_t  tag;
+    uint32_t value;
+    uint16_t crc;
+} GccPacket;</code></pre></div>
+      <p>这是 GCC / Clang 常见扩展，通常把该结构体及其成员的对齐需求压到 1；不会悄悄影响后续其他声明。</p>
+    </div>
+  </div>
+  <div class="callout tip"><b>习惯：</b>使用 pragma 时成对写 <span class="mono">push/pop</span>；跨编译器项目用条件宏统一封装，并用 <span class="mono">sizeof</span> / <span class="mono">offsetof</span> 验证布局。</div>
+</section>

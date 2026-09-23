@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="GMaster 电控（软件）组 Lecture 3《C 语言程序设计（二）》：结构体、内存对齐、指针、大小端、中断、回调函数与 STM32 点灯实战。">
+<title>C 语言程序设计（二）：Lecture 3 | GMaster</title>
+<link rel="stylesheet" href="vendor/reveal.js/reveal.css">
+<link rel="stylesheet" href="theme.css?v=20260923a">
+<link rel="stylesheet" href="deck.css?v=20260923a">
+</head>
+<body>
+
+<!--
+  ============================================================================
+  这个文件只是外壳：每张幻灯片单独存放在 slides/ 目录下，
+  由 slides/manifest.js 列出顺序，运行时统一载入。
+  想调整某一页 → 直接改 slides/ 里对应的那个文件；
+  想单独看某一页 → 打开 one.html?p=序号
+  ============================================================================
+-->
+
+<div class="reveal">
+  <img class="brand-logo" src="img/brand-logo.png" alt="GMaster">
+  <img class="brand-corner" src="img/brand-corner.png" alt="">
+  <div class="slides"><section><h2>正在载入课件…</h2></section></div>
+</div>
+
+<script src="vendor/reveal.js/reveal.js"></script>
+<script src="vendor/reveal.js/plugin/zoom/zoom.js"></script>
+<script src="vendor/reveal.js/plugin/search/search.js"></script>
+<script src="vendor/reveal.js/plugin/notes/notes.js"></script>
+<script src="deck.js?v=20260923a"></script>
+<script>
+(function () {
+  var slidesEl = document.querySelector('.reveal .slides');
+
+  DeckKit.loadManifest('slides/manifest.js')
+    .then(function () {
+      var files = window.DECK_SLIDES.map(function (s) { return s.file; });
+      return DeckKit.loadFragments(files, slidesEl);
+    })
+    .then(function () {
+      DeckKit.initAll(document);
+      DeckKit.initReveal({
+        plugins: [window.RevealZoom, window.RevealSearch, window.RevealNotes].filter(Boolean)
+      });
+    })
+    .catch(function (err) {
+      slidesEl.innerHTML =
+        '<section><h2>课件载入失败</h2>' +
+        '<p>原因：<span class="mono">' + err.message + '</span></p>' +
+        '<p>本课件的每页内容是分开存放的，需要能读取本地文件，' +
+        '请通过 <b>http(s)</b> 访问（不能用 <span class="mono">file://</span> 直接双击打开）。</p></section>';
+    });
+})();
+</script>
+</body>
+</html>

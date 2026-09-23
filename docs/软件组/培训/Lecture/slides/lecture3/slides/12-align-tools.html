@@ -1,0 +1,16 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title"><span class="mono">sizeof</span>、<span class="mono">offsetof</span> 与 packing</h2><p class="lead">不要靠猜，直接让编译器告诉你当前目标平台的布局。</p></div>
+  <div class="codebox"><pre><code>#include &lt;stddef.h&gt;
+#include &lt;stdio.h&gt;
+
+printf("size=%zu, value=%zu, crc=%zu\n",
+       sizeof(struct A),
+       offsetof(struct A, value),
+       offsetof(struct A, crc));</code></pre></div>
+  <table class="dense"><thead><tr><th>做法</th><th>适用场景</th><th>风险</th></tr></thead><tbody>
+    <tr><td>自然对齐</td><td>普通运行时对象</td><td>跨平台布局可能不同</td></tr>
+    <tr><td><span class="mono">#pragma pack</span> / <span class="mono">__attribute__((packed))</span></td><td>确有固定二进制布局要求的底层接口</td><td>非标准扩展；可能产生未对齐访问</td></tr>
+    <tr><td>逐字段序列化</td><td>通信协议、文件格式</td><td>代码稍多，但边界与字节序清楚</td></tr>
+  </tbody></table>
+  <div class="callout"><b>packing 的含义：</b>限制或取消成员之间的对齐填充，使成员排列得更紧凑；它改变“布局”，不改变整数的字节序和字段含义。</div>
+</section>

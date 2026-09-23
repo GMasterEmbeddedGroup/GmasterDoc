@@ -1,0 +1,14 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title"><span class="mono">typedef</span> 与设计习惯</h2><p class="lead"><span class="mono">typedef</span> 只创建类型别名，不创建新结构体。</p></div>
+  <div class="compare">
+    <div><h4>常用写法</h4><div class="codebox"><pre><code>typedef struct {
+    uint8_t r;
+    uint8_t g;
+    uint8_t b;
+} RgbColor;
+
+RgbColor warning = {255, 0, 0};</code></pre></div></div>
+    <div><h4>成员设计</h4><ul><li>名字体现单位：<span class="mono">speed_rpm</span></li><li>协议字段用固定宽度类型：<span class="mono">uint16_t</span></li><li>硬件寄存器定义保留芯片手册中的命名</li><li>初始化时优先写成员名，避免顺序改变后静默出错</li></ul></div>
+  </div>
+  <div class="callout warn"><b>注意：</b>结构体赋值会复制所有成员。结构体里若保存指针，只会复制地址，不会复制指针指向的数据。</div>
+</section>

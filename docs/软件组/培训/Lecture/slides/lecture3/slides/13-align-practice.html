@@ -1,0 +1,12 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">自编练习：内存侦探</h2><p class="lead">先写预测，再在电脑与 STM32 工程里各运行一次。</p></div>
+  <div class="codebox"><pre><code>typedef struct { uint8_t a; uint32_t b; uint16_t c; } S1;
+typedef struct { uint32_t b; uint16_t c; uint8_t a; } S2;
+typedef struct { uint8_t a; uint16_t c; uint32_t b; } S3;</code></pre></div>
+  <div class="grid grid-3">
+    <div class="card"><h4><span class="card-index">任务 1</span>纸上推导</h4><p>标出每个成员的 offset、填充位置和总大小。</p></div>
+    <div class="card"><h4><span class="card-index">任务 2</span>程序验证</h4><p>用 <span class="mono">sizeof</span> 和 <span class="mono">offsetof</span> 打印结果，解释差异。</p></div>
+    <div class="card"><h4><span class="card-index">任务 3</span>数组观察</h4><p>打印 <span class="mono">&amp;arr[0]</span> 和 <span class="mono">&amp;arr[1]</span>，验证步长等于结构体大小。</p></div>
+  </div>
+  <div class="callout"><b>验收：</b>能解释尾部填充为什么对结构体数组是必要的。</div>
+</section>

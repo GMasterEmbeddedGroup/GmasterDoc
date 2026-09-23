@@ -1,0 +1,15 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">指针的两个基本操作</h2><p class="lead"><span class="mono">&amp;</span> 从对象得到地址，叫“取地址”；<span class="mono">*</span> 从地址找到对象，叫“解引用”。</p></div>
+  <div class="codebox"><pre><code>int value = 42;
+int *p = &amp;value;
+
+printf("%p\n", (void *)p); // 打印地址
+printf("%d\n", *p);       // 读出 42
+
+*p = 100;                  // 通过指针修改 value</code></pre></div>
+  <div class="quiz">
+    <p class="quiz-q">执行完 <span class="mono">*p = 100</span> 后，<span class="mono">value</span> 是多少？</p>
+    <div class="quiz-opts"><button class="quiz-opt" data-correct="0"><span class="q-key">A</span>42</button><button class="quiz-opt" data-correct="1" data-explain="p 保存 value 的地址，*p 就是 value 本身。"><span class="q-key">B</span>100</button><button class="quiz-opt" data-correct="0"><span class="q-key">C</span>地址值</button><button class="quiz-opt" data-correct="0"><span class="q-key">D</span>未定义</button></div><div class="quiz-feedback"></div>
+  </div>
+  <div class="memory-hook compact"><b>一来一回：</b><span class="mono">value</span> 经 <span class="mono">&amp;</span> 变成地址，地址经 <span class="mono">*</span> 又回到 <span class="mono">value</span>。</div>
+</section>

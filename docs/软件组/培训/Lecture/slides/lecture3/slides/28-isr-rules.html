@@ -4,7 +4,7 @@
     <div class="card"><h4><span class="card-index">可以</span>快速收尾</h4><p>读取并清除中断标志；保存少量数据；更新计数器；设置事件标志；唤醒任务。</p></div>
     <div class="card"><h4><span class="card-index">避免</span>阻塞与重活</h4><p><span class="mono">HAL_Delay</span>、长循环、大量打印、动态内存、等待锁，以及不可重入函数。</p></div>
   </div>
-  <div class="codebox"><pre><code>static volatile bool button_pending = false;
+  <div class="codebox"><pre><code class="language-c">static volatile bool button_pending = false;
 
 void HAL_GPIO_EXTI_Callback(uint16_t pin) {
     if (pin == USER_BTN_Pin) button_pending = true;

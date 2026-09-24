@@ -1,0 +1,12 @@
+<section><div class="slide-head"><h2 class="slide-title">CMakePresets.json：保存统一配置</h2><p class="lead">Preset 把生成器、构建目录和缓存变量写进可提交的 JSON。</p></div><div class="two-code"><div class="codebox"><div class="codebox-head"><span class="cb-file">CMakePresets.json</span></div><pre><code>{
+  "version": 3,
+  "configurePresets": [{
+    "name": "debug",
+    "generator": "Ninja",
+    "binaryDir": "${sourceDir}/build/debug",
+    "cacheVariables": {
+      "CMAKE_BUILD_TYPE": "Debug",
+      "ENABLE_TRACE": "ON"
+    }
+  }]
+}</code></pre></div><div><div class="terminal"><span class="prompt">$</span> cmake --list-presets<br><span class="prompt">$</span> cmake --preset debug<br><span class="prompt">$</span> cmake --build build/debug</div><div class="callout"><b>CMakePresets.json</b> 可提交；包含个人绝对路径或秘密的配置应放进 <span class="mono">CMakeUserPresets.json</span> 并忽略。</div></div></div></section>

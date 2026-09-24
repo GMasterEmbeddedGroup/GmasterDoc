@@ -1,0 +1,4 @@
+<section><div class="slide-head"><h2 class="slide-title">实操一：PC13 呼吸式节拍灯</h2><p class="lead">目标是先验证硬件极性和初始化，再完成 500 ms 周期闪烁。</p></div><div class="lab"><ol><li>CubeMX 将 PC13 配置为低速推挽输出，初始高电平。</li><li>生成工程并确认 GPIOC 时钟、SET 初值和 HAL_GPIO_Init 顺序。</li><li>主循环每 500 ms 调用 TogglePin。</li><li>用万用表确认亮时 PC13 接近 0 V，灭时接近 3.3 V。</li></ol></div><div class="codebox"><pre><code>while (1) {
+    HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+    HAL_Delay(500);
+}</code></pre></div></section>

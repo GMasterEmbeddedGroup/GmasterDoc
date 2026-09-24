@@ -1,0 +1,19 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">break 与 continue 的作用范围</h2><p class="lead"><code>break</code> 结束整个循环，<code>continue</code> 只结束本轮，进入下一轮。</p>
+  <div class="split">
+    <div><h3>break：跳出循环</h3><pre><code class="language-c">for (int i = 0; i &lt; n; ++i) {
+    if (frame[i] == 0xAA) break;
+    payload[len++] = frame[i];
+}</code></pre></div>
+    <div><h3>continue：跳过本轮</h3><pre><code class="language-c">for (int i = 0; i &lt; n; ++i) {
+    if (frame[i] == 0xFF) continue;
+    payload[len++] = frame[i];
+}</code></pre></div>
+  </div></div>
+  <pre><code class="language-c">for (int i = 0; i &lt; frame_len; ++i) {
+    if (frame[i] == 0xFF) continue;   /* 分隔字节：跳过本轮 */
+    if (frame[i] == 0xAA) break;      /* 帧头：结束查找 */
+    payload[len++] = frame[i];
+}</code></pre>
+  <div class="callout warn"><b>只看最内层：</b>两者都作用于最近的一层循环；<code>break</code> 在 <code>switch</code> 里跳出的是 switch，而不是外层循环。需要跳出多层时，把条件提到外层，或封装成函数用 <code>return</code>，比 <code>goto</code> 好读。</div>
+</section>

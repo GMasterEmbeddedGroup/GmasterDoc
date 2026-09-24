@@ -1,0 +1,6 @@
+<section><div class="slide-head"><h2 class="slide-title">位、移位与掩码</h2><p class="lead">一个 32 位寄存器同时保存多个引脚的配置，修改其中一部分时必须保留其他位。</p></div><div class="codebox"><pre><code>uint32_t bit = 1u &lt;&lt; 13;   // 只有 bit13 为 1
+GPIOC-&gt;ODR |= bit;          // 把 bit13 置 1
+GPIOC-&gt;ODR &amp;= ~bit;         // 把 bit13 清 0
+
+GPIOC-&gt;CRH &amp;= ~(0xFu &lt;&lt; 20); // 清 PC13 的 4 位
+GPIOC-&gt;CRH |=  (0x2u &lt;&lt; 20); // 写入新配置</code></pre></div><div class="explain"><p><span class="mono">1u &lt;&lt; n</span> 生成第 n 位掩码。按位或用于置位，和取反掩码用于清位。</p><p>直接写整个 CRH 会同时覆盖 PC8–PC15，可能破坏其他引脚。</p></div></section>

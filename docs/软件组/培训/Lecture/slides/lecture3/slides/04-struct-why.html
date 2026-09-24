@@ -1,10 +1,10 @@
 <section>
   <div class="slide-head"><h2 class="slide-title">结构体的定义与用途</h2><p class="lead"><b>定义：</b>结构体是用户定义的数据类型，它把多个可能不同类型的变量组合成一个整体；其中每个变量叫作“成员”。</p></div>
   <div class="compare">
-    <div><h4>不用结构体：关系全靠下标</h4><div class="codebox"><pre><code>int motor_id[4];
+    <div><h4>不用结构体：关系全靠下标</h4><div class="codebox"><pre><code class="language-c">int motor_id[4];
 float motor_speed[4];
 float motor_current[4];</code></pre></div><p>三个数组靠相同下标维持关系。字段越多，越容易把不同电机的数据配错。</p></div>
-    <div><h4>使用结构体：一条记录就是一个对象</h4><div class="codebox"><pre><code>Motor motors[4];
+    <div><h4>使用结构体：一条记录就是一个对象</h4><div class="codebox"><pre><code class="language-c">Motor motors[4];
 motors[0].speed = 120.0f;
 motors[0].current = 3.2f;</code></pre></div><p>每个元素就是一台电机。传参、复制和扩展字段都围绕同一个对象进行。</p></div>
   </div>

@@ -1,0 +1,9 @@
+<section><div class="slide-head"><h2 class="slide-title">源码树与构建树</h2><p class="lead">把生成物放进独立的 build 目录，源码目录就能保持干净。</p></div><div class="two-code"><div class="codebox"><div class="codebox-head"><span class="cb-file">源码树</span><span class="cb-tag">需要提交</span></div><pre><code>demo/
+├─ CMakeLists.txt
+├─ src/main.c
+├─ include/calc.h
+└─ lib/calc.c</code></pre></div><div class="codebox"><div class="codebox-head"><span class="cb-file">构建树</span><span class="cb-tag">可以删除</span></div><pre><code>build/
+├─ CMakeCache.txt
+├─ build.ninja
+├─ CMakeFiles/
+└─ demo.exe</code></pre></div></div><div class="terminal"><span class="prompt">$</span> cmake -S . -B build -G Ninja<br><span class="prompt">$</span> cmake --build build</div><div class="callout"><b>-S</b> 指源码目录，<b>-B</b> 指构建目录。不要把生成文件散落到源码旁边，也不要提交 build/。</div></section>

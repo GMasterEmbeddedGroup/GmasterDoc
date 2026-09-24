@@ -1,6 +1,6 @@
 <section>
   <div class="slide-head"><h2 class="slide-title">指针与数组</h2><p class="lead">在多数表达式里，数组名会转换为首元素指针。</p></div>
-  <div class="codebox"><pre><code>int data[4] = {10, 20, 30, 40};
+  <div class="codebox"><pre><code class="language-c">int data[4] = {10, 20, 30, 40};
 int *p = data;            // 等价于 &amp;data[0]
 
 data[2] == *(data + 2);  // 都是 30

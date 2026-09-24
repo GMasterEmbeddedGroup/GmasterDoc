@@ -1,0 +1,3 @@
+<section><div class="slide-head"><h2 class="slide-title">PC13 板载 LED：低电平点亮</h2><p class="lead">LED 阳极通过限流电阻接 3.3 V，阴极接 PC13。GPIO 负责吸收电流。</p></div><div class="state-flow"><div class="state-box"><h4>PC13 = 0</h4><p>3.3 V 经 LED、电阻和 PC13 流向 GND，LED 亮。</p></div><div class="state-change">逻辑反相</div><div class="state-box"><h4>PC13 = 1</h4><p>LED 两端压差接近 0，LED 灭。</p></div></div><div class="codebox"><pre><code>HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET); // 亮
+HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);   // 灭
+HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);</code></pre></div><div class="callout"><b>低电平有效：</b>建议封装 <span class="mono">Led_Set(bool on)</span>，避免业务代码反复记忆反相关系。</div></section>

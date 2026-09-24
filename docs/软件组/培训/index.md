@@ -8,7 +8,7 @@
 
 ## 培训体系
 
-开课之前，建议先过一遍 [从零开始电控开发 —— Lecture 1](./Lecture/Lecture1.md)，了解电控组、工具链与 CubeMX 工程；随后用 [C 语言第一次培训 —— Lecture 2](./Lecture/Lecture2.md) 补齐 C 语言基础，再通过 [C 语言程序设计（二）—— Lecture 3](./Lecture/Lecture3.md) 进入内存、指针和中断。三次课的交互式课件都收在 [培训课程（Lecture 系列）](./Lecture/index.md) 里。
+开课之前，建议先过一遍 [从零开始电控开发 —— Lecture 1](./Lecture/Lecture1.md)，了解电控组、工具链与 CubeMX 工程；随后用 Lecture 2–4 建立 C 语言基础：语法与进制、结构体与指针、流程控制与作用域、预处理进阶与模块。国庆期间可进入 [C语言国庆假期学习](./C语言国庆假期学习/index.md)，按 Windows 版学习指南继续系统学习。已公开的交互式课件都收在 [培训课程（Lecture 系列）](./Lecture/index.md) 里。
 
 随后按以下三大模块的顺序学习：
 
@@ -31,6 +31,8 @@ STM32 嵌入式开发入门，从 GPIO 到 CAN 通信，再到 GSRL 工程全景
 - [从零开始电控开发 —— Lecture 1](./Lecture/Lecture1.md) — 组别认知与开发环境入门（含可交互课件）
 - [C 语言第一次培训 —— Lecture 2](./Lecture/Lecture2.md) — Hello World、数据类型、进制转换、函数与输入输出（含可交互课件）
 - [C 语言程序设计（二）—— Lecture 3](./Lecture/Lecture3.md) — 结构体、内存对齐、指针、大小端、中断与回调函数，以及 STM32 点灯实战
+- [C 语言程序设计（三）—— Lecture 4](./Lecture/Lecture4.md) — 流程控制与作用域、预处理进阶与宏、函数与模块边界（`static` 的三种用法、`extern` 与跨文件链接）、联合体与枚举、`volatile` 与内存访问（含可交互课件）
+- [C语言国庆假期学习](./C语言国庆假期学习/index.md) — 面向 Windows 平台的《嵌入式 C 语言学习指南》
 - [培训课程（Lecture 系列）](./Lecture/index.md) — 课次目录与学习建议
 - [用 CMake 新建 x86 工程并通过 Git 提交](./Lecture/用cmake新建x86工程并通过git提交.md) — 本机 C 工程的编译、运行与版本提交
 - [使用 STM32CubeMX 新建工程](./Lecture/Lecture1小作业.md) — 第一课配套实操：安装、配置工程与交叉编译

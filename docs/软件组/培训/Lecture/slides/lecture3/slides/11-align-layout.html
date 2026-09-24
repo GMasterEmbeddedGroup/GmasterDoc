@@ -1,7 +1,7 @@
 <section>
   <div class="slide-head"><h2 class="slide-title">手算结构体布局</h2><p class="lead">每一格代表 1 字节。假设 <span class="mono">char / uint32_t / uint16_t</span> 的大小与对齐分别为 1 / 4 / 2 字节。</p></div>
   <div class="compare">
-    <div><h4>顺序 A：通常占 12 字节</h4><div class="codebox"><pre><code>struct A {
+    <div><h4>顺序 A：通常占 12 字节</h4><div class="codebox"><pre><code class="language-c">struct A {
     char tag;       // offset 0
     uint32_t value; // offset 4
     uint16_t crc;   // offset 8
@@ -22,7 +22,7 @@
       </div>
       <p class="byte-note"><b>为什么空 3 格：</b><span class="mono">tag</span> 后下一空位为 1；<span class="mono">value</span> 必须从 4 的倍数地址开始，所以 1～3 填充。<span class="mono">value</span> 占 4～7，<span class="mono">crc</span> 占 8～9，尾部再补 2 字节到 12。</p>
     </div>
-    <div><h4>顺序 B：通常占 8 字节</h4><div class="codebox"><pre><code>struct B {
+    <div><h4>顺序 B：通常占 8 字节</h4><div class="codebox"><pre><code class="language-c">struct B {
     uint32_t value; // offset 0
     uint16_t crc;   // offset 4
     char tag;       // offset 6

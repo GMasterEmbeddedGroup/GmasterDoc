@@ -1,0 +1,14 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">if 语句的组成部分</h2><p class="lead">条件写在括号里，分支体跟在后面，<code>else</code> 负责兜底。</p></div>
+  <table class="dense">
+    <thead><tr><th>组成部分</th><th>写什么</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td><code>if (条件)</code></td><td>比较、逻辑表达式或函数调用</td><td>结果为 0 时跳过本分支；括号不能省略，判断相等写 <code>==</code></td></tr>
+      <tr><td>分支体</td><td><code>{ ... }</code> 或单条语句</td><td>只有一条语句时花括号可省；统一加更安全</td></tr>
+      <tr><td><code>else if</code> / <code>else</code></td><td>再给一个条件，或其余全部情况</td><td>自上而下第一个成立的分支执行；不加大括号时 <code>else</code> 与最近的 <code>if</code> 配对</td></tr>
+    </tbody>
+  </table>
+  <pre><code class="language-c">if (speed &gt; 8000)     motor_stop();
+else if (speed &lt; 0)   speed = 0;
+else                  motor_run(speed);</code></pre>
+</section>

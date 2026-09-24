@@ -1,0 +1,8 @@
+<section><div class="slide-head"><h2 class="slide-title">IRQHandler 到用户回调</h2><p class="lead">HAL 把硬件入口、通用处理和业务逻辑分成三层，便于多个引脚共用处理流程。</p></div><img class="schematic" src="img/hal-callback-flow.png" alt="HAL 中断回调层次"><div class="photo-caption">硬件 IRQHandler 调用 HAL 公用处理函数，随后进入用户回调</div><div class="two-code"><div class="codebox"><pre><code>void EXTI0_IRQHandler(void)
+{
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
+}</code></pre></div><div class="codebox"><pre><code>void HAL_GPIO_EXTI_Callback(uint16_t pin)
+{
+  if (pin == GPIO_PIN_0)
+    key_event = true;
+}</code></pre></div></div><div class="error-box">HAL 处理函数已经检查并清除 EXTI 挂起标志。IRQHandler 中不要在调用它之后再次手动清除同一标志。</div></section>

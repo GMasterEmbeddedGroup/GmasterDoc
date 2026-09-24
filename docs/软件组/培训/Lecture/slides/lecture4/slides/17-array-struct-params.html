@@ -1,0 +1,10 @@
+<section><div class="slide-head"><h2 class="slide-title">数组、结构体与多结果接口</h2><p class="lead">函数只能返回一个值；结果不止一个，或者对象较大时，用输入指针加输出指针的接口。</p></div><pre><code class="language-c">typedef struct { int min; int max; } Range;
+
+void measure_range(const int data[], size_t count, Range *out) {
+    out->min = data[0];
+    out->max = data[0];
+    for (size_t i = 1; i &lt; count; ++i) {
+        if (data[i] &lt; out->min) out->min = data[i];
+        if (data[i] &gt; out->max) out->max = data[i];
+    }
+}</code></pre><p><code>data</code> 只读，用 <code>const</code> 说明函数不会修改它；<code>out</code> 指向调用方准备的结果位置。</p></section>

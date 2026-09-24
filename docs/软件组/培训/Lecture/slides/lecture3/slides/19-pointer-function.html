@@ -1,6 +1,6 @@
 <section>
   <div class="slide-head"><h2 class="slide-title">函数指针</h2><p class="lead">函数也有地址；函数指针让“调用哪段逻辑”变成可传递的数据。</p></div>
-  <div class="codebox"><pre><code>typedef void (*EventCallback)(int event);
+  <div class="codebox"><pre><code class="language-c">typedef void (*EventCallback)(int event);
 
 void on_button(int event) {
     printf("button: %d\n", event);

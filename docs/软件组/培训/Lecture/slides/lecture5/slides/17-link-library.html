@@ -1,0 +1,4 @@
+<section><div class="slide-head"><h2 class="slide-title">target_link_libraries：声明依赖</h2><p class="lead">应用调用 calc 中的函数，就显式链接 calc 目标。</p></div><div class="codebox"><div class="codebox-head"><span class="cb-file">顶层 CMakeLists.txt</span></div><pre><code>add_subdirectory(lib)
+add_executable(app src/main.c)
+
+target_link_libraries(app PRIVATE calc)</code></pre></div><div class="pipeline"><div class="node"><b>calc.c</b>编译</div><span class="arrow">→</span><div class="node"><b>calc</b>静态库</div><span class="arrow">→</span><div class="node hot"><b>app</b>链接 calc</div></div><div class="callout"><b>不要硬写库文件路径。</b>链接 CMake 目标后，顺序、位置和传递使用要求都由 CMake 处理。</div></section>

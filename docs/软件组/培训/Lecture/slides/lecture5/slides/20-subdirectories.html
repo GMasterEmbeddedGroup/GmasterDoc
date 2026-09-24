@@ -1,0 +1,10 @@
+<section><div class="slide-head"><h2 class="slide-title">add_subdirectory：拆分多目录工程</h2><p class="lead">顶层文件描述模块关系，各子目录维护自己的目标。</p></div><div class="two-code"><div class="codebox"><div class="codebox-head"><span class="cb-file">顶层 CMakeLists.txt</span></div><pre><code>cmake_minimum_required(VERSION 3.20)
+project(calc_demo LANGUAGES C)
+
+add_subdirectory(lib)
+add_executable(app src/main.c)
+target_link_libraries(app PRIVATE calc)</code></pre></div><div class="codebox"><div class="codebox-head"><span class="cb-file">lib/CMakeLists.txt</span></div><pre><code>add_library(calc STATIC calc.c)
+target_include_directories(calc
+    PUBLIC ${PROJECT_SOURCE_DIR}/include
+)
+target_compile_features(calc PUBLIC c_std_11)</code></pre></div></div><div class="callout"><b>顺序有意义：</b>先进入 lib 创建 calc，再让 app 链接 calc。</div></section>

@@ -1,0 +1,11 @@
+Lecture 4 课件配图出处与许可
+================================
+
+george-boole.jpg
+  内容：George Boole 肖像（1847 年铅笔画，像主 32 岁，画上原题 "George Boole Aetatis Suae 32"）
+  作者：未知画家（Unknown author, 1847）
+  来源：Wikimedia Commons
+        https://commons.wikimedia.org/wiki/File:George_Boole_by_unknown_artist_1847.jpg
+        原始收藏：National Portrait Gallery（NPG）
+  许可：Public domain（公有领域，1847 年作品，版权已过期）
+  处理：仅按原图下载，未作裁剪或修改；幻灯片上按 240px 高度等比缩放显示。

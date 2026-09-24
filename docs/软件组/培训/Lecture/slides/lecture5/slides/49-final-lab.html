@@ -1,0 +1,8 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">综合实操与参考答案</h2><p class="lead">需求：为 calc 增加减法函数，在独立分支完成构建验证，并准备可评审的提交。</p></div>
+  <div class="explain-grid">
+    <div class="lab"><h3>任务步骤</h3><ol><li>从最新 main 创建 <span class="mono">dev/calc-sub</span>。</li><li>在 calc.h 声明，在 calc.c 实现 <span class="mono">sub_int</span>。</li><li>修改 main.c，输出 <span class="mono">5 - 3 = 2</span>。</li><li>运行 Preset、构建和程序，再检查 Git 差异。</li></ol><div class="answer-box"><b>核心代码：</b><span class="mono">int sub_int(int left, int right) { return left - right; }</span></div></div>
+    <div class="terminal"><span class="prompt">$</span> git switch -c dev/calc-sub<br><span class="prompt">$</span> cmake --preset debug<br><span class="prompt">$</span> cmake --build build/debug<br><span class="prompt">$</span> ./build/debug/calc_demo.exe<br><span class="ok">2 + 3 = 5<br>5 - 3 = 2<br>trace: calculations completed</span><br><span class="prompt">$</span> git diff<br><span class="prompt">$</span> git add include/calc.h lib/calc.c src/main.c<br><span class="prompt">$</span> git diff --staged<br><span class="prompt">$</span> git commit -m "add integer subtraction"</div>
+  </div>
+  <div class="callout"><b>提交前检查清单：</b>输出正确；build/ 未进入仓库；staged diff 只含本需求；提交信息说明结果；PR 描述列出构建和运行命令。</div>
+</section>

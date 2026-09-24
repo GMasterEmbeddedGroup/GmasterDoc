@@ -1,0 +1,3 @@
+<section><div class="slide-head"><h2 class="slide-title">端口、引脚与 APB2 时钟</h2><p class="lead">GPIOA、GPIOB、GPIOC 是独立外设，每个端口最多包含 16 个引脚。</p></div><div class="codebox"><pre><code>RCC-&gt;APB2ENR |= RCC_APB2ENR_IOPCEN; // GPIOC 时钟
+// 或 HAL 宏
+__HAL_RCC_GPIOC_CLK_ENABLE();</code></pre></div><div class="explain"><p>外设时钟关闭时，CPU 写 GPIO 配置不会得到预期效果。CubeMX 生成的 <span class="mono">MX_GPIO_Init()</span> 会先开启端口时钟。</p><p>PA5 表示端口 A 的第 5 位，不等于封装第 5 脚。物理脚号必须查 LQFP48 pinout。</p></div></section>

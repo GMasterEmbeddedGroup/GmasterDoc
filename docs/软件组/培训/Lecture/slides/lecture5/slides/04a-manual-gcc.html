@@ -1,0 +1,5 @@
+<section><div class="slide-head"><h2 class="slide-title">手写编译命令为什么难以维护</h2><p class="lead">一个源文件时，直接调用 GCC 很简单；工程增长后，同一条命令会同时承担文件清单、选项、依赖和链接顺序。</p></div><div class="explain-grid"><div><div class="codebox"><div class="codebox-head"><span class="cb-file">只有 main.c</span></div><pre><code>gcc main.c -o app.exe</code></pre></div><div class="codebox"><div class="codebox-head"><span class="cb-file">增加模块以后</span></div><pre><code>gcc -std=c11 -Wall
+  -Iinclude
+  src/main.c lib/calc.c
+  -DAPP_VERSION=4
+  -o app.exe</code></pre></div></div><div class="explain"><h3>工程增长带来的问题</h3><p><b>命令越来越长：</b>每个源文件、头文件目录和宏都要人工维护。</p><p><b>重复编译：</b>只改一个文件，手写命令仍可能重新编译全部源码。</p><p><b>平台不同：</b>Windows、Linux 与 STM32 使用的编译器和参数不同。</p><p><b>团队难以统一：</b>口头告诉同伴一串命令，很容易漏参数或使用错误版本。</p></div></div><div class="callout"><b>CMake 的作用：</b>把“工程由哪些目标组成、目标依赖什么”写成可提交的配置，再为当前平台生成正确的构建规则。</div></section>

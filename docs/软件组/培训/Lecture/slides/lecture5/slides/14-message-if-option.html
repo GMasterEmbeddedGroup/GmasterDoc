@@ -1,0 +1,6 @@
+<section><div class="slide-head"><h2 class="slide-title">message、if 与 option</h2><p class="lead">用选项表达可切换功能，用消息显示关键配置。</p></div><div class="codebox"><div class="codebox-head"><span class="cb-file">CMakeLists.txt</span></div><pre><code>option(ENABLE_TRACE "Print debug trace" OFF)
+
+if(ENABLE_TRACE)
+    message(STATUS "Trace enabled")
+    target_compile_definitions(app PRIVATE ENABLE_TRACE=1)
+endif()</code></pre></div><div class="terminal"><span class="prompt">$</span> cmake -S . -B build -DENABLE_TRACE=ON<br>-- Trace enabled</div><div class="callout"><b>职责分开：</b><span class="mono">option</span> 定义用户配置，<span class="mono">if</span> 控制 CMake 语句，编译宏再传给 C 代码。</div></section>

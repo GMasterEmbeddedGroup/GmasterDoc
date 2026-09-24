@@ -1,0 +1,7 @@
+<section><div class="slide-head"><h2 class="slide-title">声明与定义的分工</h2><p class="lead">头文件放声明，源文件放定义；<code>extern</code> 表示定义在其他翻译单元，由链接器解析。</p></div><pre><code class="language-c">/* motor.h：声明 */
+extern int motor_start(void);
+
+/* motor.c：定义 */
+int motor_start(void) {
+    return 0;
+}</code></pre><p>函数声明里的 <code>extern</code> 通常可以省略，函数默认具有外部链接。可写全局变量要避免跨文件共享，否则很难追踪它在什么时刻被谁修改。</p><div class="callout tip"><b>惯例：</b>头文件只公开函数；需要共享状态时，由模块提供读取、修改和复位函数。</div></section>

@@ -1,13 +1,13 @@
 <section>
   <div class="slide-head"><h2 class="slide-title">检测、转换与协议</h2><p class="lead">协议规定字节顺序，代码按字节显式组装，避免依赖主机布局。</p></div>
   <div class="compare">
-    <div><h4>运行时观察</h4><div class="codebox"><pre><code>uint16_t x = 0x0102;
+    <div><h4>运行时观察</h4><div class="codebox"><pre><code class="language-c">uint16_t x = 0x0102;
 uint8_t first;
 memcpy(&amp;first, &amp;x, 1);
 
 puts(first == 0x02
      ? "little" : "big");</code></pre></div></div>
-    <div><h4>读取大端 16 位</h4><div class="codebox"><pre><code>uint16_t read_be16(const uint8_t *p) {
+    <div><h4>读取大端 16 位</h4><div class="codebox"><pre><code class="language-c">uint16_t read_be16(const uint8_t *p) {
     return ((uint16_t)p[0] &lt;&lt; 8)
          |  (uint16_t)p[1];
 }</code></pre></div></div>

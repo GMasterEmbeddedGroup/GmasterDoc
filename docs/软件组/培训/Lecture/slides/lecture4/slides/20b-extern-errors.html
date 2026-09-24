@@ -1,0 +1,12 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">链接错误的排查</h2><p class="lead">编译通过但链接失败时，先分清是缺少定义还是重复定义。</p></div>
+  <table class="dense">
+    <thead><tr><th>报错信息</th><th>原因</th><th>处理</th></tr></thead>
+    <tbody>
+      <tr><td><code>undefined reference to 'x'</code></td><td>只有声明没有定义，或定义所在的源文件没有参与链接</td><td>补上定义，或把该源文件加入目标</td></tr>
+      <tr><td><code>multiple definition of 'x'</code></td><td>变量定义写在头文件里，被多个源文件包含</td><td>头文件改成声明，定义移到一个源文件</td></tr>
+      <tr><td>同名符号冲突</td><td>两个源文件里有同名全局函数或变量</td><td>改名，或加 <code>static</code> 使其只在本文件可见</td></tr>
+    </tbody>
+  </table>
+  <div class="callout"><b>排查顺序：</b>先看报错的名字属于哪个文件，再确认它是声明还是定义，最后核对参与链接的文件清单。</div>
+</section>

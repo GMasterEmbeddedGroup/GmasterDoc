@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 320" role="img" aria-labelledby="mlTitle mlDesc" font-family="system-ui,-apple-system,'Segoe UI','Microsoft YaHei',sans-serif">
+  <title id="mlTitle">程序运行时的内存分布</title>
+  <desc id="mlDesc">从高地址到低地址依次是栈、堆、静态数据段和代码段。函数参数与普通局部变量在栈上，函数返回后这一段回收；static 变量在 .data 或 .bss，程序启动时分配，运行期间一直存在；函数体与只读常量在 .text。</desc>
+  <rect x="0" y="0" width="760" height="320" rx="12" fill="#f7f9fc"/>
+
+  <text x="46" y="22" font-size="15" fill="#5b6470">高地址</text>
+  <path d="M54 30 L54 296" stroke="#9aa2ad" stroke-width="1.5"/>
+  <path d="M54 30 l-4.5 9 h9 z" fill="#9aa2ad"/>
+  <path d="M54 296 l-4.5 -9 h9 z" fill="#9aa2ad"/>
+  <text x="46" y="312" font-size="15" fill="#5b6470">低地址</text>
+
+  <rect x="76" y="28" width="656" height="66" rx="6" fill="#eef6ff" stroke="#bfd4eb"/>
+  <text x="98" y="54" font-size="23" font-weight="700" fill="#14161a">栈 Stack</text>
+  <text x="250" y="54" font-size="19" fill="#3c4650">函数参数与普通局部变量，函数返回后回收</text>
+  <text x="98" y="80" font-size="17" fill="#285f91" font-family="'Cascadia Mono',Consolas,'Courier New',monospace">int speed;  /* 每次调用重新分配 */</text>
+
+  <rect x="76" y="102" width="656" height="46" rx="6" fill="#f1f3f6" stroke="#d8dee9"/>
+  <text x="98" y="130" font-size="23" font-weight="700" fill="#14161a">堆 Heap</text>
+  <text x="250" y="130" font-size="19" fill="#3c4650">malloc / free 分配的内存（本讲不涉及）</text>
+
+  <rect x="76" y="156" width="656" height="88" rx="6" fill="#fdf0f1" stroke="#a2131c" stroke-width="1.5"/>
+  <text x="98" y="184" font-size="23" font-weight="700" fill="#14161a">.data / .bss</text>
+  <text x="250" y="184" font-size="19" font-weight="700" fill="#a2131c">static 变量：程序启动时分配，直到程序结束</text>
+  <text x="98" y="212" font-size="17" fill="#a2131c" font-family="'Cascadia Mono',Consolas,'Courier New',monospace">static int retry_count;        /* 未初始化 → .bss */</text>
+  <text x="98" y="234" font-size="17" fill="#25714c" font-family="'Cascadia Mono',Consolas,'Courier New',monospace">static unsigned int tick = 0;  /* 已初始化 → .data */</text>
+
+  <rect x="76" y="252" width="656" height="44" rx="6" fill="#f4f5f7" stroke="#d8dee9"/>
+  <text x="98" y="278" font-size="23" font-weight="700" fill="#14161a">.text / .rodata</text>
+  <text x="320" y="278" font-size="19" fill="#3c4650">机器指令与只读常量，函数体在这里</text>
+</svg>

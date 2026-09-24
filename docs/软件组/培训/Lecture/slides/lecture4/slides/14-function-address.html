@@ -1,0 +1,6 @@
+<section><div class="slide-head"><h2 class="slide-title">函数名也是一个地址</h2><p class="lead">变量名对应一块数据，函数名对应一段可执行代码；两者都能用地址描述，访问方式不同。</p></div><pre><code class="language-c">int add(int a, int b) {
+    return a + b;
+}
+
+int (*operation)(int, int) = add;
+int result = operation(2, 3);</code></pre><div class="flow"><div class="flow-box"><b><code>add</code></b><span class="fx">函数入口的位置</span></div><span class="flow-arrow">→</span><div class="flow-box"><b><code>operation</code></b><span class="fx">保存这个位置</span></div><span class="flow-arrow">→</span><div class="flow-box is-hi"><b><code>operation(2, 3)</code></b><span class="fx">通过地址调用函数</span></div></div><p>这是回调函数的基础：把要调用的函数地址保存下来，事件发生时通过该地址调用。</p></section>

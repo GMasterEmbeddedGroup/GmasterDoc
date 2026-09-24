@@ -1,6 +1,6 @@
 <section>
   <div class="slide-head"><h2 class="slide-title">指针的定义</h2><p class="lead"><b>定义：</b>指针是保存内存地址的变量。指针的类型说明该地址处存放什么类型的数据。</p></div>
-  <div class="memory-row large"><span class="mem dim">0x2000</span><span class="mem dim">0x2001</span><span class="mem i">0x2002<br><b>42</b></span><span class="mem dim">0x2003</span><span class="mem dim">0x2004</span></div>
+  <div class="memory-row large"><span class="mem dim">0x2000</span><span class="mem dim">0x2001</span><span class="mem i"><span>0x2002<br><b>42</b></span></span><span class="mem dim">0x2003</span><span class="mem dim">0x2004</span></div>
   <div class="flow"><div class="flow-box"><b><span class="mono">uint8_t value = 42</span></b><span class="fx">地址 0x2002 里存着 42</span></div><span class="flow-arrow">→</span><div class="flow-box is-hi"><b><span class="mono">&amp;value</span></b><span class="fx">得到门牌号 0x2002</span></div><span class="flow-arrow">→</span><div class="flow-box"><b><span class="mono">uint8_t *p</span></b><span class="fx">p 保存 0x2002</span></div></div>
   <div class="memory-hook"><b>记忆点：</b>普通变量存“东西”，指针变量存“门牌号”。<span class="mono">*</span> 会按门牌号找到那件东西。</div>
 </section>

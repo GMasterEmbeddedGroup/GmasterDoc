@@ -1,0 +1,6 @@
+<section><div class="slide-head"><h2 class="slide-title">封装低电平有效 LED</h2><p class="lead">把硬件极性封装在驱动层，业务代码只表达“开”或“关”。</p></div><div class="codebox"><pre><code>void Led_Set(bool on) {
+    HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin,
+        on ? GPIO_PIN_RESET : GPIO_PIN_SET);
+}
+
+Led_Set(true);   // 无需记忆 PC13 极性</code></pre></div><div class="callout">同样的方法适用于低电平有效的片选、复位、故障和使能信号。</div></section>

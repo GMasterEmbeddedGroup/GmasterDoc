@@ -1,0 +1,6 @@
+<section><div class="slide-head"><h2 class="slide-title">交叉编译工具链文件</h2><p class="lead">PC 上运行 CMake 和编译器，生成给 STM32 Cortex-M 执行的代码。</p></div><div class="codebox"><div class="codebox-head"><span class="cb-file">cmake/gcc-arm-none-eabi.cmake</span></div><pre><code>set(CMAKE_SYSTEM_NAME Generic)
+set(CMAKE_SYSTEM_PROCESSOR arm)
+
+set(CMAKE_C_COMPILER arm-none-eabi-gcc)
+set(CMAKE_CXX_COMPILER arm-none-eabi-g++)
+set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)</code></pre></div><div class="terminal">cmake -S . -B build/stm32 -G Ninja \<br>  -DCMAKE_TOOLCHAIN_FILE=cmake/gcc-arm-none-eabi.cmake</div><div class="callout"><b>工具链文件要在第一次配置时指定。</b>已经用本机 GCC 配置过的 build 目录不要直接改成 ARM 编译器。</div></section>

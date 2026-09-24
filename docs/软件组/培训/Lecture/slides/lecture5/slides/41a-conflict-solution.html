@@ -1,0 +1,5 @@
+<section><div class="slide-head"><h2 class="slide-title">冲突解决实例</h2><p class="lead">main 希望默认关闭跟踪，dev/trace 希望默认开启。解决冲突不是机械选择一边，而是确定项目真正需要的最终内容。</p></div><div class="explain-grid"><div><div class="codebox"><div class="codebox-head"><span class="cb-file">编辑后的最终内容</span></div><pre><code># 默认关闭，调试时用 -D 开启
+option(ENABLE_TRACE
+    "Print debug trace"
+    OFF
+)</code></pre></div><div class="terminal"><span class="prompt">$</span> git add CMakeLists.txt<br><span class="prompt">$</span> cmake -S . -B build \<br>  -DENABLE_TRACE=ON<br><span class="prompt">$</span> cmake --build build<br><span class="prompt">$</span> git commit</div></div><div class="explain"><h3>处理顺序</h3><p><b>1. 理解两边意图：</b>默认值应保持 OFF，但仍允许开发者显式开启。</p><p><b>2. 写出最终文件：</b>删除所有冲突标记，不能把 <span class="mono">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> 留进源码。</p><p><b>3. 验证行为：</b>分别检查默认配置与开启 Trace 的构建。</p><p><b>4. 标记解决：</b><span class="mono">git add</span> 表示你已经确认最终内容，再完成合并提交。</p></div></div><div class="error-box"><b>需要退出时：</b>尚未完成合并可用 <span class="mono">git merge --abort</span> 返回合并前。不要用 reset --hard 代替，因为它还可能丢弃原有未提交修改。</div></section>

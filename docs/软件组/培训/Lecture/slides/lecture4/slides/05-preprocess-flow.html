@@ -1,0 +1,6 @@
+<section><div class="slide-head"><h2 class="slide-title">预处理阶段的工作</h2><p class="lead">预处理器只处理以 <code>#</code> 开头的指令：展开头文件和宏、按条件保留代码，然后把结果交给编译器。</p></div><pre><code class="language-c">#include "motor.h"
+#define MOTOR_LIMIT 8000
+
+#if BOARD_REV == 2
+    motor_enable_new_driver();
+#endif</code></pre><div class="flow"><div class="flow-box"><b>源文件</b><span class="fx">.c 与 .h</span></div><span class="flow-arrow">→</span><div class="flow-box is-hi"><b>预处理</b><span class="fx">展开、替换、选择</span></div><span class="flow-arrow">→</span><div class="flow-box"><b>编译</b><span class="fx">检查 C 语法</span></div></div><p class="small">宏不占用运行时内存，条件编译不生成运行时判断；两者都在预处理阶段完成。</p></section>

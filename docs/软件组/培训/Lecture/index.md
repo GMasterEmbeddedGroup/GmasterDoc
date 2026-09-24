@@ -13,12 +13,16 @@
 | **Lecture 1** | [从零开始电控开发](./Lecture1.md) | 电控导论（以一台步兵机器人为例、培养计划与学习路线图）、开发平台与工作流（每个工具解决什么问题、编译原理、裸机与交叉编译）、VS Code 与 STM32CubeMX 的安装、用 CubeMX 跑通第一个工程 | [打开课件](slides/lecture1/index.html) |
 | **Lecture 2** | [C 语言第一次培训](./Lecture2.md) | 从 Hello World 开始：程序结构与基本语法、数据类型与运算符、二进制与进制转换（除 2 取余 / 位权相加 / 补码 / 位运算）、函数（定义调用 / 作用域 / 多文件 / 递归）、标准输入输出（printf 与 scanf） | [打开课件](slides/lecture2/index.html) |
 | **Lecture 3** | [C 语言程序设计（二）](./Lecture3.md) | 结构体、内存对齐、指针、大小端、中断与回调函数；以 STM32F103 的“点灯大师”实战收尾 | [打开课件](slides/lecture3/index.html) |
+| **Lecture 4** | [C 语言程序设计（三）](./Lecture4.md) | 流程控制与作用域、预处理、函数与模块、联合体与枚举、`volatile` 以及复杂表达式的数据流分析 | [打开课件](slides/lecture4/index.html) |
+
+> Lecture 5–6 正在整理；国庆期间可以配合学习 [C语言国庆假期学习](../C语言国庆假期学习/index.md)。
 
 ---
 
 ## 配套实操
 
 - [用 CMake 新建 x86 工程并通过 Git 提交](./用cmake新建x86工程并通过git提交.md) —— 在电脑上编译运行 C 程序，完成第一次 Git 本地提交
+- [STM32F103 中断教程](./中断教程.md) —— 从中断基本概念、NVIC、EXTI 与 AFIO 路由讲到 HAL 配置、非阻塞消抖和完整排错流程
 - [使用 STM32CubeMX 新建工程](./Lecture1小作业.md) —— Lecture 1 配套：CubeMX 安装、工程配置、代码生成与交叉编译（以 STM32F103C8T6 为例）
 - [点灯大师](./点灯大师.md) —— 在新建工程后完成板载 LED 点亮、烧录与外接 LED 练习
 - [Lesson1 开发环境配置](../Lesson1%20开发环境配置.md) —— 本地开发环境搭建（工具链安装问题优先查这里）
@@ -34,4 +38,4 @@
 
 ---
 
-> **作者**: [Metalxiaoxiao](https://github.com/Metalxiaoxiao) | **修改日期**: 2026-09-20
+> **作者**: [Metalxiaoxiao](https://github.com/Metalxiaoxiao) | **修改日期**: 2026-09-25

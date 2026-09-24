@@ -1,0 +1,9 @@
+<section><div class="slide-head"><h2 class="slide-title">编译器优化与 volatile 的必要性</h2><p class="lead">编译器按当前翻译单元内可见的读写做优化，无法预知中断在运行期间写入标志位。</p></div><div class="split"><div><h3>普通变量</h3><pre><code class="language-c">bool ready;
+
+while (!ready) {
+    /* 编译器可能反复使用旧结果 */
+}</code></pre></div><div><h3>易变变量</h3><pre><code class="language-c">volatile bool ready;
+
+while (!ready) {
+    /* 每次循环都重新读取 ready */
+}</code></pre></div></div><p><code>volatile</code> 要求编译器保留每一次读写，不做省略或合并。</p></section>

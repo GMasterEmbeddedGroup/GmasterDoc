@@ -70,6 +70,7 @@
 
 <script src="slides/manifest.js?v=20260920c"></script>
 <script src="vendor/reveal.js/reveal.js"></script>
+<script src="vendor/reveal.js/plugin/highlight/highlight.js"></script>
 <script src="deck.js"></script>
 <script>
 (function () {
@@ -112,7 +113,7 @@
             overview: false,
             keyboard: false,
             touch: false,
-            plugins: []
+            plugins: [window.RevealHighlight].filter(Boolean)
           });
         } else if (window.Reveal) {
           window.Reveal.sync();

@@ -1,0 +1,7 @@
+<section><div class="slide-head"><h2 class="slide-title">实参与形参：函数拿到的是一份值</h2><p class="lead">调用时写在括号里的叫实参；函数定义里接收它们的变量叫形参。默认情况下，形参是实参值的副本。</p></div><pre><code class="language-c">void add_one(int value) {
+    value = value + 1;
+}
+
+int speed = 100;
+add_one(speed);
+/* speed 仍然是 100 */</code></pre><div class="flow"><div class="flow-box"><b><code>speed</code></b><span class="fx">调用者里的 100</span></div><span class="flow-arrow">→</span><div class="flow-box is-hi"><b><code>value</code></b><span class="fx">函数里得到一份 100</span></div><span class="flow-arrow">→</span><div class="flow-box"><b>修改 value</b><span class="fx">不会回写 speed</span></div></div><p>函数修改形参不会影响调用方的数据，这是值传递的直接结果。</p></section>

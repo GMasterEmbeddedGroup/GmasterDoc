@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="GMaster 电控（软件）组 Lecture 5《CMake 与 Git 的使用》：从构建第一个 CMake 项目到使用 Git 完成团队协作。">
+<title>CMake 与 Git 的使用：Lecture 5 | GMaster</title>
+<link rel="stylesheet" href="../lecture3/vendor/reveal.js/reveal.css">
+<link rel="stylesheet" href="../lecture3/theme.css">
+<link rel="stylesheet" href="../lecture3/deck.css">
+<link rel="stylesheet" href="lecture5.css">
+</head>
+<body>
+<div class="reveal">
+  <img class="brand-logo" src="../lecture3/img/brand-logo.png" alt="GMaster">
+  <img class="brand-corner" src="../lecture3/img/brand-corner.png" alt="">
+  <div class="slides"><section><h2>正在载入课件…</h2></section></div>
+</div>
+<script src="../lecture3/vendor/reveal.js/reveal.js"></script>
+<script src="../lecture3/vendor/reveal.js/plugin/zoom/zoom.js"></script>
+<script src="../lecture3/vendor/reveal.js/plugin/search/search.js"></script>
+<script src="../lecture3/vendor/reveal.js/plugin/notes/notes.js"></script>
+<script src="../lecture3/deck.js"></script>
+<script src="study-notes.js"></script>
+<script>
+(function () {
+  var slidesEl = document.querySelector('.reveal .slides');
+  DeckKit.loadManifest('slides/manifest.js').then(function () {
+    return DeckKit.loadFragments(window.DECK_SLIDES.map(function (s) { return s.file; }), slidesEl);
+  }).then(function () {
+    Lecture5Study.enrich(slidesEl, window.DECK_SLIDES.map(function (s) { return s.file; }));
+    DeckKit.initAll(document);
+    DeckKit.initReveal({ plugins: [window.RevealZoom, window.RevealSearch, window.RevealNotes].filter(Boolean) });
+  }).catch(function (err) {
+    slidesEl.innerHTML = '<section><h2>课件载入失败</h2><p class="mono">' + err.message + '</p><p>请通过 HTTP 访问，不要直接使用 file:// 打开。</p></section>';
+  });
+})();
+</script>
+</body>
+</html>

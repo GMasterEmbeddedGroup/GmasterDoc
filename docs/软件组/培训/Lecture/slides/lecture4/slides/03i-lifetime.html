@@ -1,0 +1,12 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">生命周期：变量活多久</h2><p class="lead">作用域决定名字能不能用，生命周期决定这块存储什么时候存在。</p></div>
+  <table class="dense">
+    <thead><tr><th>种类</th><th>何时创建</th><th>何时消失</th></tr></thead>
+    <tbody>
+      <tr><td>自动变量（块内 <code>int x;</code>）</td><td>进入所在的块</td><td>离开所在的块</td></tr>
+      <tr><td>静态变量（<code>static</code>）</td><td>程序启动时</td><td>程序结束时</td></tr>
+      <tr><td>动态内存（<code>malloc</code>）</td><td>调用 <code>malloc</code> 时</td><td><code>free</code> 之后</td></tr>
+    </tbody>
+  </table>
+  <div class="callout"><b>衔接：</b>后面讲 <code>static</code> 时，区别就在这张表里——自动变量随块消失，静态变量一直存在，所以下一次调用还能读到上次留下的值。</div>
+</section>

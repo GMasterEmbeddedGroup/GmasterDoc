@@ -1,0 +1,4 @@
+<section><div class="slide-head"><h2 class="slide-title">最小 CMakeLists.txt</h2><p class="lead">三条语句已经足够描述一个单文件程序。</p></div><div class="codebox"><div class="codebox-head"><span class="cb-file">CMakeLists.txt</span><span class="cb-tag">命令名不区分大小写，参数通常区分</span></div><pre><code>cmake_minimum_required(VERSION 3.20)
+project(hello_cmake LANGUAGES C)
+
+add_executable(hello main.c)</code></pre></div><div class="deflist"><div><dt>VERSION 3.20</dt><dd>拒绝功能太旧、无法正确解释本项目的 CMake。</dd></div><div><dt>hello_cmake</dt><dd>工程名，会写入 <span class="mono">PROJECT_NAME</span>。</dd></div><div><dt>hello</dt><dd>目标名，也是默认生成的可执行文件名。</dd></div></div></section>

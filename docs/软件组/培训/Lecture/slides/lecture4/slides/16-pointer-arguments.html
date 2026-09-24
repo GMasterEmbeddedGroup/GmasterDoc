@@ -1,0 +1,9 @@
+<section><div class="slide-head"><h2 class="slide-title">需要修改调用方的数据时传地址</h2><p class="lead">地址指出原数据的位置；函数用指针接住地址，通过 <code>*</code> 访问那块数据。</p></div><pre><code class="language-c">void swap_int(int *left, int *right) {
+    int temp = *left;
+    *left = *right;
+    *right = temp;
+}
+
+int a = 3;
+int b = 5;
+swap_int(&amp;a, &amp;b);</code></pre><p><code>&amp;a</code> 取得 <code>a</code> 的地址；<code>left</code> 保存这个地址；<code>*left</code> 就是“该地址里的那个整数”，也就是 <code>a</code> 本身。</p><div class="callout">指针传参仍然是值传递，传的值恰好是地址；函数能改到原数据，是因为地址指向原数据。</div></section>

@@ -1,0 +1,18 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">作用域：名字在哪里可见</h2><p class="lead">变量定义在哪个花括号里，就只能在那个花括号内使用。</p></div>
+  <div class="split">
+    <div><h3>块作用域</h3><pre><code class="language-c">int counter = 0;      /* 文件作用域 */
+
+void tick(void) {
+    int step = 3;     /* 只在 tick 内可见 */
+    counter += step;
+}</code></pre></div>
+    <div><h3>同名遮蔽</h3><pre><code class="language-c">int step = 100;       /* 外层变量 */
+
+void f(void) {
+    int step = 3;     /* 遮蔽外层同名变量 */
+    printf("%d\n", step);   /* 输出 3 */
+}</code></pre></div>
+  </div>
+  <div class="callout"><b>文件作用域：</b>在所有函数之外定义的变量，整个 <code>.c</code> 文件都能访问；要让其他文件使用，需要在头文件里声明（见 <code>extern</code> 一节）。名字够用就好，遮蔽合法但容易看错。</div>
+</section>

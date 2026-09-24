@@ -1,6 +1,6 @@
 <section>
   <div class="slide-head"><h2 class="slide-title">等级 1：轮询闪烁</h2><p class="lead">先确认 GPIO、下载和时钟配置都正常。</p></div>
-  <div class="codebox"><div class="codebox-head"><span class="cb-file">main.c</span><span class="cb-tag">while (1)</span></div><pre><code>while (1) {
+  <div class="codebox"><div class="codebox-head"><span class="cb-file">main.c</span><span class="cb-tag">while (1)</span></div><pre><code class="language-c">while (1) {
     HAL_GPIO_TogglePin(LED_R_GPIO_Port, LED_R_Pin);
     HAL_Delay(500);
 }</code></pre></div>

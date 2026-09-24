@@ -1,0 +1,11 @@
+<section><div class="slide-head"><h2 class="slide-title">.gitignore：不让生成物进入仓库</h2><p class="lead">忽略规则应该和项目一起提交，让每个人得到一致结果。</p></div><div class="two-code"><div class="codebox"><div class="codebox-head"><span class="cb-file">.gitignore</span></div><pre><code># CMake build trees
+/build/
+/out/
+
+# Local user settings
+CMakeUserPresets.json
+.vscode/settings.json
+
+# Editor and OS files
+*.swp
+.DS_Store</code></pre></div><div><div class="terminal"><span class="prompt">$</span> git check-ignore -v build/app.exe</div><div class="callout"><b>已经被跟踪的文件不会因新增规则而自动消失。</b>先确认内容可再生，再用 <span class="mono">git rm --cached &lt;file&gt;</span> 停止跟踪。</div></div></div></section>

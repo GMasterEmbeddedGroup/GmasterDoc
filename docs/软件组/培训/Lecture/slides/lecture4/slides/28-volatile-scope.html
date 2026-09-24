@@ -1,0 +1,6 @@
+<section><div class="slide-head"><h2 class="slide-title">volatile 的适用范围与边界</h2><p class="lead">常见于外设寄存器、中断共享数据和 DMA 缓冲区；它只保证真实访问内存，不保证并发正确。</p></div><table class="dense"><thead><tr><th>场景</th><th>为什么需要它</th><th>还要注意什么</th></tr></thead><tbody><tr><td>外设寄存器</td><td>硬件会自行改变状态位</td><td>遵循芯片手册规定的读写顺序</td></tr><tr><td>ISR 与主循环共享标志</td><td>中断可以随时写入标志</td><td>复合操作是否原子</td></tr><tr><td>DMA 缓冲区</td><td>DMA 绕过 CPU 改内存</td><td>缓存维护、内存屏障和驱动约定</td></tr></tbody></table><pre><code class="language-c">static volatile bool sample_ready;
+
+void DMA_IRQHandler(void) {
+    clear_dma_irq();
+    sample_ready = true;
+}</code></pre><div class="callout warn"><b>原子性：</b><code>counter++</code> 由读、加、写三步组成，即使加上 <code>volatile</code> 也可能被中断插入；需要时使用临界区、原子操作或单写者设计。</div></section>

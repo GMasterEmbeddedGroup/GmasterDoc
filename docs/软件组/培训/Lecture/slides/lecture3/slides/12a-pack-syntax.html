@@ -3,7 +3,7 @@
   <div class="compare">
     <div>
       <h4><span class="mono">#pragma pack</span>：改变后续声明的状态</h4>
-      <div class="codebox"><pre><code>#pragma pack(push, 1)  // 保存旧值，最大对齐量设为 1
+      <div class="codebox"><pre><code class="language-c">#pragma pack(push, 1)  // 保存旧值，最大对齐量设为 1
 typedef struct {
     uint8_t  tag;
     uint32_t value;
@@ -14,7 +14,7 @@ typedef struct {
     </div>
     <div>
       <h4><span class="mono">packed</span>：只标记这个类型</h4>
-      <div class="codebox"><pre><code>typedef struct __attribute__((packed)) {
+      <div class="codebox"><pre><code class="language-c">typedef struct __attribute__((packed)) {
     uint8_t  tag;
     uint32_t value;
     uint16_t crc;

@@ -1,0 +1,11 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">左值与右值</h2><p class="lead">能取地址、能被赋值的是左值；只表示一个计算结果的是右值。</p></div>
+  <pre><code class="language-c">int a = 3;        /* a 是左值：有确定的内存位置 */
+int b = a + 1;    /* a + 1 是右值：算完即止，没有地址 */
+
+&amp;a;               /* 合法：左值有地址 */
+/* &amp;(a + 1); */   /* 非法：右值没有地址 */
+
+a = 5;            /* 赋值左侧必须是左值 */</code></pre>
+  <ol class="rule-list"><li><b>左值：</b>指向一块存储的对象，例如变量、数组元素、结构体成员、<code>*p</code> 解引用。</li><li><b>右值：</b>表达式的计算结果、字面量、函数返回值，只提供数值，不能出现在赋值左侧。</li><li><b>两个判据：</b>赋值号左边必须是左值；<code>&amp;</code> 只能作用在左值上——这条在后面讲指针时会反复用到。</li></ol>
+</section>

@@ -1,0 +1,5 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">程序运行时的内存分布</h2><p class="lead">变量落在哪一段由存储期决定：普通局部变量在栈上，<code>static</code> 变量在 <code>.data</code> 或 <code>.bss</code>。</p></div>
+  <img src="img/memory-layout.svg" alt="程序内存分布示意图：从高地址到低地址依次是栈、堆、静态数据段（.data / .bss）与代码段（.text）" style="display:block;width:100%;margin:0.15em auto 0">
+  <div class="callout"><b>判断方法：</b>每次函数调用都重新创建、返回即失效 → 栈；程序启动时就分配、直到退出都在 → <code>.data</code> 或 <code>.bss</code>。</div>
+</section>

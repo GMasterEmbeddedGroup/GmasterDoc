@@ -1,0 +1,12 @@
+<section><div class="slide-head"><h2 class="slide-title">回调函数与非阻塞消抖</h2><p class="lead">ISR 只记录事件和时间，主循环等待电平稳定后再执行业务动作。</p></div><div class="two-code"><div class="codebox"><pre><code>static volatile uint32_t key_tick;
+
+void HAL_GPIO_EXTI_Callback(uint16_t pin)
+{
+  if (pin == GPIO_PIN_0)
+    key_tick = HAL_GetTick();
+}</code></pre></div><div class="codebox"><pre><code>if (key_tick &amp;&amp;
+    HAL_GetTick()-key_tick &gt;= 20) {
+  key_tick = 0;
+  if (HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_0)==0)
+    HAL_GPIO_TogglePin(GPIOC,GPIO_PIN_13);
+}</code></pre></div></div><div class="why-line"><b>为什么不延时</b><span>ISR 内长时间等待会推迟其他中断，系统节拍也可能受影响。</span></div><div class="why-line"><b>为什么再读取</b><span>20 ms 后确认按键仍为低，才能把抖动边沿与真实按下区分开。</span></div><div class="error-box"><span class="mono">volatile</span> 要求编译器每次读取共享变量，但不能自动保证多步操作的原子性。</div></section>

@@ -1,0 +1,15 @@
+<section><div class="slide-head"><h2 class="slide-title">static 与 extern 划分模块边界</h2><p class="lead">模块只公开外部需要的功能，具体实现留在自己的 <code>.c</code> 文件里。</p></div><div class="split"><div><h3>motor.c</h3><pre><code class="language-c">static int retry_count;
+
+static void reset_bus(void) {
+    retry_count = 0;
+}
+
+int motor_start(void) {
+    reset_bus();
+    return 0;
+}</code></pre></div><div><h3>motor.h</h3><pre><code class="language-c">#ifndef MOTOR_H
+#define MOTOR_H
+
+int motor_start(void);
+
+#endif</code></pre></div></div><p><code>static</code> 让 <code>retry_count</code> 和 <code>reset_bus</code> 只在 <code>motor.c</code> 内可见。其他文件通过头文件调用 <code>motor_start</code>，但不需要知道它内部怎样复位总线。</p></section>

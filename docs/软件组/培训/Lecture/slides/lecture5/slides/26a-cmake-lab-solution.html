@@ -1,0 +1,16 @@
+<section><div class="slide-head"><h2 class="slide-title">CMake 练习答案</h2><p class="lead">答案把 calc 建成独立库。app 只列自己的 main.c，再通过链接取得 calc 的实现和公开头文件路径。</p></div><div class="two-code"><div class="codebox"><div class="codebox-head"><span class="cb-file">顶层 CMakeLists.txt</span></div><pre><code>cmake_minimum_required(VERSION 3.20)
+project(calc_demo LANGUAGES C)
+
+add_subdirectory(lib)
+add_executable(calc_demo src/main.c)
+target_link_libraries(calc_demo
+    PRIVATE calc
+)</code></pre></div><div class="codebox"><div class="codebox-head"><span class="cb-file">lib/CMakeLists.txt</span></div><pre><code>add_library(calc STATIC calc.c)
+
+target_include_directories(calc
+    PUBLIC ${PROJECT_SOURCE_DIR}/include
+)
+
+target_compile_features(calc
+    PUBLIC c_std_11
+)</code></pre></div></div><div class="answer-box"><h3>为什么这样能工作</h3><p><span class="mono">add_subdirectory</span> 先创建 calc；app 链接 calc 后，CMake 安排构建顺序。PUBLIC 头文件路径沿依赖关系传给 app，所以 main.c 能找到 calc.h。</p><p><b>验证：</b><span class="mono">cmake -S . -B build -G Ninja</span>，再运行 <span class="mono">cmake --build build</span> 和生成的程序，输出应为 <span class="mono">2 + 3 = 5</span>、<span class="mono">5 - 3 = 2</span>。</p></div></section>

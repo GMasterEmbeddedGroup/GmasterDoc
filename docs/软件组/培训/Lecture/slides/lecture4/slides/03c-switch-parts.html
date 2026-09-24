@@ -1,0 +1,12 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">switch 语句的组成部分</h2><p class="lead"><code>switch</code> 把一个整型表达式的值与若干常量逐一比较。</p></div>
+  <table class="dense">
+    <thead><tr><th>组成部分</th><th>写什么</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td><code>switch (表达式)</code></td><td>整型或枚举值</td><td>不能用浮点与字符串，<code>char</code> 可以；与 <code>if</code> 不同，它只比较相等</td></tr>
+      <tr><td><code>case 常量:</code></td><td>编译期常量</td><td>不能写变量；同一个 <code>switch</code> 里不能重复</td></tr>
+      <tr><td><code>break;</code> / <code>default:</code></td><td>结束分支；其余情况</td><td>漏写 <code>break</code> 会继续执行下一个 <code>case</code>（fallthrough）；<code>default</code> 位置任意，建议保留</td></tr>
+    </tbody>
+  </table>
+  <div class="callout warn"><b>只比较相等：</b><code>switch</code> 不能写范围或浮点条件，这类判断仍然要用 <code>if</code>；完整实例见下一页。</div>
+</section>

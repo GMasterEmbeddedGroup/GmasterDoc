@@ -1,0 +1,5 @@
+<section><div class="slide-head"><h2 class="slide-title">用预定义宏记录调用位置</h2><p class="lead">预定义宏在预处理时替换成当前文件、当前函数和当前行号，日志宏因此能带上出错位置。</p></div><pre><code class="language-c">#define LOG_INFO(fmt, ...) \
+    printf("[%s:%d][%s] " fmt "\n", \
+           __FILE__, __LINE__, __func__, ##__VA_ARGS__)
+
+LOG_INFO("speed = %u", speed);</code></pre><div class="outbox">[motor.c:42][motor_update] speed = 1200</div><p>宏只负责补齐上下文，格式化和输出仍由 <code>printf</code> 完成，所以每条日志格式一致。</p></section>

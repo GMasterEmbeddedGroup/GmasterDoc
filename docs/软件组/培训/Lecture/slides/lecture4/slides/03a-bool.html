@@ -1,0 +1,12 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">布尔值与真值</h2><p class="lead">「真 / 假」的写法来自 19 世纪的布尔代数：布尔把逻辑推理写成 0 与 1 的运算，C 沿用了这个约定——0 为假，非 0 为真。</p></div>
+  <div class="split">
+    <div><figure style="margin:0"><img src="img/george-boole.jpg" alt="George Boole 像，1847 年铅笔画" style="display:block;height:230px;margin:0 auto"><figcaption style="margin-top:.5em;text-align:center;font-size:.58em;color:#6b7280">乔治·布尔（1815–1864），1847 年像，公有领域</figcaption></figure></div>
+    <div><pre><code class="language-c">#include &lt;stdbool.h&gt;
+
+bool ready = false;        /* bool / true / false：C99 */
+bool same  = (count == 3); /* 比较结果：0 或 1 */
+if (count) { }             /* 非 0 即真 */</code></pre></div>
+  </div>
+  <ol class="rule-list"><li><b>比较与逻辑运算的结果是 <code>int</code>：</b>成立为 <code>1</code>，不成立为 <code>0</code>；<code>bool</code> 只是这个约定的别名。</li><li><b>「真」不只有 1：</b><code>if (-1)</code>、<code>if (0.1f)</code> 都成立，判断条件时别写 <code>if (x == 1)</code>。</li><li><b>赋值也返回数值：</b><code>if (x = 1)</code> 是赋值、条件恒真，这是 <code>=</code> 与 <code>==</code> 混用后最典型的错误。</li></ol>
+</section>

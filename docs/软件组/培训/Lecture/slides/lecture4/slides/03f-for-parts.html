@@ -1,0 +1,14 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">for 括号里的三块内容</h2><p class="lead"><code>for (初始化 ; 循环条件 ; 迭代表达式)</code>：三部分各负责一件事，都可以留空。</p></div>
+  <pre><code class="language-c">for (int i = 0; i &lt; count; ++i, ++total) {
+    sum += data[i];
+}</code></pre>
+  <table class="dense">
+    <thead><tr><th>位置</th><th>什么时候执行</th><th>写什么</th></tr></thead>
+    <tbody>
+      <tr><td>初始化</td><td>进入循环之前，只执行一次</td><td>声明并给计数变量初值，如 <code>int i = 0</code>；留空表示不需要</td></tr>
+      <tr><td>循环条件</td><td>每轮循环体之前判断</td><td>表达式为 0 时结束循环；留空表示恒真，等价于 <code>while (1)</code></td></tr>
+      <tr><td>迭代表达式</td><td>每轮循环体之后执行</td><td>更新计数变量，如 <code>++i</code>；用逗号可同时更新多个，如 <code>++i, --j</code></td></tr>
+    </tbody>
+  </table>
+</section>

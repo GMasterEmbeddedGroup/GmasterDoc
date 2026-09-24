@@ -1,0 +1,6 @@
+<section><div class="slide-head"><h2 class="slide-title">target_sources：补充目标源码</h2><p class="lead">目标可以先创建，再按模块追加源码。</p></div><div class="codebox"><div class="codebox-head"><span class="cb-file">CMakeLists.txt</span></div><pre><code>add_executable(app src/main.c)
+
+target_sources(app PRIVATE
+    src/cli.c
+    src/report.c
+)</code></pre></div><table class="scope-table"><thead><tr><th>作用域</th><th>影响谁</th></tr></thead><tbody><tr><td>PRIVATE</td><td>只影响当前目标，普通实现文件通常选它</td></tr><tr><td>PUBLIC</td><td>当前目标和依赖它的目标</td></tr><tr><td>INTERFACE</td><td>当前目标不使用，只交给依赖它的目标</td></tr></tbody></table><div class="callout"><b>先会用 PRIVATE。</b>PUBLIC 和 INTERFACE 在头文件路径与库依赖中更容易理解。</div></section>

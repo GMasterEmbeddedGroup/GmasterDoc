@@ -1,0 +1,3 @@
+<section><div class="slide-head"><h2 class="slide-title">版本要求与工程声明</h2><p class="lead">顶层文件先确定 CMake 行为，再声明工程使用哪些语言。</p></div><div class="grid grid-2"><div class="card"><h4><span class="mono">cmake_minimum_required</span></h4><p>必须放在顶层文件开头。版本写团队实际支持的最低版本，不要机械追最新。</p></div><div class="card"><h4><span class="mono">project</span></h4><p>启用指定语言并检测编译器。纯 C 工程写 <span class="mono">LANGUAGES C</span>，C/C++ 混合工程再加 CXX。</p></div></div><div class="codebox"><div class="codebox-head"><span class="cb-file">可读取的内置变量</span></div><pre><code>message(STATUS "project = ${PROJECT_NAME}")
+message(STATUS "source  = ${PROJECT_SOURCE_DIR}")
+message(STATUS "build   = ${PROJECT_BINARY_DIR}")</code></pre></div><p class="refline">参考：CMake 官方命令文档 cmake_minimum_required() 与 project()</p></section>

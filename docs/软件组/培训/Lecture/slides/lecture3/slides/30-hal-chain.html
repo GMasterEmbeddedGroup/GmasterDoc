@@ -7,7 +7,7 @@
     <div class="flow-box"><b class="mono">HAL_GPIO_EXTI_<br>IRQHandler</b><span class="fx">HAL 清标志</span></div><span class="flow-arrow">→</span>
     <div class="flow-box is-hi"><b class="mono">HAL_GPIO_EXTI_<br>Callback</b><span class="fx">用户代码</span></div>
   </div>
-  <div class="codebox"><pre><code>void EXTI15_10_IRQHandler(void) {
+  <div class="codebox"><pre><code class="language-c">void EXTI15_10_IRQHandler(void) {
     HAL_GPIO_EXTI_IRQHandler(USER_BTN_Pin);
 }
 

@@ -6,7 +6,7 @@
 
   <div class="codebox">
     <div class="codebox-head"><span class="cb-file">bits.c</span><span class="cb-tag">点灯与熄灯</span></div>
-<pre><code>#define LED_PIN  5              // 第 5 位对应 PA5
+<pre><code class="language-c">#define LED_PIN  5              // 第 5 位对应 PA5
 uint16_t odr = 0x0000;          // 假装这是 GPIOA 的输出寄存器
 
 odr |=  (1 &lt;&lt; LED_PIN);         // 置 1：把第 5 位置为高电平，点亮 LED

@@ -1,0 +1,9 @@
+<section><div class="slide-head"><h2 class="slide-title">变量、字符串与列表</h2><p class="lead">CMake 变量本质上保存字符串；分号分隔的字符串可以作为列表处理。</p></div><div class="codebox"><div class="codebox-head"><span class="cb-file">CMakeLists.txt</span></div><pre><code>set(APP_NAME sensor_demo)
+set(APP_SOURCES
+    src/main.c
+    src/sensor.c
+)
+
+add_executable(${APP_NAME} ${APP_SOURCES})
+list(LENGTH APP_SOURCES SOURCE_COUNT)
+message(STATUS "sources: ${SOURCE_COUNT}")</code></pre></div><div class="callout"><b>不推荐入门时用 file(GLOB) 自动抓源码。</b>显式列表更容易审查，也能清楚看到工程新增了什么。</div></section>

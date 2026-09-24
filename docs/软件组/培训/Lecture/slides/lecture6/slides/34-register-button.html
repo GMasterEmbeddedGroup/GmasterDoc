@@ -1,0 +1,5 @@
+<section><div class="slide-head"><h2 class="slide-title">寄存器方式读取 PA0</h2><p class="lead">示例把 PA0 配成下拉输入，按键连接 3.3 V，按下时 IDR bit0 为 1。</p></div><div class="codebox"><pre><code>RCC-&gt;APB2ENR |= RCC_APB2ENR_IOPAEN;
+GPIOA-&gt;CRL &amp;= ~0xFu;
+GPIOA-&gt;CRL |=  0x8u;          // CNF=10, MODE=00
+GPIOA-&gt;ODR &amp;= ~(1u &lt;&lt; 0);   // 选择下拉
+bool pressed = (GPIOA-&gt;IDR &amp; 1u) != 0;</code></pre></div><div class="callout">若电路采用上拉并按下接地，最后一行逻辑需要取反。</div></section>

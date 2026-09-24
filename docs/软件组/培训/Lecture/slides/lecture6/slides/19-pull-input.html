@@ -1,0 +1,2 @@
+<section><div class="slide-head"><h2 class="slide-title">F103 上拉/下拉输入</h2><p class="lead">CRL/CRH 表示“带上下拉输入”，方向由 ODR 对应位选择。</p></div><div class="register"><span>CNF=10</span><span>MODE=00</span><span class="hot">ODR=1</span><span>上拉</span><span>CNF=10</span><span>MODE=00</span><span class="hot">ODR=0</span><span>下拉</span></div><div class="codebox"><pre><code>GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+GPIO_InitStruct.Pull = GPIO_PULLUP; // HAL 同时处理 ODR</code></pre></div><div class="error-box">直接写寄存器时只设置 CNF 而忘记 ODR，会得到错误的默认电平。</div></section>

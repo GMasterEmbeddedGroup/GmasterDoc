@@ -6,7 +6,7 @@
 
   <div class="codebox">
     <div class="codebox-head"><span class="cb-file">scope.c</span><span class="cb-tag">同名变量互不干扰</span></div>
-<pre><code>int counter = 0;             /* 全局变量：所有函数都能访问 */
+<pre><code class="language-c">int counter = 0;             /* 全局变量：所有函数都能访问 */
 void tick(void)
 {
     int step = 3;            /* 局部变量：只在 tick 里存在 */

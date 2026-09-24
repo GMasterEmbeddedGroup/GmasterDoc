@@ -1,0 +1,9 @@
+<section><div class="slide-head"><h2 class="slide-title">多语句宏用 do { } while (0) 包装</h2><p class="lead">调用处会在宏后面写分号，也可能把宏放进 <code>if ... else</code>，宏定义必须在这种写法下保持正确。</p></div><pre><code class="language-c">#define LED_ON() do {             \
+    gpio_write(LED_PORT, LED_PIN, 1); \
+    log_led_state(1);             \
+} while (0)
+
+if (ready)
+    LED_ON();
+else
+    report_error();</code></pre><p><code>do { ... } while (0)</code> 只执行一次，把多条语句组成一个整体；调用处的分号不会破坏 <code>if ... else</code> 的结构。</p></section>

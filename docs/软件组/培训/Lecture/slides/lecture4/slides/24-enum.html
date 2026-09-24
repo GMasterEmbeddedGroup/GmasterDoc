@@ -1,0 +1,10 @@
+<section><div class="slide-head"><h2 class="slide-title">枚举：用名字代替状态数字</h2><p class="lead">状态机里散落的数字难以维护，枚举把状态集中成一份命名表。</p></div><pre><code class="language-c">typedef enum {
+    MOTOR_IDLE,
+    MOTOR_STARTING,
+    MOTOR_RUNNING,
+    MOTOR_FAULT
+} MotorState;
+
+if (state == MOTOR_FAULT) {
+    motor_stop();
+}</code></pre><p>读代码时不必猜 <code>3</code> 是什么状态；增加新状态时，编译器和 <code>switch</code> 更容易发现遗漏。</p></section>

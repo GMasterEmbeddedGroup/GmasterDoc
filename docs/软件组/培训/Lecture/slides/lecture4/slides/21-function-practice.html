@@ -1,0 +1,6 @@
+<section><div class="slide-head"><h2 class="slide-title">函数与模块练习</h2><p class="lead">先判断数据在哪里，再决定接口怎么写。</p></div><pre><code class="language-c">void add_offset(int value, int offset) {
+    value += offset;
+}
+
+int speed = 100;
+add_offset(speed, 20);</code></pre><ol class="rule-list"><li>调用以后 <code>speed</code> 的值是多少？为什么？</li><li>怎样改写接口，才能让调用以后 <code>speed</code> 变成 120？</li><li>如果这个速度只允许由 <code>motor.c</code> 修改，头文件里应该公开变量，还是公开函数？</li></ol><details class="quiz-answer"><summary>查看参考答案</summary><p><code>speed</code> 仍是 100，因为 <code>value</code> 只是副本。改成 <code>void add_offset(int *value, int offset)</code>，调用时传入 <code>&amp;speed</code>。模块外只需要调用一个公开函数，速度变量应当留在 <code>motor.c</code> 内。</p></details></section>

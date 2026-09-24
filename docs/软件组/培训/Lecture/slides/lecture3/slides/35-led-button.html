@@ -1,6 +1,6 @@
 <section>
   <div class="slide-head"><h2 class="slide-title">等级 3：按键外部中断</h2><p class="lead">中断只记录事件，主循环负责切换灯效，避免在 ISR 里做复杂工作。</p></div>
-  <div class="codebox"><pre><code>static volatile bool button_pending;
+  <div class="codebox"><pre><code class="language-c">static volatile bool button_pending;
 
 void HAL_GPIO_EXTI_Callback(uint16_t pin) {
     if (pin == USER_BTN_Pin) button_pending = true;

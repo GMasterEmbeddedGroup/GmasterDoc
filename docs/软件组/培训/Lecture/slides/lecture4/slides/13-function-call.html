@@ -1,0 +1,7 @@
+<section><div class="slide-head"><h2 class="slide-title">函数的作用与调用过程</h2><p class="lead">调用方只需要知道传入什么、返回什么，具体实现留在函数内部。这个边界是复用和单独测试的前提。</p></div><pre><code class="language-c">int clamp_speed(int speed) {
+    if (speed &lt; 0) return 0;
+    if (speed &gt; 8000) return 8000;
+    return speed;
+}
+
+speed = clamp_speed(requested_speed);</code></pre><p>调用 <code>clamp_speed(requested_speed)</code> 时：取函数入口，把实参的值复制给形参，执行函数体，最后把返回值赋给左边的 <code>speed</code>。</p></section>

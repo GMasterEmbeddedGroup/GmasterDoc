@@ -1,0 +1,5 @@
+<section><div class="slide-head"><h2 class="slide-title">add_executable：创建可执行目标</h2><p class="lead">目标是 CMake 的中心。后续设置都应指向明确目标。</p></div><div class="codebox"><div class="codebox-head"><span class="cb-file">CMakeLists.txt</span></div><pre><code>add_executable(robot_tool
+    src/main.c
+    src/parse.c
+    src/report.c
+)</code></pre></div><table><thead><tr><th>部分</th><th>含义</th><th>常见误解</th></tr></thead><tbody><tr><td><span class="mono">robot_tool</span></td><td>CMake 目标名</td><td>不是工程目录名</td></tr><tr><td>源文件列表</td><td>参与该目标编译的实现文件</td><td>头文件通常无需逐个列出才能被包含</td></tr><tr><td>生成结果</td><td>Windows 常为 robot_tool.exe</td><td>生成位置在构建树中</td></tr></tbody></table><div class="callout"><b>高频问题：</b>文件已经写好，但没有加入任何目标，所以 CMake 根本不会编译它。</div></section>

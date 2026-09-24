@@ -1,0 +1,3 @@
+<section><div class="slide-head"><h2 class="slide-title">HAL GPIO 读写 API</h2><p class="lead">HAL 使用端口指针和引脚位掩码，标签宏可避免硬编码。</p></div><div class="codebox"><pre><code>HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
+HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
+GPIO_PinState key = HAL_GPIO_ReadPin(KEY_GPIO_Port, KEY_Pin);</code></pre></div><div class="explain"><p><span class="mono">WritePin</span> 使用 BSRR 原子写入；<span class="mono">ReadPin</span> 读取 IDR；<span class="mono">TogglePin</span> 适合单一执行上下文，复杂并发中应明确设定状态。</p><p>CubeMX 标签会在 main.h 中生成 <span class="mono">LED_Pin</span> 和 <span class="mono">LED_GPIO_Port</span>。</p></div></section>

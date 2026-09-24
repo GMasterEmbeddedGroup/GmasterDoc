@@ -1,0 +1,2 @@
+<section><div class="slide-head"><h2 class="slide-title">LCKR：锁定配置直到复位</h2><p class="lead">GPIO_LCKR 可防止 CRL/CRH 被意外修改，锁定后只能通过芯片复位解除。</p></div><div class="codebox"><pre><code>HAL_StatusTypeDef result =
+    HAL_GPIO_LockPin(GPIOA, GPIO_PIN_0);</code></pre></div><div class="explain"><p>锁定适用于安全关键或量产配置，不适合入门实验中随意启用。若后续代码需要切换输入/输出，锁定会导致难以理解的故障。</p><p>调试时看到 HAL 初始化调用正常但配置不变，要检查是否早先锁定了该引脚。</p></div></section>

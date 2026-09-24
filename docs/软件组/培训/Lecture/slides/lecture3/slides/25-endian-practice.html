@@ -1,6 +1,6 @@
 <section>
   <div class="slide-head"><h2 class="slide-title">自编练习：协议拆包器</h2><p class="lead">给定一帧大端数据，解析并校验字段。</p></div>
-  <div class="codebox"><div class="codebox-head"><span class="cb-file">输入帧</span><span class="cb-tag">8 bytes</span></div><pre><code>AA 01 12 34 00 00 03 E8</code></pre></div>
+  <div class="codebox"><div class="codebox-head"><span class="cb-file">输入帧</span><span class="cb-tag">8 bytes</span></div><pre><code class="language-plaintext">AA 01 12 34 00 00 03 E8</code></pre></div>
   <table class="dense"><thead><tr><th>偏移</th><th>长度</th><th>字段</th><th>期望值</th></tr></thead><tbody>
     <tr><td>0</td><td>1</td><td>帧头</td><td class="mono">0xAA</td></tr>
     <tr><td>1</td><td>1</td><td>版本</td><td>1</td></tr>

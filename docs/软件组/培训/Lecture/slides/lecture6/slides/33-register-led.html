@@ -1,0 +1,4 @@
+<section><div class="slide-head"><h2 class="slide-title">寄存器方式点亮 PC13</h2><p class="lead">完整顺序是开时钟、配置 CRH、设置初始输出，再进入应用逻辑。</p></div><div class="codebox"><pre><code>RCC-&gt;APB2ENR |= RCC_APB2ENR_IOPCEN;
+GPIOC-&gt;CRH &amp;= ~(0xFu &lt;&lt; 20);
+GPIOC-&gt;CRH |=  (0x2u &lt;&lt; 20); // 2MHz 推挽
+GPIOC-&gt;BSRR =  (1u &lt;&lt; 29); // PC13=0，LED 亮</code></pre></div><div class="explain"><p><span class="mono">0x2</span> 对应 CNF=00、MODE=10。移位 20 是因为 PC13 在 CRH 中排第 5 组。</p><p>寄存器写法有助于理解硬件，但团队工程通常优先使用 HAL 或 LL，减少系列差异。</p></div></section>

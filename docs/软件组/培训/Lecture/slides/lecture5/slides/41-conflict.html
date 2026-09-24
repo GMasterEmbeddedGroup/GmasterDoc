@@ -1,0 +1,5 @@
+<section><div class="slide-head"><h2 class="slide-title">合并冲突的处理流程</h2><p class="lead">冲突表示 Git 无法替你决定保留哪段内容，不代表仓库损坏。</p></div><div class="two-code"><div class="codebox"><div class="codebox-head"><span class="cb-file">冲突标记</span></div><pre><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+option(ENABLE_TRACE "" OFF)
+&#61;&#61;&#61;&#61;&#61;&#61;&#61;
+option(ENABLE_TRACE "" ON)
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; dev/trace</code></pre></div><div class="stepper stepper-col" data-stepper><div class="step-stage"><div class="step-panel"><h4>1. 定位</h4><p><span class="mono">git status</span> 列出 unmerged paths。</p></div><div class="step-panel"><h4>2. 编辑并验证</h4><p>理解两边意图，删除标记，构建和测试结果。</p></div><div class="step-panel"><h4>3. 完成</h4><p><span class="mono">git add file</span>，然后 <span class="mono">git commit</span> 或继续 rebase。</p></div></div><div class="step-controls"><button data-step="prev">上一步</button><span class="step-current"></span><button data-step="next">下一步</button></div></div></div><div class="callout"><b>不确定时先停下。</b>使用 <span class="mono">git merge --abort</span> 回到合并前，再与改动作者确认。</div></section>

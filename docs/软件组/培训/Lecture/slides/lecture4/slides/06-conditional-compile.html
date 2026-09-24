@@ -1,0 +1,6 @@
+<section><div class="slide-head"><h2 class="slide-title">条件编译：构建配置与板卡差异</h2><p class="lead">调试构建需要日志，发布构建要把它去掉；不同板卡的硬件配置也不一样。这类差异在编译前就能确定，适合用条件编译处理。</p></div><pre><code class="language-c">int main(void) {
+#ifdef DEBUG
+    printf("motor speed = %u\n", speed);
+#endif
+    motor_run();
+}</code></pre><p>执行 <code>gcc main.c -DDEBUG</code> 时，日志代码会留下；不带 <code>-DDEBUG</code> 时，预处理器会把它整段删掉。</p><div class="callout warn"><b>配置错误留在构建阶段暴露：</b>缺少必需的板卡配置时用 <code>#error</code> 停止构建，只是提醒时用 <code>#warning</code>，避免上板以后才发现。</div></section>

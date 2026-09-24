@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>单页预览：Lecture 5</title>
+<link rel="stylesheet" href="../lecture3/vendor/reveal.js/reveal.css">
+<link rel="stylesheet" href="../lecture3/theme.css"><link rel="stylesheet" href="../lecture3/deck.css"><link rel="stylesheet" href="lecture5.css">
+<style>
+body{margin:0;background:#f4f6f8}.onebar{display:flex;align-items:center;gap:.6rem;padding:.55rem 1rem;background:#14161a;color:#e7ebf2;font:14px/1.4 "Microsoft YaHei",sans-serif}.onebar .brand{color:#ff6a4d;font-weight:700}.onebar select,.onebar button{font:inherit;padding:.35rem .7rem;border:1px solid #39404d;border-radius:4px;background:#1e2430;color:#e7ebf2;cursor:pointer}.onebar .pos{margin-left:auto;color:#98a2b3;font-family:Consolas,monospace}.onebar .file{color:#7c848f;font:12px Consolas,monospace}#stage{width:100vw;height:calc(100vh - 42px)}#stage .reveal{width:100%;height:100%}
+</style>
+</head>
+<body>
+<div class="onebar"><span class="brand">GMaster</span><span>Lecture 5 单页预览</span><button id="prev">← 上一页</button><button id="next">下一页 →</button><select id="jump"></select><span class="file" id="file"></span><span class="pos" id="pos"></span></div>
+<div id="stage"><div class="reveal"><img class="brand-logo" src="../lecture3/img/brand-logo.png" alt="GMaster"><img class="brand-corner" src="../lecture3/img/brand-corner.png" alt=""><div class="slides"><section><h2>正在载入…</h2></section></div></div></div>
+<script src="slides/manifest.js"></script><script src="../lecture3/vendor/reveal.js/reveal.js"></script><script src="../lecture3/deck.js"></script><script src="study-notes.js"></script>
+<script>
+(function(){var list=window.DECK_SLIDES,slidesEl=document.querySelector('.reveal .slides'),jump=document.getElementById('jump');list.forEach(function(s,i){var o=document.createElement('option');o.value=i;o.textContent=String(i+1).padStart(2,'0')+' '+s.title;jump.appendChild(o)});function idx(){var p=parseInt(new URLSearchParams(location.search).get('p'),10);return isNaN(p)||p<1||p>list.length?0:p-1}function render(i){var item=list[i];document.getElementById('file').textContent='slides/'+item.file;document.getElementById('pos').textContent=String(i+1).padStart(2,'0')+' / '+list.length;jump.value=i;DeckKit.loadFragments([item.file],slidesEl).then(function(){Lecture5Study.enrich(slidesEl,[item.file]);DeckKit.initAll(document);if(!window.__ready){window.__ready=true;DeckKit.initReveal({hash:false,controls:false,progress:false,slideNumber:false,overview:false,keyboard:false,touch:false,plugins:[]})}else{Reveal.sync();Reveal.slide(0);Reveal.layout()}})}function go(i){i=(i+list.length)%list.length;history.replaceState(null,'','?p='+(i+1));render(i)}document.getElementById('prev').onclick=function(){go(idx()-1)};document.getElementById('next').onclick=function(){go(idx()+1)};jump.onchange=function(){go(Number(jump.value))};document.onkeydown=function(e){if(e.key==='ArrowLeft'||e.key==='PageUp')go(idx()-1);if(e.key==='ArrowRight'||e.key==='PageDown')go(idx()+1)};render(idx())})();
+</script>
+</body></html>

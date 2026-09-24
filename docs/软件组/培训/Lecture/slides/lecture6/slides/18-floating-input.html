@@ -1,0 +1,2 @@
+<section><div class="slide-head"><h2 class="slide-title">浮空输入</h2><p class="lead">内部上下拉关闭，电平完全由外部电路决定。</p></div><div class="codebox"><pre><code>GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+GPIO_InitStruct.Pull = GPIO_NOPULL;</code></pre></div><div class="explain"><p>适合另一个芯片的推挽输出，例如 UART_RX。若外部器件断电或进入高阻态，引脚仍会浮空。</p><p>不适合直接悬空的按键。手靠近导线时读数变化通常是浮空表现。</p></div></section>

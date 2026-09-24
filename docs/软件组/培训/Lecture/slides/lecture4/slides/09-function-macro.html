@@ -1,0 +1,5 @@
+<section><div class="slide-head"><h2 class="slide-title">宏函数的副作用：实参可能被求值多次</h2><p class="lead">下面这段代码取两个数的较大值，展开后被选中的那个实参自增两次。</p></div><pre><code class="language-c">#define MAX(a, b) ((a) > (b) ? (a) : (b))
+
+int a = 2;
+int b = 3;
+int max = MAX(a++, b++);</code></pre><p>展开后，比较先求值一次，被选中的分支再求值一次。<code>a++</code>、函数调用、寄存器读取这类带副作用的实参不适合放进宏。</p><div class="callout tip"><b>改用函数：</b>实参在调用时求值一次，函数体里拿到的是已经算好的值。</div></section>

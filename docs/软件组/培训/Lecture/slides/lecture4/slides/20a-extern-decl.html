@@ -1,0 +1,20 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">extern：声明与定义分开</h2><p class="lead">extern 只声明名字和类型，不分配存储空间；存储由某一个源文件中的定义分配。</p></div>
+  <div class="split">
+    <div><h3>counter.h（声明）</h3><pre><code class="language-c">#ifndef COUNTER_H
+#define COUNTER_H
+
+extern unsigned int can_rx_count;
+unsigned int can_rx_count_get(void);
+
+#endif</code></pre></div>
+    <div><h3>counter.c（定义）</h3><pre><code class="language-c">#include "counter.h"
+
+unsigned int can_rx_count;   /* 分配存储 */
+
+unsigned int can_rx_count_get(void) {
+    return can_rx_count;
+}</code></pre></div>
+  </div>
+  <div class="callout"><b>头文件里不写定义：</b>被多个源文件包含时会出现多份定义，链接阶段报 multiple definition。函数声明中的 <code>extern</code> 可以省略。</div>
+</section>

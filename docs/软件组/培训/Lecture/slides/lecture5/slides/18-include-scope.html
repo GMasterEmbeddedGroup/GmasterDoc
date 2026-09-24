@@ -1,0 +1,4 @@
+<section><div class="slide-head"><h2 class="slide-title">头文件路径与作用域</h2><p class="lead">PUBLIC 让 calc 自己和使用 calc 的目标都能找到 calc.h。</p></div><div class="codebox"><div class="codebox-head"><span class="cb-file">lib/CMakeLists.txt</span></div><pre><code>target_include_directories(calc
+    PUBLIC
+        ${PROJECT_SOURCE_DIR}/include
+)</code></pre></div><table class="scope-table"><thead><tr><th>作用域</th><th>calc 自己</th><th>链接 calc 的 app</th><th>适合</th></tr></thead><tbody><tr><td>PRIVATE</td><td>可见</td><td>不可见</td><td>库内部头文件</td></tr><tr><td>PUBLIC</td><td>可见</td><td>可见</td><td>公开头文件</td></tr><tr><td>INTERFACE</td><td>不可见</td><td>可见</td><td>纯头文件库</td></tr></tbody></table><div class="callout"><b>判断方法：</b>谁需要这个路径才能编译，就把要求传播给谁。</div></section>

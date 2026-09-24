@@ -1,0 +1,7 @@
+<section><div class="slide-head"><h2 class="slide-title">CubeMX 生成的 MX_GPIO_Init</h2><p class="lead">阅读顺序是时钟、初始输出、结构体字段、HAL_GPIO_Init。</p></div><div class="codebox"><pre><code>__HAL_RCC_GPIOC_CLK_ENABLE();
+HAL_GPIO_WritePin(GPIOC, LED_Pin, GPIO_PIN_SET);
+GPIO_InitStruct.Pin = LED_Pin;
+GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+GPIO_InitStruct.Pull = GPIO_NOPULL;
+GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+HAL_GPIO_Init(GPIOC, &amp;GPIO_InitStruct);</code></pre></div><div class="circuit-note">PC13 输出 SET 时板载 LED 灭，因此这里把“灭”作为安全初始状态。</div></section>

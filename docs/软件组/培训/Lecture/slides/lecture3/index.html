@@ -30,6 +30,7 @@
 <script src="vendor/reveal.js/plugin/zoom/zoom.js"></script>
 <script src="vendor/reveal.js/plugin/search/search.js"></script>
 <script src="vendor/reveal.js/plugin/notes/notes.js"></script>
+<script src="vendor/reveal.js/plugin/highlight/highlight.js"></script>
 <script src="deck.js?v=20260923a"></script>
 <script>
 (function () {
@@ -43,7 +44,7 @@
     .then(function () {
       DeckKit.initAll(document);
       DeckKit.initReveal({
-        plugins: [window.RevealZoom, window.RevealSearch, window.RevealNotes].filter(Boolean)
+        plugins: [window.RevealHighlight, window.RevealZoom, window.RevealSearch, window.RevealNotes].filter(Boolean)
       });
     })
     .catch(function (err) {

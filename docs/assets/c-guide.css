@@ -1,0 +1,19 @@
+.md-typeset .guide-code {
+  background: #f6f8fa;
+  border: 1px solid #e2e6ea;
+  border-radius: 6px;
+  padding: 1rem 1.15rem;
+  margin: 1.25em 0;
+  overflow: auto;
+  color: #2b2f36;
+  line-height: 1.65;
+  tab-size: 4;
+}
+.md-typeset .guide-code code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  font-family: Consolas, "Cascadia Code", monospace;
+  font-size: .78rem;
+  white-space: pre;
+}

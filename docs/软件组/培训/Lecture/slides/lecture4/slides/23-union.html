@@ -1,0 +1,6 @@
+<section><div class="slide-head"><h2 class="slide-title">联合体：同一段内存的多种解释</h2><p class="lead">联合体的成员共用同一块内存，读取时使用哪个成员由代码自行保证。</p></div><pre><code class="language-c">typedef union {
+    uint32_t word;
+    uint8_t bytes[4];
+} WordView;
+
+WordView value = { .word = 0x12345678u };</code></pre><p><code>word</code> 和 <code>bytes</code> 从同一个起始地址解释数据。它适合保存互斥的数据形式，或在明确约定下查看底层表示。</p><div class="callout warn"><b>解析通信数据时：</b>字节序、对齐和可移植性都可能出问题，用显式移位组合字节更可靠。</div></section>

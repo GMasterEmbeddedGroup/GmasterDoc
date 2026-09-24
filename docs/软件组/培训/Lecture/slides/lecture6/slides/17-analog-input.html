@@ -1,0 +1,3 @@
+<section><div class="slide-head"><h2 class="slide-title">模拟输入</h2><p class="lead">模拟模式关闭数字输入缓冲器，让焊盘连接 ADC 等模拟外设。</p></div><div class="codebox"><pre><code>GPIO_InitStruct.Pin  = GPIO_PIN_0;
+GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+HAL_GPIO_Init(GPIOA, &amp;GPIO_InitStruct);</code></pre></div><div class="explain"><p>ADC 引脚应使用模拟模式，否则数字输入电路会增加功耗和干扰。模拟模式下读取 GPIO IDR 没有实际意义。</p><p>确定不用的引脚常设为模拟输入，减少浮空数字输入反复翻转造成的功耗。</p></div></section>

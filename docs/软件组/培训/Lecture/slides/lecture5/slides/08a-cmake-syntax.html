@@ -1,0 +1,9 @@
+<section><div class="slide-head"><h2 class="slide-title">CMakeLists.txt 的基本语法</h2><p class="lead">CMake 使用“命令名(参数...)”的形式。换行主要用于排版，括号决定命令范围。</p></div><div class="explain-grid"><div class="codebox"><div class="codebox-head"><span class="cb-file">语法示例</span></div><pre><code># 井号开始单行注释
+set(APP_NAME calc_demo)
+
+add_executable(${APP_NAME}
+    src/main.c
+    src/report.c
+)
+
+message(STATUS "target=${APP_NAME}")</code></pre></div><div class="annotated"><ol><li><b>命令名</b>通常写小写，便于保持统一风格。</li><li><b>参数</b>由空白分隔；含空格的路径必须使用引号。</li><li><b>${NAME}</b>读取变量；未定义变量通常展开为空。</li><li><b>相对路径</b>以当前 CMakeLists.txt 所在目录为基准。</li></ol></div></div><div class="error-box"><b>常见错误：</b>把 C/C++ 语法带进 CMake，例如在行尾写分号，或使用 <span class="mono">NAME=value</span> 赋值。CMake 变量应使用 <span class="mono">set(NAME value)</span>。</div></section>

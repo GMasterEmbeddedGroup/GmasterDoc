@@ -1,6 +1,6 @@
 <section>
   <div class="slide-head"><h2 class="slide-title">回调函数</h2><p class="lead">库在约定时机调用用户提供的函数，实现控制反转。</p></div>
-  <div class="codebox"><pre><code>typedef void (*OnByte)(uint8_t byte);
+  <div class="codebox"><pre><code class="language-c">typedef void (*OnByte)(uint8_t byte);
 
 void uart_set_callback(OnByte cb);
 

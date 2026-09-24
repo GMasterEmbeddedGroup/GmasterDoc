@@ -1,0 +1,15 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">一个模块里的 static 写法</h2><p class="lead">下面三处 static 都在同一份 motor.c 里，各自解决的问题不同。</p></div>
+  <pre><code class="language-c">/* motor.c */
+static int retry_count;              /* 模块私有状态 */
+
+static void reset_bus(void) {        /* 内部函数，只在本文件调用 */
+    retry_count = 0;
+}
+
+unsigned int next_tick(void) {
+    static unsigned int tick = 0;    /* 跨调用保留 */
+    return ++tick;
+}</code></pre>
+  <ol class="rule-list"><li><code>retry_count</code> 不进入导出符号，其他文件的同名变量不会与它冲突。</li><li><code>reset_bus</code> 的参数和实现可以随时修改，不影响模块对外的接口。</li><li><code>tick</code> 不在栈上，中断和主循环同时调用 <code>next_tick</code> 时要单独考虑并发。</li></ol>
+</section>

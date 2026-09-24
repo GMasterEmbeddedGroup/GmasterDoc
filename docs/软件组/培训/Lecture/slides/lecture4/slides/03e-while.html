@@ -1,0 +1,13 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">while 与 do-while 的组成部分</h2><p class="lead">两者只差一点：条件在循环体之前还是之后判断。</p></div>
+  <div class="split">
+    <div><h3>while：先判断条件</h3><pre><code class="language-c">while (!sample_ready) {
+    /* 条件不成立时，循环体一次也不执行 */
+}</code></pre></div>
+    <div><h3>do-while：先执行一次</h3><pre><code class="language-c">do {
+    /* 循环体至少执行一次 */
+} while (!sample_ready);   /* 结尾的分号不能漏 */</code></pre></div>
+  </div>
+  <ol class="rule-list"><li><b>条件表达式：</b>与 <code>if</code> 相同，0 为假、非 0 为真；为假时结束循环。</li><li><b>循环体：</b>花括号块或单条语句。计数变量要在进入循环前初始化、在循环体里更新，否则容易变成死循环。</li></ol>
+  <div class="callout"><b>do-while 至少执行一次：</b>条件在循环体之后判断，适合「先做一次再看结果」的场合；结尾的分号不能漏。</div>
+</section>

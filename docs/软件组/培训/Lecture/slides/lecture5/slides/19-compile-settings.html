@@ -1,0 +1,6 @@
+<section><div class="slide-head"><h2 class="slide-title">编译标准、宏与警告选项</h2><p class="lead">把要求挂在目标上，避免用全局命令污染整个工程。</p></div><div class="codebox"><div class="codebox-head"><span class="cb-file">CMakeLists.txt</span></div><pre><code>target_compile_features(app PRIVATE c_std_11)
+target_compile_definitions(app PRIVATE APP_VERSION=4)
+
+if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
+    target_compile_options(app PRIVATE -Wall -Wextra)
+endif()</code></pre></div><div class="grid grid-3"><div class="card"><h4>features</h4><p>声明需要 C11，CMake 为当前编译器选择合适参数。</p></div><div class="card"><h4>definitions</h4><p>向预处理器提供宏，不要手写 <span class="mono">-D</span>。</p></div><div class="card"><h4>options</h4><p>编译器专用选项先判断编译器，避免跨平台失败。</p></div></div></section>

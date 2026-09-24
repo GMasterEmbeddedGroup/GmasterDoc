@@ -1,0 +1,12 @@
+<section>
+  <div class="slide-head"><h2 class="slide-title">static 的三种用法</h2><p class="lead">static 出现在不同位置时作用不同：修饰函数内的局部变量，或修饰文件作用域的变量和函数。</p></div>
+  <table class="dense">
+    <thead><tr><th>写法</th><th>作用</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td><code>static int tick;</code>（函数内）</td><td>跨调用保留值</td><td>只初始化一次，函数返回后仍然存在，其他函数看不到</td></tr>
+      <tr><td><code>static int state;</code>（文件作用域）</td><td>仅本文件可见</td><td>链接器不向其他文件导出这个符号</td></tr>
+      <tr><td><code>static void helper(void)</code></td><td>内部函数</td><td>头文件中不声明，其他文件无法调用</td></tr>
+    </tbody>
+  </table>
+  <div class="callout"><b>static 改变的是存储期和链接属性</b>，不改变类型和大小，也不影响运行时开销。</div>
+</section>

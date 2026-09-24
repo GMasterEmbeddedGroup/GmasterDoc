@@ -5,7 +5,7 @@
     <div class="card"><h4><span class="card-index">野</span>未初始化</h4><p><span class="mono">int *p;</span> 中的地址不确定。声明时初始化为有效地址或 <span class="mono">NULL</span>。</p></div>
     <div class="card"><h4><span class="card-index">悬空</span>对象已失效</h4><p>返回局部变量地址、释放后继续使用，都会留下看似有效但不能访问的地址。</p></div>
   </div>
-  <div class="codebox"><pre><code>int *bad(void) {
+  <div class="codebox"><pre><code class="language-c">int *bad(void) {
     int local = 7;
     return &amp;local;  // 函数返回后 local 的生命周期结束
 }</code></pre></div>

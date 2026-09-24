@@ -1,0 +1,4 @@
+<section><div class="slide-head"><h2 class="slide-title">从一个表达式读出数据流</h2><p class="lead">下面一行代码同时出现成员访问、下标、取址和函数调用，按对象关系逐层拆开。</p></div><pre><code class="language-c">controller->channels[index].on_sample(
+    &amp;controller->channels[index].latest,
+    1
+);</code></pre><ol class="rule-list"><li><code>controller</code> 是指针，<code>controller-&gt;channels</code> 取到它指向对象里的数组成员。</li><li><code>[index]</code> 选出其中一个通道对象。</li><li><code>.on_sample</code> 取出这个通道保存的回调函数。</li><li><code>&amp;...latest</code> 取得这个通道最新数据的地址。</li><li><code>()</code> 调用回调，把地址和元素个数交给它。</li></ol><div class="callout"><code>a[i]</code> 等价于 <code>*(a + i)</code>，<code>p-&gt;m</code> 等价于 <code>(*p).m</code>；读代码时按对象归属关系理解即可。</div></section>

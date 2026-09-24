@@ -1,0 +1,4 @@
+<section><div class="slide-head"><h2 class="slide-title">宏只是文本替换</h2><p class="lead">预处理阶段只做文本替换：不处理运算符优先级，也不检查类型。</p></div><div class="split"><div><h3>宏定义</h3><pre><code class="language-c">#define OFFSET 10 + 2
+int value = OFFSET * 10;</code></pre></div><div><h3>展开后实际编译的代码</h3><pre><code class="language-c">int value = 10 + 2 * 10;
+/* 结果是 30，不是 120 */</code></pre></div></div><pre><code class="language-c">#define OFFSET (10 + 2)
+#define SECONDS_PER_DAY (24UL * 60UL * 60UL)</code></pre><p>只要宏体会参与运算，整个宏体都要加括号。需要类型和作用域的常量，用 <code>const</code> 或枚举更合适。</p></section>

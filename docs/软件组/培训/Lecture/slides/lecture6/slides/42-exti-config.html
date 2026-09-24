@@ -1,0 +1,10 @@
+<section><div class="slide-head"><h2 class="slide-title">PA0 下降沿中断初始化</h2><p class="lead">示例使用 PA0 上拉按键，按下接 GND，因此高到低的下降沿触发 EXTI0。</p></div><div class="codebox"><pre><code>__HAL_RCC_GPIOA_CLK_ENABLE();
+__HAL_RCC_AFIO_CLK_ENABLE();
+
+GPIO_InitStruct.Pin  = GPIO_PIN_0;
+GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+GPIO_InitStruct.Pull = GPIO_PULLUP;
+HAL_GPIO_Init(GPIOA, &amp;GPIO_InitStruct);
+
+HAL_NVIC_SetPriority(EXTI0_IRQn, 2, 0);
+HAL_NVIC_EnableIRQ(EXTI0_IRQn);</code></pre></div><div class="explain"><p><span class="mono">GPIO_MODE_IT_FALLING</span> 同时表达输入和下降沿 EXTI。<span class="mono">GPIO_PULLUP</span> 让按键松开时保持高电平。</p><p><span class="mono">EXTI0_IRQn</span> 是 NVIC 中断编号，不是引脚掩码；IRQHandler 使用 <span class="mono">GPIO_PIN_0</span>。</p></div></section>

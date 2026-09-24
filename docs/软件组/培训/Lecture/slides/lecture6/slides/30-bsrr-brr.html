@@ -1,0 +1,3 @@
+<section><div class="slide-head"><h2 class="slide-title">BSRR 与 BRR：原子修改输出</h2><p class="lead">一次 APB2 写操作只改变指定引脚，不需要先读取 ODR。</p></div><div class="codebox"><pre><code>GPIOC-&gt;BSRR = (1u &lt;&lt; 13);       // PC13 置 1，LED 灭
+GPIOC-&gt;BSRR = (1u &lt;&lt; (13+16));  // PC13 清 0，LED 亮
+GPIOC-&gt;BRR  = (1u &lt;&lt; 13);       // F1 专用复位寄存器</code></pre></div><div class="explain"><p>BSRR 低 16 位写 1 表示置位，高 16 位写 1 表示复位。写 0 不改变对应位。</p><p>HAL_GPIO_WritePin 正是利用 BSRR，因此在中断与主循环并发修改不同引脚时更安全。</p></div></section>

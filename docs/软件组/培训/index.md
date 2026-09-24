@@ -32,7 +32,9 @@ STM32 嵌入式开发入门，从 GPIO 到 CAN 通信，再到 GSRL 工程全景
 - [C 语言第一次培训 —— Lecture 2](./Lecture/Lecture2.md) — Hello World、数据类型、进制转换、函数与输入输出（含可交互课件）
 - [C 语言程序设计（二）—— Lecture 3](./Lecture/Lecture3.md) — 结构体、内存对齐、指针、大小端、中断与回调函数，以及 STM32 点灯实战
 - [培训课程（Lecture 系列）](./Lecture/index.md) — 课次目录与学习建议
+- [用 CMake 新建 x86 工程并通过 Git 提交](./Lecture/用cmake新建x86工程并通过git提交.md) — 本机 C 工程的编译、运行与版本提交
 - [使用 STM32CubeMX 新建工程](./Lecture/Lecture1小作业.md) — 第一课配套实操：安装、配置工程与交叉编译
+- [点灯大师](./Lecture/点灯大师.md) — 接续新建工程，完成 LED 点亮与烧录
 - [自学清单](./自学清单.md) — 推荐的外部学习资源汇总
 - [Lesson1 开发环境配置](./Lesson1%20开发环境配置.md) — 本地开发环境搭建
 - [Github Education 认证](./Github%20Education认证.md) — 获取学生认证与免费工具

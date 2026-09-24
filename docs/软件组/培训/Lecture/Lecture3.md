@@ -50,6 +50,7 @@
 
 - **上一篇**：[C 语言第一次培训 —— Lecture 2](./Lecture2.md)
 - **开发板工程**：[Lecture 1 小作业：使用 STM32CubeMX 新建工程](./Lecture1小作业.md)
+- **点灯实操**：[点灯大师](./点灯大师.md)（板载 LED、烧录与外接 LED）
 - **参考资料**：[cppreference：C 语言](https://zh.cppreference.com/w/c)、[STM32F1 HAL 文档与工程模板](https://github.com/STMicroelectronics/STM32CubeF1)
 
 ---

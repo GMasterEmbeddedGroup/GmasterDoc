@@ -21,7 +21,9 @@ nav:
               - Lecture1 从零开始电控开发: 软件组/培训/Lecture/Lecture1.md
               - Lecture2 C 语言第一次培训: 软件组/培训/Lecture/Lecture2.md
               - Lecture3 C 语言程序设计（二）: 软件组/培训/Lecture/Lecture3.md
+              - 用 CMake 新建 x86 工程并通过 Git 提交: 软件组/培训/Lecture/用cmake新建x86工程并通过git提交.md
               - 使用 STM32CubeMX 新建工程: 软件组/培训/Lecture/Lecture1小作业.md
+              - 点灯大师: 软件组/培训/Lecture/点灯大师.md
           - 自学清单: 软件组/培训/自学清单.md
           - Lesson1 开发环境配置: 软件组/培训/Lesson1 开发环境配置.md
           - Github Education认证: 软件组/培训/Github Education认证.md

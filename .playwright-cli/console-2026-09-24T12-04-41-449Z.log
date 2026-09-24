@@ -1,0 +1,6 @@
+[    2751ms] [LOG] Service Worker registered with scope: https://www.falstad.com/circuit/ @ https://www.falstad.com/circuit/circuitjs.html:173
+[    3148ms] [LOG] ignoring line in string catalog: "<a href="customlogic.html" target="_blank">Definition</a>"="<a href="customlogic.html" target="_blank">定义</a>" @ circuitjs1-0.js:61599
+[    3148ms] [LOG] ignoring line in string catalog: "<a href="customfunction.html" target="_blank">Output Function</a>"="<a href="customfunction.html" target="_blank">输出函数</a>" @ circuitjs1-0.js:61599
+[    3149ms] [LOG] ignoring line in string catalog: "Load Model Circuit"="加载模型电路 @ circuitjs1-0.js:61599
+[  482995ms] [LOG] converged after 10 iterations, timeStep = 0.000005 @ circuitjs1-0.js:51982
+[ 1155178ms] [LOG] converged after 10 iterations, timeStep = 0.000005 @ circuitjs1-0.js:51982

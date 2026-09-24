@@ -118,13 +118,7 @@
 
 ![STM32CubeMX 工程创建操作截图 35](./images/stm32cubemx-new-project/35.png)
 
-### 2.8. 添加用户测试代码
-
-打开工程后在main函数中的主循环插入用户代码，目的是让红色LED周期闪烁。
-
-![STM32CubeMX 工程创建操作截图 36](./images/stm32cubemx-new-project/36.png)
-
-### 2.9. 配置下载调试工具
+### 2.8. 配置下载调试工具
 
 首先确保自己已经安装了gcc-arm-toolchain（下载链接：<https://gitlab.arm.com/api/v4/projects/tooling%2Fgnu-toolchains-for-arm/packages/generic/gnu-toolchain/15.3.rel1/arm-gnu-toolchain-15.3.rel1-mingw-w64-x86_64-arm-none-eabi.msi>）。
 
@@ -167,4 +161,4 @@ winget install Ninja-build.Ninja
 
 ![STM32CubeMX 工程创建操作截图 44](./images/stm32cubemx-new-project/44.png)
 
-如果你有一个开发板，就可以使用openocd等工具烧录了。成功生成elf文件就是成功。
+成功生成elf文件就是成功。

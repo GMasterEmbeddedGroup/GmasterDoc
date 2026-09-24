@@ -1,0 +1,123 @@
+- generic [active] [ref=e1]:
+  - iframe
+  - iframe
+  - generic [ref=e4]:
+    - menubar [ref=e6]:
+      - table [ref=e7]:
+        - rowgroup [ref=e8]:
+          - row [ref=e9]:
+            - menuitem "文件" [ref=e10]
+            - menuitem "编辑" [ref=e11]
+            - menuitem "绘制" [ref=e12]
+            - menuitem "示波器" [ref=e13]
+            - menuitem "选项" [ref=e14]
+            - menuitem "工具" [ref=e15]
+            - menuitem "电路" [ref=e16]
+      - textbox [aria-hidden] [ref=e17]
+    - table [ref=e19]:
+      - rowgroup [ref=e20]:
+        - row [ref=e21]:
+          - cell [ref=e22]:
+            - table [ref=e23]:
+              - rowgroup [ref=e24]:
+                - row [ref=e25]:
+                  - cell [ref=e26]:
+                    - button "重置" [ref=e27] [cursor=pointer]
+                  - cell [ref=e28]:
+                    - button [ref=e29] [cursor=pointer]:
+                      - strong [ref=e30]: 运行
+                      - text: / 停止
+        - row "Choose File":
+          - cell "Choose File":
+            - button "Choose File" [ref=e472]
+        - row [ref=e32]:
+          - cell "仿真速度" [ref=e33]
+        - row [ref=e35]:
+          - cell [ref=e36]:
+            - table [ref=e37]:
+              - rowgroup [ref=e38]:
+                - row [ref=e39]:
+                  - cell [ref=e40]
+        - row [ref=e42]:
+          - cell "电流速度" [ref=e43]
+        - row [ref=e45]:
+          - cell [ref=e46]:
+            - table [ref=e47]:
+              - rowgroup [ref=e48]:
+                - row [ref=e49]:
+                  - cell [ref=e50]
+        - row [ref=e52]:
+          - cell "功率的亮度" [ref=e53]
+        - row [ref=e55]:
+          - cell [ref=e56]:
+            - table [ref=e57]:
+              - rowgroup [ref=e58]:
+                - row [ref=e59]:
+                  - cell [ref=e60]
+        - row [ref=e62]:
+          - cell "目前电路:" [ref=e63]
+        - row [ref=e473]:
+          - cell "external-led-push-pull.circuitjs.txt" [ref=e474]
+        - row [ref=e98]:
+          - cell [ref=e99]:
+            - iframe [ref=e100]
+    - generic [ref=e102]:
+      - generic "撤销" [ref=e103] [cursor=pointer]: 
+      - generic "重做" [ref=e104] [cursor=pointer]: 
+      - generic "剪切" [ref=e105] [cursor=pointer]: 
+      - generic "复制" [ref=e106] [cursor=pointer]: 
+      - generic "粘贴" [ref=e107] [cursor=pointer]: 
+      - generic "重复" [ref=e108] [cursor=pointer]: 
+      - generic "查找元件..." [ref=e109] [cursor=pointer]: 
+      - generic "缩放100%" [ref=e110] [cursor=pointer]: 
+      - generic "放大" [ref=e111] [cursor=pointer]: 
+      - generic "缩小" [ref=e112] [cursor=pointer]: 
+      - generic "添加导线" [ref=e113] [cursor=pointer]:
+        - img [ref=e114]:
+          - generic [ref=e115]: <
+      - generic "添加电阻器" [ref=e120] [cursor=pointer]:
+        - img [ref=e121]:
+          - generic [ref=e122]: <
+      - generic "添加接地" [ref=e128] [cursor=pointer]:
+        - img [ref=e129]:
+          - generic [ref=e130]: <
+      - generic "添加电容器" [ref=e133] [cursor=pointer]:
+        - img [ref=e134]:
+          - generic [ref=e135]: <
+      - generic "添加电感器" [ref=e139] [cursor=pointer]:
+        - img [ref=e140]:
+          - generic [ref=e141]: <
+      - generic "添加二极管" [ref=e149] [cursor=pointer]:
+        - img [ref=e150]:
+          - generic [ref=e151]: <
+      - generic "添加直流电压源(二端口)" [ref=e156] [cursor=pointer]:
+        - img [ref=e157]:
+          - generic [ref=e158]: <
+      - generic "添加直流电压源(单端口)" [ref=e162] [cursor=pointer]:
+        - img [ref=e163]:
+          - generic [ref=e164]:
+            - generic [ref=e165]: +5V
+            - text: <
+      - generic "添加开关" [ref=e167] [cursor=pointer]:
+        - img [ref=e168]:
+          - generic [ref=e169]: <
+      - generic "添加运算放大器(理想,-上)" [ref=e172] [cursor=pointer]:
+        - img [ref=e173]:
+          - generic [ref=e174]:
+            - generic [ref=e175]:
+              - generic [ref=e177]: "-"
+              - generic [ref=e179]: +
+            - text: <
+      - generic "添加NPN双极型晶体管" [ref=e181] [cursor=pointer]:
+        - img [ref=e182]:
+          - generic [ref=e183]: <
+      - generic "添加MOSFET(N沟道)" [ref=e192] [cursor=pointer]:
+        - img [ref=e193]:
+          - generic [ref=e194]: <
+      - generic "添加非门" [ref=e200] [cursor=pointer]:
+        - img [ref=e201]:
+          - generic [ref=e202]: <
+      - generic "添加与门" [ref=e206] [cursor=pointer]:
+        - img [ref=e207]:
+          - generic [ref=e208]: <
+      - generic [ref=e383]: 模式：选择/框选

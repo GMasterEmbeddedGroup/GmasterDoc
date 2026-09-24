@@ -14,7 +14,7 @@
 
 ![STM32CubeMX 工程创建操作截图 2](./images/stm32cubemx-new-project/02.png)
 
-使用文件资源管理器打开zip文件，然后运行安装程序。在这一步选择第一项。
+使用文件资源管理器打开zip文件，然后运行安装程序。在这一步选择第一项。之后就按照下面的图示操作。
 
 ![STM32CubeMX 工程创建操作截图 3](./images/stm32cubemx-new-project/03.png)
 
@@ -56,10 +56,6 @@
 
 ![STM32CubeMX 工程创建操作截图 17](./images/stm32cubemx-new-project/17.png)
 
-![STM32CubeMX 工程创建操作截图 18](./images/stm32cubemx-new-project/18.png)
-
-![STM32CubeMX 工程创建操作截图 19](./images/stm32cubemx-new-project/19.png)
-
 ### 2.2. 确认时钟源
 
 进入工程后打开RCC选项，选择Crystal/Ceramic Resonator，即使用外部晶振作为HSE（High Speed External)的时钟源。
@@ -94,9 +90,11 @@
 
 为了防止出现，烧录以后仿真器无法连接的情况，我们一定要在Pinout里将SYS里面的Debug设置成Serial Wire,这样问题得到解决。
 
-![STM32CubeMX 工程创建操作截图 27](./images/stm32cubemx-new-project/27.png)
+![STM32CubeMX 工程创建操作截图 18](./images/stm32cubemx-new-project/18.png)
 
-接着选择Project Manager选项，配置工程的名称，路径，堆栈大小(保持默认即可），toolchain/IDE 选择cmake。注意不要使用中文路径和工程名称。
+![STM32CubeMX 工程创建操作截图 19](./images/stm32cubemx-new-project/19.png)
+
+接着选择Project Manager选项，配置工程的名称，路径，堆栈大小（保持默认即可），toolchain/IDE 选择cmake。注意不要使用中文路径和工程名称。
 
 ![STM32CubeMX 工程创建操作截图 28](./images/stm32cubemx-new-project/28.png)
 
@@ -128,7 +126,7 @@
 
 ### 2.9. 配置下载调试工具
 
-首先确保自己已经安装了gcc-arm-toolchain（下载链接：<https://gitlab.arm.com/api/v4/projects/tooling%2Fgnu-toolchains-for-arm/packages/generic/gnu-toolchain/15.3.rel1/arm-gnu-toolchain-15.3.rel1-mingw-w64-i686-aarch64-none-elf.msi>）。
+首先确保自己已经安装了gcc-arm-toolchain（下载链接：<https://gitlab.arm.com/api/v4/projects/tooling%2Fgnu-toolchains-for-arm/packages/generic/gnu-toolchain/15.3.rel1/arm-gnu-toolchain-15.3.rel1-mingw-w64-x86_64-arm-none-eabi.msi>）。
 
 ![STM32CubeMX 工程创建操作截图 37](./images/stm32cubemx-new-project/37.png)
 

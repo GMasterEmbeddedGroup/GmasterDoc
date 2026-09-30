@@ -94,6 +94,7 @@ nav:
           - PID: 软件组/开发/PID.md
           - Vofa调试: 软件组/开发/Vofa.md
           - 电机手册: 软件组/开发/电机手册.md
+          - 开发板手册: 软件组/开发/开发板手册.md
           - 通信协议: 软件组/开发/通信协议.md
       - Checklist:
           - Checklist首页: 软件组/checklist/index.md

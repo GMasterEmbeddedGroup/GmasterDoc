@@ -14,8 +14,9 @@
 | **Lecture 2** | [C 语言第一次培训](./Lecture2.md) | 从 Hello World 开始：程序结构与基本语法、数据类型与运算符、二进制与进制转换（除 2 取余 / 位权相加 / 补码 / 位运算）、函数（定义调用 / 作用域 / 多文件 / 递归）、标准输入输出（printf 与 scanf） | [打开课件](slides/lecture2/index.html) |
 | **Lecture 3** | [C 语言程序设计（二）](./Lecture3.md) | 结构体、内存对齐、指针、大小端、中断与回调函数；以 STM32F103 的“点灯大师”实战收尾 | [打开课件](slides/lecture3/index.html) |
 | **Lecture 4** | [C 语言程序设计（三）](./Lecture4.md) | 流程控制与作用域、预处理、函数与模块、联合体与枚举、`volatile` 以及复杂表达式的数据流分析 | [打开课件](slides/lecture4/index.html) |
+| **Lecture 5** | [GPIO 基础原理与 EXTI 实践](./Lecture5.md) | GPIO 内部结构与八种模式、寄存器和 CubeMX 配置、EXTI 与 NVIC、HAL 回调及 USART 中断发送 | [下载 PPTX](./Lecture5.pptx) |
 
-> Lecture 5–6 正在整理；国庆期间可以配合学习 [C语言国庆假期学习](../C语言国庆假期学习/index.md)。
+> Lecture 6 正在整理；国庆期间可以配合学习 [C语言国庆假期学习](../C语言国庆假期学习/index.md)。
 
 ---
 

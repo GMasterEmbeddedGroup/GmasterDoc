@@ -1,7 +1,6 @@
 site_name: Gmaster Documentation
 site_url: https://www.gmaster.wiki
 exclude_docs: |
-  /软件组/培训/Lecture/Lecture5.md
   /软件组/培训/Lecture/Lecture6.md
   /软件组/培训/Lecture/slides/lecture5/**
   /软件组/培训/Lecture/slides/lecture6/**
@@ -34,6 +33,7 @@ nav:
               - Lecture2 C 语言第一次培训: 软件组/培训/Lecture/Lecture2.md
               - Lecture3 C 语言程序设计（二）: 软件组/培训/Lecture/Lecture3.md
               - Lecture4 C 语言程序设计（三）: 软件组/培训/Lecture/Lecture4.md
+              - Lecture5 GPIO 基础原理与 EXTI 实践: 软件组/培训/Lecture/Lecture5.md
               - 用 CMake 新建 x86 工程并通过 Git 提交: 软件组/培训/Lecture/用cmake新建x86工程并通过git提交.md
               - STM32F103 中断教程: 软件组/培训/Lecture/中断教程.md
               - 使用 STM32CubeMX 新建工程: 软件组/培训/Lecture/Lecture1小作业.md

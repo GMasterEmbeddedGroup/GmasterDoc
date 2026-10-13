@@ -1,9 +1,6 @@
 site_name: Gmaster Documentation
 site_url: https://www.gmaster.wiki
 exclude_docs: |
-  /软件组/培训/Lecture/点亮一个数码管.md
-  /软件组/培训/Lecture/TOP-CC-5461AH.pdf
-  /软件组/培训/Lecture/assets/seven-segment/
   /软件组/培训/Lecture/Lecture6.md
   /软件组/培训/Lecture/slides/lecture5/**
   /软件组/培训/Lecture/slides/lecture6/**
@@ -42,6 +39,7 @@ nav:
               - STM32F103 中断教程: 软件组/培训/Lecture/中断教程.md
               - 使用 STM32CubeMX 新建工程: 软件组/培训/Lecture/Lecture1小作业.md
               - 点灯大师: 软件组/培训/Lecture/点灯大师.md
+              - 点亮一个数码管: 软件组/培训/Lecture/点亮一个数码管.md
           - C语言国庆假期学习:
               - 专栏首页: 软件组/培训/C语言国庆假期学习/index.md
               - 嵌入式 C 语言学习指南（Windows版）: 软件组/培训/C语言国庆假期学习/嵌入式C语言学习指南（Windows版）.md

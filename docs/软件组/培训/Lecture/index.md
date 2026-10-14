@@ -2,7 +2,7 @@
 
 面向新队员的系列课程：从「电控组做什么、工具怎么装、第一个工程怎么跑通」开始，逐步进入 C 语言基础与嵌入式开发。
 
-每节课都配有**可交互课件**（点击章节可跳转、折叠问答、选项卡、随堂小测）与**课后作业**。课件是纯静态页面，打开页面后可按 <kbd>F</kbd> 全屏播放。
+Lecture 1–4 提供**可交互课件**（点击章节可跳转、折叠问答、选项卡、随堂小测），打开课件后可按 <kbd>F</kbd> 全屏播放。Lecture 5–6 提供 **PDF 在线预览**与 **PowerPoint 下载**。配套练习见各课页面与下方实操入口。
 
 ---
 
@@ -15,8 +15,9 @@
 | **Lecture 3** | [C 语言程序设计（二）](./Lecture3.md) | 结构体、内存对齐、指针、大小端、中断与回调函数；以 STM32F103 的“点灯大师”实战收尾 | [打开课件](slides/lecture3/index.html) |
 | **Lecture 4** | [C 语言程序设计（三）](./Lecture4.md) | 流程控制与作用域、预处理、函数与模块、联合体与枚举、`volatile` 以及复杂表达式的数据流分析 | [打开课件](slides/lecture4/index.html) |
 | **Lecture 5** | [GPIO 基础原理与 EXTI 实践](./Lecture5.md) | GPIO 内部结构与八种模式、寄存器和 CubeMX 配置、EXTI 与 NVIC、HAL 回调及 USART 中断发送 | [在线浏览](./Lecture5.md#lecture5-online) |
+| **Lecture 6** | [STM32 定时器与 PWM](./Lecture6.md) | 定时器时基与 PWM、调光与呼吸灯、时钟源、主从模式、定时器级联与外部脉冲计数 | [在线浏览](./Lecture6.md#lecture6-online) |
 
-> Lecture 6 正在整理；国庆期间可以配合学习 [C语言国庆假期学习](../C语言国庆假期学习/index.md)。
+> C 语言基础可配合 [C语言国庆假期学习](../C语言国庆假期学习/index.md) 继续巩固。
 
 ---
 
@@ -40,4 +41,4 @@
 
 ---
 
-> **作者**: [Metalxiaoxiao](https://github.com/Metalxiaoxiao) | **修改日期**: 2026-09-25
+> **作者**: [Metalxiaoxiao](https://github.com/Metalxiaoxiao) | **修改日期**: 2026-10-14

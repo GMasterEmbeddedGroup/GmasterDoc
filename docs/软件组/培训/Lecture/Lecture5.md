@@ -26,4 +26,5 @@
 ---
 
 - **上一篇**：[C 语言程序设计（三）—— Lecture 4](./Lecture4.md)
+- **下一篇**：[STM32 定时器与 PWM —— Lecture 6](./Lecture6.md)
 - **课程目录**：[培训课程（Lecture 系列）](./index.md)

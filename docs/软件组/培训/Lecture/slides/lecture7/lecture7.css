@@ -1,0 +1,16 @@
+/* Lecture 7: reuse the local Reveal runtime and GMaster theme. */
+.reveal .slides .l7-page{box-sizing:border-box;padding:42px 50px;text-align:left;font-size:27px;line-height:1.5;height:780px;overflow-y:auto;scrollbar-width:thin}
+.l7-page .eyebrow{font:600 16px/1.5 var(--g-body-font);letter-spacing:.18em;color:var(--g-red);margin-bottom:14px}
+.reveal .l7-page h2{font-size:44px;margin-bottom:24px}.reveal .l7-page h3{font-size:31px}
+.reveal .l7-page p{margin:12px 0}.l7-page .lead{font-size:34px;color:var(--g-ink)}
+.reveal .l7-page code{font-family:Consolas,"Microsoft YaHei",monospace;font-size:.9em;background:#f4f5f7;border-radius:4px;padding:2px 6px}
+.question{border-bottom:1px solid var(--g-line);padding:7px 0 12px}.qno{display:inline-block;color:var(--g-red);font-weight:700;min-width:45px}
+.question small{display:block;font-size:23px;margin:8px 0 4px 45px;line-height:1.5}
+.answer{font-size:23px;margin:8px 0 0 45px}.answer summary{cursor:pointer;color:var(--g-red);font-size:21px;width:max-content}.answer>div{background:var(--g-bg-soft);padding:12px 16px;margin-top:8px;border-left:3px solid var(--g-red)}
+.answer:focus-within,.chapter-links a:focus-visible{outline:2px solid var(--g-red);outline-offset:4px}
+.l7-page footer{font-size:16px;color:var(--g-mute);margin-top:18px}.muted,.reveal .l7-page .note{color:var(--g-mute);font-size:23px}.reveal .l7-page .note{font-size:18px;margin-top:28px}
+.cover{margin-top:60px}.chapter-links{display:flex;gap:22px;margin:54px 0}.chapter-links a{background:var(--g-bg-soft);padding:24px 18px;border-bottom:3px solid var(--g-red);font-size:25px}
+.download{font-size:23px}.callout{border-left:5px solid var(--g-red);background:var(--g-red-soft);padding:20px 28px;margin-top:28px;font-size:30px}
+.reveal .steps{display:block;margin:28px 0 0 50px}.steps li{padding:8px 12px}.learning{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:55px}.learning article{border-top:3px solid var(--g-red);padding-top:20px}.big-number{font-size:58px;color:var(--g-red)}
+.reveal img.git-logo{float:right;width:170px;height:auto;margin:0 10px;border:0;box-shadow:none}.git-block{margin-top:48px}.reveal .git-block pre{margin:18px 0;width:100%;box-shadow:none;font-size:28px}.reveal .git-block pre code{padding:22px}.practice{font-size:30px}.reveal .recap{display:block;margin:40px 0 40px 40px}.recap li{padding:12px}.end-links{display:flex;gap:30px;font-size:24px}
+@media print{.reveal .slides .l7-page{overflow:visible;height:auto!important}.answer>div{display:block}.answer:not([open])>div{display:block}.answer summary{display:none}}

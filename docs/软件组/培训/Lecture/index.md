@@ -2,7 +2,7 @@
 
 面向新队员的系列课程：从「电控组做什么、工具怎么装、第一个工程怎么跑通」开始，逐步进入 C 语言基础与嵌入式开发。
 
-Lecture 1–4 提供**可交互课件**（点击章节可跳转、折叠问答、选项卡、随堂小测），打开课件后可按 <kbd>F</kbd> 全屏播放。Lecture 5–6 提供 **PDF 在线预览**与 **PowerPoint 下载**。配套练习见各课页面与下方实操入口。
+Lecture 1–4 和 Lecture 7 提供**可交互课件**（点击章节可跳转、折叠问答、选项卡、随堂小测），打开课件后可按 <kbd>F</kbd> 全屏播放。Lecture 5–6 提供 **PDF 在线预览**与 **PowerPoint 下载**。配套练习见各课页面与下方实操入口。
 
 ---
 
@@ -16,6 +16,7 @@ Lecture 1–4 提供**可交互课件**（点击章节可跳转、折叠问答�
 | **Lecture 4** | [C 语言程序设计（三）](./Lecture4.md) | 流程控制与作用域、预处理、函数与模块、联合体与枚举、`volatile` 以及复杂表达式的数据流分析 | [打开课件](slides/lecture4/index.html) |
 | **Lecture 5** | [GPIO 基础原理与 EXTI 实践](./Lecture5.md) | GPIO 内部结构与八种模式、寄存器和 CubeMX 配置、EXTI 与 NVIC、HAL 回调及 USART 中断发送 | [在线浏览](./Lecture5.md#lecture5-online) |
 | **Lecture 6** | [STM32 定时器与 PWM](./Lecture6.md) | 定时器时基与 PWM、调光与呼吸灯、时钟源、主从模式、定时器级联与外部脉冲计数 | [在线浏览](./Lecture6.md#lecture6-online) |
+| **Lecture 7** | [复习、工程思维与 Git](./Lecture7.md) | C 与 GPIO 复习题、工程拆分验证、搜索与 AI 学习方法、Git 安装与分支练习 | [打开课件](slides/lecture7/index.html) |
 
 > C 语言基础可配合 [C语言国庆假期学习](../C语言国庆假期学习/index.md) 继续巩固。
 
@@ -41,4 +42,4 @@ Lecture 1–4 提供**可交互课件**（点击章节可跳转、折叠问答�
 
 ---
 
-> **作者**: [Metalxiaoxiao](https://github.com/Metalxiaoxiao) | **修改日期**: 2026-10-14
+> **作者**: [Metalxiaoxiao](https://github.com/Metalxiaoxiao) | **修改日期**: 2026-10-21

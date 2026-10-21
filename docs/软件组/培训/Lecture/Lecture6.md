@@ -26,4 +26,5 @@
 ---
 
 - **上一篇**：[GPIO 基础原理与 EXTI 实践 —— Lecture 5](./Lecture5.md)
+- **下一篇**：[复习、工程思维与 Git —— Lecture 7](./Lecture7.md)
 - **课程目录**：[培训课程（Lecture 系列）](./index.md)

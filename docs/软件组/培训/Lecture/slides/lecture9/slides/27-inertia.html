@@ -1,0 +1,37 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">惯量</h2>
+    <p class="lead">质量是平动的惯性，转动惯量是转动的惯性；两条牛顿第二定律一一对应。</p>
+  </div>
+  <div class="grid grid-2">
+    <div>
+      <div class="math">\[ J=\sum_i m_i r_i^{2},\qquad T=J\alpha \]</div>
+      <div class="kv"><b>含义</b><span>抵抗角加速度的能力，单位 kg·m²；质量越靠外，\(J\) 越大。</span></div>
+      <div class="kv"><b>整车的 J</b><span>由轮组、车体、云台、电池弹舱共同决定——换机械布局后 PID 必须重调。</span></div>
+      <div class="kv"><b>工程含义</b><span>\(J\) 大 → 同样的前馈扭矩换来的角加速度小 → 转向迟钝、易超调，需要更大的前馈和更小的 P。</span></div>
+    </div>
+    <div class="card" style="border-top-color:var(--g-red)">
+      <h4>平动 / 转动 一一对应</h4>
+      <table class="cmp" style="margin:0">
+        <tbody>
+          <tr><td>质量 \(m\)</td><td>转动惯量 \(J\)</td></tr>
+          <tr><td>速度 \(v\)</td><td>角速度 \(\omega\)</td></tr>
+          <tr><td>加速度 \(a\)</td><td>角加速度 \(\alpha\)</td></tr>
+          <tr><td>力 \(F\)</td><td>扭矩 \(T\)</td></tr>
+          <tr><td>\(F=ma\)</td><td>\(T=J\alpha\)</td></tr>
+          <tr><td>动能 \(\tfrac12 mv^{2}\)</td><td>动能 \(\tfrac12 J\omega^{2}\)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="derive">
+    <div class="derive-step"><em>例子</em><div>
+      <p>把一个轮子当成均质圆盘，绕中心轴 \(J=\int_0^{R}\rho\cdot2\pi r\cdot r^{2}\,\mathrm{d}r=\tfrac12 mR^{2}\)。取 \(m=1.5\ \mathrm{kg}\)、\(R=0.075\ \mathrm{m}\)：</p>
+      <div class="math">\[ J=\frac{1}{2}\times1.5\times0.075^{2}\approx4.2\times10^{-3}\ \mathrm{kg\cdot m^{2}} \]</div>
+    </div></div>
+    <div class="derive-step"><em>对照</em><div>
+      <p>同样质量做成圆环（\(J=mR^{2}\)）≈ \(8.4\times10^{-3}\)，正好翻倍——质量越靠外，\(J\) 越大。回到轮子：\(\alpha_{ref}=100\ \mathrm{rad/s^{2}}\) 时，前馈扭矩 \(\tau=J_w\alpha\approx0.42\ \mathrm{N\cdot m}\)。</p>
+    </div></div>
+  </div>
+  <div class="callout tip"><b>调参时其实一直在和 J 打交道：</b>前馈补的是“\(J\) 想要的那部分扭矩”，P 补的是“误差剩下的那部分”。</div>
+</section>

@@ -1,0 +1,12 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">解算的起点：转轴与状态</h2>
+    <p class="lead">先把“绕哪根轴转”定下来，底盘在平面上的运动状态才有唯一的写法。</p>
+  </div>
+  <div class="kv"><b>操作手手感</b><span>底盘旋转中心应当取<b>云台轴线在底盘面上的投影点</b>。</span></div>
+  <div class="kv"><b>物理合理性</b><span>底盘旋转中心应当取<b>整车的物理重心</b>。</span></div>
+  <div class="kv"><b>整车通过性</b><span>底盘旋转中心一般取<b>整车的几何中心</b>，也就是底盘框架对称轴的交点。</span></div>
+  <div class="callout tip"><b>四心合一：</b>四者重合时，转轴固定且垂直于地面，底盘只剩平面运动。此时状态可以写成一个三维向量加一根固定的转轴：</div>
+  <div class="math">\[ v=\begin{pmatrix}v_x\\ v_y\\ 0\end{pmatrix},\qquad \omega=\begin{pmatrix}0\\ 0\\ \omega\end{pmatrix},\qquad v_0=v+\omega\times r \]</div>
+  <div class="callout"><b>所以解算不是“凑三个数”：</b>无论轮组是什么，都是同一件事——把刚体上该轮组所在点的速度 \(v_0\) 投影到轮子的约束方向上。</div>
+</section>

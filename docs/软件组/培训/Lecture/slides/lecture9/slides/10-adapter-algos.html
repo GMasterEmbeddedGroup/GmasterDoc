@@ -1,0 +1,22 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">六类适配算法</h2>
+    <p class="lead">解算只保证“能动”，这些算法保证“实车上好用”。点击标题展开。</p>
+  </div>
+  <div class="accordion">
+    <div class="acc-item"><button class="acc-head">牵引力补偿：防止坡上打滑<span class="acc-arrow">›</span></button>
+      <div class="acc-body">坡道上重力沿斜面的分量需要额外的牵引力来平衡，否则底盘会溜坡、打滑。补偿量由陀螺仪测出的车身倾角算出。</div></div>
+    <div class="acc-item"><button class="acc-head">阻力补偿：轮组机械结构带来的阻力<span class="acc-arrow">›</span></button>
+      <div class="acc-body">轮组本身的加工误差、装配预紧、同步带张力都会形成阻力。机械装得不够理想、又不想改机械时，就在电控里做前馈把它补掉。</div></div>
+    <div class="acc-item"><button class="acc-head">功率控制：比赛对底盘有功率限制<span class="acc-arrow">›</span></button>
+      <div class="acc-body">比赛规则限制底盘可用功率，超限会限流。功率控制负责在四个轮组之间分配功率，避免“一个轮吃满、三个轮空转”。</div></div>
+    <div class="acc-item"><button class="acc-head">速度规划：让 WSAD 变得好开<span class="acc-arrow">›</span></button>
+      <div class="acc-body">操作手只有 WSAD，直接把按键映射到最大速度会导致急加速、急刹车，手感很差；过于剧烈的转向还会翻车。因此需要对速度给定做规划（限加速度、限加加速度）。</div></div>
+    <div class="acc-item"><button class="acc-head">陀螺仪纠偏：全向轮与麦轮专用<span class="acc-arrow">›</span></button>
+      <div class="acc-body">这两种底盘的滚子容易打滑。整车重心不均时，底盘可能因打滑而漂移，速度方向呈现出<b>朝向某个恒定方向的稳定偏移</b>。陀螺仪纠偏算法可以缓解该现象。</div></div>
+    <div class="acc-item"><button class="acc-head">舵向电机就近转位：舵轮专用<span class="acc-arrow">›</span></button>
+      <div class="acc-body">舵向电机控制轮组方向，轮向电机控制轮组角速度。底盘更需要方向上的精准性与快速响应，因此舵向电机应在角度改变时就近转位。典型例子：正在前进（舵向 0°、轮向 5 rad/s），想后退时，让轮向电机直接变成 −5 rad/s 比让舵向电机转 180° 更适宜；而且高速运动时舵向电机快速改向，也容易造成打滑与侧翻。</div></div>
+    <div class="acc-item"><button class="acc-head">速度与扭矩投影：舵轮专用<span class="acc-arrow">›</span></button>
+      <div class="acc-body">轮向电机的朝向受舵向电机当前角度影响，转向的中间过程中轮向电机可能仍有输出，直接输出会导致底盘漂移。因此在“舵向当前角度与目标角度之差”上做投影：偏角为 90° 时，对应的轮向角速度与扭矩应为 0。</div></div>
+  </div>
+</section>

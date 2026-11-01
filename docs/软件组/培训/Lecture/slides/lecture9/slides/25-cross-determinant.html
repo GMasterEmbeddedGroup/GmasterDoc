@@ -1,0 +1,27 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">叉乘的行列式定义</h2>
+    <p class="lead">几何定义用来理解，行列式定义用来写代码。</p>
+  </div>
+  <div class="math">\[ a\times b=\begin{vmatrix}
+    \mathbf{i} & \mathbf{j} & \mathbf{k}\\
+    a_x & a_y & a_z\\
+    b_x & b_y & b_z
+  \end{vmatrix}
+  =\begin{pmatrix}
+    a_y b_z-a_z b_y\\
+    a_z b_x-a_x b_z\\
+    a_x b_y-a_y b_x
+  \end{pmatrix} \]</div>
+  <div class="grid grid-2">
+    <div>
+      <div class="kv"><b>记法</b><span>\(\mathbf{i}\) 分量用 \(y,z\)；\(\mathbf{j}\) 分量前面<b>要加负号</b>；\(\mathbf{k}\) 分量用 \(x,y\)。</span></div>
+      <div class="kv"><b>自检</b><span>取 \(\omega=1\)、\(r=(1,0,0)\)，得 \(v=(0,1,0)\)：位于 +x 轴上的点朝 +y 方向运动，与直觉一致。</span></div>
+    </div>
+    <div class="kv"><b>工程做法</b><span>用不着手算——写代码时直接套上面的分量式，让单片机去乘。</span></div>
+  </div>
+  <p class="math-exp" style="margin-top:.4em">代进底盘：平面内所有 z 分量为 0，只剩两项</p>
+  <div class="math">\[ \omega\times r=\begin{pmatrix}0\\0\\\omega\end{pmatrix}\times\begin{pmatrix}r_x\\r_y\\0\end{pmatrix}
+    =\begin{pmatrix}-\omega r_y\\ \omega r_x\\ 0\end{pmatrix} \]</div>
+  <div class="callout warn"><b>符号陷阱：</b>把 \((-\omega r_y,\;\omega r_x)\) 写成正向，自转时车会朝反方向漂——现象是“陀螺仪转得对，位置却跑偏”。</div>
+</section>

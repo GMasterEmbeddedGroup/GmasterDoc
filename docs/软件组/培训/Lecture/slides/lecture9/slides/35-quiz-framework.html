@@ -1,0 +1,46 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">小测（二）：框架与解算</h2>
+    <p class="lead">这四题对应本讲最容易答错的地方。</p>
+  </div>
+  <div class="quiz">
+    <p class="quiz-q">1. 轮向电机保留速度环 P、去掉 I，最主要的理由是？</p>
+    <div class="quiz-opts">
+      <button class="quiz-opt" data-explain="P 就能保证基本跟随，去掉 I 与“响应快慢”关系不大。">让电机响应更快</button>
+      <button class="quiz-opt" data-correct="1" data-explain="目标速度都为 0 时，I 不一定清零，输出会与轮向电机的摩擦阻力抗衡：底盘不动却在耗功率，还挤占了超级电容的充电功率。">积分项静止时仍与摩擦对抗，白耗功率</button>
+      <button class="quiz-opt" data-explain="去掉 I 反而会留下一点稳态误差，这是已知的代价。">为了消除稳态误差</button>
+      <button class="quiz-opt" data-explain="电机本身不因为去掉 I 就变得更省电。">为了降低电机温升</button>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+  <div class="quiz">
+    <p class="quiz-q">2. 取 ω = 1 rad/s、r = (1, 0, 0)，则 ω × r 等于？</p>
+    <div class="quiz-opts">
+      <button class="quiz-opt" data-explain="(0,0,ω)×(rx,ry,0) = (−ω·ry, ω·rx, 0)，代进 ry = 0 得第一分量为 0。">(1, 0, 0)</button>
+      <button class="quiz-opt" data-correct="1" data-explain="(−ω·ry, ω·rx, 0) = (0, 1, 0)：位于 +x 轴上的点，逆时针转时朝 +y 方向运动，与直觉一致。">(0, 1, 0)</button>
+      <button class="quiz-opt" data-explain="这个结果对应的是 (−ω·rx, ...) 之类写错符号的公式。">(0, −1, 0)</button>
+      <button class="quiz-opt" data-explain="结果是向量，不是标量 1。">1</button>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+  <div class="quiz">
+    <p class="quiz-q">3. 运动学正解算为什么不能直接“求个逆矩阵”？</p>
+    <div class="quiz-opts">
+      <button class="quiz-opt" data-explain="逆解算的 A 是 4×3，正解算要用它反推，但反推不能靠求逆。">因为 A 的元素都是无理数</button>
+      <button class="quiz-opt" data-correct="1" data-explain="A 连方阵都不是（4×3 或 8×3），求逆无从谈起；正解算本质是超定条件下的加权平均，所以要另外求一个 B。">因为 A 不是方阵，正解算超定</button>
+      <button class="quiz-opt" data-explain="单片机算力不足可以查表或用定点数解决，不是根本原因。">因为单片机算力不够</button>
+      <button class="quiz-opt" data-explain="恰恰相反：需要处理的正是“数据彼此矛盾”这件事。">因为四个电机数据完全一致</button>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+  <div class="quiz">
+    <p class="quiz-q">4. 加了扭矩前馈之后，为什么轮向电机的 P 还要调小？</p>
+    <div class="quiz-opts">
+      <button class="quiz-opt" data-explain="P 大小与电机功率上限没有直接关系。">为了让电机不超过额定功率</button>
+      <button class="quiz-opt" data-correct="1" data-explain="P 剩下的作用是防止“单个轮子打滑空转、速度过快”，从而让平动速度环误以为已经达到目标、其它轮不再输出。P 太大就会抢在别的轮之前冲上去。">防止单轮打滑冲高，让速度环提前达标</button>
+      <button class="quiz-opt" data-explain="前馈不改变编码器分辨率。">为了提高编码器分辨率</button>
+      <button class="quiz-opt" data-explain="电流环是下层，不受这里的 P 影响。">为了取消电流环</button>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+</section>

@@ -1,0 +1,17 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">积分项在时域里的副作用</h2>
+    <p class="lead">换个角度看同一个问题：从轮向电机 PI 的积分项看功率损耗。</p>
+  </div>
+  <div class="grid grid-2">
+    <div class="card"><h4><span class="card-index">+</span>积极作用</h4>
+      <p>消除<b>稳态误差</b>，这是它存在的理由。</p></div>
+    <div class="card"><h4><span class="card-index">−</span>消极作用</h4>
+      <p>轮向电机的机械系统本身有阻力，积分项会<b>在不知不觉中与这种阻力作斗争</b>。</p></div>
+  </div>
+  <div class="band">目标平动速度 = 0，目标角速度 = 0
+  →  e = 0，P 输出 = 0
+  →  但积分器不一定已经清零</div>
+  <div class="kv"><b>后果</b><span>轮向电机仍有输出，该输出对应的扭矩与摩擦阻力相抗衡：车不动，却在耗功率。</span></div>
+  <div class="kv"><b>代价</b><span>这部分功率会挤占超级电容的充电余量，裁判系统看到的也是它。</span></div>
+</section>

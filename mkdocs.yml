@@ -36,6 +36,7 @@ nav:
               - Lecture5 GPIO 基础原理与 EXTI 实践: 软件组/培训/Lecture/Lecture5.md
               - Lecture6 STM32 定时器与 PWM: 软件组/培训/Lecture/Lecture6.md
               - Lecture7 复习、工程思维与 Git: 软件组/培训/Lecture/Lecture7.md
+              - Lecture9 底盘概述: 软件组/培训/Lecture/Lecture9.md
               - 用 CMake 新建 x86 工程并通过 Git 提交: 软件组/培训/Lecture/用cmake新建x86工程并通过git提交.md
               - STM32F103 中断教程: 软件组/培训/Lecture/中断教程.md
               - 使用 STM32CubeMX 新建工程: 软件组/培训/Lecture/Lecture1小作业.md

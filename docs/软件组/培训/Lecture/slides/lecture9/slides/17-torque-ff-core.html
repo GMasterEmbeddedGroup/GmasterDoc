@@ -1,0 +1,57 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">什么是前馈</h2>
+    <p class="lead">前馈是按模型“先算后给”：不等误差出现，就把该出的力加上去；反馈才是等误差出现再纠。</p>
+  </div>
+  <div class="grid grid-2">
+    <div class="diagram">
+      <svg viewBox="0 0 480 288" role="img" aria-label="反馈与前馈并联的控制框图：前馈按目标经模型逆先给出前馈量，反馈按误差修正">
+        <defs>
+          <marker id="ff-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#3b4149"></path>
+          </marker>
+          <marker id="ff-arr-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#b3121b"></path>
+          </marker>
+          <marker id="ff-arr-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#7c848f"></path>
+          </marker>
+        </defs>
+        <text x="8" y="85" font-size="14" fill="#14161a">r</text>
+        <line x1="20" y1="90" x2="60" y2="90" stroke="#3b4149" stroke-width="1.7" marker-end="url(#ff-arr)"></line>
+        <circle cx="79" cy="90" r="15" fill="#fff" stroke="#3b4149" stroke-width="1.7"></circle>
+        <text x="70" y="87" font-size="12.5" fill="#3b4149">+</text>
+        <text x="70" y="105" font-size="12.5" fill="#3b4149">−</text>
+        <line x1="94" y1="90" x2="118" y2="90" stroke="#3b4149" stroke-width="1.7" marker-end="url(#ff-arr)"></line>
+        <rect x="122" y="62" width="94" height="56" rx="3" fill="#f7f8fa" stroke="#3b4149" stroke-width="1.6"></rect>
+        <text x="169" y="95" font-size="15" text-anchor="middle" fill="#14161a">Kp</text>
+        <line x1="216" y1="90" x2="232" y2="90" stroke="#3b4149" stroke-width="1.7" marker-end="url(#ff-arr)"></line>
+        <circle cx="249" cy="90" r="15" fill="#fff" stroke="#3b4149" stroke-width="1.7"></circle>
+        <text x="240" y="87" font-size="12.5" fill="#3b4149">+</text>
+        <text x="240" y="105" font-size="12.5" fill="#3b4149">+</text>
+        <line x1="264" y1="90" x2="288" y2="90" stroke="#3b4149" stroke-width="1.7" marker-end="url(#ff-arr)"></line>
+        <rect x="292" y="62" width="106" height="56" rx="3" fill="#f7f8fa" stroke="#3b4149" stroke-width="1.6"></rect>
+        <text x="345" y="95" font-size="15" text-anchor="middle" fill="#14161a">对象</text>
+        <line x1="398" y1="90" x2="426" y2="90" stroke="#3b4149" stroke-width="1.7" marker-end="url(#ff-arr)"></line>
+        <text x="432" y="95" font-size="14" fill="#14161a">y</text>
+        <polyline points="42,90 42,206 164,206" fill="none" stroke="#b3121b" stroke-width="1.7" marker-end="url(#ff-arr-r)"></polyline>
+        <rect x="170" y="178" width="162" height="56" rx="3" fill="#f7eaeb" stroke="#b3121b" stroke-width="1.6"></rect>
+        <text x="251" y="212" font-size="14.5" text-anchor="middle" fill="#14161a">模型逆 g&#8315;&#185;(r)</text>
+        <line x1="251" y1="178" x2="251" y2="109" stroke="#b3121b" stroke-width="1.7" marker-end="url(#ff-arr-r)"></line>
+        <text x="259" y="148" font-size="13" fill="#b3121b">u<tspan font-size="9.5" dy="3">ff</tspan></text>
+        <polyline points="412,90 412,252 79,252 79,109" fill="none" stroke="#7c848f" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#ff-arr-g)"></polyline>
+        <text x="52" y="190" font-size="13" fill="#b3121b">前馈通道</text>
+        <text x="246" y="274" font-size="13" text-anchor="middle" fill="#7c848f">反馈通道：误差出现后才动作</text>
+      </svg>
+    </div>
+    <div>
+      <div class="kv"><b>反馈看差距</b><span>由误差驱动：\(e=0\) 就不出力，误差出现了才开始纠，永远慢半拍。</span></div>
+      <div class="kv"><b>前馈看目标</b><span>由模型驱动：不看当前误差，先按“目标 + 模型”把该出的力算出来。</span></div>
+      <div class="kv"><b>写在一起</b><span>\(u=u_{\text{ff}}(r)+K_p e\)：前馈承担主要扭矩，\(K_p\) 只收拾模型没算准的残差。</span></div>
+      <div class="kv"><b>为什么不影响稳定</b><span>前馈是开环通道，不进闭环特征方程；所以轮向电机可以把 I 拿掉，只留一个调小的 P。</span></div>
+      <div class="band">反馈：等误差出现 → 才出力（事后纠偏，改变闭环极点）
+前馈：目标已知 → 先出力（事前给量，不动闭环极点）</div>
+    </div>
+  </div>
+  <div class="callout"><b>两个例子：</b>要 2 m/s² 的加速度，就先给 \(J\alpha\) 的扭矩；在 15° 的坡上，就先给 \(mg\sin\theta\) 的力——都不等车速掉下来再补。</div>
+</section>

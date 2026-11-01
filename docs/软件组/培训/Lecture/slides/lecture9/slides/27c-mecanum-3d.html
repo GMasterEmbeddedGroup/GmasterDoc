@@ -1,0 +1,46 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">可交互 3D：轮速只往两个方向拆</h2>
+    <p class="lead">拖动旋转、点轮子切换。接触点速度 \(v_0\) 只有两个去处：沿辊轴的 \(v_\parallel\) 要电机滚出来，垂直辊轴的 \(v_\perp\) 由辊子自转吃掉 —— <b>轮毂一动不动</b>。</p>
+  </div>
+
+  <div class="m3d" data-m3d>
+    <div class="m3d-stage">
+      <canvas></canvas>
+      <div class="m3d-bar">
+        <div class="m3d-legend">
+          <span><i class="sw sw-ink"></i>v₀ 接触点速度</span>
+          <span><i class="sw sw-red"></i>v∥ 驱动分量</span>
+          <span><i class="sw sw-free"></i>v⊥ 辊子自转分量</span>
+          <span><i class="sw sw-dash"></i>u、g 两个 45° 方向</span>
+        </div>
+        <div class="m3d-views">
+          <button data-view="iso">等轴测</button>
+          <button data-view="top">俯视</button>
+          <button data-view="front">正前</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="m3d-panel">
+      <div class="m3d-tabs">
+        <button data-wheel="0">左前</button>
+        <button data-wheel="1">右前</button>
+        <button data-wheel="2">左后</button>
+        <button data-wheel="3">右后</button>
+      </div>
+      <div class="car-row"><label>vx</label><input type="range" data-k="vx" min="-2" max="2" step="0.05" value="1"><output>1.00</output></div>
+      <div class="car-row"><label>vy</label><input type="range" data-k="vy" min="-2" max="2" step="0.05" value="0"><output>0.00</output></div>
+      <div class="car-row"><label>ω</label><input type="range" data-k="w" min="-3" max="3" step="0.05" value="0"><output>0.00</output></div>
+      <div class="m3d-presets">
+        <button data-preset="fwd">前进</button>
+        <button data-preset="strafe">横移</button>
+        <button data-preset="spin">自转</button>
+        <button data-preset="diag">斜行</button>
+      </div>
+      <div class="m3d-out" data-m3d-out></div>
+    </div>
+  </div>
+
+  <div class="callout tip"><b>亲手验一次：</b>点「斜行」，左前轮的 \(v_\parallel\) 正好是 0 —— 看它<b>轮毂停住、只有辊子在自己转</b>；再点「横移」，四个轮子的 \(v_\parallel\) 变成对角同号，这就是麦轮横着走的原理。下一页把这套分解写成三步公式。</div>
+</section>

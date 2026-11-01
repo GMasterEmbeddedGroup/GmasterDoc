@@ -1,0 +1,23 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">扭矩</h2>
+    <p class="lead">力决定平动，扭矩决定转动；在电机侧，“控扭矩”就是“控电流”。</p>
+  </div>
+  <div class="grid grid-2">
+    <div>
+      <div class="math">\[ \tau=r\times F \]</div>
+      <div class="kv"><b>大小</b><span>\(\left|\tau\right|=\left|r\right|\left|F\right|\sin\theta\)，即“力臂 × 力”，单位 N·m。</span></div>
+      <div class="kv"><b>直觉</b><span>同一个力，力臂越长转动效果越强。</span></div>
+      <div class="kv"><b>电机侧</b><span>扭矩与电流成正比，3508 配 C620 时控制量就是扭矩（电流）。</span></div>
+      <div class="math">\[ \tau=K_t I \]</div>
+    </div>
+    <div class="card" style="border-top-color:var(--g-red)">
+      <h4>三个层次</h4>
+      <p><b>力学</b>：\(\tau=r\times F\)</p>
+      <p><b>电机</b>：\(\tau=K_t I\)</p>
+      <p><b>整车</b>：\((F,\,T)\Leftarrow\) 四个轮组扭矩，这就是动力学逆解算</p>
+      <p class="small dim" style="margin-top:.4em!important">注意：扭矩决定的是角加速度，不是速度。速度由功率与阻力共同决定，所以只给前馈、不给速度环，车会一直加速。</p>
+    </div>
+  </div>
+  <div class="callout"><b>与解算的关系：</b>速度解算给出“每个轮子转多快”，动力学逆解算给出“每个轮子出多大力”。前者只需要几何，后者需要质量、惯量与阻力。</div>
+</section>

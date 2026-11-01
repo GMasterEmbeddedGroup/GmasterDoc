@@ -1,0 +1,19 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">为什么不能“求个逆矩阵”</h2>
+    <p class="lead">学过线性代数的人第一反应是求逆，但这里的矩阵连方阵都不是。</p>
+  </div>
+  <div class="math">\[ \underbrace{A}_{4\times3\ \text{或}\ 8\times3}\, v_{\text{chassis}} = \omega_{\text{wheel}}
+    \qquad\Longrightarrow\qquad
+    v_{\text{chassis}} = \underbrace{B}_{3\times4\ \text{或}\ 3\times8}\, \omega_{\text{wheel}} \]</div>
+  <div class="grid grid-2">
+    <div class="card"><h4>从问题出发</h4>
+      <p><b>逆解算：</b>已知底盘状态，求轮组的 4 个甚至 8 个变量，每个变量都有唯一解。</p>
+      <p><b>正解算：</b>已知一大堆电机变量，其实不需要这么多就能唯一确定底盘状态，因此是<b>超定</b>条件。</p></div>
+    <div class="card"><h4>从物理现实出发</h4>
+      <p>直接对速度做对应方向的投影，手动调整系数——也就是求出 \(B\)，使 \(BA=I\) 在最小二乘意义上成立。</p>
+      <p class="small dim">了解机器人学的可能知道这被称为 Jacobi 矩阵的伪逆，这里不展开。</p></div>
+  </div>
+  <div class="kv"><b>超定怎么解</b><span>对数据做加权平均。四个轮子的读数会互相矛盾（打滑、量化误差），\(B\) 决定你更相信谁。</span></div>
+  <div class="callout warn"><b>实践含义：</b>正解算的精度直接决定速度环的输入质量。\(B\) 里抄错一个符号，表现就是“直着开没问题，一转就漂”。</div>
+</section>

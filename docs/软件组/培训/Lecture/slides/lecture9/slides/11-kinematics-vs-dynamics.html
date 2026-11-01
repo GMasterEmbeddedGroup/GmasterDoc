@@ -1,0 +1,32 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">相关概念辨析：运动学？动力学？</h2>
+    <p class="lead">同一个底盘，两种问法。切换选项卡对照着看。</p>
+  </div>
+  <div data-tabs>
+    <div class="tabbar">
+      <button class="tab-btn" data-tab="kin">运动学</button>
+      <button class="tab-btn" data-tab="dyn">动力学</button>
+      <button class="tab-btn" data-tab="both">放在一起看</button>
+    </div>
+    <div class="tab-panel" data-panel="kin">
+      <div class="callout"><b>关注运动状态与位姿信息。</b></div>
+      <div class="kv"><b>关心什么</b><span>加速度、角加速度、速度、角速度、位置、姿态。</span></div>
+      <div class="kv"><b>因果链</b><span><b>速度导致位置的改变</b>。</span></div>
+      <div class="kv"><b>对应算法</b><span>速度解算（逆解算）、运动学正解算、里程计。</span></div>
+    </div>
+    <div class="tab-panel" data-panel="dyn">
+      <div class="callout"><b>关注受力情况与运动状态的关系。</b></div>
+      <div class="kv"><b>关心什么</b><span>受到的力、引发旋转的力矩，以及由此对应的加速度、角加速度。</span></div>
+      <div class="kv"><b>因果链</b><span><b>受力导致运动状态的改变</b>。</span></div>
+      <div class="kv"><b>对应算法</b><span>动力学逆解算、扭矩前馈、功率控制。</span></div>
+    </div>
+    <div class="tab-panel" data-panel="both">
+      <div class="grid grid-2">
+        <div class="card"><h4>运动学回答</h4><p>“给定 v、ω，四个轮子该转多快？”——只有几何关系，不涉及质量和力。</p></div>
+        <div class="card"><h4>动力学回答</h4><p>“要让底盘产生这个加速度，四个电机该出多少扭矩？”——引入质量、惯量、阻力。</p></div>
+      </div>
+      <div class="callout tip"><b>一句话：</b>运动学保证动作是对的，动力学保证代价是最小的。</div>
+    </div>
+  </div>
+</section>

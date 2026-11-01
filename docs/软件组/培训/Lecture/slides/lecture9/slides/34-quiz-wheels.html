@@ -1,0 +1,36 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">小测（一）：轮组与装车</h2>
+    <p class="lead">先想再点，点完会显示解析。</p>
+  </div>
+  <div class="quiz">
+    <p class="quiz-q">1. 全向轮底盘四个轮组的滚子轴线不再是“两两对称”（左上与右下不同向），最先出现的现象是？</p>
+    <div class="quiz-opts">
+      <button class="quiz-opt" data-correct="1" data-explain="对称布置被破坏后，四个轮组在平动方向上的投影不再互相抵消，底盘平动会朝一侧跑偏。">平动跑偏</button>
+      <button class="quiz-opt" data-explain="旋转主要靠四个轮组的切向分量，符号对称被破坏通常先表现在平动上。">完全不能旋转</button>
+      <button class="quiz-opt" data-explain="电机与编码器都还正常，转速闭环照样能跟住。">电机转速跟不住目标</button>
+      <button class="quiz-opt" data-explain="这与 CAN 通信无关，属于机械安装问题。">CAN 总线通信失败</button>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+  <div class="quiz">
+    <p class="quiz-q">2. 麦轮装反（俯视看不到打叉、仰视看不到画圆）后，最典型的现象是？</p>
+    <div class="quiz-opts">
+      <button class="quiz-opt" data-explain="装反后仍然能平移，只是转向时四个轮子对转矩的贡献互相抵消。">完全无法移动</button>
+      <button class="quiz-opt" data-correct="1" data-explain="装反只能平动，转动会打滑：四个轮组对转矩的贡献互相抵消，所以自转时打滑、转不动。">能平动，但转动会打滑</button>
+      <button class="quiz-opt" data-explain="麦轮本就存在自由平移方向，装反不会让打滑消失。">打滑现象完全消失</button>
+      <button class="quiz-opt" data-explain="装反不影响电机本身的控制环路。">电机进入堵转保护</button>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+  <div class="quiz">
+    <p class="quiz-q">3. 舵轮底盘最容易因为装配问题带来“固定偏置”的是哪一项？</p>
+    <div class="quiz-opts">
+      <button class="quiz-opt" data-explain="轮半径为固定值，不影响角度零点。">轮向电机的轮半径 s</button>
+      <button class="quiz-opt" data-explain="四轮布局的 a、b 由机械尺寸决定，属于设计值。">轮组到中心的距离 a、b</button>
+      <button class="quiz-opt" data-correct="1" data-explain="四个舵向电机的零位必须一致，否则解算出的角度会带一个固定偏置，车会一直朝某个方向偏。">四个舵向电机的零位是否一致</button>
+      <button class="quiz-opt" data-explain="陀螺仪与舵向零位是两件独立的事。">陀螺仪的安装高度</button>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+</section>

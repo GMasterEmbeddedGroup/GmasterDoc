@@ -1,0 +1,27 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">麦轮速度解算：三步推导</h2>
+    <p class="lead">算该点速度 → 投影到轮子的约束方向 → 除以轮半径。全程只有几何，没有经验系数。</p>
+  </div>
+  <div class="derive">
+    <div class="derive-step"><em>①</em><div>
+      <p>取轮组位置 \(r_i=(\pm a,\ \pm b)\)，先算该点的速度：</p>
+      <div class="math">\[ v_0=v+\omega\times r_i=\begin{pmatrix}v_x-\omega r_y\\ v_y+\omega r_x\end{pmatrix} \]</div>
+    </div></div>
+    <div class="derive-step"><em>②</em><div>
+      <p>不打滑时轮子只能沿自身轮面方向滚动。麦轮的滚子与轮面成 45°，轮面方向单位矢量为 \(\hat{u}=\tfrac{\sqrt2}{2}(\pm1,\pm1)\)，轮面线速度就是投影：</p>
+      <div class="math">\[ v_{\parallel}=v_0\cdot\hat{u} \]</div>
+    </div></div>
+    <div class="derive-step"><em>③</em><div>
+      <p>角速度 = 轮面线速度 ÷ 轮半径，代入四个位置并整理（\(45^\circ\) 的常数系数折进 \(s\)）：</p>
+      <div class="math">\[ \omega_i=\frac{v_{\parallel}}{s}=\frac{1}{s}\Bigl(\pm v_x\pm v_y+\omega\left(a+b\right)\Bigr) \]</div>
+    </div></div>
+  </div>
+  <div class="grid grid-2" style="margin-top:.2em">
+    <div class="math">\[ M_0=\bigl(-v_x+v_y+\omega(a+b)\bigr)/s \]</div>
+    <div class="math">\[ M_1=\bigl(-v_x-v_y+\omega(a+b)\bigr)/s \]</div>
+    <div class="math">\[ M_2=\bigl(\ \ v_x-v_y+\omega(a+b)\bigr)/s \]</div>
+    <div class="math">\[ M_3=\bigl(\ \ v_x+v_y+\omega(a+b)\bigr)/s \]</div>
+  </div>
+  <div class="callout tip"><b>校对两件事：</b>令 \(\omega=0\) 应得纯平动；令 \(v_x=v_y=0\) 应得四轮同号同速的纯自转。正负号取决于电机编号与安装方向，抄公式前先确认自己的编号。</div>
+</section>

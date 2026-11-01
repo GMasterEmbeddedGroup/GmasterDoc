@@ -1,0 +1,17 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">底盘要完成的工作</h2>
+    <p class="lead">两件事：把目标变成电机指令（逆解算），把电机数据变回底盘状态（位姿与运动学解算）。</p>
+  </div>
+  <div class="grid grid-2">
+    <div class="card"><h4><span class="card-index">01</span>运动学与动力学逆解算</h4>
+      <p>根据遥控器或小电脑输入的控制信号，即<b>底盘平动速度与角速度的目标值</b>，解算到每个电机的<b>速度 or 扭矩（或电流）</b>目标值。</p>
+      <p class="small dim">这是底盘运动的根本。</p></div>
+    <div class="card"><h4><span class="card-index">02</span>位姿与运动学解算</h4>
+      <p>根据底盘陀螺仪与每个电机的数据，确定当前底盘的朝向，进而确定在<b>场地坐标系（Odom 系）</b>下的速度与角速度的值。</p>
+      <p class="small dim">陀螺仪给朝向，电机给自身转速，两者合成整车状态。</p></div>
+  </div>
+  <div class="kv"><b>谁在用 02</b><span>底盘动力学闭环对电机的前馈、小陀螺、上坡功率分配时都需要它。</span></div>
+  <div class="kv"><b>还发给谁</b><span>位姿还会发给小电脑，用于自瞄的预判。</span></div>
+  <div class="callout"><b>方向相反：</b>01 是“上层 → 下层”，02 是“下层 → 上层”。这两条路合起来才是闭环，缺一条就只能在开环里猜。</div>
+</section>

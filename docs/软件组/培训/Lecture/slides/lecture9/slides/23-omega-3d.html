@@ -1,0 +1,44 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">角速度是轴矢量</h2>
+    <p class="lead">大小是转速，方向沿转轴；它不能直接与线速度相加，只能通过叉乘作用到位置矢量上。</p>
+  </div>
+  <div class="grid grid-2">
+    <div class="card" style="border-top-color:var(--g-red)">
+      <svg viewBox="0 0 480 400" style="display:block;width:100%;height:auto" role="img" aria-label="角速度与线速度的三维关系">
+        <defs>
+          <marker id="om3-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#b3121b"></path></marker>
+          <marker id="om3-k" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#14161a"></path></marker>
+          <marker id="om3-rot" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#b9c0c8"></path></marker>
+        </defs>
+        <!-- 盘面（含厚度） -->
+        <ellipse cx="240" cy="262" rx="120" ry="42" fill="#e4e7ea"></ellipse>
+        <ellipse cx="240" cy="250" rx="120" ry="42" fill="#f7f8fa" stroke="#8e9aa6" stroke-width="1.6"></ellipse>
+        <!-- 转向指示：正前方边缘向 +x 移动，即俯视逆时针 -->
+        <path d="M 168 288 Q 240 305 312 288" fill="none" stroke="#b9c0c8" stroke-width="1.4" marker-end="url(#om3-rot)"></path>
+        <!-- ω：垂直于盘面 -->
+        <line x1="240" y1="250" x2="240" y2="96" stroke="#b3121b" stroke-width="2.2" marker-end="url(#om3-arr)"></line>
+        <text x="250" y="112" font-size="18" font-weight="700" fill="#b3121b">ω</text>
+        <text x="250" y="130" font-size="11.5" fill="#7c848f">垂直于盘面</text>
+        <circle cx="240" cy="250" r="4" fill="#14161a"></circle>
+        <text x="214" y="270" font-size="12" fill="#7c848f">O</text>
+        <!-- 该点位置矢量 r：t = 30° 的盘面点 -->
+        <line x1="240" y1="250" x2="344" y2="229" stroke="#14161a" stroke-width="1.5" stroke-dasharray="6 4"></line>
+        <text x="286" y="236" font-size="14" font-weight="700" fill="#14161a">r</text>
+        <circle cx="344" cy="229" r="4.5" fill="#b3121b"></circle>
+        <!-- v = ω × r：沿椭圆切线方向（盘面内，指向 t 增大方向） -->
+        <line x1="344" y1="229" x2="284" y2="193" stroke="#b3121b" stroke-width="2.4" marker-end="url(#om3-arr)"></line>
+        <text x="292" y="186" font-size="15" font-weight="700" fill="#b3121b">v = ω × r</text>
+        <text x="356" y="246" font-size="12" fill="#7c848f">该点</text>
+      </svg>
+      <p class="tiny dim" style="margin:.3em 0 0!important">盘面转动时，盘上每一点的线速度都在盘面内，且垂直于它到转轴的连线。</p>
+    </div>
+    <div>
+      <div class="kv"><b>定义</b><span>平面上的转动用角速度描述：\(\omega=\dfrac{\mathrm{d}\theta}{\mathrm{d}t}\)，单位 rad/s。</span></div>
+      <div class="kv"><b>轴矢量</b><span>方向沿转轴，由<b>右手螺旋定则</b>确定；从 +z 方向俯视，逆时针为正。</span></div>
+      <div class="kv"><b>为什么用三维写法</b><span>\(\omega\) 与 \(v\) 量纲不同，不能相加；写成三维向量后，一次叉乘就能算出任意一点的线速度，不用分情况讨论。</span></div>
+      <div class="kv"><b>底盘里</b><span>转轴固定垂直于地面，所以 \(\omega=(0,0,\omega)\)，只有大小在变。</span></div>
+      <div class="math">\[ v_0=v+\omega\times r \]</div>
+    </div>
+  </div>
+</section>

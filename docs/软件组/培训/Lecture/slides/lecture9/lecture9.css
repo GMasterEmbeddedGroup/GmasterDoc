@@ -1,0 +1,156 @@
+/* Lecture 9: 底盘概述 —— 在 Lecture 1/3 视觉语言上追加的零件 */
+
+/* 内容偏密的页较多，整体收敛一档字号，给公式与总图留出空间 */
+.reveal .slides section { font-size: 0.94em; }
+
+/* ------------------------------------------------------------ 要点行 */
+.kv { display: grid; grid-template-columns: 8.4em 1fr; gap: 0.6em; padding: 0.26em 0; border-bottom: 1px solid var(--g-line-soft); font-size: 0.69em; line-height: 1.5; }
+.kv b { color: var(--g-ink); }
+.kv:last-child { border-bottom: none; }
+.kv .mono { color: var(--g-red); }
+
+/* ------------------------------------------------------------ 公式（LaTeX） */
+.math { margin: 0.3em 0; overflow-x: auto; overflow-y: hidden; font-size: 0.72em; }
+.math mjx-container[display="true"] { margin: 0.12em 0 !important; }
+.math.left mjx-container[display="true"] { text-align: left !important; }
+.math mjx-container { color: var(--g-ink); }
+.math-exp { font-size: 0.66em; color: var(--g-body); line-height: 1.55; }
+.math-exp b { color: var(--g-ink); }
+.math.small mjx-container[display="true"] { font-size: 92% !important; }
+.math.tight { font-size: 0.6em; }
+.math::-webkit-scrollbar { height: 5px; }
+.math::-webkit-scrollbar-thumb { background: #d3d8de; border-radius: 3px; }
+
+/* 强调条 / 矩阵说明 */
+.band { margin: 0.4em 0; padding: 0.5em 0.8em; background: var(--g-red-soft); border-left: 4px solid var(--g-red); font: 0.62em/1.7 var(--r-code-font); color: var(--g-ink); white-space: pre-wrap; overflow-x: auto; }
+.mx-cap { font-size: 0.56em; color: var(--g-mute); line-height: 1.45; margin-top: 0.2em; }
+
+/* 推导步骤：一行一步，左侧编号 */
+.derive { display: grid; gap: 0.3em; margin-top: 0.4em; }
+.derive-step { display: grid; grid-template-columns: 2.1em 1fr; gap: 0.55em; align-items: start; padding-bottom: 0.28em; border-bottom: 1px dashed var(--g-line); }
+.derive-step:last-child { border-bottom: none; }
+.derive-step > em { font: 700 0.72em/1.3 var(--r-code-font); color: var(--g-red); font-style: normal; }
+.derive-step > div { min-width: 0; }
+.derive-step p { font-size: 0.66em; margin: 0 0 0.15em !important; line-height: 1.5; color: var(--g-body); }
+
+/* --------------------------------------------------------- 三列对比表 */
+.reveal .cmp { width: 100%; margin-top: 0.35em; }
+.reveal .cmp th, .reveal .cmp td { font-size: 0.6em !important; line-height: 1.45; padding: 0.4em 0.5em !important; vertical-align: top; }
+.reveal .cmp th { background: var(--g-bg-soft); color: var(--g-ink); white-space: nowrap; }
+.reveal .cmp td:first-child { font-weight: 700; color: var(--g-ink); white-space: nowrap; background: #fff; }
+.reveal .cmp .good { color: var(--g-ok); }
+.reveal .cmp .bad { color: var(--g-red); }
+
+/* ------------------------------------------------------ 框架总图（分步） */
+.fc { display: grid; grid-template-columns: 1fr; gap: 0.4em; align-items: start; }
+.fc-rail { display: flex; flex-direction: row; flex-wrap: wrap; gap: 0.28em; }
+.fc-step {
+  display: flex; align-items: baseline; justify-content: center; gap: 0.4em;
+  flex: 1 1 auto; text-align: left;
+  font: inherit; font-size: 0.5em; line-height: 1.3;
+  color: var(--g-mute); background: #fff;
+  border: 1px solid var(--g-line); border-bottom: 2px solid var(--g-line);
+  padding: 0.42em 0.45em; cursor: pointer;
+  transition: all 0.16s ease;
+}
+.fc-step:hover { color: var(--g-ink); background: var(--g-bg-soft); }
+.fc-step.is-past { color: var(--g-body); border-bottom-color: #c3c9d1; }
+.fc-step.is-active { color: var(--g-ink); font-weight: 700; background: var(--g-bg-soft); border-color: var(--g-red); }
+.fc-idx { font-family: var(--r-code-font); font-size: 0.92em; color: var(--g-red); flex: none; }
+.fc-stage { min-width: 0; }
+.fc-stage svg { display: block; width: 100%; max-height: 452px; height: auto; }
+.fc-stage .fc-node, .fc-stage .fc-edge { opacity: 0.2; transition: opacity 0.25s ease; }
+.fc-stage .fc-node.is-past, .fc-stage .fc-edge.is-past { opacity: 0.68; }
+.fc-stage .fc-node.is-on, .fc-stage .fc-edge.is-on { opacity: 1; }
+.fc-stage .fc-node rect, .fc-stage .fc-node polygon { transition: stroke-width 0.2s ease; }
+.fc-stage .fc-node.is-on rect, .fc-stage .fc-node.is-on polygon { stroke-width: 2.8; }
+.fc-stage text { font-family: var(--g-body-font), "Microsoft YaHei", sans-serif; }
+.fc-stage .t { font-size: 17px; fill: #14161a; }
+.fc-stage .t-sm { font-size: 14px; fill: #3b4149; }
+.fc-stage .t-tiny { font-size: 12px; fill: #7c848f; }
+.fc-controls { display: flex; align-items: center; gap: 0.45em; margin-top: 0.35em; font-size: 0.62em; }
+.fc-controls button { font: inherit; font-size: 0.95em; color: var(--g-body); background: #fff; border: 1px solid var(--g-line); padding: 0.4em 0.8em; cursor: pointer; transition: all 0.16s ease; }
+.fc-controls button:hover { color: var(--g-red); border-color: var(--g-red); }
+.fc-counter { margin-left: auto; font-family: var(--r-code-font); color: var(--g-mute); }
+
+/* ------------------------------------------------- 原稿截图整页引用 */
+.ppt-import { margin: 0; display: flex; justify-content: center; align-items: center; }
+.ppt-import img { display: block; height: 700px; width: auto; max-width: 100%; border: 1px solid var(--g-line); background: #fff; }
+
+/* ------------------------------------------------------ 通用方块图容器 */
+.diagram { border: 1px solid var(--g-line); background: #fff; padding: 0.3em 0.45em; align-self: start; }
+.diagram svg { display: block; width: 100%; height: auto; }
+
+/* -------------------------------------------------------- 可交互小车 */
+.car { display: grid; grid-template-columns: 1.35fr 1fr; gap: 0.7em; align-items: start; margin-top: 0.35em; }
+.car-stage { border: 1px solid var(--g-line); background: #fff; }
+.car-stage svg { display: block; width: 100%; height: auto; max-height: 415px; }
+.car-panel { border: 1px solid var(--g-line); border-top: 3px solid var(--g-red); padding: 0.5em 0.65em 0.6em; background: var(--g-bg-soft); }
+.car-panel h4 { font-size: 0.62em !important; margin: 0 0 0.3em !important; color: var(--g-mute); font-family: var(--r-main-font); font-weight: 700; letter-spacing: 0.04em; }
+.car-row { display: grid; grid-template-columns: 2.6em 1fr 3.4em; align-items: center; gap: 0.45em; padding: 0.12em 0; font-size: 0.58em; }
+.car-row label { font-family: var(--r-code-font); color: var(--g-ink); }
+.car-row input[type="range"] { width: 100%; accent-color: var(--g-red); height: 1em; }
+.car-row output { font-family: var(--r-code-font); text-align: right; color: var(--g-body); }
+.car-out { margin-top: 0.4em; border-top: 1px solid var(--g-line); padding-top: 0.3em; }
+.car-line { display: grid; grid-template-columns: 3.6em 1fr auto; gap: 0.4em; font: 0.56em/1.75 var(--r-code-font); color: var(--g-body); }
+.car-line span { color: var(--g-ink); }
+.car-line b { color: var(--g-red); font-weight: 700; }
+.car-line em { font-style: normal; color: var(--g-mute); }
+.car-formula { font-size: 0.56em; color: var(--g-mute); margin: 0.35em 0 0 !important; line-height: 1.5; }
+
+/* ------------------------------------------------------- 麦轮 3D 分解模型 */
+.m3d { display: grid; grid-template-columns: minmax(0, 1.42fr) minmax(0, 1fr); gap: 0.6em; align-items: start; margin-top: 0.3em; }
+.m3d-stage { position: relative; min-width: 0; border: 1px solid var(--g-line); background: #fff; }
+.m3d-stage canvas { display: block; width: 100%; height: 396px; touch-action: none; cursor: grab; }
+.m3d-stage canvas.is-drag { cursor: grabbing; }
+.m3d-bar { display: flex; align-items: center; gap: 0.6em; padding: 0.28em 0.5em; border-top: 1px solid var(--g-line); }
+.m3d-views { margin-left: auto; display: flex; gap: 0.2em; flex: none; }
+.m3d-views button { font: inherit; font-size: 0.44em; padding: 0.28em 0.55em; color: var(--g-body); background: #fff; border: 1px solid var(--g-line); cursor: pointer; }
+.m3d-views button:hover { color: var(--g-red); border-color: var(--g-red); }
+.m3d-legend { display: flex; flex-wrap: wrap; gap: 0.08em 0.85em; font-size: 0.43em; color: var(--g-mute); }
+.m3d-legend span { display: flex; align-items: center; gap: 0.3em; padding: 0.12em 0; }
+.m3d-legend .sw { display: inline-block; width: 0.8em; height: 0.26em; border-radius: 1px; }
+.sw-ink { background: var(--g-ink); }
+.sw-red { background: var(--g-red); }
+.sw-free { background: var(--g-warn); }
+.sw-dash { background: repeating-linear-gradient(90deg, var(--g-mute) 0 3px, transparent 3px 6px); }
+.m3d-panel { min-width: 0; border: 1px solid var(--g-line); border-top: 3px solid var(--g-red); background: var(--g-bg-soft); padding: 0.42em 0.55em 0.5em; }
+.m3d-tabs { display: flex; gap: 0.2em; margin-bottom: 0.3em; }
+.m3d-tabs button { flex: 1; font: inherit; font-size: 0.5em; padding: 0.34em 0; color: var(--g-mute); background: #fff; border: 1px solid var(--g-line); cursor: pointer; transition: all 0.15s ease; }
+.m3d-tabs button:hover { color: var(--g-red); border-color: var(--g-red); }
+.m3d-tabs button.is-on { color: #fff; background: var(--g-red); border-color: var(--g-red); font-weight: 700; }
+.m3d-presets { display: flex; gap: 0.22em; margin: 0.3em 0 0.1em; }
+.m3d-presets button { flex: 1; font: inherit; font-size: 0.46em; padding: 0.34em 0; color: var(--g-body); background: #fff; border: 1px solid var(--g-line); cursor: pointer; }
+.m3d-presets button:hover { color: var(--g-red); border-color: var(--g-red); }
+.m3d-out { border-top: 1px solid var(--g-line); margin-top: 0.34em; padding-top: 0.26em; }
+.m3d-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.18em; font-size: 0.56em; font-weight: 700; color: var(--g-ink); }
+.m3d-head em { font-style: normal; font: 0.86em/1 var(--r-code-font); color: var(--g-mute); }
+.m3d-line { display: grid; grid-template-columns: 1fr auto; gap: 0.3em; font: 0.5em/1.72 var(--r-code-font); color: var(--g-body); }
+.m3d-line b { color: var(--g-ink); font-weight: 700; }
+.m3d-line.hot b { color: var(--g-red); }
+.m3d-line.dim { color: var(--g-mute); line-height: 1.5; }
+.m3d-fx { margin-top: 0.24em; padding: 0.24em 0.45em; font: 0.48em/1.5 var(--r-code-font); color: var(--g-ink); background: #fff; border-left: 3px solid var(--g-red); }
+.m3d-strip { display: flex; gap: 0.25em; margin-top: 0.26em; font: 0.45em/1.4 var(--r-code-font); color: var(--g-mute); }
+.m3d-strip span { flex: 1; padding: 0.18em 0; text-align: center; border: 1px solid var(--g-line); background: #fff; }
+.m3d-strip span.on { color: var(--g-red); border-color: var(--g-red); font-weight: 700; }
+
+/* ------------------------------------------------------------ 装反提示条 */
+.flip { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5em; margin-top: 0.4em; }
+.flip div { border: 1px solid var(--g-line); padding: 0.45em 0.6em; font-size: 0.62em; line-height: 1.5; }
+.flip .no { border-left: 4px solid var(--g-red); background: var(--g-red-soft); }
+.flip .yes { border-left: 4px solid var(--g-ok); background: #f2faf6; }
+.flip b { display: block; margin-bottom: 0.15em; }
+
+/* ---------------------------------------------------------- 小测收紧 */
+.reveal .quiz { margin-bottom: 0.24em; padding: 0.32em 0.6em; }
+.reveal .quiz-q { font-size: 0.68em; margin-bottom: 0.2em !important; }
+.reveal .quiz-opt { font-size: 0.62em; padding: 0.34em 0.5em; line-height: 1.4; }
+.reveal .quiz-opts { gap: 0.24em; }
+.reveal .quiz-feedback { font-size: 0.6em; }
+
+/* 图组高度微调：底盘的 3 视图偏方，给足高度 */
+.figrow.tall img { height: 372px; }
+.figrow.mid img { height: 330px; }
+
+/* 说明：reveal 的画布固定为 1280×800 并整体缩放，
+   因此这里不用 max-width 断点，否则窗口一变窄就会把两栏挤成一栏。 */

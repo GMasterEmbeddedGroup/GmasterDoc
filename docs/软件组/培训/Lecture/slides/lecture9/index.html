@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="GMaster 电控（软件）组 Lecture 9《底盘概述》：从全向轮、麦轮、舵轮三种轮组，到速度解算、运动学正反解与控制框架中的扭矩前馈。">
+<title>底盘概述：Lecture 9 | GMaster</title>
+<link rel="stylesheet" href="../lecture3/vendor/reveal.js/reveal.css">
+<link rel="stylesheet" href="../lecture3/theme.css">
+<link rel="stylesheet" href="../lecture3/deck.css">
+<link rel="stylesheet" href="lecture9.css?v=20261124">
+</head>
+<body>
+<div class="reveal">
+  <img class="brand-logo" src="../lecture3/img/brand-logo.png" alt="GMaster">
+  <img class="brand-corner" src="../lecture3/img/brand-corner.png" alt="">
+  <div class="slides"><section><h2>正在载入课件…</h2></section></div>
+</div>
+<script src="../lecture3/vendor/reveal.js/reveal.js"></script>
+<script src="../lecture3/vendor/reveal.js/plugin/zoom/zoom.js"></script>
+<script src="../lecture3/vendor/reveal.js/plugin/search/search.js"></script>
+<script src="../lecture3/vendor/reveal.js/plugin/notes/notes.js"></script>
+<script src="../lecture3/deck.js"></script>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script id="MathJax-script" src="../lecture3/vendor/mathjax/tex-svg.js"></script>
+<script src="lecture9.js?v=20261127"></script>
+<script>
+(function () {
+  var slidesEl = document.querySelector('.reveal .slides');
+  function typeset() {
+    if (!window.MathJax || !MathJax.typesetPromise) { return Promise.resolve(); }
+    return MathJax.typesetPromise([slidesEl]).catch(function () {});
+  }
+  DeckKit.loadManifest('slides/manifest.js').then(function () {
+    return DeckKit.loadFragments(window.DECK_SLIDES.map(function (s) { return s.file; }), slidesEl);
+  }).then(typeset).then(function () {
+    DeckKit.initAll(document);
+    Lecture9.initAll(document);
+    DeckKit.initReveal({ plugins: [window.RevealZoom, window.RevealSearch, window.RevealNotes].filter(Boolean) });
+    if (window.MathJax && MathJax.startup) { MathJax.startup.promise.then(typeset); }
+  }).catch(function (err) {
+    slidesEl.innerHTML = '<section><h2>课件载入失败</h2><p class="mono">' + err.message + '</p><p>请通过 HTTP 访问，不要直接使用 file:// 打开。</p></section>';
+  });
+})();
+</script>
+</body>
+</html>

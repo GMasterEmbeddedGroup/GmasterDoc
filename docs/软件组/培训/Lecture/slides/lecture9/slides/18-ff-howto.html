@@ -1,0 +1,29 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">需要哪些前馈</h2>
+    <p class="lead">按物理来源拆开：主扭矩由动力学逆解算给出，小扭矩逐轮补——惯量、阻尼、摩擦、坡道、轮差。</p>
+  </div>
+  <table class="cmp">
+    <thead><tr><th>前馈项</th><th>算式（目标值 → 前馈量）</th><th>为什么必须有</th><th>参数从哪来</th></tr></thead>
+    <tbody>
+      <tr><td>惯量</td><td>\(m\dot{v}_{ref}\)、\(J\dot{\omega}_{ref}\)、\(J_w\dot{\omega}_{ref}\)</td><td>目标在加速，扭矩必须先到位，否则只能靠 P 事后追</td><td>建模 + 称重</td></tr>
+      <tr><td>粘性阻尼</td><td>\(b\,v_{ref}\)、\(b_\omega\omega_{ref}\)</td><td>阻力随速度线性增长，高速时占大头</td><td>匀速爬行，记稳态电流</td></tr>
+      <tr><td>库仑摩擦</td><td>\(\tau_c\,\mathrm{sgn}(\omega_{ref})\)</td><td>与转向相反的常值阻力，低速最明显——也是静止时白耗功率的元凶</td><td>正反转试验取半差</td></tr>
+      <tr><td>坡道 / 重力</td><td>\(m g\sin\theta\)</td><td>不补就溜坡，纯 P 追不回来</td><td>IMU 俯仰角</td></tr>
+      <tr><td>轮间差异</td><td>每轮自己的 \(k_i\omega_{ref}+\tau_i\)</td><td>机械装得不理想，四轮出力不均、总功率偏大</td><td>逐轮单独标定</td></tr>
+    </tbody>
+  </table>
+  <div class="band">① 目标速度 / 加速度 → 动力学逆解算 → 整车广义力 (F_x, F_y, T)
+② 乘 Bᵀ 分出各轮扭矩 → 每个轮组再补：惯量 / 阻尼 / 摩擦 / 坡道 / 轮差</div>
+  <div class="grid grid-2">
+    <div>
+      <div class="math">\[ \begin{pmatrix}\tau_1\\ \vdots\\ \tau_n\end{pmatrix}=B^{\top}\begin{pmatrix}F_x\\F_y\\T\end{pmatrix} \]</div>
+      <p class="math-exp">\(B\) 就是第 05 章正解算那个矩阵：速度是 \(v=B\,\omega\)，力就是 \(\tau=B^{\top}F\)（虚功原理，功率守恒），不用为力另推一套。</p>
+    </div>
+    <div>
+      <div class="math">\[ \tau_i=\frac{s}{4}\left(\pm F_x\pm F_y+\frac{T}{a+b}\right) \]</div>
+      <p class="math-exp">上面是<b>麦轮</b>把 \(B_{\text{麦}}\) 展开后的样子；全向轮要换 45° 投影（出现 \(1/r\)），舵轮是 8 个轮向量、先算 \(v_0\) 再取模——三种底盘不能共用“除以四”。</p>
+    </div>
+  </div>
+  <div class="callout"><b>工程上更常用实测标定：</b>匀速爬行记录稳态电流，得到“阻力—速度”曲线直接查表——\(b\)、\(\tau_c\) 是装出来的，不是查出来的。</div>
+</section>

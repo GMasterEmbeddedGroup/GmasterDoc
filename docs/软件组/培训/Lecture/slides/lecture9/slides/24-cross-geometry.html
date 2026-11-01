@@ -1,0 +1,32 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">叉乘的几何定义</h2>
+    <p class="lead">\(a\times b\) 的结果是一个向量：大小是平行四边形面积，方向由右手定则给出。</p>
+  </div>
+  <div class="grid grid-2">
+    <div class="card" style="border-top-color:var(--g-red)">
+      <svg viewBox="0 0 400 300" style="display:block;width:100%;height:auto" role="img" aria-label="叉乘的几何意义">
+        <defs><marker id="cg-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#14161a"></path></marker>
+          <marker id="cg-arr-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#b3121b"></path></marker></defs>
+        <polygon points="60,240 190,110 300,160 170,290" fill="#f7f8fa" stroke="#c3c9d1"></polygon>
+        <line x1="60" y1="240" x2="190" y2="110" stroke="#14161a" stroke-width="2" marker-end="url(#cg-arr)"></line>
+        <line x1="60" y1="240" x2="170" y2="290" stroke="#14161a" stroke-width="2" marker-end="url(#cg-arr)"></line>
+        <line x1="190" y1="110" x2="300" y2="160" stroke="#c3c9d1" stroke-width="1.4" stroke-dasharray="5 4"></line>
+        <line x1="170" y1="290" x2="300" y2="160" stroke="#c3c9d1" stroke-width="1.4" stroke-dasharray="5 4"></line>
+        <text x="186" y="104" font-size="14" font-weight="700" fill="#14161a">a</text>
+        <text x="178" y="300" font-size="14" font-weight="700" fill="#14161a">b</text>
+        <text x="46" y="252" font-size="12" fill="#7c848f">O</text>
+        <line x1="300" y1="160" x2="368" y2="112" stroke="#b3121b" stroke-width="2" marker-end="url(#cg-arr-r)"></line>
+        <text x="330" y="102" font-size="14" font-weight="700" fill="#b3121b">a × b</text>
+      </svg>
+      <p class="tiny dim" style="margin:.3em 0 0!important">平行四边形的面积就是 \(a\times b\) 的模长。</p>
+    </div>
+    <div>
+      <div class="kv"><b>模长</b><span>\(\left|a\times b\right|=\left|a\right|\left|b\right|\sin\theta\)，等于两向量张成的平行四边形面积。</span></div>
+      <div class="kv"><b>方向</b><span>同时垂直于 \(a\) 与 \(b\)，四指从 \(a\) 转向 \(b\)，拇指指向结果。</span></div>
+      <div class="kv"><b>特例</b><span>\(a\parallel b\) 时结果为零向量；\(a\perp b\) 时模长取最大值 \(\left|a\right|\left|b\right|\)。</span></div>
+      <div class="kv"><b>反号</b><span>交换顺序会反号，这是后续最容易调错符号的地方。</span></div>
+      <div class="math">\[ b\times a=-\left(a\times b\right) \]</div>
+    </div>
+  </div>
+</section>

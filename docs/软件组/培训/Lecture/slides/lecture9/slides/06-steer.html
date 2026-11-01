@@ -1,0 +1,13 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">舵轮底盘</h2>
+    <p class="lead">触地点形成矩形；每个轮组由舵向电机（管朝向）和轮向电机（管转速）组成。</p>
+  </div>
+  <div class="figrow three tall">
+    <figure><img src="img/steer-top.png" alt="舵轮底盘俯视图"><figcaption><b>俯视图</b>：四个独立转向轮组，可任意指向前方</figcaption></figure>
+    <figure><img src="img/steer-iso.png" alt="舵轮底盘等轴测视图"><figcaption><b>等轴测视图</b>：每个轮组上都有舵向与轮向两台电机</figcaption></figure>
+    <figure><img src="img/steer-bottom.png" alt="舵轮底盘仰视图"><figcaption><b>仰视图</b>：轮组没有自由平移方向，因此不打滑</figcaption></figure>
+  </div>
+  <div class="kv"><b>解耦</b><span>舵向电机只管朝向、轮向电机只管转速，两者解耦，所以解算最直接（详见第 04 章）。</span></div>
+  <div class="kv"><b>装配要点</b><span>四个舵向电机的零位必须一致，否则解算出的角度会带一个固定偏置。</span></div>
+</section>

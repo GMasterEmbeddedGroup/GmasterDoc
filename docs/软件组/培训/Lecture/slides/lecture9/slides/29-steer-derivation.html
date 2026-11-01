@@ -1,0 +1,23 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">舵轮速度解算：大小与方向分开</h2>
+    <p class="lead">舵轮没有自由平移方向，不需要投影——把 \(v_0\) 的大小给轮向电机、方向给舵向电机。</p>
+  </div>
+  <div class="derive">
+    <div class="derive-step"><em>①</em><div>
+      <p>同样先算该点速度（\(r_i=(\pm a,\pm b)\)）：</p>
+      <div class="math">\[ v_0=\begin{pmatrix}v_x-\omega r_y\\ v_y+\omega r_x\end{pmatrix} \]</div>
+    </div></div>
+    <div class="derive-step"><em>②</em><div>
+      <p>轮组可以自由转向，没有“只能沿某个方向滚动”的约束，\(v_0\) 就是轮子必须实现的速度；取模长与方向即可：</p>
+      <div class="math">\[ \omega_i=\frac{\left|v_0\right|}{s}
+        =\frac{\sqrt{\left(v_x-\omega r_y\right)^{2}+\left(v_y+\omega r_x\right)^{2}}}{s} \]</div>
+      <div class="math">\[ \theta_i=\operatorname{atan2}\!\left(v_y+\omega r_x,\ \ v_x-\omega r_y\right) \]</div>
+    </div></div>
+    <div class="derive-step"><em>③</em><div>
+      <p>舵向未到位时，只有投影分量有效；角度差 90° 时轮向输出应为 0：</p>
+      <div class="math">\[ \omega_i^{\text{eff}}=\omega_i\cos\left(\theta_i-\theta_i^{\text{now}}\right) \]</div>
+    </div></div>
+  </div>
+  <div class="callout tip"><b>两个工程细节：</b>\(\theta_i+\pi\) 与 \(\theta_i\) 等效但轮速反号，取与当前角更近的解可避免舵向原地转 180°；四个舵向电机零位必须一致，否则解算出的角度带固定偏置。机械最复杂的舵轮，速度解算反而最简单。</div>
+</section>

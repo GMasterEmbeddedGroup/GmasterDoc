@@ -1,0 +1,73 @@
+<section>
+  <div class="slide-head">
+    <h2 class="slide-title">A 矩阵与 B 矩阵</h2>
+    <p class="lead">\(A\) 用于逆解算，\(B\) 用于正解算。切换选项卡看三种底盘各自的取值。</p>
+  </div>
+  <div data-tabs>
+    <div class="tabbar">
+      <button class="tab-btn" data-tab="steer">舵轮底盘</button>
+      <button class="tab-btn" data-tab="omni">全向轮底盘</button>
+      <button class="tab-btn" data-tab="mecanum">麦轮底盘</button>
+    </div>
+
+    <div class="tab-panel" data-panel="steer">
+      <div class="grid grid-2">
+        <div class="card"><h4>\(A\)：底盘状态 → 轮组状态（8 × 3）</h4>
+          <div class="math tight">\[ A_{\text{舵}}=\frac{1}{s}\begin{pmatrix}
+            1&0&-\tfrac{\sqrt2}{2}r\\[2pt]
+            0&1&\ \ \tfrac{\sqrt2}{2}r\\[2pt]
+            \vdots&\vdots&\vdots
+          \end{pmatrix}_{8\times3} \]</div>
+          <p class="mx-cap">四个轮组各两行：先算 \(v_0\) 的分量，再取模与方向。</p></div>
+        <div class="card"><h4>\(B\)：轮组状态 → 底盘状态（3 × 8）</h4>
+          <div class="math tight">\[ B_{\text{舵}}=\frac{s}{4}\begin{pmatrix}
+            1&0&1&0&1&0&1&0\\
+            0&1&0&1&0&1&0&1\\
+            -\tfrac{\sqrt2}{2}&\tfrac{\sqrt2}{2}&-\tfrac{\sqrt2}{2}&\tfrac{\sqrt2}{2}&-\tfrac{\sqrt2}{2}&\tfrac{\sqrt2}{2}&-\tfrac{\sqrt2}{2}&\tfrac{\sqrt2}{2}
+          \end{pmatrix} \]</div>
+          <p class="mx-cap">\(x\)、\(y\) 分量取平均，第三行由 8 个轮组速度合成 \(\omega\)。</p></div>
+      </div>
+    </div>
+
+    <div class="tab-panel" data-panel="omni">
+      <div class="grid grid-2">
+        <div class="card"><h4>\(A\)：底盘状态 → 轮组状态（4 × 3）</h4>
+          <div class="math tight">\[ A_{\text{全}}=\frac{1}{s}\begin{pmatrix}
+            -\tfrac{\sqrt2}{2}&\ \ \tfrac{\sqrt2}{2}&r\\
+            -\tfrac{\sqrt2}{2}&-\tfrac{\sqrt2}{2}&r\\
+            \ \ \tfrac{\sqrt2}{2}&-\tfrac{\sqrt2}{2}&r\\
+            \ \ \tfrac{\sqrt2}{2}&\ \ \tfrac{\sqrt2}{2}&r
+          \end{pmatrix} \]</div>
+          <p class="mx-cap">每个轮组一行；第三列的 \(r\) 来自滚子与正交方向的 45° 夹角。</p></div>
+        <div class="card"><h4>\(B\)：轮组状态 → 底盘状态（3 × 4）</h4>
+          <div class="math tight">\[ B_{\text{全}}=\frac{s}{4}\begin{pmatrix}
+            -\sqrt2&-\sqrt2&\sqrt2&\sqrt2\\
+            \sqrt2&-\sqrt2&-\sqrt2&\sqrt2\\
+            \tfrac{1}{r}&\tfrac{1}{r}&\tfrac{1}{r}&\tfrac{1}{r}
+          \end{pmatrix} \]</div>
+          <p class="mx-cap">\(B\) 恰好是 \(A\) 的“投影版”：先按方向投影，再取平均。</p></div>
+      </div>
+    </div>
+
+    <div class="tab-panel" data-panel="mecanum">
+      <div class="grid grid-2">
+        <div class="card"><h4>\(A\)：底盘状态 → 轮组状态（4 × 3）</h4>
+          <div class="math tight">\[ A_{\text{麦}}=\frac{1}{s}\begin{pmatrix}
+            -1&\ \ 1&a+b\\
+            -1&-1&a+b\\
+            \ \ 1&-1&a+b\\
+            \ \ 1&\ \ 1&a+b
+          \end{pmatrix} \]</div>
+          <p class="mx-cap">与上一章推导出的四个式子逐项对应。</p></div>
+        <div class="card"><h4>\(B\)：轮组状态 → 底盘状态（3 × 4）</h4>
+          <div class="math tight">\[ B_{\text{麦}}=\frac{s}{4}\begin{pmatrix}
+            -1&-1&1&1\\
+            \ \ 1&-1&-1&1\\
+            \tfrac{1}{a+b}&\tfrac{1}{a+b}&\tfrac{1}{a+b}&\tfrac{1}{a+b}
+          \end{pmatrix} \]</div>
+          <p class="mx-cap">最省事的一组：分子只有 \(\pm1\)，写代码时只剩加减。</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="callout">矩阵里的符号与系数依赖于<b>轮组编号、安装方向与 45° 约定</b>；换车时先确认自己的编号，再照抄数值。</div>
+</section>
